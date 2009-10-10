@@ -60,6 +60,7 @@ Window::Window() {
 
 	// Create success message
 	m_success = new QLabel(contents);
+	m_success->setAttribute(Qt::WA_TransparentForMouseEvents);
 
 	QFont f = font();
 	f.setPointSize(24);
