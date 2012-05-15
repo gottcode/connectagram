@@ -1,0 +1,80 @@
+2009-09-07 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.0.1.
+
+2009-09-03 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Identical seeds did not always generate identical games.
+	* FIXED: Crashed when using multiple mouse buttons during a drag.
+
+2009-08-30 Graeme Gott <graeme@gottcode.org>
+	* Tag version 1.0.0.
+
+2009-08-29 Graeme Gott <graeme@gottcode.org>
+	* Refactor pattern class.
+	* FIXED: Loading text would sometimes disappear.
+	* FIXED: Success message did not disappear when starting a game.
+	* FIXED: Words were sometimes repeated in puzzle.
+
+2009-08-27 Graeme Gott <graeme@gottcode.org>
+	* Use thread for creating patterns.
+
+2009-08-26 Graeme Gott <graeme@gottcode.org>
+	* Remember dictionary size across runs.
+
+2009-08-25 Graeme Gott <graeme@gottcode.org>
+	* Improve word shuffling algorithm.
+
+2009-08-23 Graeme Gott <graeme@gottcode.org>
+	* Add program icon.
+
+2009-08-22 Graeme Gott <graeme@gottcode.org>
+	* Add buttons for definitions and hints.
+	* Make clicking on timer toggle paused state.
+	* Refactor timer.
+
+2009-08-21 Graeme Gott <graeme@gottcode.org>
+	* Add dictionary lookup.
+
+2009-08-20 Graeme Gott <graeme@gottcode.org>
+	* Improve letter shuffling algorithm.
+	* Add hints.
+
+2009-08-19 Graeme Gott <graeme@gottcode.org>
+	* Add high score board.
+	* Add pausing.
+	* Add timer.
+
+2009-08-18 Graeme Gott <graeme@gottcode.org>
+	* Add success message.
+	* Add stairs pattern.
+	* Automatically save game.
+
+2009-08-17 Graeme Gott <graeme@gottcode.org>
+	* Add details dialog.
+	* Expand new game dialog.
+	* Shuffle letters in new games.
+	* Detect finished games.
+	* Add checking words.
+	* Add letter movement.
+
+2009-08-16 Graeme Gott <graeme@gottcode.org>
+	* Highlight active word.
+	* Add board class.
+	* Add cell class.
+	* Add word class.
+	* Add letter class.
+
+2009-08-14 Graeme Gott <graeme@gottcode.org>
+	* Add starting new games.
+	* Add formulas for word count and minimum word size.
+	* Add error handling to patterns.
+
+2009-08-13 Graeme Gott <graeme@gottcode.org>
+	* Refactor patterns.
+	* Add rings pattern.
+	* Add chain pattern.
+	* Add fence pattern.
+	* Add wave pattern.
+
+2009-08-12 Graeme Gott <graeme@gottcode.org>
+	* Add twisty pattern.
+	* Initial project layout.

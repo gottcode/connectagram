@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Connectagram
+Exec=connectagram
+Icon=connectagram
+Terminal=false
+Type=Application
+Categories=Qt;Game;
