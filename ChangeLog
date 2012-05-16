@@ -1,3 +1,6 @@
+2012-05-16 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Twisty boards sometimes have words that touch incorrectly.
+
 2009-09-07 Graeme Gott <graeme@gottcode.org>
 	* Tag version 1.0.1.
 

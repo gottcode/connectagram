@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -364,9 +364,12 @@ Word* TwistyPattern::stepOne() {
 
 	while (!positions.isEmpty()) {
 		QPoint pos = positions.takeAt(qrand() % positions.count());
-		int right = wordLength() + pos.x();
-		int left = -wordLength() + pos.x();
 
+		// Define possible range for word
+		int right = wordLength() + pos.x() - 1;
+		int left = -wordLength() + pos.x() + 1;
+
+		// Check for conflicting words on the right side of range for word
 		for (int x = 1; x <= wordLength(); ++x) {
 			for (int y = -1; y < 2; ++y) {
 				QPoint test(pos.x() + x, pos.y() + y);
@@ -378,6 +381,7 @@ Word* TwistyPattern::stepOne() {
 			}
 		}
 
+		// Check for conflicting words on the left side of range for word
 		for (int x = -1; x >= -wordLength(); --x) {
 			for (int y = -1; y < 2; ++y) {
 				QPoint test(pos.x() + x, pos.y() + y);
@@ -389,6 +393,7 @@ Word* TwistyPattern::stepOne() {
 			}
 		}
 
+		// Randomly place word in range if it can fit
 		int length = right - left;
 		int offset = length - wordLength();
 		if (offset >= 0) {
@@ -412,9 +417,12 @@ Word* TwistyPattern::stepTwo() {
 
 	while (!positions.isEmpty()) {
 		QPoint pos = positions.takeAt(qrand() % positions.count());
-		int bottom = wordLength() + pos.y();
-		int top = -wordLength() + pos.y();
 
+		// Define possible range for word
+		int bottom = wordLength() + pos.y() - 1;
+		int top = -wordLength() + pos.y() + 1;
+
+		// Check for conflicting words on the bottom of range for word
 		for (int y = 1; y <= wordLength(); ++y) {
 			for (int x = -1; x < 2; ++x) {
 				QPoint test(pos.x() + x, pos.y() + y);
@@ -426,6 +434,7 @@ Word* TwistyPattern::stepTwo() {
 			}
 		}
 
+		// Check for conflicting words on the top of range for word
 		for (int y = -1; y >= -wordLength(); --y) {
 			for (int x = -1; x < 2; ++x) {
 				QPoint test(pos.x() + x, pos.y() + y);
@@ -437,6 +446,7 @@ Word* TwistyPattern::stepTwo() {
 			}
 		}
 
+		// Randomly place word in range if it can fit
 		int length = bottom - top;
 		int offset = length - wordLength();
 		if (offset >= 0) {
