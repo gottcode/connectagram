@@ -2,7 +2,7 @@
 
 APP='Connectagram'
 BUNDLE="$APP.app"
-VERSION='1.0.1'
+VERSION=$(git rev-parse --short HEAD)
 
 cp -f share/connectagram/words "$BUNDLE/Contents/Resources"
 

@@ -27,7 +27,7 @@
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
 	app.setApplicationName("Connectagram");
-	app.setApplicationVersion("1.0.1");
+	app.setApplicationVersion(VERSIONSTR);
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
