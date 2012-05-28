@@ -30,6 +30,8 @@
 #include <QSpinBox>
 #include <QVBoxLayout>
 
+#include <ctime>
+
 NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 : QDialog(parent), m_board(board) {
 	setWindowTitle(tr("New Game"));
