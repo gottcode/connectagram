@@ -87,7 +87,7 @@ unix: !macx {
 	desktop.path = $$PREFIX/share/applications/
 
 	qm.files = translations/*.qm
-	qm.path = $$PREFIX/share/focuswriter/translations
+	qm.path = $$PREFIX/share/connectagram/translations
 
 	INSTALLS += target icon desktop data qm
 }
