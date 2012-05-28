@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #include "board.h"
 #include "clock.h"
 #include "definitions.h"
+#include "locale_dialog.h"
 #include "new_game_dialog.h"
 #include "pattern.h"
 #include "score_board.h"
@@ -167,6 +168,9 @@ Window::Window() {
 	menu->addSeparator();
 	menu->addAction(tr("&Quit"), qApp, SLOT(quit()), tr("Ctrl+Q"));
 
+	menu = menuBar()->addMenu(tr("&Settings"));
+	menu->addAction(tr("Application &Language..."), this, SLOT(setLocale()));
+
 	menu = menuBar()->addMenu(tr("&Help"));
 	menu->addAction(tr("&About"), this, SLOT(about()));
 	menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
@@ -249,6 +253,13 @@ void Window::showDetails() {
 			"<b>Game number:</b> %L4</p>"
 		).arg(pattern->name()).arg(pattern->wordLength() + 1).arg(pattern->wordCount()).arg(pattern->seed()));
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::setLocale() {
+	LocaleDialog dialog(this);
+	dialog.exec();
 }
 
 //-----------------------------------------------------------------------------

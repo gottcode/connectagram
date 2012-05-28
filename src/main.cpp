@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,11 @@
  *
  ***********************************************************************/
 
+#include "locale_dialog.h"
 #include "window.h"
 
 #include <QApplication>
 #include <QDir>
-#include <QLocale>
-#include <QTranslator>
 
 int main(int argc, char** argv) {
 	QApplication app(argc, argv);
@@ -31,13 +30,7 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
-	QTranslator qt_translator;
-	qt_translator.load("qt_" + QLocale::system().name());
-	app.installTranslator(&qt_translator);
-
-	QTranslator translator;
-	translator.load(":/connectagram_" + QLocale::system().name());
-	app.installTranslator(&translator);
+	LocaleDialog::loadTranslator("connectagram_");
 
 #if defined(Q_OS_MAC)
 	QDir::setCurrent(QCoreApplication::applicationDirPath() + "/../Resources/");

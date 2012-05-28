@@ -30,6 +30,7 @@ HEADERS = src/board.h \
 	src/definitions.h \
 	src/dictionary.h \
 	src/letter.h \
+	src/locale_dialog.h \
 	src/new_game_dialog.h \
 	src/pattern.h \
 	src/score_board.h \
@@ -43,6 +44,7 @@ SOURCES = src/board.cpp \
 	src/definitions.cpp \
 	src/dictionary.cpp \
 	src/letter.cpp \
+	src/locale_dialog.cpp \
 	src/main.cpp \
 	src/new_game_dialog.cpp \
 	src/pattern.cpp \
@@ -50,6 +52,8 @@ SOURCES = src/board.cpp \
 	src/view.cpp \
 	src/window.cpp \
 	src/word.cpp
+
+TRANSLATIONS = share/connectagram/translations/connectagram_en.ts
 
 RESOURCES = icons/icons.qrc
 macx {

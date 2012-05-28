@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,48 +17,34 @@
  *
  ***********************************************************************/
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef LOCALE_DIALOG_H
+#define LOCALE_DIALOG_H
 
-#include <QMainWindow>
-class QAction;
-class QLabel;
-class Board;
-class Clock;
-class Definitions;
-class ScoreBoard;
+#include <QDialog>
+class QComboBox;
 
-class Window : public QMainWindow {
+class LocaleDialog : public QDialog
+{
 	Q_OBJECT
 
-	public:
-		Window();
+public:
+	LocaleDialog(QWidget* parent = 0);
 
-	public slots:
-		void newGame();
+	static void loadTranslator(const QString& appname);
+	static QString languageName(const QString& language);
 
-	protected:
-		virtual void closeEvent(QCloseEvent* event);
-		virtual bool event(QEvent* event);
-		virtual bool eventFilter(QObject* object, QEvent* event);
+public slots:
+	virtual void accept();
 
-	private slots:
-		void about();
-		void showDetails();
-		void setLocale();
-		void gameStarted();
-		void gameFinished();
-		void gamePauseChanged();
+private:
+	static QStringList findTranslations();
 
-	private:
-		QAction* m_pause_action;
-		Board* m_board;
-		Clock* m_clock;
-		QLabel* m_definitions_button;
-		QLabel* m_hint_button;
-		ScoreBoard* m_scores;
-		Definitions* m_definitions;
-		QLabel* m_success;
+private:
+	QComboBox* m_translations;
+
+	static QString m_current;
+	static QString m_path;
+	static QString m_appname;
 };
 
 #endif
