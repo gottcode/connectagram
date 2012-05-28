@@ -39,7 +39,7 @@ int Pattern::m_max_length = 0;
 Pattern::Pattern()
 : m_current(0,0), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
 	if (m_words.isEmpty()) {
-		QFile file("words");
+		QFile file("connectagram:en/words");
 		if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
 			return;
 		}

@@ -30,15 +30,15 @@ int main(int argc, char** argv) {
 	app.setOrganizationDomain("gottcode.org");
 	app.setOrganizationName("GottCode");
 
+	QString path = app.applicationDirPath();
+	QStringList paths;
+	paths.append(path + "/data/");
+	paths.append(path + "/../share/connectagram/data/");
+	paths.append(path + "/../Resources/data/");
+	QDir::setSearchPaths("connectagram", paths);
+
 	LocaleDialog::loadTranslator("connectagram_");
 
-#if defined(Q_OS_MAC)
-	QDir::setCurrent(QCoreApplication::applicationDirPath() + "/../Resources/");
-#elif defined(Q_OS_UNIX)
-	QDir::setCurrent(QCoreApplication::applicationDirPath() + "/../share/connectagram/");
-#elif defined(Q_OS_WIN32)
-	QDir::setCurrent(QCoreApplication::applicationDirPath());
-#endif
 	Window window;
 
 	return app.exec();

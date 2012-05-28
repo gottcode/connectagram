@@ -1,10 +1,8 @@
 TEMPLATE = app
 QT += network
-CONFIG += warn_on release
+CONFIG += warn_on
 macx {
-	# Uncomment the following line to compile on PowerPC Macs
-	# QMAKE_MAC_SDK = /Developer/SDKs/MacOSX10.4u.sdk
-	CONFIG += x86 ppc
+	CONFIG += x86_64
 }
 
 MOC_DIR = build
@@ -18,7 +16,6 @@ isEmpty(VERSION) {
 DEFINES += VERSIONSTR=\\\"git.$${VERSION}\\\"
 
 unix: !macx {
-	DESTDIR = bin
 	TARGET = connectagram
 } else {
 	TARGET = Connectagram
@@ -53,7 +50,7 @@ SOURCES = src/board.cpp \
 	src/window.cpp \
 	src/word.cpp
 
-TRANSLATIONS = share/connectagram/translations/connectagram_en.ts
+TRANSLATIONS = translations/connectagram_en.ts
 
 RESOURCES = icons/icons.qrc
 macx {
@@ -67,11 +64,14 @@ unix: !macx {
 	isEmpty(PREFIX) {
 		PREFIX = /usr/local
 	}
+	isEmpty(BINDIR) {
+		BINDIR = bin
+	}
 
-	target.path = $$PREFIX/bin/
+	target.path = $$PREFIX/$$BINDIR/
 
-	definitions.files = share/connectagram/words
-	definitions.path = $$PREFIX/share/connectagram/
+	data.files = share/connectagram/data
+	data.path = $$PREFIX/share/connectagram/
 
 	icon.files = icons/connectagram.png
 	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
@@ -79,5 +79,8 @@ unix: !macx {
 	desktop.files = icons/connectagram.desktop
 	desktop.path = $$PREFIX/share/applications/
 
-	INSTALLS += target definitions icon desktop
+	qm.files = translations/*.qm
+	qm.path = $$PREFIX/share/focuswriter/translations
+
+	INSTALLS += target icon desktop data qm
 }
