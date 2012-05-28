@@ -233,12 +233,12 @@ bool Window::event(QEvent* event) {
 
 void Window::about() {
 	QMessageBox::about(this, tr("About"), tr(
-		"<p><center><big><b>%1 %2</b></big><br/>"
+		"<p><center><big><b>Connectagram %1</b></big><br/>"
 		"A word unscrambling game<br/>"
-		"<small>Copyright &copy; 2009 by Graeme Gott</small><br/>"
+		"<small>Copyright &copy; 2009-%2 by Graeme Gott</small><br/>"
 		"<small>Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license</small></center></p>"
 		"<p><center>Definitions are from <a href=\"http://www.dict.org/\">dict.org</a></center></p>"
-	).arg(QCoreApplication::applicationName()).arg(QCoreApplication::applicationVersion()));
+	).arg(QCoreApplication::applicationVersion()).arg("2012"));
 }
 
 //-----------------------------------------------------------------------------
