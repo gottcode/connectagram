@@ -292,8 +292,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="235"/>
-        <source>&lt;p&gt;&lt;center&gt;&lt;big&gt;&lt;b&gt;Connectagram %1&lt;/b&gt;&lt;/big&gt;&lt;br/&gt;A word unscrambling game&lt;br/&gt;&lt;small&gt;Copyright &amp;copy; 2009-%2 by Graeme Gott&lt;/small&gt;&lt;br/&gt;&lt;small&gt;Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license&lt;/small&gt;&lt;/center&gt;&lt;/p&gt;&lt;p&gt;&lt;center&gt;Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;&lt;/center&gt;&lt;/p&gt;</source>
+        <location filename="../src/window.cpp" line="236"/>
+        <source>Connectagram</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="237"/>
+        <source>A word unscrambling game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="238"/>
+        <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="239"/>
+        <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="240"/>
+        <source>Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
