@@ -50,7 +50,8 @@ SOURCES = src/board.cpp \
 	src/window.cpp \
 	src/word.cpp
 
-TRANSLATIONS = translations/connectagram_en.ts
+TRANSLATIONS = translations/connectagram_en.ts \
+	translations/connectagram_fr.ts
 
 RESOURCES = icons/icons.qrc
 macx {
