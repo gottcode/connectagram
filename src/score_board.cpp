@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,8 +33,13 @@ ScoreBoard::ScoreBoard(QWidget* parent)
 	// Create tree view
 	m_scores = new QTreeWidget(this);
 	m_scores->setHeaderLabels(QStringList() << tr("Score") << tr("Time") << tr("Words") << tr("Length"));
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	m_scores->header()->setSectionsMovable(false);
+	m_scores->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+#else
 	m_scores->header()->setMovable(false);
 	m_scores->header()->setResizeMode(QHeaderView::ResizeToContents);
+#endif
 	m_scores->header()->setStretchLastSection(false);
 	m_scores->setRootIsDecorated(false);
 
