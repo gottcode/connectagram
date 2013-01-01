@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr">
+<TS version="2.0" language="ro">
 <context>
     <name>ChainPattern</name>
     <message>
         <location filename="../src/pattern.h" line="135"/>
         <source>Chain</source>
-        <translation>Chaîne</translation>
+        <translation>Lanţ</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/clock.cpp" line="70"/>
         <source>Loading</source>
-        <translation>Chargement</translation>
+        <translation>Încarcă</translation>
     </message>
     <message>
         <location filename="../src/clock.cpp" line="112"/>
         <source>Paused</source>
-        <translation>En pause</translation>
+        <translation>În pauză</translation>
     </message>
 </context>
 <context>
@@ -27,7 +27,7 @@
     <message>
         <location filename="../src/definitions.cpp" line="35"/>
         <source>Definitions</source>
-        <translation>Définitions</translation>
+        <translation>Definiţii</translation>
     </message>
 </context>
 <context>
@@ -35,12 +35,12 @@
     <message>
         <location filename="../src/dictionary.cpp" line="75"/>
         <source>Unable to connect to www.dict.org</source>
-        <translation>Connexion impossible à www.dict.org</translation>
+        <translation>Imposibil de conectat la www.dict.org</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="124"/>
         <source>No definition found</source>
-        <translation>Aucune définition trouvée</translation>
+        <translation>Nu s-a găsit nici o definiţie</translation>
     </message>
 </context>
 <context>
@@ -48,7 +48,7 @@
     <message>
         <location filename="../src/pattern.h" line="151"/>
         <source>Fence</source>
-        <translation>Clôture</translation>
+        <translation>Gard</translation>
     </message>
 </context>
 <context>
@@ -56,22 +56,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Sélectionner la langue de l&apos;application :</translation>
+        <translation>Selectaţi limba aplicaţiei:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Langue du système&gt;</translation>
+        <translation>&lt;Limbaj Sistem&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Note</source>
-        <translation>Remarque</translation>
+        <translation>Notă</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="181"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Veuillez relancer l&apos;application pour que la modification prenne effet. </translation>
+        <translation>Vă rugăm reporniţi această aplicaţie pentru ca schimbarea limbii să aibă efect.</translation>
     </message>
 </context>
 <context>
@@ -79,32 +79,32 @@
     <message>
         <location filename="../src/new_game_dialog.cpp" line="37"/>
         <source>New Game</source>
-        <translation>Nouvelle Partie</translation>
+        <translation>Joc nou</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="57"/>
         <source>Random</source>
-        <translation>Aléatoire</translation>
+        <translation>Aleator</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="66"/>
         <source>Pattern:</source>
-        <translation>Motif :</translation>
+        <translation>Tipar:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="67"/>
         <source>Characters per word:</source>
-        <translation>Caractères par mot :</translation>
+        <translation>Caractere pe cuvînt:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="68"/>
         <source>Number of words:</source>
-        <translation>Nombre de mots :</translation>
+        <translation>Număr de cuvinte:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="69"/>
         <source>Game number:</source>
-        <translation>Numéro de partie :</translation>
+        <translation>Număr joc:</translation>
     </message>
 </context>
 <context>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../src/pattern.h" line="175"/>
         <source>Rings</source>
-        <translation>Anneaux</translation>
+        <translation>Inele</translation>
     </message>
 </context>
 <context>
@@ -120,27 +120,27 @@
     <message>
         <location filename="../src/score_board.cpp" line="31"/>
         <source>Scores</source>
-        <translation>Scores</translation>
+        <translation>Scoruri</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Score</source>
-        <translation>Score</translation>
+        <translation>Scor</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Time</source>
-        <translation>Temps</translation>
+        <translation>Timp</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Words</source>
-        <translation>Mots</translation>
+        <translation>Cuvinte</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Length</source>
-        <translation>Longueur</translation>
+        <translation>Lungime</translation>
     </message>
 </context>
 <context>
@@ -148,7 +148,7 @@
     <message>
         <location filename="../src/pattern.h" line="187"/>
         <source>Stairs</source>
-        <translation>Escaliers</translation>
+        <translation>Trepte</translation>
     </message>
 </context>
 <context>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../src/pattern.h" line="199"/>
         <source>Twisty</source>
-        <translation>Déformation</translation>
+        <translation>Contorsionat</translation>
     </message>
 </context>
 <context>
@@ -164,7 +164,7 @@
     <message>
         <location filename="../src/pattern.h" line="221"/>
         <source>Wave</source>
-        <translation>Vague</translation>
+        <translation>Ondulat</translation>
     </message>
 </context>
 <context>
@@ -173,37 +173,37 @@
         <location filename="../src/window.cpp" line="69"/>
         <location filename="../src/window.cpp" line="84"/>
         <source>Success</source>
-        <translation>Succès</translation>
+        <translation>Succes</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Loading</source>
-        <translation>Chargement</translation>
+        <translation>Încarcă</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Paused</source>
-        <translation>En pause</translation>
+        <translation>În pauză</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="119"/>
         <source>Definitions</source>
-        <translation>Définitions</translation>
+        <translation>Definiţii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="125"/>
         <source>Hint</source>
-        <translation>Suggestion</translation>
+        <translation>Indiciu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Game</source>
-        <translation>&amp;Jeu</translation>
+        <translation>&amp;Joc</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
         <source>&amp;New</source>
-        <translation>&amp;Nouveau</translation>
+        <translation>&amp;Nou</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
@@ -213,13 +213,13 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Details</source>
-        <translation>&amp;Détails</translation>
+        <translation>&amp;Detalii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <location filename="../src/window.cpp" line="294"/>
         <source>&amp;Pause</source>
-        <translation>&amp;Pause</translation>
+        <translation>&amp;Pauză</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
@@ -229,7 +229,7 @@
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Hint</source>
-        <translation>&amp;Suggestion</translation>
+        <translation>Indiciu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/window.cpp" line="165"/>
         <source>D&amp;efinitions</source>
-        <translation>D&amp;éfinitions</translation>
+        <translation>D&amp;efiniţii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
@@ -249,12 +249,12 @@
     <message>
         <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Scores</source>
-        <translation>&amp;Scores</translation>
+        <translation>&amp;Scoruri</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Quitter</translation>
+        <translation>&amp;Ieşire</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="169"/>
@@ -264,32 +264,32 @@
     <message>
         <location filename="../src/window.cpp" line="171"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Paramètres</translation>
+        <translation>&amp;Setări</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="172"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Langue de l&apos;application…</translation>
+        <translation>Limbă aplicaţie...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="174"/>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>&amp;Ajutor</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;About</source>
-        <translation>À &amp;propos de…</translation>
+        <translation>&amp;Despre</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>About &amp;Qt</source>
-        <translation>À propos de &amp;Qt</translation>
+        <translation>Despre &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="235"/>
         <source>About</source>
-        <translation>À propos de…</translation>
+        <translation>Despre</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="236"/>
@@ -299,37 +299,37 @@
     <message>
         <location filename="../src/window.cpp" line="237"/>
         <source>A word unscrambling game</source>
-        <translation>Un jeu de démêlage de mots</translation>
+        <translation>Un joc de descîlcire de cuvinte</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="238"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 by Graeme Gott</translation>
+        <translation>Toate drepturile rezervate &amp;copy; 2009-%1 by Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="239"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Publié sous licence GNU &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Lansat sub licenţă &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="240"/>
         <source>Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</source>
-        <translation>Définitions tirées de &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</translation>
+        <translation>Definiţiile sînt de la &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>Details</source>
-        <translation>Détails</translation>
+        <translation>Detalii</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>&lt;p&gt;&lt;b&gt;Pattern:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Characters per word:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Number of words:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Game number:&lt;/b&gt; %L4&lt;/p&gt;</source>
-        <translation>&lt;p&gt;&lt;b&gt;Motif : &lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Caractères par mot :&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Nombre de mots :&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Numéro de partie :&lt;/b&gt; %L4&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;&lt;b&gt;Tipar:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Caractere pe cuvînt:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Număr de cuvinte:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Număr joc:&lt;/b&gt; %L4&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="294"/>
         <source>&amp;Resume</source>
-        <translation>&amp;Continuer</translation>
+        <translation>&amp;Reluare</translation>
     </message>
 </context>
 </TS>
