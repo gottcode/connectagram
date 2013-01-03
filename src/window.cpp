@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,6 @@
 
 Window::Window() {
 	setWindowTitle(QCoreApplication::applicationName());
-	setWindowIcon(QIcon(":/connectagram.png"));
 
 	m_board = new Board(this);
 	connect(m_board, SIGNAL(finished()), this, SLOT(gameFinished()));

@@ -85,8 +85,11 @@ unix: !macx {
 	data.files = share/connectagram/data
 	data.path = $$PREFIX/share/connectagram/
 
-	icon.files = icons/connectagram.png
-	icon.path = $$PREFIX/share/icons/hicolor/48x48/apps
+	pixmap.files = icons/connectagram.xpm
+	pixmap.path = $$PREFIX/share/pixmaps/
+
+	icon.files = icons/icons/hicolor/*
+	icon.path = $$PREFIX/share/icons/hicolor/
 
 	desktop.files = icons/connectagram.desktop
 	desktop.path = $$PREFIX/share/applications/
@@ -94,5 +97,5 @@ unix: !macx {
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/connectagram/translations
 
-	INSTALLS += target icon desktop data qm
+	INSTALLS += target pixmap icon desktop data qm
 }

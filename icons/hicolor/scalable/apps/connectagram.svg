@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   width="48"
+   height="48"
+   id="svg2">
+  <title
+     id="title3816">Connectagram Icon</title>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3767">
+      <stop
+         id="stop3769"
+         style="stop-color:#006400;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop3771"
+         style="stop-color:#00b400;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3210">
+      <stop
+         id="stop3212"
+         style="stop-color:#ffffff;stop-opacity:0.76862746"
+         offset="0" />
+      <stop
+         id="stop3214"
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="1" />
+    </linearGradient>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3301">
+      <feGaussianBlur
+         id="feGaussianBlur3303"
+         stdDeviation="1.05" />
+    </filter>
+    <filter
+       x="-0.20834465"
+       y="-0.15844417"
+       width="1.4166893"
+       height="1.3168883"
+       color-interpolation-filters="sRGB"
+       id="filter3200">
+      <feGaussianBlur
+         id="feGaussianBlur3202"
+         stdDeviation="1.2982544" />
+    </filter>
+    <linearGradient
+       x1="64"
+       y1="5"
+       x2="64"
+       y2="24"
+       id="linearGradient3213"
+       xlink:href="#linearGradient3210"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-40,0)" />
+    <linearGradient
+       x1="3"
+       y1="24"
+       x2="45"
+       y2="24"
+       id="linearGradient3773"
+       xlink:href="#linearGradient3767"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0,-48)" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Connectagram Icon</dc:title>
+        <dc:date>2012-05-17</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Graeme Gott</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://www.gnu.org/licenses/gpl-3.0.txt" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <rect
+       width="42"
+       height="42"
+       rx="6.5625"
+       ry="6.5625"
+       x="3"
+       y="3"
+       id="rect3295"
+       style="fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter3301)" />
+    <rect
+       width="42"
+       height="42"
+       rx="6.5625"
+       ry="6.5625"
+       x="3"
+       y="-45"
+       transform="matrix(0,1,-1,0,0,0)"
+       id="rect3159"
+       style="fill:url(#linearGradient3773);fill-opacity:1;stroke:none" />
+    <path
+       d="m 10.9375,5 26.125,0 C 40.351875,5 43,7.648125 43,10.9375 L 43,24 5,24 5,10.9375 C 5,7.648125 7.648125,5 10.9375,5 z"
+       id="rect3204"
+       style="fill:url(#linearGradient3213);fill-opacity:1;stroke:none" />
+    <text
+       x="14.65625"
+       y="33.464355"
+       id="text2398"
+       xml:space="preserve"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter3200);font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold"><tspan
+         x="14.65625"
+         y="33.464355"
+         id="tspan2400"
+         style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold">C</tspan></text>
+    <g
+       id="text3192"
+       style="font-size:26px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold">
+      <path
+         d="m 32.074219,32.42334 c -0.897152,0.465495 -1.832373,0.816732 -2.805664,1.053711 -0.973321,0.236979 -1.988945,0.355468 -3.046875,0.355469 -3.15691,-1e-6 -5.657884,-0.880208 -7.50293,-2.640625 -1.845054,-1.768877 -2.767579,-4.164057 -2.767578,-7.185547 -10e-7,-3.029936 0.922524,-5.425116 2.767578,-7.185547 1.845046,-1.768862 4.34602,-2.653301 7.50293,-2.653321 1.05793,2e-5 2.073554,0.118509 3.046875,0.355469 0.973291,0.236998 1.908512,0.588235 2.805664,1.053711 l 0,3.922852 c -0.905616,-0.617824 -1.798518,-1.070623 -2.678711,-1.358399 -0.880222,-0.287745 -1.806979,-0.431625 -2.780274,-0.43164 -1.743499,1.5e-5 -3.114592,0.558609 -4.113281,1.675781 -0.998705,1.1172 -1.498053,2.657563 -1.498047,4.621094 -6e-6,1.955085 0.499342,3.491217 1.498047,4.608398 0.998689,1.117191 2.369782,1.675785 4.113281,1.675781 0.973295,4e-6 1.900052,-0.143877 2.780274,-0.43164 0.880193,-0.287757 1.773095,-0.740556 2.678711,-1.358399 l 0,3.922852"
+         id="path3795"
+         style="line-height:125%;fill:#ffffff;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans Bold" />
+    </g>
+  </g>
+</svg>
