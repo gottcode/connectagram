@@ -29,6 +29,16 @@
         <source>Definitions</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../src/definitions.cpp" line="142"/>
+        <source>Downloading definition...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/definitions.cpp" line="148"/>
+        <source>Unsolved word</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Dictionary</name>
@@ -170,164 +180,164 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="69"/>
-        <location filename="../src/window.cpp" line="84"/>
+        <location filename="../src/window.cpp" line="68"/>
+        <location filename="../src/window.cpp" line="83"/>
         <source>Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="96"/>
+        <location filename="../src/window.cpp" line="95"/>
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="96"/>
+        <location filename="../src/window.cpp" line="95"/>
         <source>Paused</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="119"/>
+        <location filename="../src/window.cpp" line="118"/>
         <source>Definitions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="125"/>
+        <location filename="../src/window.cpp" line="124"/>
         <source>Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="156"/>
+        <location filename="../src/window.cpp" line="155"/>
         <source>&amp;Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="157"/>
+        <location filename="../src/window.cpp" line="156"/>
         <source>&amp;New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="157"/>
+        <location filename="../src/window.cpp" line="156"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="158"/>
+        <location filename="../src/window.cpp" line="157"/>
         <source>&amp;Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
-        <location filename="../src/window.cpp" line="294"/>
+        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="293"/>
         <source>&amp;Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="159"/>
         <source>P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>&amp;Hint</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="162"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
+        <location filename="../src/window.cpp" line="164"/>
         <source>D&amp;efinitions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="165"/>
+        <location filename="../src/window.cpp" line="164"/>
         <source>D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="167"/>
+        <location filename="../src/window.cpp" line="166"/>
         <source>&amp;Scores</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="169"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="171"/>
         <source>Application &amp;Language...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>&amp;About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="176"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="235"/>
+        <location filename="../src/window.cpp" line="234"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="236"/>
+        <location filename="../src/window.cpp" line="235"/>
         <source>Connectagram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="237"/>
+        <location filename="../src/window.cpp" line="236"/>
         <source>A word unscrambling game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="238"/>
+        <location filename="../src/window.cpp" line="237"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="239"/>
+        <location filename="../src/window.cpp" line="238"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="240"/>
+        <location filename="../src/window.cpp" line="239"/>
         <source>Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="249"/>
+        <location filename="../src/window.cpp" line="248"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="249"/>
+        <location filename="../src/window.cpp" line="248"/>
         <source>&lt;p&gt;&lt;b&gt;Pattern:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Characters per word:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Number of words:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Game number:&lt;/b&gt; %L4&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="294"/>
+        <location filename="../src/window.cpp" line="293"/>
         <source>&amp;Resume</source>
         <translation type="unfinished"></translation>
     </message>

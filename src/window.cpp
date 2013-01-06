@@ -234,7 +234,7 @@ void Window::about() {
 	QMessageBox::about(this, tr("About"), QString("<p><center><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></center></p><p><center>%6</center></p>")
 		.arg(tr("Connectagram"), QCoreApplication::applicationVersion(),
 			tr("A word unscrambling game"),
-			tr("Copyright &copy; 2009-%1 by Graeme Gott").arg("2012"),
+			tr("Copyright &copy; 2009-%1 by Graeme Gott").arg("2013"),
 			tr("Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license"),
 			tr("Definitions are from <a href=\"http://www.dict.org/\">dict.org</a>"))
 	);

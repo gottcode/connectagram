@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -139,13 +139,13 @@ void Definitions::wordSelected(QListWidgetItem* item) {
 	if (item->text().at(0) != QChar('?')) {
 		QString definition = item->data(Qt::UserRole).toString();
 		if (definition.isEmpty()) {
-			definition = "<font color=\"#555\">Downloading definition...</font>";
+			definition = QString("<font color=\"#555\">%1</font>").arg(tr("Downloading definition..."));
 			item->setData(Qt::UserRole, definition);
 			m_dictionary->lookup(item->text());
 		}
 		m_text->setHtml(definition);
 	} else {
-		m_text->setText("Unsolved word");
+		m_text->setText(tr("Unsolved word"));
 	}
 }
 
