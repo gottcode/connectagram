@@ -25,17 +25,17 @@
 <context>
     <name>Definitions</name>
     <message>
-        <location filename="../src/definitions.cpp" line="35"/>
+        <location filename="../src/definitions.cpp" line="36"/>
         <source>Definitions</source>
         <translation>Définitions</translation>
     </message>
     <message>
-        <location filename="../src/definitions.cpp" line="142"/>
+        <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/definitions.cpp" line="148"/>
+        <location filename="../src/definitions.cpp" line="151"/>
         <source>Unsolved word</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43,14 +43,19 @@
 <context>
     <name>Dictionary</name>
     <message>
-        <location filename="../src/dictionary.cpp" line="75"/>
-        <source>Unable to connect to www.dict.org</source>
-        <translation>Connexion impossible à www.dict.org</translation>
+        <location filename="../src/dictionary.cpp" line="126"/>
+        <source>No definition found</source>
+        <translation>Aucune définition trouvée</translation>
+    </message>
+    <message>
+        <location filename="../src/dictionary.cpp" line="129"/>
+        <source>Unable to connect to Wiktionary</source>
+        <translation>Connexion impossible à Wiktionnaire</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="124"/>
-        <source>No definition found</source>
-        <translation>Aucune définition trouvée</translation>
+        <source>Definition from Wiktionary, the free dictionary</source>
+        <translation>Définition, traduction, prononciation, anagramme et synonyme sur le dictionnaire libre Wiktionnaire</translation>
     </message>
 </context>
 <context>
@@ -323,8 +328,8 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="239"/>
-        <source>Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</source>
-        <translation>Définitions tirées de &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</translation>
+        <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
+        <translation>Définitions tirées de &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionnaire&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="248"/>

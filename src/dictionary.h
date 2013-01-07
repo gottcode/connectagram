@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,33 +20,44 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
-#include <QMutex>
-#include <QThread>
+#include <QHash>
+#include <QObject>
+#include <QUrl>
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+#include <QUrlQuery>
+#endif
+class QNetworkAccessManager;
+class QNetworkReply;
 
-class Dictionary : public QThread {
+class Dictionary : public QObject {
 	Q_OBJECT
 
-	public:
-		Dictionary(QObject* parent = 0);
+public:
+	explicit Dictionary(QObject* parent = 0);
 
-		void lookup(const QString& word);
+	QUrl url() const {
+		return m_url;
+	}
 
-	signals:
-		void wordDefined(const QString& word, const QString& definition);
+	void setLanguage(const QString& langcode);
 
-	protected:
-		virtual void run();
+signals:
+	void wordDefined(const QString& word, const QString& definition);
 
-	private:
-		void downloadDefinition();
-		void parseDefinition();
+public slots:
+	void lookup(const QString& word);
+	void wait();
 
-	private:
-		QList<QString> m_words;
-		QMutex m_word_mutex;
-		QString m_word;
-		QString m_definition;
-		QString m_data;
+private slots:
+	void lookupFinished(QNetworkReply* reply);
+
+private:
+	QUrl m_url;
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	QUrlQuery m_query;
+#endif
+	QNetworkAccessManager* m_manager;
+	QHash<QNetworkReply*, QString> m_words;
 };
 
 #endif

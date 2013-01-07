@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,8 @@
 class QListWidget;
 class QListWidgetItem;
 class QSplitter;
-class QTextEdit;
+class QTextBrowser;
+class QUrl;
 class Dictionary;
 
 class Definitions : public QDialog {
@@ -45,13 +46,14 @@ class Definitions : public QDialog {
 		virtual void hideEvent(QHideEvent* event);
 
 	private slots:
+		void anchorClicked(const QUrl& link);
 		void wordSelected(QListWidgetItem* item);
 		void wordDefined(const QString& word, const QString& definition);
 
 	private:
 		QSplitter* m_contents;
 		QListWidget* m_words;
-		QTextEdit* m_text;
+		QTextBrowser* m_text;
 		Dictionary* m_dictionary;
 		QHash<QString, QListWidgetItem*> m_word_table;
 };

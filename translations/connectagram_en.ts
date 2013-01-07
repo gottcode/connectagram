@@ -25,17 +25,17 @@
 <context>
     <name>Definitions</name>
     <message>
-        <location filename="../src/definitions.cpp" line="35"/>
+        <location filename="../src/definitions.cpp" line="36"/>
         <source>Definitions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/definitions.cpp" line="142"/>
+        <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/definitions.cpp" line="148"/>
+        <location filename="../src/definitions.cpp" line="151"/>
         <source>Unsolved word</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43,13 +43,18 @@
 <context>
     <name>Dictionary</name>
     <message>
-        <location filename="../src/dictionary.cpp" line="75"/>
-        <source>Unable to connect to www.dict.org</source>
+        <location filename="../src/dictionary.cpp" line="124"/>
+        <source>Definition from Wiktionary, the free dictionary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dictionary.cpp" line="124"/>
+        <location filename="../src/dictionary.cpp" line="126"/>
         <source>No definition found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dictionary.cpp" line="129"/>
+        <source>Unable to connect to Wiktionary</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -323,7 +328,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="239"/>
-        <source>Definitions are from &lt;a href=&quot;http://www.dict.org/&quot;&gt;dict.org&lt;/a&gt;</source>
+        <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

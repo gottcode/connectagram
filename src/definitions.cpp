@@ -21,12 +21,13 @@
 
 #include "dictionary.h"
 
+#include <QDesktopServices>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QListWidget>
 #include <QSettings>
 #include <QSplitter>
-#include <QTextEdit>
+#include <QTextBrowser>
 #include <QVBoxLayout>
 
 Definitions::Definitions(QWidget* parent)
@@ -46,14 +47,10 @@ Definitions::Definitions(QWidget* parent)
 	m_contents->setStretchFactor(0, 0);
 	m_contents->setSizes(QList<int>() << settings.value("Definitions/Splitter", m_words->fontMetrics().averageCharWidth() * 12).toInt());
 
-	m_text = new QTextEdit(m_contents);
+	m_text = new QTextBrowser(m_contents);
 	m_text->setReadOnly(true);
-	m_text->document()->setDefaultStyleSheet(
-		".title { font-weight: bold; font-size: large; margin-left: 0px; } "
-		".part { margin-left: 0px; }"
-		"p { margin-left: 30px; } "
-		"b { color: #404040; } "
-	);
+	m_text->setOpenLinks(false);
+	connect(m_text, SIGNAL(anchorClicked(QUrl)), this, SLOT(anchorClicked(QUrl)));
 	m_contents->addWidget(m_text);
 	m_contents->setStretchFactor(1, 1);
 
@@ -126,6 +123,12 @@ void Definitions::hideEvent(QHideEvent* event) {
 	settings.setValue("Definitions/Size", size());
 	settings.setValue("Definitions/Splitter", m_contents->sizes().first());
 	QDialog::hideEvent(event);
+}
+
+//-----------------------------------------------------------------------------
+
+void Definitions::anchorClicked(const QUrl& link) {
+	QDesktopServices::openUrl(m_dictionary->url().resolved(link));
 }
 
 //-----------------------------------------------------------------------------

@@ -236,7 +236,7 @@ void Window::about() {
 			tr("A word unscrambling game"),
 			tr("Copyright &copy; 2009-%1 by Graeme Gott").arg("2013"),
 			tr("Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license"),
-			tr("Definitions are from <a href=\"http://www.dict.org/\">dict.org</a>"))
+			tr("Definitions are from <a href=\"http://wiktionary.org/\">Wiktionary</a>"))
 	);
 }
 
