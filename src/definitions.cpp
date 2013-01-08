@@ -154,13 +154,13 @@ void Definitions::wordSelected(QListWidgetItem* item) {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::wordDefined(const QString& word,  const QString& definition) {
+void Definitions::wordDefined(const QString& word, const QString& definition) {
 	QListWidgetItem* item = m_word_table.value(word);
 	if (item == 0) {
 		return;
 	}
 	item->setData(Qt::UserRole, definition);
 	if (item == m_words->currentItem()) {
-		wordSelected(item);
+		m_text->setHtml(definition);
 	}
 }
