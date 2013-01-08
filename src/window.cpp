@@ -53,9 +53,9 @@ Window::Window() {
 	m_scores = new ScoreBoard(this);
 
 	m_definitions = new Definitions(this);
-	connect(m_board, SIGNAL(wordAdded(const QString&)), m_definitions, SLOT(addWord(const QString&)));
-	connect(m_board, SIGNAL(wordSolved(const QString&, const QString&)), m_definitions, SLOT(solveWord(const QString&, const QString&)));
-	connect(m_board, SIGNAL(wordSelected(const QString&)), m_definitions, SLOT(selectWord(const QString&)));
+	connect(m_board, SIGNAL(wordAdded(QString)), m_definitions, SLOT(addWord(QString)));
+	connect(m_board, SIGNAL(wordSolved(QString, QString)), m_definitions, SLOT(solveWord(QString, QString)));
+	connect(m_board, SIGNAL(wordSelected(QString)), m_definitions, SLOT(selectWord(QString)));
 	connect(m_board, SIGNAL(loading()), m_definitions, SLOT(clear()));
 
 	// Create success message

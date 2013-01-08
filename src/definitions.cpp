@@ -37,7 +37,7 @@ Definitions::Definitions(QWidget* parent)
 	setModal(true);
 
 	m_dictionary = new Dictionary(this);
-	connect(m_dictionary, SIGNAL(wordDefined(const QString&, const QString&)), this, SLOT(wordDefined(const QString&, const QString&)));
+	connect(m_dictionary, SIGNAL(wordDefined(QString, QString)), this, SLOT(wordDefined(QString, QString)));
 
 	m_contents = new QSplitter(this);
 
