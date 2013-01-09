@@ -28,9 +28,6 @@
 #include <QTextStream>
 #include <QVariant>
 
-#include <algorithm>
-#include <cstdlib>
-
 WordList Pattern::m_words;
 
 //-----------------------------------------------------------------------------
@@ -118,7 +115,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 	QStringList words = m_words.filter(known_letters);
 
 	// Find word
-	QString result = !words.isEmpty() ? words.at(qrand() % words.count()) : QString();
+	QString result = !words.isEmpty() ? words.at(randomInt(words.count())) : QString();
 	if (result.isEmpty()) {
 		return 0;
 	}
@@ -126,7 +123,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 	// Remove anagrams of word
 	m_words.addAnagramFilter(result);
 
-	return new Word(result, m_current, orientation);
+	return new Word(result, m_current, orientation, m_random);
 }
 
 //-----------------------------------------------------------------------------
@@ -150,7 +147,7 @@ void Pattern::run() {
 		return;
 	}
 
-	qsrand(m_seed);
+	m_random.setSeed(m_seed);
 
 	// Add words
 	cleanUp();
@@ -333,7 +330,7 @@ Word* TwistyPattern::stepOne() {
 	}
 
 	while (!positions.isEmpty()) {
-		QPoint pos = positions.takeAt(qrand() % positions.count());
+		QPoint pos = positions.takeAt(randomInt(positions.count()));
 
 		// Define possible range for word
 		int right = wordLength() + pos.x() - 1;
@@ -367,7 +364,7 @@ Word* TwistyPattern::stepOne() {
 		int length = right - left;
 		int offset = length - wordLength();
 		if (offset >= 0) {
-			left += offset ? (qrand() % offset) : 0;
+			left += offset ? randomInt(offset) : 0;
 			right = left + wordLength();
 			m_current = QPoint(left, pos.y());
 			return addRandomWord(Qt::Horizontal);
@@ -386,7 +383,7 @@ Word* TwistyPattern::stepTwo() {
 	}
 
 	while (!positions.isEmpty()) {
-		QPoint pos = positions.takeAt(qrand() % positions.count());
+		QPoint pos = positions.takeAt(randomInt(positions.count()));
 
 		// Define possible range for word
 		int bottom = wordLength() + pos.y() - 1;
@@ -420,7 +417,7 @@ Word* TwistyPattern::stepTwo() {
 		int length = bottom - top;
 		int offset = length - wordLength();
 		if (offset >= 0) {
-			top += offset ? (qrand() % offset) : 0;
+			top += offset ? randomInt(offset) : 0;
 			bottom = top + wordLength();
 			m_current = QPoint(pos.x(), top);
 			return addRandomWord(Qt::Vertical);

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -145,8 +145,6 @@ void Board::togglePaused() {
 //-----------------------------------------------------------------------------
 
 void Board::patternGenerated() {
-	qsrand(m_pattern->seed());
-
 	m_words = m_pattern->solution();
 	QSize size = m_pattern->size();
 	setSceneRect(0, 0, size.width() * 34 + 2, size.height() * 34 + 34);

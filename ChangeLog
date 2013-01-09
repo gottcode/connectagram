@@ -1,4 +1,5 @@
 2013-01-09 Graeme Gott <graeme@gottcode.org>
+	* Use random class from Tanglet.
 	* Refactor wordlist out of pattern.
 
 2013-01-06 Graeme Gott <graeme@gottcode.org>

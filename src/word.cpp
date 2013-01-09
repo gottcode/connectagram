@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #include "board.h"
 #include "cell.h"
 #include "letter.h"
+#include "random.h"
 
 #include <QGraphicsPathItem>
 #include <QHash>
@@ -57,14 +58,10 @@ static int countPermutations(const QString& word) {
 	return n / d;
 }
 
-static int rangedRandom(int num) {
-	return qrand() % num;
-}
-
 //-----------------------------------------------------------------------------
 
-Word::Word(const QString& word, const QPoint& position, Qt::Orientation orientation)
-: m_board(0), m_correct(false), m_orientation(orientation) {
+Word::Word(const QString& word, const QPoint& position, Qt::Orientation orientation, Random& random)
+: m_board(0), m_correct(false), m_orientation(orientation), m_random(random) {
 	if (word.isEmpty()) {
 		return;
 	}
@@ -286,7 +283,7 @@ void Word::shuffle(const QStringList& words) {
 	QString permuted;
 	if (m_solutions.count() < countPermutations(movable)) {
 		do {
-			std::random_shuffle(movable.begin(), movable.end(), rangedRandom);
+			std::random_shuffle(movable.begin(), movable.end(), m_random);
 			permuted = movable;
 			QHashIterator<int, QChar> j(fixed);
 			while (j.hasNext()) {

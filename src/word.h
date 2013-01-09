@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,10 +26,11 @@
 #include <QString>
 class QGraphicsItem;
 class Board;
+class Random;
 
 class Word {
 	public:
-		Word(const QString& word, const QPoint& position, Qt::Orientation orientation);
+		Word(const QString& word, const QPoint& position, Qt::Orientation orientation, Random& random);
 
 		QChar at(int i) const {
 			return m_solutions.at(0).at(i);
@@ -73,6 +74,7 @@ class Word {
 		QList<QPoint> m_positions;
 		QList<QString> m_solutions;
 		Qt::Orientation m_orientation;
+		Random& m_random;
 };
 
 #endif

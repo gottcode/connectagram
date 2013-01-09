@@ -20,6 +20,7 @@
 #ifndef PATTERN_H
 #define PATTERN_H
 
+#include "random.h"
 #include "wordlist.h"
 class Word;
 
@@ -100,6 +101,10 @@ class Pattern : public QThread {
 		QChar at(const QPoint& pos) const;
 		virtual void run();
 
+		unsigned int randomInt(unsigned int max) {
+			return m_random.nextInt(max);
+		}
+
 	protected:
 		QPoint m_current;
 
@@ -121,6 +126,7 @@ class Pattern : public QThread {
 		QList<Word*> m_solution;
 		bool m_cancelled;
 		QMutex m_cancelled_mutex;
+		Random m_random;
 };
 
 //-----------------------------------------------------------------------------
