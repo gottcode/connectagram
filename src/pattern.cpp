@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2012 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,27 +31,14 @@
 #include <algorithm>
 #include <cstdlib>
 
-QHash<int, QStringList> Pattern::m_words;
-int Pattern::m_max_length = 0;
+WordList Pattern::m_words;
 
 //-----------------------------------------------------------------------------
 
 Pattern::Pattern()
 : m_current(0,0), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
 	if (m_words.isEmpty()) {
-		QFile file("connectagram:en/words");
-		if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
-			return;
-		}
-
-		QTextStream in(&file);
-		while (!in.atEnd()) {
-			QString line = in.readLine();
-			m_max_length = qMax(m_max_length, line.length());
-			if (line.length() > 4) {
-				m_words[line.length() - 1].append(line.toUpper());
-			}
-		}
+		m_words.setLanguage("en");
 	}
 }
 
@@ -78,6 +65,7 @@ void Pattern::setCount(int count) {
 
 void Pattern::setLength(int length) {
 	m_length = qBound(minimumLength(), length, maximumLength()) - 1;
+	m_words.setLength(m_length);
 }
 
 //-----------------------------------------------------------------------------
@@ -119,44 +107,26 @@ Pattern* Pattern::create(int type) {
 
 Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 	// Filter words on what characters are on the board
-	QString filter;
+	QString known_letters;
 	QPoint pos = m_current;
 	QPoint delta = (orientation == Qt::Horizontal) ? QPoint(1, 0) : QPoint(0, 1);
 	for (int i = 0; i <= wordLength(); ++i) {
 		QChar c = at(pos);
-		filter.append(c.isNull() ? QChar('.') : c);
+		known_letters.append(c.isNull() ? QChar('.') : c);
 		pos += delta;
 	}
-	QStringList filtered = m_words.value(wordLength()).filter(QRegExp(filter));
-
-	// Remove anagrams of words on the board
-	QStringList words;
-	QString sorted;
-	bool anagram;
-	foreach (const QString& word, filtered) {
-		anagram = false;
-		sorted = word;
-		std::sort(sorted.begin(), sorted.end());
-		foreach (const QString& skip, m_skip) {
-			if (sorted == skip) {
-				anagram = true;
-				break;
-			}
-		}
-		if (!anagram) {
-			words.append(word);
-		}
-	}
+	QStringList words = m_words.filter(known_letters);
 
 	// Find word
 	QString result = !words.isEmpty() ? words.at(qrand() % words.count()) : QString();
 	if (result.isEmpty()) {
 		return 0;
 	}
-	Word* word = new Word(result, m_current, orientation);
-	std::sort(result.begin(), result.end());
-	m_skip.append(result);
-	return word;
+
+	// Remove anagrams of word
+	m_words.addAnagramFilter(result);
+
+	return new Word(result, m_current, orientation);
 }
 
 //-----------------------------------------------------------------------------
@@ -229,7 +199,7 @@ void Pattern::run() {
 void Pattern::cleanUp() {
 	qDeleteAll(m_solution);
 	m_solution.clear();
-	m_skip.clear();
+	m_words.resetAnagramFilters();
 	m_current = QPoint(0,0);
 }
 

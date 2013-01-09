@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,9 @@
 #ifndef PATTERN_H
 #define PATTERN_H
 
+#include "wordlist.h"
+class Word;
+
 #include <QHash>
 #include <QList>
 #include <QMutex>
@@ -27,7 +30,6 @@
 #include <QSize>
 #include <QStringList>
 #include <QThread>
-class Word;
 
 class Pattern : public QThread {
 	Q_OBJECT
@@ -67,11 +69,11 @@ class Pattern : public QThread {
 		}
 
 		QStringList words() const {
-			return m_words.value(wordLength());
+			return m_words.words();
 		}
 
-		static int maximumLength() {
-			return m_max_length;
+		int maximumLength() const {
+			return m_words.maximumLength();
 		}
 
 		int seed() const {
@@ -111,13 +113,11 @@ class Pattern : public QThread {
 		virtual Word* addWord(int step);
 
 	private:
-		static QHash<int, QStringList> m_words;
-		static int m_max_length;
+		static WordList m_words;
 		int m_count;
 		int m_length;
 		int m_seed;
 		QSize m_size;
-		QStringList m_skip;
 		QList<Word*> m_solution;
 		bool m_cancelled;
 		QMutex m_cancelled_mutex;

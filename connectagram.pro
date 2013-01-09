@@ -36,7 +36,8 @@ HEADERS = src/board.h \
 	src/score_board.h \
 	src/view.h \
 	src/window.h \
-	src/word.h
+	src/word.h \
+	src/wordlist.h
 
 SOURCES = src/board.cpp \
 	src/cell.cpp \
@@ -51,7 +52,8 @@ SOURCES = src/board.cpp \
 	src/score_board.cpp \
 	src/view.cpp \
 	src/window.cpp \
-	src/word.cpp
+	src/word.cpp \
+	src/wordlist.cpp
 
 TRANSLATIONS = translations/connectagram_en.ts \
 	translations/connectagram_fr.ts \
