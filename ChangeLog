@@ -1,4 +1,5 @@
 2013-01-09 Graeme Gott <graeme@gottcode.org>
+	* Add version number to saved game.
 	* Use random class from Tanglet.
 	* Refactor wordlist out of pattern.
 

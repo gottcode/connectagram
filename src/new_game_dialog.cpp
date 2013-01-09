@@ -103,6 +103,7 @@ void NewGameDialog::accept() {
 	settings.setValue("NewGame/Pattern", id);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
+	settings.setValue("Current/Version", 2);
 	settings.setValue("Current/Pattern", id);
 	settings.setValue("Current/Count", count);
 	settings.setValue("Current/Length", length);
