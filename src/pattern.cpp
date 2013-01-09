@@ -188,6 +188,8 @@ void Pattern::run() {
 		word->moveBy(delta);
 	}
 
+	m_words.resetAnagramFilters();
+
 	emit generated();
 }
 

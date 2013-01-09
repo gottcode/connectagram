@@ -177,10 +177,9 @@ void Board::patternGenerated() {
 		}
 	}
 
-	QStringList words = m_pattern->words();
 	foreach (Word* word, m_words) {
 		emit wordAdded(word->toString());
-		word->shuffle(words);
+		word->shuffle(m_pattern->words());
 	}
 
 	QStringList previous = QSettings().value("Current/Words").toStringList();

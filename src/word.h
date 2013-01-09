@@ -27,6 +27,7 @@
 class QGraphicsItem;
 class Board;
 class Random;
+class WordList;
 
 class Word {
 	public:
@@ -66,7 +67,7 @@ class Word {
 		}
 
 		void setHighlight(bool highlight);
-		void shuffle(const QStringList& words);
+		void shuffle(const WordList& words);
 
 	private:
 		Board* m_board;

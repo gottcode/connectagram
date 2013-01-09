@@ -69,8 +69,8 @@ class Pattern : public QThread {
 			return m_solution;
 		}
 
-		QStringList words() const {
-			return m_words.words();
+		const WordList& words() const {
+			return m_words;
 		}
 
 		int maximumLength() const {

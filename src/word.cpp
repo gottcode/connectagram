@@ -23,6 +23,7 @@
 #include "cell.h"
 #include "letter.h"
 #include "random.h"
+#include "wordlist.h"
 
 #include <QGraphicsPathItem>
 #include <QHash>
@@ -246,7 +247,7 @@ void Word::setHighlight(bool highlight) {
 
 //-----------------------------------------------------------------------------
 
-void Word::shuffle(const QStringList& words) {
+void Word::shuffle(const WordList& words) {
 	// Create list of characters and filter the list of words
 	QHash<int, QChar> fixed;
 	QString chars;
@@ -267,8 +268,7 @@ void Word::shuffle(const QStringList& words) {
 	}
 	std::sort(chars.begin(), chars.end());
 	std::sort(movable.begin(), movable.end());
-	QRegExp exp(filter);
-	QStringList filtered = words.filter(exp);
+	QStringList filtered = words.filter(filter);
 
 	// Find valid solutions
 	foreach (const QString& valid, filtered) {

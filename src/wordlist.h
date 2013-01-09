@@ -37,10 +37,6 @@ public:
 
 	QStringList filter(const QString& known_letters) const;
 
-	QStringList words() const {
-		return m_words;
-	}
-
 	void addAnagramFilter(const QString& word);
 	void resetAnagramFilters();
 	void setLanguage(const QString& langcode);
