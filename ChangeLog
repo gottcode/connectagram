@@ -1,4 +1,5 @@
 2013-01-12 Graeme Gott <graeme@gottcode.org>
+	* Make wordlist no longer be a static object.
 	* Add loading extra spellings of words.
 
 2013-01-09 Graeme Gott <graeme@gottcode.org>

@@ -36,10 +36,9 @@ class Pattern : public QThread {
 	Q_OBJECT
 
 	public:
-		Pattern();
 		virtual ~Pattern();
 
-		static Pattern* create(int type);
+		static Pattern* create(WordList& words, int type);
 
 		static int types() {
 			return 6;
@@ -97,6 +96,8 @@ class Pattern : public QThread {
 		void generated();
 
 	protected:
+		Pattern(WordList& words);
+
 		Word* addRandomWord(Qt::Orientation orientation);
 		QChar at(const QPoint& pos) const;
 		virtual void run();
@@ -118,7 +119,7 @@ class Pattern : public QThread {
 		virtual Word* addWord(int step);
 
 	private:
-		static WordList m_words;
+		WordList& m_words;
 		int m_count;
 		int m_length;
 		int m_seed;
@@ -133,6 +134,9 @@ class Pattern : public QThread {
 
 class ChainPattern : public Pattern {
 	public:
+		ChainPattern(WordList& words) : Pattern(words) {
+		}
+
 		int expandCount() const {
 			return 5;
 		}
@@ -149,6 +153,9 @@ class ChainPattern : public Pattern {
 
 class FencePattern : public Pattern {
 	public:
+		FencePattern(WordList& words) : Pattern(words) {
+		}
+
 		int expandCount() const {
 			return 3;
 		}
@@ -169,6 +176,9 @@ class FencePattern : public Pattern {
 
 class RingsPattern : public Pattern {
 	public:
+		RingsPattern(WordList& words) : Pattern(words) {
+		}
+
 		int minimumLength() const {
 			return 7;
 		}
@@ -189,6 +199,9 @@ class RingsPattern : public Pattern {
 
 class StairsPattern : public Pattern {
 	public:
+		StairsPattern(WordList& words) : Pattern(words) {
+		}
+
 		QString name() const {
 			return tr("Stairs");
 		}
@@ -201,6 +214,9 @@ class StairsPattern : public Pattern {
 
 class TwistyPattern : public Pattern {
 	public:
+		TwistyPattern(WordList& words) : Pattern(words) {
+		}
+
 		QString name() const {
 			return tr("Twisty");
 		}
@@ -215,6 +231,9 @@ class TwistyPattern : public Pattern {
 
 class WavePattern : public Pattern {
 	public:
+		WavePattern(WordList& words) : Pattern(words) {
+		}
+
 		int minimumCount() const {
 			return 5;
 		}

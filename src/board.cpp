@@ -29,6 +29,8 @@
 
 Board::Board(QObject* parent)
 : QGraphicsScene(parent), m_pattern(0), m_current_word(0), m_hint(0), m_finished(true), m_paused(false) {
+	m_wordlist.setLanguage("en");
+
 	QTimer* auto_save = new QTimer(this);
 	auto_save->setInterval(30000);
 	connect(auto_save, SIGNAL(timeout()), this, SLOT(saveGame()));
@@ -106,7 +108,7 @@ void Board::openGame() {
 	emit loading();
 
 	QSettings settings;
-	m_pattern = Pattern::create(settings.value("Current/Pattern").toInt());
+	m_pattern = Pattern::create(m_wordlist, settings.value("Current/Pattern").toInt());
 	m_pattern->setCount(settings.value("Current/Count").toInt());
 	m_pattern->setLength(settings.value("Current/Length").toInt());
 	m_pattern->setSeed(settings.value("Current/Seed").toInt());

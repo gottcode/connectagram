@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,11 +20,13 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include <QGraphicsScene>
-#include <QList>
+#include "wordlist.h"
 class Cell;
 class Pattern;
 class Word;
+
+#include <QGraphicsScene>
+#include <QList>
 
 class Board : public QGraphicsScene {
 	Q_OBJECT
@@ -50,6 +52,10 @@ class Board : public QGraphicsScene {
 
 		bool isPaused() const {
 			return m_paused;
+		}
+
+		WordList& words() {
+			return m_wordlist;
 		}
 
 		void setCurrentWord(Word* word);
@@ -78,6 +84,7 @@ class Board : public QGraphicsScene {
 		void cleanUp();
 
 	private:
+		WordList m_wordlist;
 		Pattern* m_pattern;
 		QList<QList<Cell*> > m_cells;
 		QList<Word*> m_words;

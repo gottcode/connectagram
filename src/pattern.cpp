@@ -21,22 +21,10 @@
 
 #include "word.h"
 
-#include <QFile>
-#include <QMutexLocker>
-#include <QRegExp>
-#include <QStringList>
-#include <QTextStream>
-#include <QVariant>
-
-WordList Pattern::m_words;
-
 //-----------------------------------------------------------------------------
 
-Pattern::Pattern()
-: m_current(0,0), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
-	if (m_words.isEmpty()) {
-		m_words.setLanguage("en");
-	}
+Pattern::Pattern(WordList& words)
+: m_current(0,0), m_words(words), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
 }
 
 //-----------------------------------------------------------------------------
@@ -73,26 +61,26 @@ void Pattern::setSeed(int seed) {
 
 //-----------------------------------------------------------------------------
 
-Pattern* Pattern::create(int type) {
+Pattern* Pattern::create(WordList& words, int type) {
 	Pattern* pattern = 0;
 	switch (type) {
 		case 0:
-			pattern = new ChainPattern;
+			pattern = new ChainPattern(words);
 			break;
 		case 1:
-			pattern = new FencePattern;
+			pattern = new FencePattern(words);
 			break;
 		case 2:
-			pattern = new RingsPattern;
+			pattern = new RingsPattern(words);
 			break;
 		case 3:
-			pattern = new StairsPattern;
+			pattern = new StairsPattern(words);
 			break;
 		case 4:
-			pattern = new TwistyPattern;
+			pattern = new TwistyPattern(words);
 			break;
 		case 5:
-			pattern = new WavePattern;
+			pattern = new WavePattern(words);
 			break;
 		default:
 			break;

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	// Create patterns box
 	m_patterns_box = new QComboBox(this);
 	for (int i = 0; i < Pattern::types(); ++i) {
-		Pattern* pattern = Pattern::create(i);
+		Pattern* pattern = Pattern::create(board->words(), i);
 		m_patterns.append(pattern);
 		m_patterns_box->addItem(pattern->name(), i);
 	}
