@@ -58,20 +58,25 @@ void Dictionary::setLanguage(const QString& langcode) {
 //-----------------------------------------------------------------------------
 
 void Dictionary::lookup(const QString& word) {
-	QNetworkRequest request;
-	QUrl url = m_url;
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
-	QUrlQuery query = m_query;
-	query.addQueryItem("page", word.toLower());
-	url.setQuery(query);
-#else
-	url.addQueryItem("page", word.toLower());
-#endif
-	request.setUrl(url);
-	request.setRawHeader("User-Agent", USER_AGENT);
+	QStringList spellings = m_wordlist.spellings(word);
+	foreach (const QString& spelling, spellings) {
+		m_spellings[spelling] = word;
 
-	QNetworkReply* reply = m_manager->get(request);
-	m_reply_details[reply] = word;
+		QNetworkRequest request;
+		QUrl url = m_url;
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+		QUrlQuery query = m_query;
+		query.addQueryItem("page", spelling);
+		url.setQuery(query);
+#else
+		url.addQueryItem("page", spelling);
+#endif
+		request.setUrl(url);
+		request.setRawHeader("User-Agent", USER_AGENT);
+
+		QNetworkReply* reply = m_manager->get(request);
+		m_reply_details[reply] = spelling;
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -88,15 +93,21 @@ void Dictionary::wait() {
 void Dictionary::lookupFinished(QNetworkReply* reply) {
 	// Find word
 	QString word = m_reply_details.value(reply);
+	if (!word.isEmpty()) {
+		m_reply_details.remove(reply);
+		word = m_spellings.take(word);
+	}
 	if (word.isEmpty()) {
 		qWarning("Unknown lookup");
 		reply->deleteLater();
 		return;
 	}
-	m_reply_details.remove(reply);
+
+	// Determine if this is the last spelling of a word
+	bool last_definition = m_spellings.key(word).isEmpty();
 
 	// Fetch word definitions
-	QString definition;
+	QString definition = m_definitions.value(word);
 	if (reply->error() == QNetworkReply::NoError) {
 		bool started = false;
 		QXmlStreamReader xml(reply);
@@ -123,14 +134,24 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 		}
 
 		if (!xml.hasError()) {
-			definition += "<p align=\"right\">" + tr("Definition from Wiktionary, the free dictionary") + "</p>";
-		} else {
-			definition = tr("No definition found");
+			if (last_definition) {
+				definition += "<p align=\"right\">" + tr("Definition from Wiktionary, the free dictionary") + "</p>";
+				m_definitions.remove(word);
+			} else {
+				definition += "<hr>";
+				m_definitions[word] = definition;
+			}
+		} else if (last_definition && definition.isEmpty()) {
+			definition += tr("No definition found");
 		}
 	} else {
 		definition = tr("Unable to connect to Wiktionary");
+		last_definition = true;
 	}
-	emit wordDefined(word, definition);
 
+	// Show spelling if definition is done
+	if (last_definition) {
+		emit wordDefined(word, definition);
+	}
 	reply->deleteLater();
 }

@@ -61,6 +61,8 @@ private:
 #endif
 	QNetworkAccessManager* m_manager;
 	QHash<QNetworkReply*, QString> m_reply_details;
+	QHash<QString, QString> m_spellings;
+	QHash<QString, QString> m_definitions;
 };
 
 #endif
