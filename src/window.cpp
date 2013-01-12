@@ -52,7 +52,7 @@ Window::Window() {
 
 	m_scores = new ScoreBoard(this);
 
-	m_definitions = new Definitions(this);
+	m_definitions = new Definitions(m_board->words(), this);
 	connect(m_board, SIGNAL(wordAdded(QString)), m_definitions, SLOT(addWord(QString)));
 	connect(m_board, SIGNAL(wordSolved(QString, QString)), m_definitions, SLOT(solveWord(QString, QString)));
 	connect(m_board, SIGNAL(wordSelected(QString)), m_definitions, SLOT(selectWord(QString)));

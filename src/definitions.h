@@ -28,12 +28,13 @@ class QSplitter;
 class QTextBrowser;
 class QUrl;
 class Dictionary;
+class WordList;
 
 class Definitions : public QDialog {
 	Q_OBJECT
 
 	public:
-		Definitions(QWidget* parent = 0);
+		Definitions(const WordList& wordlist, QWidget* parent = 0);
 		~Definitions();
 
 	public slots:

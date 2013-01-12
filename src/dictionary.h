@@ -20,6 +20,8 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
+class WordList;
+
 #include <QHash>
 #include <QObject>
 #include <QUrl>
@@ -33,7 +35,7 @@ class Dictionary : public QObject {
 	Q_OBJECT
 
 public:
-	explicit Dictionary(QObject* parent = 0);
+	Dictionary(const WordList& wordlist, QObject* parent = 0);
 
 	QUrl url() const {
 		return m_url;
@@ -52,6 +54,7 @@ private slots:
 	void lookupFinished(QNetworkReply* reply);
 
 private:
+	const WordList& m_wordlist;
 	QUrl m_url;
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	QUrlQuery m_query;

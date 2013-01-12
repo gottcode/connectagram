@@ -30,13 +30,13 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
-Definitions::Definitions(QWidget* parent)
+Definitions::Definitions(const WordList& wordlist, QWidget* parent)
 : QDialog(parent) {
 	QSettings settings;
 	setWindowTitle(tr("Definitions"));
 	setModal(true);
 
-	m_dictionary = new Dictionary(this);
+	m_dictionary = new Dictionary(wordlist, this);
 	connect(m_dictionary, SIGNAL(wordDefined(QString, QString)), this, SLOT(wordDefined(QString, QString)));
 
 	m_contents = new QSplitter(this);

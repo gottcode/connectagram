@@ -19,6 +19,8 @@
 
 #include "dictionary.h"
 
+#include "wordlist.h"
+
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
@@ -26,8 +28,8 @@
 
 static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (http://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
 
-Dictionary::Dictionary(QObject* parent)
-: QObject(parent) {
+Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
+: QObject(parent), m_wordlist(wordlist) {
 	m_url.setScheme("http");
 	m_url.setPath("/w/api.php");
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
