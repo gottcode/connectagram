@@ -71,13 +71,13 @@ void Dictionary::lookup(const QString& word) {
 	request.setRawHeader("User-Agent", USER_AGENT);
 
 	QNetworkReply* reply = m_manager->get(request);
-	m_words[reply] = word;
+	m_reply_details[reply] = word;
 }
 
 //-----------------------------------------------------------------------------
 
 void Dictionary::wait() {
-	QHashIterator<QNetworkReply*, QString> i(m_words);
+	QHashIterator<QNetworkReply*, QString> i(m_reply_details);
 	while (i.hasNext()) {
 		i.key()->abort();
 	}
@@ -87,13 +87,13 @@ void Dictionary::wait() {
 
 void Dictionary::lookupFinished(QNetworkReply* reply) {
 	// Find word
-	QString word = m_words.value(reply);
+	QString word = m_reply_details.value(reply);
 	if (word.isEmpty()) {
 		qWarning("Unknown lookup");
 		reply->deleteLater();
 		return;
 	}
-	m_words.remove(reply);
+	m_reply_details.remove(reply);
 
 	// Fetch word definitions
 	QString definition;

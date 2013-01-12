@@ -60,7 +60,7 @@ private:
 	QUrlQuery m_query;
 #endif
 	QNetworkAccessManager* m_manager;
-	QHash<QNetworkReply*, QString> m_words;
+	QHash<QNetworkReply*, QString> m_reply_details;
 };
 
 #endif
