@@ -37,6 +37,10 @@ public:
 
 	QStringList filter(const QString& known_letters) const;
 
+	QStringList spellings(const QString& word) const {
+		return m_spellings.value(word, QStringList(word.toLower()));
+	}
+
 	void addAnagramFilter(const QString& word);
 	void resetAnagramFilters();
 	void setLanguage(const QString& langcode);
@@ -47,6 +51,7 @@ private:
 
 private:
 	QHash<int, QStringList> m_all_words;
+	QHash<QString, QStringList> m_spellings;
 	QStringList m_words;
 	QStringList m_anagram_filters;
 	int m_maximum_length;

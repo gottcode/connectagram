@@ -75,10 +75,22 @@ void WordList::setLanguage(const QString& langcode) {
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
 	while (!in.atEnd()) {
-		QString line = in.readLine().trimmed();
-		m_maximum_length = qMax(m_maximum_length, line.length());
-		if (line.length() > 4) {
-			m_all_words[line.length() - 1].append(line.toUpper());
+		QStringList spellings = in.readLine().simplified().split(" ", QString::SkipEmptyParts);
+		if (spellings.isEmpty()) {
+			continue;
+		}
+
+		QString word = spellings.takeFirst();
+		int length = word.length();
+		if (length < 5) {
+			continue;
+		}
+
+		m_maximum_length = qMax(m_maximum_length, length);
+		m_all_words[length - 1].append(word.toUpper());
+
+		if (!spellings.isEmpty()) {
+			m_spellings[word] = spellings;
 		}
 	}
 
