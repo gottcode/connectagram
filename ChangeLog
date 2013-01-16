@@ -1,3 +1,6 @@
+2013-01-15 Graeme Gott <graeme@gottcode.org>
+	* Show entire definition of word.
+
 2013-01-12 Graeme Gott <graeme@gottcode.org>
 	* Look up extra spellings for each word.
 	* Make wordlist no longer be a static object.

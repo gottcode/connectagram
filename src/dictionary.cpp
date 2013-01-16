@@ -109,7 +109,6 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 	// Fetch word definitions
 	QString definition = m_definitions.value(word);
 	if (reply->error() == QNetworkReply::NoError) {
-		bool started = false;
 		QXmlStreamReader xml(reply);
 		while (!xml.atEnd()) {
 			xml.readNext();
@@ -118,16 +117,7 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 			}
 
 			if (xml.name() == "section") {
-				int toclevel = xml.attributes().value("toclevel").toString().toInt();
-				if (toclevel == 1) {
-					if (!started) {
-						started = true;
-					} else {
-						break;
-					}
-				} else if (toclevel == 2) {
-					definition += xml.readElementText();
-				}
+				definition += xml.readElementText();
 			} else if (xml.name() == "error") {
 				xml.raiseError();
 			}
