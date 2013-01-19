@@ -143,10 +143,12 @@ void Definitions::wordSelected(QListWidgetItem* item) {
 		QString definition = item->data(Qt::UserRole).toString();
 		if (definition.isEmpty()) {
 			definition = QString("<font color=\"#555\">%1</font>").arg(tr("Downloading definition..."));
+			m_text->setHtml(definition);
 			item->setData(Qt::UserRole, definition);
 			m_dictionary->lookup(item->text());
+		} else {
+			m_text->setHtml(definition);
 		}
-		m_text->setHtml(definition);
 	} else {
 		m_text->setText(tr("Unsolved word"));
 	}

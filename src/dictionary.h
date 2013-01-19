@@ -63,6 +63,7 @@ private:
 	QHash<QNetworkReply*, QString> m_reply_details;
 	QHash<QString, QString> m_spellings;
 	QHash<QString, QString> m_definitions;
+	QString m_cache_path;
 };
 
 #endif

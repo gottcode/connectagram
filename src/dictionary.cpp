@@ -21,9 +21,19 @@
 
 #include "wordlist.h"
 
+#include <QDateTime>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+#include <QStandardPaths>
+#else
+#include <QDesktopServices>
+#endif
+#include <QTextStream>
 #include <QXmlStreamReader>
 
 static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (http://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
@@ -53,11 +63,38 @@ Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
 
 void Dictionary::setLanguage(const QString& langcode) {
 	m_url.setHost(langcode + ".wiktionary.org");
+
+	// Find cache path
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	m_cache_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+#else
+	m_cache_path = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
+#endif
+	m_cache_path += "/" + langcode + "/";
+
+	// Create cache directory
+	QDir dir(m_cache_path);
+	dir.mkpath(dir.absolutePath());
 }
 
 //-----------------------------------------------------------------------------
 
 void Dictionary::lookup(const QString& word) {
+	// Check if word exists in cache and is recent
+	QFileInfo info(m_cache_path + word);
+	if (info.exists() && (info.lastModified() >= QDateTime::currentDateTime().addDays(-14))) {
+		QFile file(info.absoluteFilePath());
+		if (file.open(QFile::ReadOnly | QFile::Text)) {
+			QTextStream stream(&file);
+			stream.setCodec("UTF-8");
+			QString definition = stream.readAll();
+			file.close();
+			emit wordDefined(word, definition);
+			return;
+		}
+	}
+
+	// Look up word
 	QStringList spellings = m_wordlist.spellings(word);
 	foreach (const QString& spelling, spellings) {
 		m_spellings[spelling] = word;
@@ -142,6 +179,15 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 	// Show spelling if definition is done
 	if (last_definition) {
 		emit wordDefined(word, definition);
+
+		// Save word to cache
+		QFile file(m_cache_path + word);
+		if (file.open(QFile::WriteOnly | QFile::Text)) {
+			QTextStream stream(&file);
+			stream.setCodec("UTF-8");
+			stream << definition;
+			file.close();
+		}
 	}
 	reply->deleteLater();
 }
