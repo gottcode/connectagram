@@ -41,8 +41,6 @@ public:
 		return m_url;
 	}
 
-	void setLanguage(const QString& langcode);
-
 signals:
 	void wordDefined(const QString& word, const QString& definition);
 
@@ -52,6 +50,9 @@ public slots:
 
 private slots:
 	void lookupFinished(QNetworkReply* reply);
+
+private:
+	void setLanguage(const QString& langcode);
 
 private:
 	const WordList& m_wordlist;

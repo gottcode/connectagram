@@ -57,24 +57,8 @@ Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
 
 	m_manager = new QNetworkAccessManager(this);
 	connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(lookupFinished(QNetworkReply*)));
-}
 
-//-----------------------------------------------------------------------------
-
-void Dictionary::setLanguage(const QString& langcode) {
-	m_url.setHost(langcode + ".wiktionary.org");
-
-	// Find cache path
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
-	m_cache_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-#else
-	m_cache_path = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
-#endif
-	m_cache_path += "/" + langcode + "/";
-
-	// Create cache directory
-	QDir dir(m_cache_path);
-	dir.mkpath(dir.absolutePath());
+	setLanguage(wordlist.language());
 }
 
 //-----------------------------------------------------------------------------
@@ -190,4 +174,22 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 		}
 	}
 	reply->deleteLater();
+}
+
+//-----------------------------------------------------------------------------
+
+void Dictionary::setLanguage(const QString& langcode) {
+	m_url.setHost(langcode + ".wiktionary.org");
+
+	// Find cache path
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+	m_cache_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+#else
+	m_cache_path = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
+#endif
+	m_cache_path += "/" + langcode + "/";
+
+	// Create cache directory
+	QDir dir(m_cache_path);
+	dir.mkpath(dir.absolutePath());
 }

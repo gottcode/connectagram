@@ -31,6 +31,10 @@ public:
 		return m_all_words.isEmpty();
 	}
 
+	QString language() const {
+		return m_langcode;
+	}
+
 	int maximumLength() const {
 		return m_maximum_length;
 	}
@@ -50,6 +54,7 @@ private:
 	void resetWords();
 
 private:
+	QString m_langcode;
 	QHash<int, QStringList> m_all_words;
 	QHash<QString, QStringList> m_spellings;
 	QStringList m_words;
