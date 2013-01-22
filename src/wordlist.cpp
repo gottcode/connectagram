@@ -62,7 +62,7 @@ void WordList::resetAnagramFilters() {
 
 //-----------------------------------------------------------------------------
 
-void WordList::setLanguage(const QString& langcode) {
+bool WordList::setLanguage(const QString& langcode) {
 	m_langcode = langcode;
 
 	m_all_words.clear();
@@ -71,7 +71,7 @@ void WordList::setLanguage(const QString& langcode) {
 	// Read words from disk
 	QFile file("connectagram:" + langcode + "/words");
 	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
-		return;
+		return false;
 	}
 
 	QTextStream in(&file);
@@ -105,6 +105,8 @@ void WordList::setLanguage(const QString& langcode) {
 			break;
 		}
 	}
+
+	return true;
 }
 
 //-----------------------------------------------------------------------------

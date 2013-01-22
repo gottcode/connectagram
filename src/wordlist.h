@@ -47,7 +47,7 @@ public:
 
 	void addAnagramFilter(const QString& word);
 	void resetAnagramFilters();
-	void setLanguage(const QString& langcode);
+	bool setLanguage(const QString& langcode);
 	void setLength(int length);
 
 private:

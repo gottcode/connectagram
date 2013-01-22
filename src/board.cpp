@@ -24,12 +24,15 @@
 #include "pattern.h"
 #include "word.h"
 
+#include <QLocale>
 #include <QSettings>
 #include <QTimer>
 
 Board::Board(QObject* parent)
 : QGraphicsScene(parent), m_pattern(0), m_current_word(0), m_hint(0), m_finished(true), m_paused(false) {
-	m_wordlist.setLanguage("en");
+	if (!m_wordlist.setLanguage(QLocale().name().left(2))) {
+		m_wordlist.setLanguage("en");
+	}
 
 	QTimer* auto_save = new QTimer(this);
 	auto_save->setInterval(30000);
