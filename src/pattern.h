@@ -133,6 +133,8 @@ class Pattern : public QThread {
 //-----------------------------------------------------------------------------
 
 class ChainPattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		ChainPattern(WordList& words) : Pattern(words) {
 		}
@@ -152,6 +154,8 @@ class ChainPattern : public Pattern {
 //-----------------------------------------------------------------------------
 
 class FencePattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		FencePattern(WordList& words) : Pattern(words) {
 		}
@@ -175,6 +179,8 @@ class FencePattern : public Pattern {
 //-----------------------------------------------------------------------------
 
 class RingsPattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		RingsPattern(WordList& words) : Pattern(words) {
 		}
@@ -198,6 +204,8 @@ class RingsPattern : public Pattern {
 //-----------------------------------------------------------------------------
 
 class StairsPattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		StairsPattern(WordList& words) : Pattern(words) {
 		}
@@ -213,6 +221,8 @@ class StairsPattern : public Pattern {
 //-----------------------------------------------------------------------------
 
 class TwistyPattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		TwistyPattern(WordList& words) : Pattern(words) {
 		}
@@ -230,6 +240,8 @@ class TwistyPattern : public Pattern {
 //-----------------------------------------------------------------------------
 
 class WavePattern : public Pattern {
+	Q_OBJECT
+
 	public:
 		WavePattern(WordList& words) : Pattern(words) {
 		}

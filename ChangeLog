@@ -1,3 +1,6 @@
+2013-01-23 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Did not use translated name of patterns.
+
 2013-01-22 Graeme Gott <graeme@gottcode.org>
 	* Attempt to use wordlist that matches locale.
 	* Use language of wordlist in dictionary.
