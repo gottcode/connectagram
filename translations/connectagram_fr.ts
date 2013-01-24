@@ -4,7 +4,7 @@
 <context>
     <name>ChainPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="135"/>
+        <location filename="../src/pattern.h" line="147"/>
         <source>Chain</source>
         <translation>Chaîne</translation>
     </message>
@@ -35,7 +35,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/definitions.cpp" line="151"/>
+        <location filename="../src/definitions.cpp" line="153"/>
         <source>Unsolved word</source>
         <translation type="unfinished"></translation>
     </message>
@@ -43,25 +43,25 @@
 <context>
     <name>Dictionary</name>
     <message>
-        <location filename="../src/dictionary.cpp" line="126"/>
+        <location filename="../src/dictionary.cpp" line="149"/>
+        <source>Definition from Wiktionary, the free dictionary</source>
+        <translation>Définition, traduction, prononciation, anagramme et synonyme sur le dictionnaire libre Wiktionnaire</translation>
+    </message>
+    <message>
+        <location filename="../src/dictionary.cpp" line="156"/>
         <source>No definition found</source>
         <translation>Aucune définition trouvée</translation>
     </message>
     <message>
-        <location filename="../src/dictionary.cpp" line="129"/>
+        <location filename="../src/dictionary.cpp" line="159"/>
         <source>Unable to connect to Wiktionary</source>
         <translation>Connexion impossible à Wiktionnaire</translation>
-    </message>
-    <message>
-        <location filename="../src/dictionary.cpp" line="124"/>
-        <source>Definition from Wiktionary, the free dictionary</source>
-        <translation>Définition, traduction, prononciation, anagramme et synonyme sur le dictionnaire libre Wiktionnaire</translation>
     </message>
 </context>
 <context>
     <name>FencePattern</name>
     <message>
-        <location filename="../src/pattern.h" line="151"/>
+        <location filename="../src/pattern.h" line="168"/>
         <source>Fence</source>
         <translation>Clôture</translation>
     </message>
@@ -125,7 +125,7 @@
 <context>
     <name>RingsPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="175"/>
+        <location filename="../src/pattern.h" line="197"/>
         <source>Rings</source>
         <translation>Anneaux</translation>
     </message>
@@ -161,7 +161,7 @@
 <context>
     <name>StairsPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="187"/>
+        <location filename="../src/pattern.h" line="214"/>
         <source>Stairs</source>
         <translation>Escaliers</translation>
     </message>
@@ -169,7 +169,7 @@
 <context>
     <name>TwistyPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="199"/>
+        <location filename="../src/pattern.h" line="231"/>
         <source>Twisty</source>
         <translation>Déformation</translation>
     </message>
@@ -177,7 +177,7 @@
 <context>
     <name>WavePattern</name>
     <message>
-        <location filename="../src/pattern.h" line="221"/>
+        <location filename="../src/pattern.h" line="258"/>
         <source>Wave</source>
         <translation>Vague</translation>
     </message>
