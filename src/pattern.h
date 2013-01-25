@@ -38,7 +38,7 @@ class Pattern : public QThread {
 	public:
 		virtual ~Pattern();
 
-		static Pattern* create(WordList& words, int type);
+		static Pattern* create(WordList* words, int type);
 
 		static int types() {
 			return 6;
@@ -68,12 +68,12 @@ class Pattern : public QThread {
 			return m_solution;
 		}
 
-		const WordList& words() const {
+		const WordList* words() const {
 			return m_words;
 		}
 
 		int maximumLength() const {
-			return m_words.maximumLength();
+			return m_words->maximumLength();
 		}
 
 		int seed() const {
@@ -96,7 +96,7 @@ class Pattern : public QThread {
 		void generated();
 
 	protected:
-		Pattern(WordList& words);
+		Pattern(WordList* words);
 
 		Word* addRandomWord(Qt::Orientation orientation);
 		QChar at(const QPoint& pos) const;
@@ -119,7 +119,7 @@ class Pattern : public QThread {
 		virtual Word* addWord(int step);
 
 	private:
-		WordList& m_words;
+		WordList* m_words;
 		int m_count;
 		int m_length;
 		int m_seed;
@@ -136,7 +136,7 @@ class ChainPattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		ChainPattern(WordList& words) : Pattern(words) {
+		ChainPattern(WordList* words) : Pattern(words) {
 		}
 
 		int expandCount() const {
@@ -157,7 +157,7 @@ class FencePattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		FencePattern(WordList& words) : Pattern(words) {
+		FencePattern(WordList* words) : Pattern(words) {
 		}
 
 		int expandCount() const {
@@ -182,7 +182,7 @@ class RingsPattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		RingsPattern(WordList& words) : Pattern(words) {
+		RingsPattern(WordList* words) : Pattern(words) {
 		}
 
 		int minimumLength() const {
@@ -207,7 +207,7 @@ class StairsPattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		StairsPattern(WordList& words) : Pattern(words) {
+		StairsPattern(WordList* words) : Pattern(words) {
 		}
 
 		QString name() const {
@@ -224,7 +224,7 @@ class TwistyPattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		TwistyPattern(WordList& words) : Pattern(words) {
+		TwistyPattern(WordList* words) : Pattern(words) {
 		}
 
 		QString name() const {
@@ -243,7 +243,7 @@ class WavePattern : public Pattern {
 	Q_OBJECT
 
 	public:
-		WavePattern(WordList& words) : Pattern(words) {
+		WavePattern(WordList* words) : Pattern(words) {
 		}
 
 		int minimumCount() const {

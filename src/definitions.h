@@ -34,7 +34,7 @@ class Definitions : public QDialog {
 	Q_OBJECT
 
 	public:
-		Definitions(const WordList& wordlist, QWidget* parent = 0);
+		Definitions(const WordList* wordlist, QWidget* parent = 0);
 		~Definitions();
 
 	public slots:

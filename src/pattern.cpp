@@ -23,8 +23,9 @@
 
 //-----------------------------------------------------------------------------
 
-Pattern::Pattern(WordList& words)
+Pattern::Pattern(WordList* words)
 : m_current(0,0), m_words(words), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
+	Q_ASSERT(words != 0);
 }
 
 //-----------------------------------------------------------------------------
@@ -50,7 +51,7 @@ void Pattern::setCount(int count) {
 
 void Pattern::setLength(int length) {
 	m_length = qBound(minimumLength(), length, maximumLength()) - 1;
-	m_words.setLength(m_length);
+	m_words->setLength(m_length);
 }
 
 //-----------------------------------------------------------------------------
@@ -61,7 +62,7 @@ void Pattern::setSeed(int seed) {
 
 //-----------------------------------------------------------------------------
 
-Pattern* Pattern::create(WordList& words, int type) {
+Pattern* Pattern::create(WordList* words, int type) {
 	Pattern* pattern = 0;
 	switch (type) {
 		case 0:
@@ -100,7 +101,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 		known_letters.append(c.isNull() ? QChar('.') : c);
 		pos += delta;
 	}
-	QStringList words = m_words.filter(known_letters);
+	QStringList words = m_words->filter(known_letters);
 
 	// Find word
 	QString result = !words.isEmpty() ? words.at(randomInt(words.count())) : QString();
@@ -109,7 +110,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 	}
 
 	// Remove anagrams of word
-	m_words.addAnagramFilter(result);
+	m_words->addAnagramFilter(result);
 
 	return new Word(result, m_current, orientation, m_random);
 }
@@ -131,7 +132,7 @@ QChar Pattern::at(const QPoint& pos) const {
 //-----------------------------------------------------------------------------
 
 void Pattern::run() {
-	if (m_words.isEmpty()) {
+	if (m_words->isEmpty()) {
 		return;
 	}
 
@@ -176,7 +177,7 @@ void Pattern::run() {
 		word->moveBy(delta);
 	}
 
-	m_words.resetAnagramFilters();
+	m_words->resetAnagramFilters();
 
 	emit generated();
 }
@@ -186,7 +187,7 @@ void Pattern::run() {
 void Pattern::cleanUp() {
 	qDeleteAll(m_solution);
 	m_solution.clear();
-	m_words.resetAnagramFilters();
+	m_words->resetAnagramFilters();
 	m_current = QPoint(0,0);
 }
 

@@ -20,10 +20,10 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "wordlist.h"
 class Cell;
 class Pattern;
 class Word;
+class WordList;
 
 #include <QGraphicsScene>
 #include <QList>
@@ -54,7 +54,7 @@ class Board : public QGraphicsScene {
 			return m_paused;
 		}
 
-		WordList& words() {
+		WordList* words() {
 			return m_wordlist;
 		}
 
@@ -84,7 +84,7 @@ class Board : public QGraphicsScene {
 		void cleanUp();
 
 	private:
-		WordList m_wordlist;
+		WordList* m_wordlist;
 		Pattern* m_pattern;
 		QList<QList<Cell*> > m_cells;
 		QList<Word*> m_words;

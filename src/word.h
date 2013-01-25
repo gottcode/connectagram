@@ -67,7 +67,7 @@ class Word {
 		}
 
 		void setHighlight(bool highlight);
-		void shuffle(const WordList& words);
+		void shuffle(const WordList* words);
 
 	private:
 		Board* m_board;

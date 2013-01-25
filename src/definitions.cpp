@@ -30,7 +30,7 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
-Definitions::Definitions(const WordList& wordlist, QWidget* parent)
+Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 : QDialog(parent) {
 	QSettings settings;
 	setWindowTitle(tr("Definitions"));

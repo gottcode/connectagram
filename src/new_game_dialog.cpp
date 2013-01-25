@@ -22,6 +22,7 @@
 #include "board.h"
 #include "locale_dialog.h"
 #include "pattern.h"
+#include "wordlist.h"
 
 #include <QComboBox>
 #include <QDialog>
@@ -39,7 +40,8 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	setWindowTitle(tr("New Game"));
 
 	// Create languages box
-	m_wordlist.setLanguage(WordList::defaultLanguage());
+	m_wordlist = new WordList(this);
+	m_wordlist->setLanguage(WordList::defaultLanguage());
 	m_languages_box = new QComboBox(this);
 	QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
 	foreach (const QString& language, languages) {
@@ -134,7 +136,7 @@ void NewGameDialog::accept() {
 //-----------------------------------------------------------------------------
 
 void NewGameDialog::languageSelected(int index) {
-	m_wordlist.setLanguage(m_languages_box->itemData(index).toString());
+	m_wordlist->setLanguage(m_languages_box->itemData(index).toString());
 	patternSelected(m_patterns_box->currentIndex());
 }
 

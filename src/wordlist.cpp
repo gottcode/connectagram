@@ -24,8 +24,8 @@
 
 //-----------------------------------------------------------------------------
 
-WordList::WordList()
-: m_maximum_length(0), m_length(0) {
+WordList::WordList(QObject* parent)
+: QObject(parent), m_maximum_length(0), m_length(0) {
 }
 
 //-----------------------------------------------------------------------------
@@ -74,6 +74,7 @@ bool WordList::setLanguage(const QString& langcode) {
 	// Read words from disk
 	QFile file("connectagram:" + langcode + "/words");
 	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
+		emit languageChanged(m_langcode);
 		return false;
 	}
 
@@ -109,6 +110,7 @@ bool WordList::setLanguage(const QString& langcode) {
 		}
 	}
 
+	emit languageChanged(m_langcode);
 	return true;
 }
 

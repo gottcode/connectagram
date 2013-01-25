@@ -20,9 +20,9 @@
 #ifndef NEW_GAME_DIALOG_H
 #define NEW_GAME_DIALOG_H
 
-#include "wordlist.h"
 class Board;
 class Pattern;
+class WordList;
 
 #include <QDialog>
 class QComboBox;
@@ -56,7 +56,7 @@ class NewGameDialog : public QDialog {
 		QSpinBox* m_seed_box;
 		QList<Pattern*> m_patterns;
 		Board* m_board;
-		WordList m_wordlist;
+		WordList* m_wordlist;
 };
 
 #endif

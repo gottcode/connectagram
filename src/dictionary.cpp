@@ -38,7 +38,7 @@
 
 static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (http://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
 
-Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
+Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 : QObject(parent), m_wordlist(wordlist) {
 	m_url.setScheme("http");
 	m_url.setPath("/w/api.php");
@@ -57,7 +57,7 @@ Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
 	m_manager = new QNetworkAccessManager(this);
 	connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(lookupFinished(QNetworkReply*)));
 
-	setLanguage(wordlist.language());
+	connect(m_wordlist, SIGNAL(languageChanged(QString)), this, SLOT(setLanguage(QString)));
 }
 
 //-----------------------------------------------------------------------------
@@ -78,7 +78,7 @@ void Dictionary::lookup(const QString& word) {
 	}
 
 	// Look up word
-	QStringList spellings = m_wordlist.spellings(word);
+	QStringList spellings = m_wordlist->spellings(word);
 	foreach (const QString& spelling, spellings) {
 		m_spellings[spelling] = word;
 

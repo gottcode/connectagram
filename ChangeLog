@@ -1,4 +1,5 @@
 2013-01-25 Graeme Gott <graeme@gottcode.org>
+	* Update dictionary when language is changed.
 	* Allow player to choose language of board.
 
 2013-01-23 Graeme Gott <graeme@gottcode.org>

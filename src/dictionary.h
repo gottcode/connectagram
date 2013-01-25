@@ -35,7 +35,7 @@ class Dictionary : public QObject {
 	Q_OBJECT
 
 public:
-	Dictionary(const WordList& wordlist, QObject* parent = 0);
+	Dictionary(const WordList* wordlist, QObject* parent = 0);
 
 	QUrl url() const {
 		return m_url;
@@ -50,12 +50,10 @@ public slots:
 
 private slots:
 	void lookupFinished(QNetworkReply* reply);
-
-private:
 	void setLanguage(const QString& langcode);
 
 private:
-	const WordList& m_wordlist;
+	const WordList* m_wordlist;
 	QUrl m_url;
 #if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	QUrlQuery m_query;

@@ -22,10 +22,13 @@
 
 #include <QHash>
 #include <QStringList>
+#include <QObject>
 
-class WordList {
+class WordList : public QObject {
+	Q_OBJECT
+
 public:
-	WordList();
+	WordList(QObject* parent = 0);
 
 	bool isEmpty() const {
 		return m_all_words.isEmpty();
@@ -51,6 +54,9 @@ public:
 	void setLength(int length);
 
 	static QString defaultLanguage();
+
+signals:
+	void languageChanged(const QString& language);
 
 private:
 	void resetWords();

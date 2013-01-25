@@ -34,6 +34,8 @@ Board::Board(QObject* parent)
 	auto_save->setInterval(30000);
 	connect(auto_save, SIGNAL(timeout()), this, SLOT(saveGame()));
 	auto_save->start();
+
+	m_wordlist = new WordList(this);
 }
 
 //-----------------------------------------------------------------------------
@@ -107,7 +109,7 @@ void Board::openGame() {
 	emit loading();
 
 	QSettings settings;
-	m_wordlist.setLanguage(settings.value("Current/Language", WordList::defaultLanguage()).toString());
+	m_wordlist->setLanguage(settings.value("Current/Language", WordList::defaultLanguage()).toString());
 	m_pattern = Pattern::create(m_wordlist, settings.value("Current/Pattern").toInt());
 	m_pattern->setCount(settings.value("Current/Count").toInt());
 	m_pattern->setLength(settings.value("Current/Length").toInt());

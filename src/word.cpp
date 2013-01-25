@@ -247,7 +247,7 @@ void Word::setHighlight(bool highlight) {
 
 //-----------------------------------------------------------------------------
 
-void Word::shuffle(const WordList& words) {
+void Word::shuffle(const WordList* words) {
 	// Create list of characters and filter the list of words
 	QHash<int, QChar> fixed;
 	QString chars;
@@ -268,7 +268,7 @@ void Word::shuffle(const WordList& words) {
 	}
 	std::sort(chars.begin(), chars.end());
 	std::sort(movable.begin(), movable.end());
-	QStringList filtered = words.filter(filter);
+	QStringList filtered = words->filter(filter);
 
 	// Find valid solutions
 	foreach (const QString& valid, filtered) {
