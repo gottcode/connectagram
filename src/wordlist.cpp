@@ -63,6 +63,9 @@ void WordList::resetAnagramFilters() {
 //-----------------------------------------------------------------------------
 
 bool WordList::setLanguage(const QString& langcode) {
+	if (m_langcode == langcode) {
+		return true;
+	}
 	m_langcode = langcode;
 
 	m_all_words.clear();
