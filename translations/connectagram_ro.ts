@@ -92,32 +92,37 @@
 <context>
     <name>NewGameDialog</name>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="37"/>
+        <location filename="../src/new_game_dialog.cpp" line="39"/>
         <source>New Game</source>
         <translation>Joc nou</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="57"/>
+        <location filename="../src/new_game_dialog.cpp" line="68"/>
         <source>Random</source>
         <translation>Aleator</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/new_game_dialog.cpp" line="77"/>
+        <source>Language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="78"/>
         <source>Pattern:</source>
         <translation>Tipar:</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="67"/>
+        <location filename="../src/new_game_dialog.cpp" line="79"/>
         <source>Characters per word:</source>
         <translation>Caractere pe cuvînt:</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="68"/>
+        <location filename="../src/new_game_dialog.cpp" line="80"/>
         <source>Number of words:</source>
         <translation>Număr de cuvinte:</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="69"/>
+        <location filename="../src/new_game_dialog.cpp" line="81"/>
         <source>Game number:</source>
         <translation>Număr joc:</translation>
     </message>

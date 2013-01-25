@@ -53,7 +53,6 @@ Dictionary::Dictionary(const WordList& wordlist, QObject* parent)
 	m_url.addQueryItem("sections", "all");
 	m_url.addQueryItem("noimages", "");
 #endif
-	setLanguage("en");
 
 	m_manager = new QNetworkAccessManager(this);
 	connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(lookupFinished(QNetworkReply*)));

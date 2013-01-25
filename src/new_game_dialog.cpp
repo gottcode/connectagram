@@ -20,11 +20,13 @@
 #include "new_game_dialog.h"
 
 #include "board.h"
+#include "locale_dialog.h"
 #include "pattern.h"
 
 #include <QComboBox>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QDir>
 #include <QFormLayout>
 #include <QSettings>
 #include <QSpinBox>
@@ -36,10 +38,19 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 : QDialog(parent), m_board(board) {
 	setWindowTitle(tr("New Game"));
 
+	// Create languages box
+	m_wordlist.setLanguage(WordList::defaultLanguage());
+	m_languages_box = new QComboBox(this);
+	QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+	foreach (const QString& language, languages) {
+		m_languages_box->addItem(LocaleDialog::languageName(language), language);
+	}
+	connect(m_languages_box, SIGNAL(currentIndexChanged(int)), this, SLOT(languageSelected(int)));
+
 	// Create patterns box
 	m_patterns_box = new QComboBox(this);
 	for (int i = 0; i < Pattern::types(); ++i) {
-		Pattern* pattern = Pattern::create(board->words(), i);
+		Pattern* pattern = Pattern::create(m_wordlist, i);
 		m_patterns.append(pattern);
 		m_patterns_box->addItem(pattern->name(), i);
 	}
@@ -63,6 +74,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Lay out dialog
 	QFormLayout* contents_layout = new QFormLayout;
+	contents_layout->addRow(tr("Language:"), m_languages_box);
 	contents_layout->addRow(tr("Pattern:"), m_patterns_box);
 	contents_layout->addRow(tr("Characters per word:"), m_word_length_box);
 	contents_layout->addRow(tr("Number of words:"), m_word_count_box);
@@ -75,6 +87,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Load settings
 	QSettings settings;
+	setLanguage(settings.value("NewGame/Language", WordList::defaultLanguage()).toString());
 	setPattern(settings.value("NewGame/Pattern", 1).toInt());
 	setCount(settings.value("NewGame/Count", 10).toInt());
 	setLength(settings.value("NewGame/Length", 7).toInt());
@@ -89,6 +102,7 @@ NewGameDialog::~NewGameDialog() {
 //-----------------------------------------------------------------------------
 
 void NewGameDialog::accept() {
+	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int id = m_patterns_box->itemData(m_patterns_box->currentIndex()).toInt();
 	int count = m_word_count_box->currentText().toInt();
 	int length = m_word_length_box->currentText().toInt();
@@ -100,10 +114,12 @@ void NewGameDialog::accept() {
 
 	QSettings settings;
 	settings.remove("Current");
+	settings.setValue("NewGame/Language", language);
 	settings.setValue("NewGame/Pattern", id);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
 	settings.setValue("Current/Version", 2);
+	settings.setValue("Current/Language", language);
 	settings.setValue("Current/Pattern", id);
 	settings.setValue("Current/Count", count);
 	settings.setValue("Current/Length", length);
@@ -113,6 +129,13 @@ void NewGameDialog::accept() {
 	m_board->openGame();
 
 	QDialog::accept();
+}
+
+//-----------------------------------------------------------------------------
+
+void NewGameDialog::languageSelected(int index) {
+	m_wordlist.setLanguage(m_languages_box->itemData(index).toString());
+	patternSelected(m_patterns_box->currentIndex());
 }
 
 //-----------------------------------------------------------------------------
@@ -135,6 +158,18 @@ void NewGameDialog::patternSelected(int index) {
 		m_word_length_box->addItem(QString::number(i));
 	}
 	setLength(length);
+}
+
+//-----------------------------------------------------------------------------
+
+void NewGameDialog::setLanguage(const QString& language) {
+	int id = m_languages_box->findData(language);
+	if (id == -1) {
+		id = 0;
+	} else if (id == 0) {
+		m_languages_box->setCurrentIndex(1);
+	}
+	m_languages_box->setCurrentIndex(id);
 }
 
 //-----------------------------------------------------------------------------

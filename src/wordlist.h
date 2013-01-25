@@ -50,6 +50,8 @@ public:
 	bool setLanguage(const QString& langcode);
 	void setLength(int length);
 
+	static QString defaultLanguage();
+
 private:
 	void resetWords();
 

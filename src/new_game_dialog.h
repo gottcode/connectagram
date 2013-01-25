@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,11 +20,13 @@
 #ifndef NEW_GAME_DIALOG_H
 #define NEW_GAME_DIALOG_H
 
+#include "wordlist.h"
+class Board;
+class Pattern;
+
 #include <QDialog>
 class QComboBox;
 class QSpinBox;
-class Board;
-class Pattern;
 
 class NewGameDialog : public QDialog {
 	Q_OBJECT
@@ -37,20 +39,24 @@ class NewGameDialog : public QDialog {
 		void accept();
 
 	private slots:
+		void languageSelected(int index);
 		void patternSelected(int index);
 
 	private:
+		void setLanguage(const QString& language);
 		void setPattern(int pattern);
 		void setCount(int count);
 		void setLength(int length);
 
 	private:
+		QComboBox* m_languages_box;
 		QComboBox* m_patterns_box;
 		QComboBox* m_word_count_box;
 		QComboBox* m_word_length_box;
 		QSpinBox* m_seed_box;
 		QList<Pattern*> m_patterns;
 		Board* m_board;
+		WordList m_wordlist;
 };
 
 #endif

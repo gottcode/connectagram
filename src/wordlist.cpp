@@ -121,6 +121,19 @@ void WordList::setLength(int length) {
 
 //-----------------------------------------------------------------------------
 
+QString WordList::defaultLanguage() {
+	QString language = QLocale().name();
+	if (!QFile::exists("connectagram:" + language)) {
+		language = language.left(2);
+		if (!QFile::exists("connectagram:" + language)) {
+			language = "en";
+		}
+	}
+	return language;
+}
+
+//-----------------------------------------------------------------------------
+
 void WordList::resetWords() {
 	m_words = m_all_words.value(m_length);
 }
