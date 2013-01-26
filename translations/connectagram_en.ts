@@ -98,26 +98,31 @@
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/window.cpp" line="265"/>
         <source>Low</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/window.cpp" line="266"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/window.cpp" line="267"/>
         <source>High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/window.cpp" line="268"/>
         <source>Very High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="75"/>
+        <location filename="../src/window.cpp" line="277"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -128,16 +133,19 @@
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="77"/>
+        <location filename="../src/window.cpp" line="279"/>
         <source>Word Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="78"/>
+        <location filename="../src/window.cpp" line="278"/>
         <source>Amount of Words:</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/new_game_dialog.cpp" line="144"/>
+        <location filename="../src/window.cpp" line="279"/>
         <source>%n letter(s)</source>
         <translation>
             <numerusform>%n letter</numerusform>
@@ -260,7 +268,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="161"/>
-        <location filename="../src/window.cpp" line="308"/>
+        <location filename="../src/window.cpp" line="319"/>
         <source>&amp;Pause</source>
         <translation type="unfinished"></translation>
     </message>
@@ -336,6 +344,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
+        <location filename="../src/window.cpp" line="280"/>
         <source>Game Number:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -380,17 +389,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="263"/>
+        <location filename="../src/window.cpp" line="275"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="263"/>
-        <source>&lt;p&gt;&lt;b&gt;Pattern:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Characters per word:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Number of words:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Game number:&lt;/b&gt; %L4&lt;/p&gt;</source>
+        <location filename="../src/window.cpp" line="276"/>
+        <source>Pattern:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="308"/>
+        <location filename="../src/window.cpp" line="319"/>
         <source>&amp;Resume</source>
         <translation type="unfinished"></translation>
     </message>

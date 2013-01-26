@@ -140,7 +140,8 @@ void Pattern::run() {
 	// Add words
 	cleanUp();
 	int s = steps();
-	for (int i = 0; i < wordCount(); ++i) {
+	int count = counts().value(wordCount());
+	for (int i = 0; i < count; ++i) {
 		Word* word = addWord(i % s);
 		if (word) {
 			m_solution.append(word);

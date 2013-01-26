@@ -259,14 +259,25 @@ void Window::about() {
 
 void Window::showDetails() {
 	Pattern* pattern = m_board->pattern();
-	if (pattern) {
-		QMessageBox::information(this, tr("Details"), tr(
-			"<p><b>Pattern:</b> %1<br>"
-			"<b>Characters per word:</b> %2<br>"
-			"<b>Number of words:</b> %3<br>"
-			"<b>Game number:</b> %L4</p>"
-		).arg(pattern->name()).arg(pattern->wordLength() + 1).arg(pattern->wordCount()).arg(pattern->seed()));
+	if (!pattern) {
+		return;
 	}
+	static const QStringList sizes = QStringList() << NewGameDialog::tr("Low")
+		<< NewGameDialog::tr("Medium")
+		<< NewGameDialog::tr("High")
+		<< NewGameDialog::tr("Very High");
+	QString number = "3"
+		+ m_board->words()->language()
+		+ QSettings().value("Current/Pattern", 0).toString()
+		+ QString::number(pattern->wordCount())
+		+ QString("%1").arg(int(pattern->wordLength() - 4), 2, 16, QLatin1Char('0'))
+		+ QString::number(pattern->seed(), 16);
+	QMessageBox::information(this, tr("Details"), QString("<p><b>%1</b> %2<br><b>%3</b> %4<br><b>%5</b> %6<br><b>%7</b> %8<br><b>%9</b> %10</p>")
+		.arg(tr("Pattern:")).arg(pattern->name())
+		.arg(NewGameDialog::tr("Language:")).arg(LocaleDialog::languageName(m_board->words()->language()))
+		.arg(NewGameDialog::tr("Amount of Words:")).arg(sizes.value(pattern->wordCount()))
+		.arg(NewGameDialog::tr("Word Length:")).arg(NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1))
+		.arg(tr("Game Number:")).arg(number));
 }
 
 //-----------------------------------------------------------------------------

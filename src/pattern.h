@@ -77,7 +77,7 @@ class Pattern : public QThread {
 		}
 
 		int wordCount() const {
-			return m_count;
+			return counts().indexOf(m_count);
 		}
 
 		int wordLength() const {
