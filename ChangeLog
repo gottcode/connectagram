@@ -1,3 +1,6 @@
+2013-01-26 Graeme Gott <graeme@gottcode.org>
+	* Simplify selection of word count.
+
 2013-01-25 Graeme Gott <graeme@gottcode.org>
 	* Update dictionary when language is changed.
 	* Allow player to choose language of board.

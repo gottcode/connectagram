@@ -43,8 +43,7 @@ Pattern::~Pattern() {
 //-----------------------------------------------------------------------------
 
 void Pattern::setCount(int count) {
-	m_count = qMax(count, minimumCount());
-	m_count -= ((m_count - minimumCount()) % expandCount());
+	m_count = counts().value(count, 4);
 }
 
 //-----------------------------------------------------------------------------

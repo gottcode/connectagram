@@ -4,7 +4,7 @@
 <context>
     <name>ChainPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="147"/>
+        <location filename="../src/pattern.h" line="143"/>
         <source>Chain</source>
         <translation>Цепь</translation>
     </message>
@@ -43,17 +43,17 @@
 <context>
     <name>Dictionary</name>
     <message>
-        <location filename="../src/dictionary.cpp" line="149"/>
+        <location filename="../src/dictionary.cpp" line="148"/>
         <source>Definition from Wiktionary, the free dictionary</source>
         <translation>Определение из Wiktionary, свободного словаря</translation>
     </message>
     <message>
-        <location filename="../src/dictionary.cpp" line="156"/>
+        <location filename="../src/dictionary.cpp" line="155"/>
         <source>No definition found</source>
         <translation>Не найдено определения</translation>
     </message>
     <message>
-        <location filename="../src/dictionary.cpp" line="159"/>
+        <location filename="../src/dictionary.cpp" line="158"/>
         <source>Unable to connect to Wiktionary</source>
         <translation>Невозможно соединиться с Wiktionary</translation>
     </message>
@@ -92,37 +92,57 @@
 <context>
     <name>NewGameDialog</name>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="39"/>
+        <location filename="../src/new_game_dialog.cpp" line="40"/>
         <source>New Game</source>
         <translation>Новая игра</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="68"/>
+        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <source>Low</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <source>Medium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <source>High</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <source>Very High</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="71"/>
         <source>Random</source>
         <translation>Произвольный</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="77"/>
+        <location filename="../src/new_game_dialog.cpp" line="80"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="78"/>
+        <location filename="../src/new_game_dialog.cpp" line="81"/>
         <source>Pattern:</source>
         <translation>Шаблон:</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="79"/>
+        <location filename="../src/new_game_dialog.cpp" line="82"/>
         <source>Characters per word:</source>
         <translation>Букв в слове:</translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="80"/>
-        <source>Number of words:</source>
-        <translation>Количество слов:</translation>
+        <location filename="../src/new_game_dialog.cpp" line="83"/>
+        <source>Amount of Words:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="81"/>
+        <location filename="../src/new_game_dialog.cpp" line="84"/>
         <source>Game number:</source>
         <translation>Номер игры:</translation>
     </message>
@@ -130,7 +150,7 @@
 <context>
     <name>RingsPattern</name>
     <message>
-        <location filename="../src/pattern.h" line="197"/>
+        <location filename="../src/pattern.h" line="193"/>
         <source>Rings</source>
         <translation>Кольца</translation>
     </message>
@@ -182,7 +202,7 @@
 <context>
     <name>WavePattern</name>
     <message>
-        <location filename="../src/pattern.h" line="258"/>
+        <location filename="../src/pattern.h" line="254"/>
         <source>Wave</source>
         <translation>Волна</translation>
     </message>

@@ -48,36 +48,32 @@ class Pattern : public QThread {
 			return m_size;
 		}
 
-		virtual int minimumLength() const {
-			return 5;
-		}
-
-		virtual int minimumCount() const {
-			return 4;
-		}
-
-		virtual int expandCount() const {
-			return 2;
+		virtual QList<int> counts() const {
+			return QList<int>() << 4 << 8 << 12 << 16;
 		}
 
 		virtual QString name() const {
 			return QString();
 		}
 
-		QList<Word*> solution() const {
-			return m_solution;
-		}
-
-		const WordList* words() const {
-			return m_words;
+		virtual int minimumLength() const {
+			return 5;
 		}
 
 		int maximumLength() const {
 			return m_words->maximumLength();
 		}
 
+		QList<Word*> solution() const {
+			return m_solution;
+		}
+
 		int seed() const {
 			return m_seed;
+		}
+
+		const WordList* words() const {
+			return m_words;
 		}
 
 		int wordCount() const {
@@ -113,7 +109,7 @@ class Pattern : public QThread {
 		void cleanUp();
 
 		virtual int steps() const {
-			return expandCount();
+			return 2;
 		}
 
 		virtual Word* addWord(int step);
@@ -139,8 +135,8 @@ class ChainPattern : public Pattern {
 		ChainPattern(WordList* words) : Pattern(words) {
 		}
 
-		int expandCount() const {
-			return 5;
+		QList<int> counts() const {
+			return QList<int>() << 4 << 9 << 14 << 19;
 		}
 
 		QString name() const {
@@ -148,6 +144,10 @@ class ChainPattern : public Pattern {
 		}
 
 	private:
+		int steps() const {
+			return 5;
+		}
+
 		Word* addWord(int step);
 };
 
@@ -160,8 +160,8 @@ class FencePattern : public Pattern {
 		FencePattern(WordList* words) : Pattern(words) {
 		}
 
-		int expandCount() const {
-			return 3;
+		QList<int> counts() const {
+			return QList<int>() << 4 << 7 << 13 << 16;
 		}
 
 		QString name() const {
@@ -189,15 +189,15 @@ class RingsPattern : public Pattern {
 			return 7;
 		}
 
-		int expandCount() const {
-			return 4;
-		}
-
 		QString name() const {
 			return tr("Rings");
 		}
 
 	private:
+		int steps() const {
+			return 4;
+		}
+
 		Word* addWord(int step);
 };
 
@@ -246,12 +246,8 @@ class WavePattern : public Pattern {
 		WavePattern(WordList* words) : Pattern(words) {
 		}
 
-		int minimumCount() const {
-			return 5;
-		}
-
-		int expandCount() const {
-			return 4;
+		QList<int> counts() const {
+			return QList<int>() << 5 << 9 << 13 << 17;
 		}
 
 		QString name() const {
@@ -259,6 +255,10 @@ class WavePattern : public Pattern {
 		}
 
 	private:
+		int steps() const {
+			return 4;
+		}
+
 		Word* addWord(int step);
 };
 

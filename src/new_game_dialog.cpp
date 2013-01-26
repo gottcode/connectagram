@@ -63,6 +63,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create word count box
 	m_word_count_box = new QComboBox(this);
+	m_word_count_box->addItems(QStringList() << tr("Low") << tr("Medium") << tr("High") << tr("Very High"));
 
 	// Create seed box
 	m_seed_box = new QSpinBox(this);
@@ -79,7 +80,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	contents_layout->addRow(tr("Language:"), m_languages_box);
 	contents_layout->addRow(tr("Pattern:"), m_patterns_box);
 	contents_layout->addRow(tr("Characters per word:"), m_word_length_box);
-	contents_layout->addRow(tr("Number of words:"), m_word_count_box);
+	contents_layout->addRow(tr("Amount of Words:"), m_word_count_box);
 	contents_layout->addRow(tr("Game number:"), m_seed_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
@@ -91,7 +92,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	QSettings settings;
 	setLanguage(settings.value("NewGame/Language", WordList::defaultLanguage()).toString());
 	setPattern(settings.value("NewGame/Pattern", 1).toInt());
-	setCount(settings.value("NewGame/Count", 10).toInt());
+	setCount(settings.value("NewGame/Count", 1).toInt());
 	setLength(settings.value("NewGame/Length", 7).toInt());
 }
 
@@ -106,7 +107,7 @@ NewGameDialog::~NewGameDialog() {
 void NewGameDialog::accept() {
 	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int id = m_patterns_box->itemData(m_patterns_box->currentIndex()).toInt();
-	int count = m_word_count_box->currentText().toInt();
+	int count = m_word_count_box->currentIndex();
 	int length = m_word_length_box->currentText().toInt();
 	int seed = m_seed_box->value();
 	if (seed == 0) {
@@ -120,7 +121,7 @@ void NewGameDialog::accept() {
 	settings.setValue("NewGame/Pattern", id);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
-	settings.setValue("Current/Version", 2);
+	settings.setValue("Current/Version", 3);
 	settings.setValue("Current/Language", language);
 	settings.setValue("Current/Pattern", id);
 	settings.setValue("Current/Count", count);
@@ -144,14 +145,6 @@ void NewGameDialog::languageSelected(int index) {
 
 void NewGameDialog::patternSelected(int index) {
 	Pattern* pattern = m_patterns.at(m_patterns_box->itemData(index).toInt());
-
-	// Set up word count combobox
-	int count = m_word_count_box->currentText().toInt();
-	m_word_count_box->clear();
-	for (int i = pattern->minimumCount(); i <= 20; i += pattern->expandCount()) {
-		m_word_count_box->addItem(QString::number(i));
-	}
-	setCount(count);
 
 	// Set up word length combobox
 	int length = m_word_length_box->currentText().toInt();
@@ -189,17 +182,8 @@ void NewGameDialog::setPattern(int pattern) {
 //-----------------------------------------------------------------------------
 
 void NewGameDialog::setCount(int count) {
-	count = qBound(m_word_count_box->itemText(0).toInt(), count, m_word_count_box->itemText(m_word_count_box->count() - 1).toInt());
-	int smallest = 0x7FFFFFFF;
-	int index = 0;
-	for (int i = 0; i < m_word_count_box->count(); ++i) {
-		int diff = abs(m_word_count_box->itemText(i).toInt() - count);
-		if (diff < smallest) {
-			smallest = diff;
-			index = i;
-		}
-	}
-	m_word_count_box->setCurrentIndex(index);
+	count = qBound(0, count, 3);
+	m_word_count_box->setCurrentIndex(count);
 }
 
 //-----------------------------------------------------------------------------
