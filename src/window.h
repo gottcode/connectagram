@@ -43,6 +43,7 @@ class Window : public QMainWindow {
 		virtual bool eventFilter(QObject* object, QEvent* event);
 
 	private slots:
+		void chooseGame();
 		void about();
 		void showDetails();
 		void setLocale();

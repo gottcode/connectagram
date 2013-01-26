@@ -63,6 +63,7 @@ class Board : public QGraphicsScene {
 
 	public slots:
 		void openGame();
+		bool openGame(const QString& number);
 		void saveGame();
 		void showHint();
 		void togglePaused();

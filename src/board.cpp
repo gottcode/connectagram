@@ -121,6 +121,75 @@ void Board::openGame() {
 
 //-----------------------------------------------------------------------------
 
+bool Board::openGame(const QString& number) {
+	if (!number.startsWith("3")) {
+		return false;
+	}
+
+	// Parse language
+	int index = 1;
+	for (int i = 1; i < number.length(); ++i) {
+		if (!number.at(i).isDigit()) {
+			index = i;
+		} else {
+			break;
+		}
+	}
+	QString language = WordList::defaultLanguage();
+	if (index > 1) {
+		language = number.mid(1, index);
+		index += 1;
+	}
+
+	// Parse type
+	if (index == number.length()) {
+		return false;
+	}
+	int pattern = number.at(index).digitValue();
+
+	// Parse count
+	if (++index == number.length()) {
+		return false;
+	}
+	int count = number.at(index).digitValue();
+
+	// Parse length
+	if (++index == number.length()) {
+		return false;
+	}
+	bool ok = false;
+	int length = number.mid(index, 2).toInt(&ok, 16) + 5;
+	if (!ok) {
+		return false;
+	}
+
+	// Parse seed
+	if ((index += 2) == number.length()) {
+		return false;
+	}
+	unsigned int seed = number.mid(index).toInt(&ok, 16);
+	if (!ok) {
+		return false;
+	}
+
+	// Start game
+	cleanUp();
+	emit loading();
+
+	m_wordlist->setLanguage(language);
+	m_pattern = Pattern::create(m_wordlist, pattern);
+	m_pattern->setCount(count);
+	m_pattern->setLength(length);
+	m_pattern->setSeed(seed);
+
+	connect(m_pattern, SIGNAL(generated()), this, SLOT(patternGenerated()));
+	m_pattern->start();
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
 void Board::saveGame() {
 	if (!m_finished && !m_words.isEmpty()) {
 		QStringList words;

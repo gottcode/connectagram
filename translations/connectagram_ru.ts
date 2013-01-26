@@ -219,164 +219,189 @@
 <context>
     <name>Window</name>
     <message>
-        <location filename="../src/window.cpp" line="68"/>
-        <location filename="../src/window.cpp" line="83"/>
+        <location filename="../src/window.cpp" line="69"/>
+        <location filename="../src/window.cpp" line="84"/>
         <source>Success</source>
         <translation>Успех</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="95"/>
+        <location filename="../src/window.cpp" line="96"/>
         <source>Loading</source>
         <translation>Загрузка</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="95"/>
+        <location filename="../src/window.cpp" line="96"/>
         <source>Paused</source>
         <translation>Пауза</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="118"/>
+        <location filename="../src/window.cpp" line="119"/>
         <source>Definitions</source>
         <translation>Определения</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="124"/>
+        <location filename="../src/window.cpp" line="125"/>
         <source>Hint</source>
         <translation>Подсказка</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="155"/>
+        <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Game</source>
         <translation>&amp;Игра</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="156"/>
+        <location filename="../src/window.cpp" line="157"/>
         <source>&amp;New</source>
         <translation>&amp;Новая</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="156"/>
+        <location filename="../src/window.cpp" line="157"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="157"/>
+        <location filename="../src/window.cpp" line="158"/>
+        <source>&amp;Choose...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="159"/>
         <source>&amp;Details</source>
         <translation>&amp;Детали</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
-        <location filename="../src/window.cpp" line="293"/>
+        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="308"/>
         <source>&amp;Pause</source>
         <translation>&amp;Пауза</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="161"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="163"/>
         <source>&amp;Hint</source>
         <translation>&amp;Подсказка</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="163"/>
         <source>H</source>
         <translation>H</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="164"/>
+        <location filename="../src/window.cpp" line="166"/>
         <source>D&amp;efinitions</source>
         <translation>О&amp;пределения</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="164"/>
+        <location filename="../src/window.cpp" line="166"/>
         <source>D</source>
         <translation>D</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Scores</source>
         <translation>&amp;Очки</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Quit</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="168"/>
+        <location filename="../src/window.cpp" line="170"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="170"/>
+        <location filename="../src/window.cpp" line="172"/>
         <source>&amp;Settings</source>
         <translation>&amp;Настройки</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="171"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>Application &amp;Language...</source>
         <translation>&amp;Язык приложения</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="173"/>
+        <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Help</source>
         <translation>&amp;Помощь</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="174"/>
+        <location filename="../src/window.cpp" line="176"/>
         <source>&amp;About</source>
         <translation>&amp;Об игре</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>About &amp;Qt</source>
         <translation>О &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="234"/>
+        <location filename="../src/window.cpp" line="205"/>
+        <source>Choose Game</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="205"/>
+        <source>Game Number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="209"/>
+        <source>Sorry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="209"/>
+        <source>Unable to start requested game.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/window.cpp" line="249"/>
         <source>About</source>
         <translation>Об игре</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="235"/>
+        <location filename="../src/window.cpp" line="250"/>
         <source>Connectagram</source>
         <translation>Connectagram</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="236"/>
+        <location filename="../src/window.cpp" line="251"/>
         <source>A word unscrambling game</source>
         <translation>Игра по расшифровыванию слов</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="237"/>
+        <location filename="../src/window.cpp" line="252"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
         <translation>Копирайт &amp;copy; 2009-%1, Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="238"/>
+        <location filename="../src/window.cpp" line="253"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Выпущено под лицензией &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="239"/>
+        <location filename="../src/window.cpp" line="254"/>
         <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
         <translation>Определения с сайта &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="248"/>
+        <location filename="../src/window.cpp" line="263"/>
         <source>Details</source>
         <translation>Детали</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="248"/>
+        <location filename="../src/window.cpp" line="263"/>
         <source>&lt;p&gt;&lt;b&gt;Pattern:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Characters per word:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Number of words:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Game number:&lt;/b&gt; %L4&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;b&gt;Шаблон:&lt;/b&gt; %1&lt;br&gt;&lt;b&gt;Букв в слове:&lt;/b&gt; %2&lt;br&gt;&lt;b&gt;Количество слов:&lt;/b&gt; %3&lt;br&gt;&lt;b&gt;Номер игры:&lt;/b&gt; %L4&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="293"/>
+        <location filename="../src/window.cpp" line="308"/>
         <source>&amp;Resume</source>
         <translation>&amp;Продолжить</translation>
     </message>

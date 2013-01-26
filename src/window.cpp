@@ -31,6 +31,7 @@
 #include <QApplication>
 #include <QGridLayout>
 #include <QHBoxLayout>
+#include <QInputDialog>
 #include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
@@ -154,6 +155,7 @@ Window::Window() {
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
 	menu->addAction(tr("&New"), this, SLOT(newGame()), tr("Ctrl+N"));
+	menu->addAction(tr("&Choose..."), this, SLOT(chooseGame()));
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addSeparator();
 	m_pause_action = menu->addAction(tr("&Pause"), m_board, SLOT(togglePaused()), tr("P"));
@@ -194,6 +196,19 @@ Window::Window() {
 void Window::newGame() {
 	NewGameDialog dialog(m_board, this);
 	dialog.exec();
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::chooseGame() {
+	bool ok = false;
+	QString number = QInputDialog::getText(this, tr("Choose Game"), tr("Game Number:"), QLineEdit::Normal, QString(), &ok);
+	if (ok && !number.isEmpty()) {
+		number = number.trimmed();
+		if (!m_board->openGame(number)) {
+			QMessageBox::warning(this, tr("Sorry"), tr("Unable to start requested game."));
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------
