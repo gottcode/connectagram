@@ -79,7 +79,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	QFormLayout* contents_layout = new QFormLayout;
 	contents_layout->addRow(tr("Language:"), m_languages_box);
 	contents_layout->addRow(tr("Pattern:"), m_patterns_box);
-	contents_layout->addRow(tr("Characters per word:"), m_word_length_box);
+	contents_layout->addRow(tr("Word Length:"), m_word_length_box);
 	contents_layout->addRow(tr("Amount of Words:"), m_word_count_box);
 	contents_layout->addRow(tr("Game number:"), m_seed_box);
 
@@ -108,7 +108,7 @@ void NewGameDialog::accept() {
 	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int id = m_patterns_box->itemData(m_patterns_box->currentIndex()).toInt();
 	int count = m_word_count_box->currentIndex();
-	int length = m_word_length_box->currentText().toInt();
+	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
 	int seed = m_seed_box->value();
 	if (seed == 0) {
 		srand(time(0));
@@ -147,10 +147,10 @@ void NewGameDialog::patternSelected(int index) {
 	Pattern* pattern = m_patterns.at(m_patterns_box->itemData(index).toInt());
 
 	// Set up word length combobox
-	int length = m_word_length_box->currentText().toInt();
+	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
 	m_word_length_box->clear();
 	for (int i = pattern->minimumLength(); i <= pattern->maximumLength(); ++i) {
-		m_word_length_box->addItem(QString::number(i));
+		m_word_length_box->addItem(tr("%n letter(s)", "", i), i);
 	}
 	setLength(length);
 }
@@ -189,7 +189,7 @@ void NewGameDialog::setCount(int count) {
 //-----------------------------------------------------------------------------
 
 void NewGameDialog::setLength(int length) {
-	int min = m_word_length_box->itemText(0).toInt();
-	int max = m_word_length_box->itemText(m_word_length_box->count() - 1).toInt();
+	int min = m_word_length_box->itemData(0).toInt();
+	int max = m_word_length_box->itemData(m_word_length_box->count() - 1).toInt();
 	m_word_length_box->setCurrentIndex(qBound(min, length, max) - min);
 }

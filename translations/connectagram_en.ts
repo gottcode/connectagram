@@ -133,13 +133,21 @@
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="82"/>
-        <source>Characters per word:</source>
+        <source>Word Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="83"/>
         <source>Amount of Words:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/new_game_dialog.cpp" line="153"/>
+        <source>%n letter(s)</source>
+        <translation>
+            <numerusform>%n letter</numerusform>
+            <numerusform>%n letters</numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="84"/>
