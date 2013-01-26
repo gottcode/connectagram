@@ -1,4 +1,5 @@
 2013-01-26 Graeme Gott <graeme@gottcode.org>
+	* Remove game number from new game dialog.
 	* Add starting games from encoded string.
 	* Add labels to word lengths.
 	* Simplify selection of word count.

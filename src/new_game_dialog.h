@@ -53,7 +53,6 @@ class NewGameDialog : public QDialog {
 		QComboBox* m_patterns_box;
 		QComboBox* m_word_count_box;
 		QComboBox* m_word_length_box;
-		QSpinBox* m_seed_box;
 		QList<Pattern*> m_patterns;
 		Board* m_board;
 		WordList* m_wordlist;

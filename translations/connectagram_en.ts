@@ -117,42 +117,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="71"/>
-        <source>Random</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/new_game_dialog.cpp" line="80"/>
+        <location filename="../src/new_game_dialog.cpp" line="75"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="81"/>
+        <location filename="../src/new_game_dialog.cpp" line="76"/>
         <source>Pattern:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="82"/>
+        <location filename="../src/new_game_dialog.cpp" line="77"/>
         <source>Word Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="83"/>
+        <location filename="../src/new_game_dialog.cpp" line="78"/>
         <source>Amount of Words:</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/new_game_dialog.cpp" line="153"/>
+        <location filename="../src/new_game_dialog.cpp" line="144"/>
         <source>%n letter(s)</source>
         <translation>
             <numerusform>%n letter</numerusform>
             <numerusform>%n letters</numerusform>
         </translation>
-    </message>
-    <message>
-        <location filename="../src/new_game_dialog.cpp" line="84"/>
-        <source>Game number:</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

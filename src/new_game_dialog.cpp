@@ -65,11 +65,6 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	m_word_count_box = new QComboBox(this);
 	m_word_count_box->addItems(QStringList() << tr("Low") << tr("Medium") << tr("High") << tr("Very High"));
 
-	// Create seed box
-	m_seed_box = new QSpinBox(this);
-	m_seed_box->setRange(0, 2147483647);
-	m_seed_box->setSpecialValueText(tr("Random"));
-
 	// Create buttons
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, Qt::Horizontal, this);
 	connect(buttons, SIGNAL(accepted()), this, SLOT(accept()));
@@ -81,7 +76,6 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	contents_layout->addRow(tr("Pattern:"), m_patterns_box);
 	contents_layout->addRow(tr("Word Length:"), m_word_length_box);
 	contents_layout->addRow(tr("Amount of Words:"), m_word_count_box);
-	contents_layout->addRow(tr("Game number:"), m_seed_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->addLayout(contents_layout);
@@ -109,11 +103,8 @@ void NewGameDialog::accept() {
 	int id = m_patterns_box->itemData(m_patterns_box->currentIndex()).toInt();
 	int count = m_word_count_box->currentIndex();
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
-	int seed = m_seed_box->value();
-	if (seed == 0) {
-		srand(time(0));
-		seed = rand();
-	}
+	srand(time(0));
+	int seed = rand();
 
 	QSettings settings;
 	settings.remove("Current");
