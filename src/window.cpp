@@ -156,7 +156,6 @@ Window::Window() {
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
 	menu->addAction(tr("&New"), this, SLOT(newGame()), tr("Ctrl+N"));
 	menu->addAction(tr("&Choose..."), this, SLOT(chooseGame()));
-	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addSeparator();
 	m_pause_action = menu->addAction(tr("&Pause"), m_board, SLOT(togglePaused()), tr("P"));
 	m_pause_action->setDisabled(true);
@@ -165,6 +164,7 @@ Window::Window() {
 	connect(m_board, SIGNAL(hintAvailable(bool)), hint_action, SLOT(setEnabled(bool)));
 	menu->addAction(tr("D&efinitions"), m_definitions, SLOT(selectWord()), tr("D"));
 	menu->addSeparator();
+	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addAction(tr("&Scores"), m_scores, SLOT(exec()));
 	menu->addSeparator();
 	menu->addAction(tr("&Quit"), qApp, SLOT(quit()), tr("Ctrl+Q"));
@@ -262,22 +262,29 @@ void Window::showDetails() {
 	if (!pattern) {
 		return;
 	}
+	QString patternid = QSettings().value("Current/Pattern", 0).toString();
 	static const QStringList sizes = QStringList() << NewGameDialog::tr("Low")
 		<< NewGameDialog::tr("Medium")
 		<< NewGameDialog::tr("High")
 		<< NewGameDialog::tr("Very High");
 	QString number = "3"
 		+ m_board->words()->language()
-		+ QSettings().value("Current/Pattern", 0).toString()
+		+ patternid
 		+ QString::number(pattern->wordCount())
 		+ QString("%1").arg(int(pattern->wordLength() - 4), 2, 16, QLatin1Char('0'))
 		+ QString::number(pattern->seed(), 16);
-	QMessageBox::information(this, tr("Details"), QString("<p><b>%1</b> %2<br><b>%3</b> %4<br><b>%5</b> %6<br><b>%7</b> %8<br><b>%9</b> %10</p>")
-		.arg(tr("Pattern:")).arg(pattern->name())
-		.arg(NewGameDialog::tr("Language:")).arg(LocaleDialog::languageName(m_board->words()->language()))
-		.arg(NewGameDialog::tr("Amount of Words:")).arg(sizes.value(pattern->wordCount()))
-		.arg(NewGameDialog::tr("Word Length:")).arg(NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1))
-		.arg(tr("Game Number:")).arg(number));
+	QMessageBox dialog(QMessageBox::Information,
+		tr("Details"),
+		QString("<p><b>%1</b> %2<br><b>%3</b> %4<br><b>%5</b> %6<br><b>%7</b> %8<br><b>%9</b> %10</p>")
+			.arg(tr("Pattern:")).arg(pattern->name())
+			.arg(NewGameDialog::tr("Language:")).arg(LocaleDialog::languageName(m_board->words()->language()))
+			.arg(NewGameDialog::tr("Amount of Words:")).arg(sizes.value(pattern->wordCount()))
+			.arg(NewGameDialog::tr("Word Length:")).arg(NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1))
+			.arg(tr("Game Number:")).arg(number),
+		QMessageBox::NoButton,
+		this);
+	dialog.setIconPixmap(QString(":/patterns/%1.png").arg(patternid));
+	dialog.exec();
 }
 
 //-----------------------------------------------------------------------------
