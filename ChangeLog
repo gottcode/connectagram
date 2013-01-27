@@ -1,4 +1,5 @@
 2013-01-27 Graeme Gott <graeme@gottcode.org>
+	* Share wordlist data between instances.
 	* Use pattern icon in details dialog.
 	* Use buttons for choosing pattern in new game dialog.
 

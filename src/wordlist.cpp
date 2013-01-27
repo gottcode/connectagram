@@ -25,7 +25,7 @@
 //-----------------------------------------------------------------------------
 
 WordList::WordList(QObject* parent)
-: QObject(parent), m_maximum_length(0), m_length(0) {
+: QObject(parent), m_length(0) {
 }
 
 //-----------------------------------------------------------------------------
@@ -62,56 +62,20 @@ void WordList::resetAnagramFilters() {
 
 //-----------------------------------------------------------------------------
 
-bool WordList::setLanguage(const QString& langcode) {
+void WordList::setLanguage(const QString& langcode) {
 	if (m_langcode == langcode) {
-		return true;
+		return;
 	}
 	m_langcode = langcode;
 
-	m_all_words.clear();
-	m_words.clear();
-
-	// Read words from disk
-	QFile file("connectagram:" + langcode + "/words");
-	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
-		emit languageChanged(m_langcode);
-		return false;
+	static QHash<QString, QSharedPointer<WordListData> > languages;
+	if (!languages.contains(langcode)) {
+		languages.insert(langcode, QSharedPointer<WordListData>(new WordListData(langcode)));
 	}
-
-	QTextStream in(&file);
-	in.setCodec("UTF-8");
-	while (!in.atEnd()) {
-		QStringList spellings = in.readLine().simplified().split(" ", QString::SkipEmptyParts);
-		if (spellings.isEmpty()) {
-			continue;
-		}
-
-		QString word = spellings.takeFirst();
-		int length = word.length();
-		if (length < 5) {
-			continue;
-		}
-
-		m_maximum_length = qMax(m_maximum_length, length);
-		m_all_words[length - 1].append(word.toUpper());
-
-		if (!spellings.isEmpty()) {
-			m_spellings[word] = spellings;
-		}
-	}
-
+	m_data = languages[langcode];
 	resetWords();
 
-	// Adjust maximum length to account for maximum amount of words
-	for (int i = m_maximum_length - 1; i > 0; --i) {
-		if (m_all_words[i].size() >= 20) {
-			m_maximum_length = i + 1;
-			break;
-		}
-	}
-
 	emit languageChanged(m_langcode);
-	return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -137,7 +101,47 @@ QString WordList::defaultLanguage() {
 //-----------------------------------------------------------------------------
 
 void WordList::resetWords() {
-	m_words = m_all_words.value(m_length);
+	m_words = m_data->words(m_length);
+}
+
+//-----------------------------------------------------------------------------
+
+WordList::WordListData::WordListData(const QString& language) {
+	// Read words from disk
+	QFile file("connectagram:" + language + "/words");
+	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
+		return;
+	}
+
+	QTextStream in(&file);
+	in.setCodec("UTF-8");
+	while (!in.atEnd()) {
+		QStringList spellings = in.readLine().simplified().split(" ", QString::SkipEmptyParts);
+		if (spellings.isEmpty()) {
+			continue;
+		}
+
+		QString word = spellings.takeFirst();
+		int length = word.length();
+		if (length < 5) {
+			continue;
+		}
+
+		m_maximum_length = qMax(m_maximum_length, length);
+		m_all_words[length - 1].append(word.toUpper());
+
+		if (!spellings.isEmpty()) {
+			m_spellings[word] = spellings;
+		}
+	}
+
+	// Adjust maximum length to account for maximum amount of words
+	for (int i = m_maximum_length - 1; i > 0; --i) {
+		if (m_all_words[i].size() >= 20) {
+			m_maximum_length = i + 1;
+			break;
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------

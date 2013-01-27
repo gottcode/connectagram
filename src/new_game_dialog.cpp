@@ -51,7 +51,6 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	foreach (const QString& language, languages) {
 		m_languages_box->addItem(LocaleDialog::languageName(language), language);
 	}
-	connect(m_languages_box, SIGNAL(currentIndexChanged(int)), this, SLOT(languageSelected(int)));
 
 	// Create word count box
 	m_word_count_box = new QComboBox(this);
@@ -107,6 +106,8 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	setCount(settings.value("NewGame/Count", 1).toInt());
 	setLength(settings.value("NewGame/Length", 7).toInt());
 	m_pattern_buttons.at(settings.value("NewGame/Pattern").toInt())->setFocus();
+
+	connect(m_languages_box, SIGNAL(currentIndexChanged(int)), this, SLOT(languageSelected(int)));
 }
 
 //-----------------------------------------------------------------------------
@@ -186,6 +187,7 @@ void NewGameDialog::setLanguage(const QString& language) {
 		m_languages_box->setCurrentIndex(1);
 	}
 	m_languages_box->setCurrentIndex(id);
+	languageSelected(id);
 }
 
 //-----------------------------------------------------------------------------
