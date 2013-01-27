@@ -27,6 +27,7 @@ class WordList;
 #include <QDialog>
 class QComboBox;
 class QSpinBox;
+class QToolButton;
 
 class NewGameDialog : public QDialog {
 	Q_OBJECT
@@ -35,24 +36,21 @@ class NewGameDialog : public QDialog {
 		NewGameDialog(Board* board, QWidget* parent = 0);
 		~NewGameDialog();
 
-	public slots:
-		void accept();
-
 	private slots:
 		void languageSelected(int index);
-		void patternSelected(int index);
+		void lengthSelected(int index);
+		void patternSelected();
 
 	private:
 		void setLanguage(const QString& language);
-		void setPattern(int pattern);
 		void setCount(int count);
 		void setLength(int length);
 
 	private:
 		QComboBox* m_languages_box;
-		QComboBox* m_patterns_box;
 		QComboBox* m_word_count_box;
 		QComboBox* m_word_length_box;
+		QList<QToolButton*> m_pattern_buttons;
 		QList<Pattern*> m_patterns;
 		Board* m_board;
 		WordList* m_wordlist;

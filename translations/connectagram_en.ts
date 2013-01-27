@@ -92,59 +92,54 @@
 <context>
     <name>NewGameDialog</name>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="40"/>
+        <location filename="../src/new_game_dialog.cpp" line="44"/>
         <source>New Game</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="265"/>
         <source>Low</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="266"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="267"/>
         <source>High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="66"/>
+        <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="268"/>
         <source>Very High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="75"/>
+        <location filename="../src/new_game_dialog.cpp" line="93"/>
         <location filename="../src/window.cpp" line="277"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="76"/>
-        <source>Pattern:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/new_game_dialog.cpp" line="77"/>
+        <location filename="../src/new_game_dialog.cpp" line="95"/>
         <location filename="../src/window.cpp" line="279"/>
         <source>Word Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="78"/>
+        <location filename="../src/new_game_dialog.cpp" line="94"/>
         <location filename="../src/window.cpp" line="278"/>
         <source>Amount of Words:</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/new_game_dialog.cpp" line="144"/>
+        <location filename="../src/new_game_dialog.cpp" line="125"/>
         <location filename="../src/window.cpp" line="279"/>
         <source>%n letter(s)</source>
         <translation>

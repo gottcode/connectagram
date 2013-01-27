@@ -11,5 +11,12 @@
 
 	<file>definitions.png</file>
 	<file>hint.png</file>
+
+	<file>patterns/0.png</file>
+	<file>patterns/1.png</file>
+	<file>patterns/2.png</file>
+	<file>patterns/3.png</file>
+	<file>patterns/4.png</file>
+	<file>patterns/5.png</file>
 </qresource>
 </RCC>

@@ -1,3 +1,6 @@
+2013-01-27 Graeme Gott <graeme@gottcode.org>
+	* Use buttons for choosing pattern in new game dialog.
+
 2013-01-26 Graeme Gott <graeme@gottcode.org>
 	* Update details dialog strings.
 	* Remove game number from new game dialog.
