@@ -36,6 +36,9 @@ class NewGameDialog : public QDialog {
 		NewGameDialog(Board* board, QWidget* parent = 0);
 		~NewGameDialog();
 
+	protected:
+		void keyPressEvent(QKeyEvent* event);
+
 	private slots:
 		void languageSelected(int index);
 		void lengthSelected(int index);

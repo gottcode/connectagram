@@ -1,3 +1,6 @@
+2013-01-28 Graeme Gott <graeme@gottcode.org>
+	* Start game when enter is pressed in new game dialog.
+
 2013-01-27 Graeme Gott <graeme@gottcode.org>
 	* Share wordlist data between instances.
 	* Use pattern icon in details dialog.

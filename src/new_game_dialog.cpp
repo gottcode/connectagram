@@ -31,6 +31,7 @@
 #include <QFormLayout>
 #include <QFrame>
 #include <QGridLayout>
+#include <QKeyEvent>
 #include <QSettings>
 #include <QSpinBox>
 #include <QToolButton>
@@ -114,6 +115,21 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 NewGameDialog::~NewGameDialog() {
 	qDeleteAll(m_patterns);
+}
+
+//-----------------------------------------------------------------------------
+
+void NewGameDialog::keyPressEvent(QKeyEvent* event) {
+	if ((event->key() == Qt::Key_Enter) || (event->key() == Qt::Key_Return)) {
+		foreach (QToolButton* button, m_pattern_buttons) {
+			if (button->hasFocus() && button->isEnabled()) {
+				button->click();
+				break;
+			}
+		}
+	} else {
+		QDialog::keyPressEvent(event);
+	}
 }
 
 //-----------------------------------------------------------------------------
