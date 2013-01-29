@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,16 +25,19 @@
 class Board;
 
 class View : public QGraphicsView {
-	Q_OBJECT
+Q_OBJECT
 
-	public:
-		View(Board* board, QWidget* parent = 0);
+public:
+	View(Board* board, QWidget* parent = 0);
 
-	private slots:
-		void gameStarted();
+protected:
+	void mouseReleaseEvent(QMouseEvent* event);
 
-	private:
-		Board* m_board;
+private slots:
+	void gameStarted();
+
+private:
+	Board* m_board;
 };
 
 #endif

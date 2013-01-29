@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,12 @@
 
 #include "board.h"
 
+#include <QMouseEvent>
+
 View::View(Board* board, QWidget* parent)
 : QGraphicsView(board, parent), m_board(board) {
+	setDragMode(QGraphicsView::ScrollHandDrag);
+	viewport()->setCursor(Qt::ArrowCursor);
 	setFrameStyle(QFrame::NoFrame);
 	setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 	connect(m_board, SIGNAL(started()), this, SLOT(gameStarted()));
@@ -35,6 +39,15 @@ View::View(Board* board, QWidget* parent)
 	if (h2 > h1) {
 		qreal s = h2 / h1;
 		scale(s, s);
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void View::mouseReleaseEvent(QMouseEvent* event) {
+	QGraphicsView::mouseReleaseEvent(event);
+	if (!itemAt(event->pos())) {
+		viewport()->setCursor(Qt::ArrowCursor);
 	}
 }
 

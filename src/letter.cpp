@@ -82,7 +82,7 @@ void Letter::setHighlight(bool highlight) {
 void Letter::setJoin() {
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setBrush(QColor("#555555"));
-	unsetCursor();
+	setCursor(Qt::ArrowCursor);
 	m_movable = false;
 }
 
@@ -97,11 +97,11 @@ void Letter::setPaused(bool paused) {
 //-----------------------------------------------------------------------------
 
 void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
-	QGraphicsPathItem::mouseMoveEvent(event);
 	if (m_dragged == false) {
-		event->ignore();
+		event->accept();
 		return;
 	}
+	QGraphicsPathItem::mouseMoveEvent(event);
 
 	if (m_board->isPaused()) {
 		m_board->setPaused(false);
@@ -130,7 +130,6 @@ void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
 //-----------------------------------------------------------------------------
 
 void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event) {
-	QGraphicsPathItem::mousePressEvent(event);
 	if (event->button() != Qt::LeftButton) {
 		event->ignore();
 		return;
@@ -146,6 +145,7 @@ void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event) {
 				m_board->click("");
 			}
 		}
+		m_dragged = false;
 		return;
 	}
 	setCursor(Qt::ClosedHandCursor);
@@ -155,16 +155,23 @@ void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event) {
 
 	m_shadow = scene()->addPath(path(), Qt::NoPen, QColor("#a5c1e4"));
 	m_shadow->setPos(pos());
+
+	QGraphicsPathItem::mousePressEvent(event);
 }
 
 //-----------------------------------------------------------------------------
 
 void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
-	QGraphicsPathItem::mouseReleaseEvent(event);
 	if (event->button() != Qt::LeftButton) {
 		event->ignore();
 		return;
 	}
+
+	if (m_dragged == false) {
+		event->accept();
+		return;
+	}
+
 	m_dragged = false;
 
 	setCursor(Qt::OpenHandCursor);
@@ -175,6 +182,8 @@ void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
 	m_shadow = 0;
 
 	m_cell->word()->check();
+
+	QGraphicsPathItem::mouseReleaseEvent(event);
 }
 
 //-----------------------------------------------------------------------------
