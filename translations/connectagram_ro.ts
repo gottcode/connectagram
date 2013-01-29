@@ -92,55 +92,55 @@
 <context>
     <name>NewGameDialog</name>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="44"/>
+        <location filename="../src/new_game_dialog.cpp" line="45"/>
         <source>New Game</source>
         <translation>Joc nou</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="265"/>
+        <location filename="../src/window.cpp" line="266"/>
         <source>Low</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="266"/>
+        <location filename="../src/window.cpp" line="267"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="267"/>
+        <location filename="../src/window.cpp" line="268"/>
         <source>High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="268"/>
+        <location filename="../src/window.cpp" line="269"/>
         <source>Very High</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
-        <location filename="../src/window.cpp" line="277"/>
+        <location filename="../src/window.cpp" line="280"/>
         <source>Language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
-        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/window.cpp" line="282"/>
         <source>Word Length:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
-        <location filename="../src/window.cpp" line="278"/>
+        <location filename="../src/window.cpp" line="281"/>
         <source>Amount of Words:</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/new_game_dialog.cpp" line="125"/>
-        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/new_game_dialog.cpp" line="143"/>
+        <location filename="../src/window.cpp" line="282"/>
         <source>%n letter(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -258,38 +258,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Details</source>
         <translation>&amp;Detalii</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
-        <location filename="../src/window.cpp" line="319"/>
+        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pauză</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="163"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Hint</source>
         <translation>Indiciu</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="163"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>H</source>
         <translation>H</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>D&amp;efinitions</source>
         <translation>D&amp;efiniţii</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>D</source>
         <translation>D</translation>
     </message>
@@ -340,7 +340,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
-        <location filename="../src/window.cpp" line="280"/>
+        <location filename="../src/window.cpp" line="283"/>
         <source>Game Number:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -385,17 +385,17 @@
         <translation>Definiţiile sînt de la &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wikționar&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="275"/>
+        <location filename="../src/window.cpp" line="277"/>
         <source>Details</source>
         <translation>Detalii</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="276"/>
+        <location filename="../src/window.cpp" line="279"/>
         <source>Pattern:</source>
-        <translation>Tipar:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="319"/>
+        <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Resume</source>
         <translation>&amp;Reluare</translation>
     </message>

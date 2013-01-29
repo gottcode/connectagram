@@ -32,12 +32,12 @@
     <message>
         <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Téléchargement de la définition en cours...</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="153"/>
         <source>Unsolved word</source>
-        <translation type="unfinished"></translation>
+        <translation>Mot non résolu</translation>
     </message>
 </context>
 <context>
@@ -92,59 +92,59 @@
 <context>
     <name>NewGameDialog</name>
     <message>
-        <location filename="../src/new_game_dialog.cpp" line="44"/>
+        <location filename="../src/new_game_dialog.cpp" line="45"/>
         <source>New Game</source>
         <translation>Nouvelle Partie</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="265"/>
-        <source>Low</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="266"/>
-        <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <source>Low</source>
+        <translation>Bas</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="267"/>
-        <source>High</source>
-        <translation type="unfinished"></translation>
+        <source>Medium</source>
+        <translation>Moyen</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="268"/>
+        <source>High</source>
+        <translation>Haut</translation>
+    </message>
+    <message>
+        <location filename="../src/new_game_dialog.cpp" line="58"/>
+        <location filename="../src/window.cpp" line="269"/>
         <source>Very High</source>
-        <translation type="unfinished"></translation>
+        <translation>Très haut</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
-        <location filename="../src/window.cpp" line="277"/>
+        <location filename="../src/window.cpp" line="280"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue : </translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
-        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/window.cpp" line="282"/>
         <source>Word Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur de mot : </translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
-        <location filename="../src/window.cpp" line="278"/>
+        <location filename="../src/window.cpp" line="281"/>
         <source>Amount of Words:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de mots : </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/new_game_dialog.cpp" line="125"/>
-        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/new_game_dialog.cpp" line="143"/>
+        <location filename="../src/window.cpp" line="282"/>
         <source>%n letter(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n lettre</numerusform>
+            <numerusform>%n lettres</numerusform>
         </translation>
     </message>
 </context>
@@ -254,41 +254,41 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Choose...</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Choisir...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="159"/>
+        <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Details</source>
         <translation>&amp;Détails</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
-        <location filename="../src/window.cpp" line="319"/>
+        <location filename="../src/window.cpp" line="160"/>
+        <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pause</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="161"/>
+        <location filename="../src/window.cpp" line="160"/>
         <source>P</source>
         <translation>P</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="163"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Hint</source>
         <translation>&amp;Suggestion</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="163"/>
+        <location filename="../src/window.cpp" line="162"/>
         <source>H</source>
         <translation>H</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>D&amp;efinitions</source>
         <translation>D&amp;éfinitions</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="166"/>
+        <location filename="../src/window.cpp" line="165"/>
         <source>D</source>
         <translation>D</translation>
     </message>
@@ -335,23 +335,23 @@
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <source>Choose Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Choix du jeu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
-        <location filename="../src/window.cpp" line="280"/>
+        <location filename="../src/window.cpp" line="283"/>
         <source>Game Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeu numéro :</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Désolé</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Unable to start requested game.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lancement du jeu demandé impossible. </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
@@ -384,17 +384,17 @@
         <translation>Définitions tirées de &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionnaire&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="275"/>
+        <location filename="../src/window.cpp" line="277"/>
         <source>Details</source>
         <translation>Détails</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="276"/>
+        <location filename="../src/window.cpp" line="279"/>
         <source>Pattern:</source>
-        <translation>Motif :</translation>
+        <translation>Motif : </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="319"/>
+        <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Resume</source>
         <translation>&amp;Continuer</translation>
     </message>
