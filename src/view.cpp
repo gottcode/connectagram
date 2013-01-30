@@ -31,15 +31,13 @@ View::View(Board* board, QWidget* parent)
 	setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 	connect(m_board, SIGNAL(started()), this, SLOT(gameStarted()));
 
-	// Handle default font being bigger than font of letters
+	// Scale board to be 50% larger than default font
 	QFont f = font();
 	f.setPixelSize(20);
 	qreal h1 = QFontMetrics(f).height();
-	qreal h2 = fontMetrics().height();
-	if (h2 > h1) {
-		qreal s = h2 / h1;
-		scale(s, s);
-	}
+	qreal h2 = fontMetrics().height() * 1.5;
+	qreal s = h2 / h1;
+	scale(s, s);
 }
 
 //-----------------------------------------------------------------------------
