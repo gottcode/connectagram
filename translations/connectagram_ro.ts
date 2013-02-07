@@ -32,12 +32,12 @@
     <message>
         <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Descărcare definiţii...</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="153"/>
         <source>Unsolved word</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuvinte nerezolvate</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/pattern.h" line="168"/>
         <source>Fence</source>
-        <translation>Gard</translation>
+        <translation>Îngrădire</translation>
     </message>
 </context>
 <context>
@@ -76,15 +76,15 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Limbaj Sistem&gt;</translation>
+        <translation>&lt;Limbaj sistem&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="181"/>
+        <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Note</source>
         <translation>Notă</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="181"/>
+        <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Vă rugăm reporniţi această aplicaţie pentru ca schimbarea limbii să aibă efect.</translation>
     </message>
@@ -100,52 +100,52 @@
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="266"/>
         <source>Low</source>
-        <translation type="unfinished"></translation>
+        <translation>Mică</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="267"/>
         <source>Medium</source>
-        <translation type="unfinished"></translation>
+        <translation>Medie</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="268"/>
         <source>High</source>
-        <translation type="unfinished"></translation>
+        <translation>Mare</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="269"/>
         <source>Very High</source>
-        <translation type="unfinished"></translation>
+        <translation>Foarte mare</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
         <location filename="../src/window.cpp" line="280"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Limbă:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>Word Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mărime cuvînt:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
         <location filename="../src/window.cpp" line="281"/>
         <source>Amount of Words:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cantitate de cuvinte:</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/new_game_dialog.cpp" line="143"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>%n letter(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n literă</numerusform>
+            <numerusform>%n litere</numerusform>
+            <numerusform>%n litere</numerusform>
         </translation>
     </message>
 </context>
@@ -255,7 +255,7 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Choose...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alegeţi...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="167"/>
@@ -336,23 +336,23 @@
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <source>Choose Game</source>
-        <translation type="unfinished"></translation>
+        <translation>Alegeţi joc</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <location filename="../src/window.cpp" line="283"/>
         <source>Game Number:</source>
-        <translation type="unfinished"></translation>
+        <translation>Joc număr:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Sorry</source>
-        <translation type="unfinished"></translation>
+        <translation>Scuze</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Unable to start requested game.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu se poate începe jocul solicitat.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
@@ -392,7 +392,7 @@
     <message>
         <location filename="../src/window.cpp" line="279"/>
         <source>Pattern:</source>
-        <translation type="unfinished"></translation>
+        <translation>Model:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="326"/>

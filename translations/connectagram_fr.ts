@@ -79,12 +79,12 @@
         <translation>&lt;Langue du système&gt;</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="181"/>
+        <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Note</source>
         <translation>Remarque</translation>
     </message>
     <message>
-        <location filename="../src/locale_dialog.cpp" line="181"/>
+        <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Please restart this application for the change in language to take effect.</source>
         <translation>Veuillez relancer l&apos;application pour que la modification prenne effet. </translation>
     </message>
@@ -371,7 +371,7 @@
     <message>
         <location filename="../src/window.cpp" line="252"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 by Graeme Gott</translation>
+        <translation>Copyright &amp;copy; 2009-%1 par Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="253"/>
