@@ -1,4 +1,5 @@
 2013-02-20 Graeme Gott <graeme@gottcode.org>
+	* Add wordlist creation tool.
 	* Simplify build system.
 
 2013-01-30 Graeme Gott <graeme@gottcode.org>
