@@ -22,6 +22,8 @@
 #include <QFile>
 #include <QTextStream>
 
+#include <algorithm>
+
 //-----------------------------------------------------------------------------
 
 WordList::WordList(QObject* parent)
