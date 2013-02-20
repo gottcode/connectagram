@@ -87,7 +87,7 @@ unix: !macx {
 	pixmap.files = icons/connectagram.xpm
 	pixmap.path = $$PREFIX/share/pixmaps/
 
-	icon.files = icons/icons/hicolor/*
+	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
 	desktop.files = icons/connectagram.desktop
