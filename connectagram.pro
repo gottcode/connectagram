@@ -1,16 +1,13 @@
+lessThan(QT_VERSION, 4.6) {
+	error("Connectagram requires Qt 4.6 or greater")
+}
+
 TEMPLATE = app
+QT += network
 greaterThan(QT_MAJOR_VERSION, 4) {
 	QT += widgets
 }
-QT += network
 CONFIG += warn_on
-macx {
-	CONFIG += x86_64
-}
-
-MOC_DIR = build
-OBJECTS_DIR = build
-RCC_DIR = build
 
 VERSION = $$system(git rev-parse --short HEAD)
 isEmpty(VERSION) {
@@ -57,10 +54,7 @@ SOURCES = src/board.cpp \
 	src/word.cpp \
 	src/wordlist.cpp
 
-TRANSLATIONS = translations/connectagram_en.ts \
-	translations/connectagram_fr.ts \
-	translations/connectagram_ro.ts \
-	translations/connectagram_ru.ts
+TRANSLATIONS = $$files(translations/connectagram_*.ts)
 
 RESOURCES = icons/icons.qrc
 macx {
