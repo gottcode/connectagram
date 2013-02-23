@@ -108,7 +108,9 @@ void WordList::resetWords() {
 
 //-----------------------------------------------------------------------------
 
-WordList::WordListData::WordListData(const QString& language) {
+WordList::WordListData::WordListData(const QString& language) :
+	m_maximum_length(0)
+{
 	// Read words from disk
 	QFile file("connectagram:" + language + "/words");
 	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
