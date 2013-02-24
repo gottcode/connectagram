@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fr">
+<TS version="2.0" language="cs">
 <context>
     <name>ChainPattern</name>
     <message>
         <location filename="../src/pattern.h" line="143"/>
         <source>Chain</source>
-        <translation>Chaîne</translation>
+        <translation>Řetěz</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/clock.cpp" line="70"/>
         <source>Loading</source>
-        <translation>Chargement</translation>
+        <translation>Nahrává se</translation>
     </message>
     <message>
         <location filename="../src/clock.cpp" line="112"/>
         <source>Paused</source>
-        <translation>En pause</translation>
+        <translation>Pozastaveno</translation>
     </message>
 </context>
 <context>
@@ -27,17 +27,17 @@
     <message>
         <location filename="../src/definitions.cpp" line="36"/>
         <source>Definitions</source>
-        <translation>Définitions</translation>
+        <translation>Vymezení</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
-        <translation>Téléchargement de la définition en cours...</translation>
+        <translation>Stahuje se vymezení...</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="153"/>
         <source>Unsolved word</source>
-        <translation>Mot non résolu</translation>
+        <translation>Nerozluštěné slovo</translation>
     </message>
 </context>
 <context>
@@ -45,17 +45,17 @@
     <message>
         <location filename="../src/dictionary.cpp" line="148"/>
         <source>Definition from Wiktionary, the free dictionary</source>
-        <translation>Définition, traduction, prononciation, anagramme et synonyme sur le dictionnaire libre Wiktionnaire</translation>
+        <translation>Vymezení ze svobodného slovníku Wiktionary</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="155"/>
         <source>No definition found</source>
-        <translation>Aucune définition trouvée</translation>
+        <translation>Nenalezeno žádné vymezení</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="158"/>
         <source>Unable to connect to Wiktionary</source>
-        <translation>Connexion impossible à Wiktionnaire</translation>
+        <translation>Nelze se spojit s Wiktionary</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/pattern.h" line="168"/>
         <source>Fence</source>
-        <translation>Clôture</translation>
+        <translation>Ohrada</translation>
     </message>
 </context>
 <context>
@@ -71,22 +71,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Sélectionner la langue de l&apos;application :</translation>
+        <translation>Vybrat jazyk programu:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Langue du système&gt;</translation>
+        <translation>&lt;Jazyk systému&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Note</source>
-        <translation>Remarque</translation>
+        <translation>Poznámka</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Veuillez relancer l&apos;application pour que la modification prenne effet. </translation>
+        <translation>Spusťte, prosím, tento program znovu, aby se změna jazyka projevila.</translation>
     </message>
 </context>
 <context>
@@ -94,57 +94,58 @@
     <message>
         <location filename="../src/new_game_dialog.cpp" line="45"/>
         <source>New Game</source>
-        <translation>Nouvelle Partie</translation>
+        <translation>Nová hra</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="266"/>
         <source>Low</source>
-        <translation>Petit</translation>
+        <translation>Nízká</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="267"/>
         <source>Medium</source>
-        <translation>Moyen</translation>
+        <translation>Střední</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="268"/>
         <source>High</source>
-        <translation>grand</translation>
+        <translation>Vysoká</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="269"/>
         <source>Very High</source>
-        <translation>Très grand</translation>
+        <translation>Velmi vysoká</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
         <location filename="../src/window.cpp" line="280"/>
         <source>Language:</source>
-        <translation>Langue : </translation>
+        <translation>Jazyk:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>Word Length:</source>
-        <translation>Longueur de mot : </translation>
+        <translation>Délka slova:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
         <location filename="../src/window.cpp" line="281"/>
         <source>Amount of Words:</source>
-        <translation>Nombre de mots : </translation>
+        <translation>Množství slov:</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/new_game_dialog.cpp" line="143"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>%n letter(s)</source>
         <translation>
-            <numerusform>%n lettre</numerusform>
-            <numerusform>%n lettres</numerusform>
+            <numerusform>%n písmeno</numerusform>
+            <numerusform>%n písmena</numerusform>
+            <numerusform>%n písmen</numerusform>
         </translation>
     </message>
 </context>
@@ -153,7 +154,7 @@
     <message>
         <location filename="../src/pattern.h" line="193"/>
         <source>Rings</source>
-        <translation>Anneaux</translation>
+        <translation>Kroužky</translation>
     </message>
 </context>
 <context>
@@ -161,27 +162,27 @@
     <message>
         <location filename="../src/score_board.cpp" line="31"/>
         <source>Scores</source>
-        <translation>Scores</translation>
+        <translation>Výsledky</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Score</source>
-        <translation>Score</translation>
+        <translation>Výsledek</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Time</source>
-        <translation>Temps</translation>
+        <translation>Čas</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Words</source>
-        <translation>Mots</translation>
+        <translation>Slova</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Length</source>
-        <translation>Longueur</translation>
+        <translation>Délka</translation>
     </message>
 </context>
 <context>
@@ -189,7 +190,7 @@
     <message>
         <location filename="../src/pattern.h" line="214"/>
         <source>Stairs</source>
-        <translation>Escaliers</translation>
+        <translation>Schody</translation>
     </message>
 </context>
 <context>
@@ -197,7 +198,7 @@
     <message>
         <location filename="../src/pattern.h" line="231"/>
         <source>Twisty</source>
-        <translation>Déformation</translation>
+        <translation>Klikatá čára</translation>
     </message>
 </context>
 <context>
@@ -205,7 +206,7 @@
     <message>
         <location filename="../src/pattern.h" line="254"/>
         <source>Wave</source>
-        <translation>Vague</translation>
+        <translation>Vlna</translation>
     </message>
 </context>
 <context>
@@ -214,37 +215,37 @@
         <location filename="../src/window.cpp" line="69"/>
         <location filename="../src/window.cpp" line="84"/>
         <source>Success</source>
-        <translation>Réussi !</translation>
+        <translation>Úspěch</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Loading</source>
-        <translation>Chargement</translation>
+        <translation>Nahrává se</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Paused</source>
-        <translation>En pause</translation>
+        <translation>Pozastaveno</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="119"/>
         <source>Definitions</source>
-        <translation>Définitions</translation>
+        <translation>Vymezení</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="125"/>
         <source>Hint</source>
-        <translation>Suggestion</translation>
+        <translation>Rada</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Game</source>
-        <translation>&amp;Jeu</translation>
+        <translation>&amp;Hra</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
         <source>&amp;New</source>
-        <translation>&amp;Nouveau</translation>
+        <translation>&amp;Nová</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
@@ -254,18 +255,18 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Choose...</source>
-        <translation>&amp;Choisir...</translation>
+        <translation>&amp;Vybrat...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Details</source>
-        <translation>&amp;Détails</translation>
+        <translation>&amp;Podrobnosti</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Pause</source>
-        <translation>&amp;Pause</translation>
+        <translation>&amp;Pozastavit</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
@@ -275,7 +276,7 @@
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Hint</source>
-        <translation>&amp;Suggestion</translation>
+        <translation>&amp;Rada</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
@@ -285,7 +286,7 @@
     <message>
         <location filename="../src/window.cpp" line="165"/>
         <source>D&amp;efinitions</source>
-        <translation>D&amp;éfinitions</translation>
+        <translation>&amp;Vymezení</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
@@ -295,12 +296,12 @@
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Scores</source>
-        <translation>&amp;Scores</translation>
+        <translation>&amp;Výsledky</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Quitter</translation>
+        <translation>&amp;Ukončit</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -310,53 +311,53 @@
     <message>
         <location filename="../src/window.cpp" line="172"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Paramètres</translation>
+        <translation>&amp;Nastavení</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>Application &amp;Language...</source>
-        <translation>&amp;Langue de l&apos;application…</translation>
+        <translation>&amp;Jazyk programu...</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>&amp;Nápověda</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>&amp;About</source>
-        <translation>À &amp;propos de…</translation>
+        <translation>O &amp;programu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="177"/>
         <source>About &amp;Qt</source>
-        <translation>À propos de &amp;Qt</translation>
+        <translation>O &amp;Qt</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <source>Choose Game</source>
-        <translation>Choix du jeu</translation>
+        <translation>Vybrat hru</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <location filename="../src/window.cpp" line="283"/>
         <source>Game Number:</source>
-        <translation>Jeu numéro :</translation>
+        <translation>Číslo hry:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Sorry</source>
-        <translation>Désolé</translation>
+        <translation>Promiňte</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Unable to start requested game.</source>
-        <translation>Lancement du jeu demandé impossible. </translation>
+        <translation>Nelze spustit požadovanou hru.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>About</source>
-        <translation>À propos de…</translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="250"/>
@@ -366,37 +367,37 @@
     <message>
         <location filename="../src/window.cpp" line="251"/>
         <source>A word unscrambling game</source>
-        <translation>Un jeu de démêlage de mots</translation>
+        <translation>Hra na rozluštění slov</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="252"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1 par Graeme Gott</translation>
+        <translation>Autorské právo &amp;copy; 2009-%1 by Graeme Gott</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="253"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Publié sous licence GNU &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
+        <translation>Vydáno s licencí &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="254"/>
         <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
-        <translation>Définitions tirées de &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionnaire&lt;/a&gt;</translation>
+        <translation>Vymezení jsou z &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="277"/>
         <source>Details</source>
-        <translation>Détails</translation>
+        <translation>Podrobnosti</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="279"/>
         <source>Pattern:</source>
-        <translation>Motif : </translation>
+        <translation>Vzor: </translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Resume</source>
-        <translation>&amp;Continuer</translation>
+        <translation>&amp;Pokračovat</translation>
     </message>
 </context>
 </TS>
