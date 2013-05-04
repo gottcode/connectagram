@@ -1,3 +1,6 @@
+2013-05-04 Graeme Gott <graeme@gottcode.org>
+	* FIXED: Did not install data files in Linux.
+
 2013-02-20 Graeme Gott <graeme@gottcode.org>
 	* Tag version 1.1.0.1.
 	* FIXED: Did not install program icons in Linux.

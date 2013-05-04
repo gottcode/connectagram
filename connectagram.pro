@@ -78,7 +78,7 @@ unix: !macx {
 
 	target.path = $$PREFIX/$$BINDIR/
 
-	data.files = share/connectagram/data
+	data.files = data
 	data.path = $$PREFIX/share/connectagram/
 
 	pixmap.files = icons/connectagram.xpm
