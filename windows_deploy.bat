@@ -1,7 +1,7 @@
 @ECHO OFF
 
 SET APP=Connectagram
-SET VERSION=1.1.0
+SET VERSION=1.1.1
 
 ECHO Copying executable
 MKDIR %APP%
