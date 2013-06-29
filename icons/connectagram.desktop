@@ -2,6 +2,10 @@
 Type=Application
 Name=Connectagram
 GenericName=Anagram Game
+GenericName[cs]=Hra s přesmyčkami
+GenericName[hu]=Anagramma játék
+GenericName[ro]=Joc de anagrame
+GenericName[tr]=Anagram Oyunu
 Exec=connectagram
 Icon=connectagram
 Terminal=false
