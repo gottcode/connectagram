@@ -1,10 +1,22 @@
 [Desktop Entry]
 Type=Application
 Name=Connectagram
+Name[cs]=Connectagram
+Name[de]=Connectagram
+Name[hr]=Connectagram
+Name[hu]=Connectagram
+Name[pl]=Connectagram
+Name[ro]=Connectagram
+Name[ru]=Connectagram
+Name[tr]=Connectagram
 GenericName=Anagram Game
 GenericName[cs]=Hra s přesmyčkami
+GenericName[de]=Ein Anagramm-Spiel
+GenericName[hr]=Premetaljka
 GenericName[hu]=Anagramma játék
+GenericName[pl]=Gra w anagramy
 GenericName[ro]=Joc de anagrame
+GenericName[ru]=Игра в анаграммы
 GenericName[tr]=Anagram Oyunu
 Exec=connectagram
 Icon=connectagram

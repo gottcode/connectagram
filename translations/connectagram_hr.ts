@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="el">
+<TS version="2.1" language="hr">
 <context>
     <name>ChainPattern</name>
     <message>
         <location filename="../src/pattern.h" line="143"/>
         <source>Chain</source>
-        <translation>Αλυσίδα </translation>
+        <translation>Lanac</translation>
     </message>
 </context>
 <context>
@@ -14,12 +14,12 @@
     <message>
         <location filename="../src/clock.cpp" line="70"/>
         <source>Loading</source>
-        <translation>Φορτωνει</translation>
+        <translation>Učitavanje</translation>
     </message>
     <message>
         <location filename="../src/clock.cpp" line="112"/>
         <source>Paused</source>
-        <translation>Διαλειμμα</translation>
+        <translation>Pauzirano</translation>
     </message>
 </context>
 <context>
@@ -27,17 +27,17 @@
     <message>
         <location filename="../src/definitions.cpp" line="36"/>
         <source>Definitions</source>
-        <translation>Ορισμοί </translation>
+        <translation>Definicija</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="145"/>
         <source>Downloading definition...</source>
-        <translation>Λϋψη ορισμων...</translation>
+        <translation>Preuzimanje definicije...</translation>
     </message>
     <message>
         <location filename="../src/definitions.cpp" line="153"/>
         <source>Unsolved word</source>
-        <translation>Άλυτη λέξη </translation>
+        <translation>Neriješene riječi</translation>
     </message>
 </context>
 <context>
@@ -45,17 +45,17 @@
     <message>
         <location filename="../src/dictionary.cpp" line="148"/>
         <source>Definition from Wiktionary, the free dictionary</source>
-        <translation>Ορισμος απο το Wiktionary, το ελεύθερο λεξικό </translation>
+        <translation>Definicija s Wikitonary, besplatnog riječnika</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="155"/>
         <source>No definition found</source>
-        <translation>Οι ορισμοι δεν βρεθηκαν</translation>
+        <translation>Definicija nije pronađena</translation>
     </message>
     <message>
         <location filename="../src/dictionary.cpp" line="158"/>
         <source>Unable to connect to Wiktionary</source>
-        <translation>Η συνδεση με το Wiktionary δεν ειναι εφικτη</translation>
+        <translation>Nije moguće povezivanje na Wikitonary</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     <message>
         <location filename="../src/pattern.h" line="168"/>
         <source>Fence</source>
-        <translation>Φράκτης </translation>
+        <translation>Ograda</translation>
     </message>
 </context>
 <context>
@@ -71,22 +71,22 @@
     <message>
         <location filename="../src/locale_dialog.cpp" line="50"/>
         <source>Select application language:</source>
-        <translation>Επιλεξτε την γλωσσα του συστηματος:</translation>
+        <translation>Izaberi jezik aplikacije:</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="53"/>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Γλωσσα συστηματος&gt;</translation>
+        <translation>&lt;Sistemski jezik&gt;</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Note</source>
-        <translation>Παρατήρηση </translation>
+        <translation>Bilješka</translation>
     </message>
     <message>
         <location filename="../src/locale_dialog.cpp" line="184"/>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Παρακαλώ κάντε επανεκκίνηση την εφαρμογή αυτή για αλλαγή στη γλώσσα να τεθεί σε ισχύ.</translation>
+        <translation>Molimo vas da ponovno pokrenete aplikaciju kako bi izabrani jezik bio primjenjen.</translation>
     </message>
 </context>
 <context>
@@ -94,57 +94,58 @@
     <message>
         <location filename="../src/new_game_dialog.cpp" line="45"/>
         <source>New Game</source>
-        <translation>Νεο παιχνιδι</translation>
+        <translation>Nova igra</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="266"/>
         <source>Low</source>
-        <translation>Χαμηλα</translation>
+        <translation>Lagano</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="267"/>
         <source>Medium</source>
-        <translation>Μεσαια</translation>
+        <translation>Srednje</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="268"/>
         <source>High</source>
-        <translation>Υψηλα</translation>
+        <translation>Teško</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
         <location filename="../src/window.cpp" line="269"/>
         <source>Very High</source>
-        <translation>Πολυ υψηλα</translation>
+        <translation>Jako teško</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
         <location filename="../src/window.cpp" line="280"/>
         <source>Language:</source>
-        <translation>Γλωσσα:</translation>
+        <translation>Jezik:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>Word Length:</source>
-        <translation>Μήκος λέξης: </translation>
+        <translation>Duljina riječi:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
         <location filename="../src/window.cpp" line="281"/>
         <source>Amount of Words:</source>
-        <translation>Ποσό των λέξεων:</translation>
+        <translation>Broj riječi:</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/new_game_dialog.cpp" line="143"/>
         <location filename="../src/window.cpp" line="282"/>
         <source>%n letter(s)</source>
         <translation>
-            <numerusform>%n γραμματα</numerusform>
-            <numerusform>%n γραμματα</numerusform>
+            <numerusform>%n slovo</numerusform>
+            <numerusform>%n slova</numerusform>
+            <numerusform>%n slova</numerusform>
         </translation>
     </message>
 </context>
@@ -153,7 +154,7 @@
     <message>
         <location filename="../src/pattern.h" line="193"/>
         <source>Rings</source>
-        <translation>Δαχτυλίδια </translation>
+        <translation>Prstenje</translation>
     </message>
 </context>
 <context>
@@ -161,27 +162,27 @@
     <message>
         <location filename="../src/score_board.cpp" line="31"/>
         <source>Scores</source>
-        <translation>Αποτελεσματα</translation>
+        <translation>Rezultati</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Score</source>
-        <translation>Αποτελεσμα</translation>
+        <translation>Rezultat</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Time</source>
-        <translation>Χρονος</translation>
+        <translation>Vrijeme</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Words</source>
-        <translation>Λεξεις</translation>
+        <translation>Riječi</translation>
     </message>
     <message>
         <location filename="../src/score_board.cpp" line="35"/>
         <source>Length</source>
-        <translation>Μεγεθος</translation>
+        <translation>Duljina</translation>
     </message>
 </context>
 <context>
@@ -189,7 +190,7 @@
     <message>
         <location filename="../src/pattern.h" line="214"/>
         <source>Stairs</source>
-        <translation>Ασταιρια</translation>
+        <translation>Stepenice</translation>
     </message>
 </context>
 <context>
@@ -197,7 +198,7 @@
     <message>
         <location filename="../src/pattern.h" line="231"/>
         <source>Twisty</source>
-        <translation>Twisty</translation>
+        <translation>Uvijen</translation>
     </message>
 </context>
 <context>
@@ -205,7 +206,7 @@
     <message>
         <location filename="../src/pattern.h" line="254"/>
         <source>Wave</source>
-        <translation>Κυματα</translation>
+        <translation>Val</translation>
     </message>
 </context>
 <context>
@@ -214,37 +215,37 @@
         <location filename="../src/window.cpp" line="69"/>
         <location filename="../src/window.cpp" line="84"/>
         <source>Success</source>
-        <translation>Τελος</translation>
+        <translation>Uspijeh</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Loading</source>
-        <translation>Φορτωνει</translation>
+        <translation>Učitavanje</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="96"/>
         <source>Paused</source>
-        <translation>Διαλειμμα</translation>
+        <translation>Pauzirano</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="119"/>
         <source>Definitions</source>
-        <translation>Ορισμοί </translation>
+        <translation>Definicija</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="125"/>
         <source>Hint</source>
-        <translation>Υπαινιγμός </translation>
+        <translation>Trik</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="156"/>
         <source>&amp;Game</source>
-        <translation>Παιχνιδι</translation>
+        <translation>&amp;Igra</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
         <source>&amp;New</source>
-        <translation>Νεο</translation>
+        <translation>&amp;Novo</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="157"/>
@@ -254,53 +255,53 @@
     <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Choose...</source>
-        <translation>Επιλεξτε...</translation>
+        <translation>&amp;Izaberi</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="167"/>
         <source>&amp;Details</source>
-        <translation>Λεπτομερειες</translation>
+        <translation>&amp;Detalji</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Pause</source>
-        <translation>Διαλειμμα</translation>
+        <translation>&amp;Pauza</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
         <source>P</source>
-        <translation>Π</translation>
+        <translation>P</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>&amp;Hint</source>
-        <translation>Υπαινιγμός </translation>
+        <translation>&amp;Trik</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="162"/>
         <source>H</source>
-        <translation>Χ</translation>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
         <source>D&amp;efinitions</source>
-        <translation>Οροισμοι</translation>
+        <translation>D&amp;efinicija</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="165"/>
         <source>D</source>
-        <translation>ΝΤ</translation>
+        <translation>D</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="168"/>
         <source>&amp;Scores</source>
-        <translation>Αποτελεσματα</translation>
+        <translation>&amp;Rezultati</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
         <source>&amp;Quit</source>
-        <translation>Κλεισιμο</translation>
+        <translation>&amp;Izlaz</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="170"/>
@@ -310,63 +311,63 @@
     <message>
         <location filename="../src/window.cpp" line="172"/>
         <source>&amp;Settings</source>
-        <translation>Ρυθμισεις</translation>
+        <translation>&amp;Postavke</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="173"/>
         <source>Application &amp;Language...</source>
-        <translation>Γλωσσα του συστηματος...</translation>
+        <translation>&amp;Jezik aplikacije</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="175"/>
         <source>&amp;Help</source>
-        <translation>Βοηθεια</translation>
+        <translation>&amp;Pomoć</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="176"/>
         <source>&amp;About</source>
-        <translation>Σχετικα</translation>
+        <translation>O &amp;programu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="177"/>
         <source>About &amp;Qt</source>
-        <translation>Σχετικα με το Qt</translation>
+        <translation>O &amp;Qt-u</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <source>Choose Game</source>
-        <translation>Επιλογη παιχνιδιου</translation>
+        <translation>Izaberi igru</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="205"/>
         <location filename="../src/window.cpp" line="283"/>
         <source>Game Number:</source>
-        <translation>Αριθμος παιχνιδιου:</translation>
+        <translation>Broj igre:</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Sorry</source>
-        <translation>Συγνωμη</translation>
+        <translation>Zao nam je!</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="209"/>
         <source>Unable to start requested game.</source>
-        <translation>Αδύνατη η εκκίνηση ζητημενου παιχνίδιου. </translation>
+        <translation>Nije moguće započeti novu igru.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="249"/>
         <source>About</source>
-        <translation>Σχετικα</translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="250"/>
         <source>Connectagram</source>
-        <translation>Connectagram</translation>
+        <translation>Cennectagram</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="251"/>
         <source>A word unscrambling game</source>
-        <translation>Μια λέξη unscrambling παιχνίδι </translation>
+        <translation>Igra premetanja riječi</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="252"/>
@@ -376,27 +377,27 @@
     <message>
         <location filename="../src/window.cpp" line="253"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</translation>
+        <translation>Objavljeno pod &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; licencom.</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="254"/>
         <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
-        <translation>Οι ορισμοι ειναι απο το &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
+        <translation>Definicija preuzeta s &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="277"/>
         <source>Details</source>
-        <translation>Λεπτομερειες</translation>
+        <translation>Detalji</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="279"/>
         <source>Pattern:</source>
-        <translation>Μοτίβο: </translation>
+        <translation>Uzorak</translation>
     </message>
     <message>
         <location filename="../src/window.cpp" line="326"/>
         <source>&amp;Resume</source>
-        <translation>Συνέχεια </translation>
+        <translation>&amp;Nastavak</translation>
     </message>
 </context>
 </TS>
