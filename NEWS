@@ -1,0 +1,20 @@
+1.1.1
+=====
+- Fixed missing game data in Linux
+- German and Greek translations added by Wasilis Mandratzis
+
+1.1.0
+=====
+- Added dragging board to scroll
+- Added French wordlist
+- Use definitions from Wiktionary
+- Improved new game dialog
+- French translation added by Guillaume Gay
+- Romanian translation added by Jaff (Oprea Nicolae)
+- Russian translation added by Artem Krosheninnikov
+- Added support for Qt 5
+
+1.0.1
+=====
+- Fixed incorrect loading of saved games
+- Fixed multiple mouse button crash
