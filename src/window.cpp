@@ -193,6 +193,12 @@ Window::Window() {
 
 //-----------------------------------------------------------------------------
 
+Window::~Window() {
+	m_board->saveGame();
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::newGame() {
 	NewGameDialog dialog(m_board, this);
 	dialog.exec();
