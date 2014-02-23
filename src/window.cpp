@@ -154,27 +154,30 @@ Window::Window() {
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, SLOT(newGame()), tr("Ctrl+N"));
+	menu->addAction(tr("&New"), this, SLOT(newGame()), QKeySequence::New);
 	menu->addAction(tr("&Choose..."), this, SLOT(chooseGame()));
 	menu->addSeparator();
 	m_pause_action = menu->addAction(tr("&Pause"), m_board, SLOT(togglePaused()), tr("P"));
 	m_pause_action->setDisabled(true);
-	QAction* hint_action = menu->addAction(tr("&Hint"), m_board, SLOT(showHint()), tr("H"));
-	hint_action->setDisabled(true);
-	connect(m_board, SIGNAL(hintAvailable(bool)), hint_action, SLOT(setEnabled(bool)));
+	QAction* action = menu->addAction(tr("&Hint"), m_board, SLOT(showHint()), tr("H"));
+	action->setDisabled(true);
+	connect(m_board, SIGNAL(hintAvailable(bool)), action, SLOT(setEnabled(bool)));
 	menu->addAction(tr("D&efinitions"), m_definitions, SLOT(selectWord()), tr("D"));
 	menu->addSeparator();
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addAction(tr("&Scores"), m_scores, SLOT(exec()));
 	menu->addSeparator();
-	menu->addAction(tr("&Quit"), qApp, SLOT(quit()), tr("Ctrl+Q"));
+	action = menu->addAction(tr("&Quit"), qApp, SLOT(quit()), QKeySequence::Quit);
+	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
 	menu->addAction(tr("Application &Language..."), this, SLOT(setLocale()));
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	menu->addAction(tr("&About"), this, SLOT(about()));
-	menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action->setMenuRole(QAction::AboutRole);
+	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action->setMenuRole(QAction::AboutQtRole);
 
 	// Restore window geometry
 	QSettings settings;

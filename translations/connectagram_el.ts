@@ -98,49 +98,49 @@
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="266"/>
+        <location filename="../src/window.cpp" line="275"/>
         <source>Low</source>
         <translation>Χαμηλα</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="267"/>
+        <location filename="../src/window.cpp" line="276"/>
         <source>Medium</source>
         <translation>Μεσαια</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="268"/>
+        <location filename="../src/window.cpp" line="277"/>
         <source>High</source>
         <translation>Υψηλα</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="58"/>
-        <location filename="../src/window.cpp" line="269"/>
+        <location filename="../src/window.cpp" line="278"/>
         <source>Very High</source>
         <translation>Πολυ υψηλα</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="93"/>
-        <location filename="../src/window.cpp" line="280"/>
+        <location filename="../src/window.cpp" line="289"/>
         <source>Language:</source>
         <translation>Γλωσσα:</translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="95"/>
-        <location filename="../src/window.cpp" line="282"/>
+        <location filename="../src/window.cpp" line="291"/>
         <source>Word Length:</source>
         <translation>Μήκος λέξης: </translation>
     </message>
     <message>
         <location filename="../src/new_game_dialog.cpp" line="94"/>
-        <location filename="../src/window.cpp" line="281"/>
+        <location filename="../src/window.cpp" line="290"/>
         <source>Amount of Words:</source>
         <translation>Ποσό των λέξεων:</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/new_game_dialog.cpp" line="143"/>
-        <location filename="../src/window.cpp" line="282"/>
+        <location filename="../src/window.cpp" line="291"/>
         <source>%n letter(s)</source>
         <translation>
             <numerusform>%n γραμματα</numerusform>
@@ -247,11 +247,6 @@
         <translation>Νεο</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="157"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
         <location filename="../src/window.cpp" line="158"/>
         <source>&amp;Choose...</source>
         <translation>Επιλεξτε...</translation>
@@ -263,7 +258,7 @@
     </message>
     <message>
         <location filename="../src/window.cpp" line="160"/>
-        <location filename="../src/window.cpp" line="326"/>
+        <location filename="../src/window.cpp" line="335"/>
         <source>&amp;Pause</source>
         <translation>Διαλειμμα</translation>
     </message>
@@ -303,98 +298,93 @@
         <translation>Κλεισιμο</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="170"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../src/window.cpp" line="172"/>
+        <location filename="../src/window.cpp" line="173"/>
         <source>&amp;Settings</source>
         <translation>Ρυθμισεις</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="173"/>
+        <location filename="../src/window.cpp" line="174"/>
         <source>Application &amp;Language...</source>
         <translation>Γλωσσα του συστηματος...</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="175"/>
+        <location filename="../src/window.cpp" line="176"/>
         <source>&amp;Help</source>
         <translation>Βοηθεια</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="176"/>
+        <location filename="../src/window.cpp" line="177"/>
         <source>&amp;About</source>
         <translation>Σχετικα</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="177"/>
+        <location filename="../src/window.cpp" line="179"/>
         <source>About &amp;Qt</source>
         <translation>Σχετικα με το Qt</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="205"/>
+        <location filename="../src/window.cpp" line="214"/>
         <source>Choose Game</source>
         <translation>Επιλογη παιχνιδιου</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="205"/>
-        <location filename="../src/window.cpp" line="283"/>
+        <location filename="../src/window.cpp" line="214"/>
+        <location filename="../src/window.cpp" line="292"/>
         <source>Game Number:</source>
         <translation>Αριθμος παιχνιδιου:</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="209"/>
+        <location filename="../src/window.cpp" line="218"/>
         <source>Sorry</source>
         <translation>Συγνωμη</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="209"/>
+        <location filename="../src/window.cpp" line="218"/>
         <source>Unable to start requested game.</source>
         <translation>Αδύνατη η εκκίνηση ζητημενου παιχνίδιου. </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="249"/>
+        <location filename="../src/window.cpp" line="258"/>
         <source>About</source>
         <translation>Σχετικα</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="250"/>
+        <location filename="../src/window.cpp" line="259"/>
         <source>Connectagram</source>
         <translation>Connectagram</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="251"/>
+        <location filename="../src/window.cpp" line="260"/>
         <source>A word unscrambling game</source>
         <translation>Μια λέξη unscrambling παιχνίδι </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="252"/>
+        <location filename="../src/window.cpp" line="261"/>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
         <translation>Copyright &amp;copy; 2009-%1 by Graeme Gott</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="253"/>
+        <location filename="../src/window.cpp" line="262"/>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
         <translation>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="254"/>
+        <location filename="../src/window.cpp" line="263"/>
         <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
         <translation>Οι ορισμοι ειναι απο το &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="277"/>
+        <location filename="../src/window.cpp" line="286"/>
         <source>Details</source>
         <translation>Λεπτομερειες</translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="279"/>
+        <location filename="../src/window.cpp" line="288"/>
         <source>Pattern:</source>
         <translation>Μοτίβο: </translation>
     </message>
     <message>
-        <location filename="../src/window.cpp" line="326"/>
+        <location filename="../src/window.cpp" line="335"/>
         <source>&amp;Resume</source>
         <translation>Συνέχεια </translation>
     </message>
