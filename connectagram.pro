@@ -85,7 +85,7 @@ macx {
 	desktop.files = icons/connectagram.desktop
 	desktop.path = $$PREFIX/share/applications/
 
-	appdata.files = icons/po/connectagram.appdata.xml
+	appdata.files = icons/connectagram.appdata.xml
 	appdata.path = $$PREFIX/share/appdata/
 
 	qm.files = translations/*.qm
