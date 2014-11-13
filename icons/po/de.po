@@ -1,0 +1,41 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Graeme Gott
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Connectagram\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-13 07:37-0500\n"
+"PO-Revision-Date: 2014-11-13 13:41+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/connectagram/"
+"language/de/)\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:3
+msgid "Unscramble words placed in patterns"
+msgstr ""
+
+#: ../connectagram.appdata.xml.in.h:2
+msgid ""
+"Connectagram is a word unscrambling game. The board consists of several "
+"scrambled words that are joined together. You can choose the length of the "
+"words, the amount of words, and the pattern that the words are arranged in. "
+"The game provides a hint option for times when you are stuck, and features "
+"an online word lookup that fetches the definitions of each word from "
+"Wiktionary. Your current progress is automatically saved."
+msgstr ""
+
+#: ../connectagram.desktop.in.h:1
+msgid "Connectagram"
+msgstr "Connectagram"
+
+#: ../connectagram.desktop.in.h:2
+msgid "Anagram Game"
+msgstr "Ein Anagramm-Spiel"

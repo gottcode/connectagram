@@ -85,11 +85,14 @@ macx {
 	desktop.files = icons/connectagram.desktop
 	desktop.path = $$PREFIX/share/applications/
 
+	appdata.files = icons/po/connectagram.appdata.xml
+	appdata.path = $$PREFIX/share/appdata/
+
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/connectagram/translations
 
 	man.files = doc/connectagram.6
 	man.path = $$PREFIX/share/man/man6
 
-	INSTALLS += target pixmap icon desktop data qm man
+	INSTALLS += target pixmap icon desktop appdata data qm man
 }
