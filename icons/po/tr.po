@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-13 07:37-0500\n"
+"POT-Creation-Date: 2014-11-14 15:37-0500\n"
 "PO-Revision-Date: 2014-11-13 13:41+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/connectagram/"
@@ -18,11 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:3
+#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:1
+msgid "Connectagram"
+msgstr "Connectagram"
+
+#: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
 msgstr ""
 
-#: ../connectagram.appdata.xml.in.h:2
+#: ../connectagram.appdata.xml.in.h:3
 msgid ""
 "Connectagram is a word unscrambling game. The board consists of several "
 "scrambled words that are joined together. You can choose the length of the "
@@ -31,10 +35,6 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
-
-#: ../connectagram.desktop.in.h:1
-msgid "Connectagram"
-msgstr "Connectagram"
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"

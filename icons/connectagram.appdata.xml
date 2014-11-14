@@ -4,12 +4,22 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Connectagram</name>
+  <name xml:lang="cs">Connectagram</name>
+  <name xml:lang="de">Connectagram</name>
+  <name xml:lang="hr">Connectagram</name>
+  <name xml:lang="hu">Connectagram</name>
+  <name xml:lang="lt">Connectagram</name>
+  <name xml:lang="nl">Connectagram</name>
+  <name xml:lang="pl">Connectagram</name>
+  <name xml:lang="ro">Connectagram</name>
+  <name xml:lang="ru">Connectagram</name>
+  <name xml:lang="tr">Connectagram</name>
   <summary>Unscramble words placed in patterns</summary>
   <description>
     <p>Connectagram is a word unscrambling game. The board consists of several scrambled words that are joined together. You can choose the length of the words, the amount of words, and the pattern that the words are arranged in. The game provides a hint option for times when you are stuck, and features an online word lookup that fetches the definitions of each word from Wiktionary. Your current progress is automatically saved.</p>
   </description>
   <screenshots>
-    <screenshot height="453" type="default" width="752">
+    <screenshot type="default">
       <image>http://gottcode.org/connectagram/screenshots/appdata.png</image>
     </screenshot>
   </screenshots>

@@ -21,10 +21,13 @@ rm -f connectagram.appdata.xml.in
 cp connectagram.appdata.xml connectagram.appdata.xml.in
 sed -e '/p xml:lang/ d' \
 	-e '/summary xml:lang/ d' \
+	-e '/name xml:lang/ d' \
 	-e 's/<p>/<_p>/' \
 	-e 's/<\/p>/<\/_p>/' \
 	-e 's/<summary>/<_summary>/' \
 	-e 's/<\/summary>/<\/_summary>/' \
+	-e 's/<name>/<_name>/' \
+	-e 's/<\/name>/<\/_name>/' \
 	-i connectagram.appdata.xml.in
 intltool-extract --quiet --type=gettext/xml connectagram.appdata.xml.in
 
