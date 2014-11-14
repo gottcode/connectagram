@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
-  <id type="desktop">connectagram.desktop</id>
-  <licence>CC0</licence>
+<component type="desktop">
+  <id>connectagram.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Connectagram</name>
   <summary>Unscramble words placed in patterns</summary>
   <description>
     <p>Connectagram is a word unscrambling game. The board consists of several scrambled words that are joined together. You can choose the length of the words, the amount of words, and the pattern that the words are arranged in. The game provides a hint option for times when you are stuck, and features an online word lookup that fetches the definitions of each word from Wiktionary. Your current progress is automatically saved.</p>
   </description>
   <screenshots>
-    <screenshot width="752" type="default" height="453">http://gottcode.org/connectagram/screenshots/appdata.png</screenshot>
+    <screenshot height="453" type="default" width="752">
+      <image>http://gottcode.org/connectagram/screenshots/appdata.png</image>
+    </screenshot>
   </screenshots>
   <url type="homepage">http://gottcode.org/connectagram/</url>
-</application>
+  <url type="bugtracker">http://gottcode.org/connectagram/bugs/</url>
+  <url type="donation">http://gottcode.org/tip/</url>
+  <developer_name>Graeme Gott</developer_name>
+  <updatecontact>graeme@gottcode.org</updatecontact>
+  <provides>
+	<binary>connectagram</binary>
+  </provides>
+</component>
