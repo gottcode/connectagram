@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file alias="connectagram.png">hicolor/256x256/apps/connectagram.png</file>
+</qresource>
+</RCC>
