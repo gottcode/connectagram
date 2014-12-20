@@ -137,7 +137,7 @@ void Pattern::run() {
 		return;
 	}
 
-	m_random.setSeed(m_seed);
+	m_random.seed(m_seed);
 
 	// Add words
 	cleanUp();

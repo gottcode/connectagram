@@ -37,8 +37,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
-#include <cstdlib>
-#include <ctime>
+#include <random>
 
 NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 : QDialog(parent, Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint), m_board(board) {
@@ -171,8 +170,10 @@ void NewGameDialog::patternSelected() {
 	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int count = m_word_count_box->currentIndex();
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
-	srand(time(0));
-	int seed = rand();
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<int> dis(0, INT_MAX);
+	int seed = dis(gen);
 
 	QSettings settings;
 	settings.remove("Current");

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +20,6 @@
 #ifndef PATTERN_H
 #define PATTERN_H
 
-#include "random.h"
 #include "wordlist.h"
 class Word;
 
@@ -31,6 +30,8 @@ class Word;
 #include <QSize>
 #include <QStringList>
 #include <QThread>
+
+#include <random>
 
 class Pattern : public QThread {
 	Q_OBJECT
@@ -99,7 +100,8 @@ class Pattern : public QThread {
 		virtual void run();
 
 		unsigned int randomInt(unsigned int max) {
-			return m_random.nextInt(max);
+			std::uniform_int_distribution<unsigned int> gen(0, max - 1);
+			return gen(m_random);
 		}
 
 	protected:
@@ -123,7 +125,7 @@ class Pattern : public QThread {
 		QList<Word*> m_solution;
 		bool m_cancelled;
 		QMutex m_cancelled_mutex;
-		Random m_random;
+		std::mt19937 m_random;
 };
 
 //-----------------------------------------------------------------------------

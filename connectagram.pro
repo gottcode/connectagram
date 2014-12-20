@@ -28,7 +28,6 @@ HEADERS = src/board.h \
 	src/locale_dialog.h \
 	src/new_game_dialog.h \
 	src/pattern.h \
-	src/random.h \
 	src/score_board.h \
 	src/view.h \
 	src/window.h \
@@ -45,7 +44,6 @@ SOURCES = src/board.cpp \
 	src/main.cpp \
 	src/new_game_dialog.cpp \
 	src/pattern.cpp \
-	src/random.cpp \
 	src/score_board.cpp \
 	src/view.cpp \
 	src/window.cpp \
