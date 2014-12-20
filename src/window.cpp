@@ -186,7 +186,7 @@ Window::Window() {
 
 	// Continue previous or start new game
 	show();
-	if (settings.contains("Current/Words") && (settings.value("Current/Version" ).toInt() == 3)) {
+	if (settings.contains("Current/Words") && (settings.value("Current/Version" ).toInt() == 4)) {
 		m_board->openGame();
 	} else {
 		settings.remove("Current");
@@ -276,7 +276,7 @@ void Window::showDetails() {
 		<< NewGameDialog::tr("Medium")
 		<< NewGameDialog::tr("High")
 		<< NewGameDialog::tr("Very High");
-	QString number = "3"
+	QString number = "4"
 		+ m_board->words()->language()
 		+ patternid
 		+ QString::number(pattern->wordCount())

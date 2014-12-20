@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -180,7 +180,7 @@ void NewGameDialog::patternSelected() {
 	settings.setValue("NewGame/Pattern", pattern);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
-	settings.setValue("Current/Version", 3);
+	settings.setValue("Current/Version", 4);
 	settings.setValue("Current/Language", language);
 	settings.setValue("Current/Pattern", pattern);
 	settings.setValue("Current/Count", count);

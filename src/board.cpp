@@ -122,7 +122,7 @@ void Board::openGame() {
 //-----------------------------------------------------------------------------
 
 bool Board::openGame(const QString& number) {
-	if (!number.startsWith("3")) {
+	if (!number.startsWith("4")) {
 		return false;
 	}
 
