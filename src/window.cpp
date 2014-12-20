@@ -38,6 +38,8 @@
 #include <QMessageBox>
 #include <QSettings>
 
+#include <algorithm>
+
 Window::Window() {
 	setWindowTitle(QCoreApplication::applicationName());
 
@@ -93,12 +95,12 @@ Window::Window() {
 	f = font();
 	f.setPixelSize(20);
 	metrics = QFontMetrics(f);
-	width = qMax(metrics.width(tr("Loading")), metrics.width(tr("Paused")));
+	width = std::max(metrics.width(tr("Loading")), metrics.width(tr("Paused")));
 	for (int i = 0; i < 10; ++i) {
 		QString test(6, QChar(i + 48));
 		test.insert(4, QLatin1Char(':'));
 		test.insert(2, QLatin1Char(':'));
-		width = qMax(width, metrics.width(test));
+		width = std::max(width, metrics.width(test));
 	}
 	pixmap = QPixmap(QSize(width + 82, 32));
 	pixmap.fill(Qt::transparent);

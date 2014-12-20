@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ WordList::WordList(QObject* parent)
 QStringList WordList::filter(const QString& known_letters) const {
 	QRegExp filter(known_letters);
 	QStringList filtered;
-	for (QStringList::const_iterator i = m_words.begin(), end = m_words.end(); i != end; ++i) {
+	for (auto i = m_words.constBegin(), end = m_words.constEnd(); i != end; ++i) {
 		if (filter.exactMatch(*i)) {
 			QString sorted = *i;
 			std::sort(sorted.begin(), sorted.end());
@@ -131,7 +131,7 @@ WordList::WordListData::WordListData(const QString& language) :
 			continue;
 		}
 
-		m_maximum_length = qMax(m_maximum_length, length);
+		m_maximum_length = std::max(m_maximum_length, length);
 		m_all_words[length - 1].append(word.toUpper());
 
 		if (!spellings.isEmpty()) {

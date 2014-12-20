@@ -79,7 +79,7 @@ void Dictionary::lookup(const QString& word) {
 
 	// Look up word
 	QStringList spellings = m_wordlist->spellings(word);
-	foreach (const QString& spelling, spellings) {
+	for (const QString& spelling : spellings) {
 		m_spellings[spelling] = word;
 
 		QNetworkRequest request;

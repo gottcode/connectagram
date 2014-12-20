@@ -45,7 +45,7 @@ static int countPermutations(const QString& word) {
 	std::sort(sorted.begin(), sorted.end());
 	QChar c;
 	int count = 0;
-	foreach (const QChar& c2, sorted) {
+	for (const QChar& c2 : sorted) {
 		if (c2 != c) {
 			c = c2;
 			d *= factorial(count);
@@ -86,12 +86,12 @@ void Word::click() {
 
 void Word::check() {
 	QString word;
-	foreach (const QPoint& pos, m_positions) {
+	for (const QPoint& pos : m_positions) {
 		word += m_board->cell(pos.x(), pos.y())->letter()->character();
 	}
 	if (m_solutions.contains(word)) {
 		m_correct = true;
-		foreach (const QPoint& pos, m_positions) {
+		for (const QPoint& pos : m_positions) {
 			Cell* cell = m_board->cell(pos.x(), pos.y());
 			cell->setWord(this);
 			cell->letter()->setCorrect();
@@ -112,7 +112,7 @@ QGraphicsItem* Word::hint() {
 	int count = m_positions.count();
 	int pos = -1;
 	QString solution;
-	foreach (const QString& word, m_solutions) {
+	for (const QString& word : m_solutions) {
 		for (int i = 0; i < count; ++i) {
 			const QPoint& point = m_positions.at(i);
 			Letter* letter = m_board->cell(point.x(), point.y())->letter();
@@ -231,7 +231,7 @@ void Word::fromString(const QString& shuffled) {
 
 QString Word::toString() const {
 	QString result;
-	foreach (const QPoint& pos, m_positions) {
+	for (const QPoint& pos : m_positions) {
 		result.append(m_board->cell(pos.x(), pos.y())->letter()->character());
 	}
 	return result;
@@ -240,7 +240,7 @@ QString Word::toString() const {
 //-----------------------------------------------------------------------------
 
 void Word::setHighlight(bool highlight) {
-	foreach (const QPoint& pos, m_positions) {
+	for (const QPoint& pos : m_positions) {
 		m_board->cell(pos.x(), pos.y())->letter()->setHighlight(highlight);
 	}
 }
@@ -271,7 +271,7 @@ void Word::shuffle(const WordList* words) {
 	QStringList filtered = words->filter(filter);
 
 	// Find valid solutions
-	foreach (const QString& valid, filtered) {
+	for (const QString& valid : filtered) {
 		QString sorted = valid;
 		std::sort(sorted.begin(), sorted.end());
 		if (sorted == chars && !m_solutions.contains(valid)) {

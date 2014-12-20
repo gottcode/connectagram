@@ -49,7 +49,7 @@ Board::~Board() {
 void Board::check(const QString& original_word, const QString& current_word) {
 	emit wordSolved(original_word, current_word);
 	m_finished = true;
-	foreach (Word* word, m_words) {
+	for (Word* word : m_words) {
 		m_finished &= word->isCorrect();
 	}
 	if (m_finished) {
@@ -193,7 +193,7 @@ bool Board::openGame(const QString& number) {
 void Board::saveGame() {
 	if (!m_finished && !m_words.isEmpty()) {
 		QStringList words;
-		foreach (Word* word, m_words) {
+		for (Word* word : m_words) {
 			words.append(word->toString());
 		}
 		QSettings().setValue("Current/Words", words);
@@ -230,7 +230,7 @@ void Board::patternGenerated() {
 		m_cells.append(cells);
 	}
 
-	foreach (Word* word, m_words) {
+	for (Word* word : m_words) {
 		word->setBoard(this);
 		QList<QPoint> positions = word->positions();
 		for (int i = 0; i < positions.count(); ++i) {
@@ -250,7 +250,7 @@ void Board::patternGenerated() {
 		}
 	}
 
-	foreach (Word* word, m_words) {
+	for (Word* word : m_words) {
 		emit wordAdded(word->toString());
 		word->shuffle(m_pattern->words());
 	}

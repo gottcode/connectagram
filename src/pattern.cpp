@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2012, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,8 @@
 #include "pattern.h"
 
 #include "word.h"
+
+#include <algorithm>
 
 //-----------------------------------------------------------------------------
 
@@ -117,7 +119,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 //-----------------------------------------------------------------------------
 
 QChar Pattern::at(const QPoint& pos) const {
-	foreach (Word* word, m_solution) {
+	for (Word* word : m_solution) {
 		QList<QPoint> positions = word->positions();
 		for (int i = 0; i < positions.count(); ++i) {
 			if (positions.at(i) == pos) {
@@ -161,19 +163,19 @@ void Pattern::run() {
 	int x2 = -x1;
 	int y1 = x1;
 	int y2 = x2;
-	foreach (Word* word, m_solution) {
+	for (Word* word : m_solution) {
 		QList<QPoint> positions = word->positions();
-		foreach (const QPoint& pos, positions) {
-			x1 = qMin(x1, pos.x());
-			y1 = qMin(y1, pos.y());
-			x2 = qMax(x2, pos.x());
-			y2 = qMax(y2, pos.y());
+		for (const QPoint& pos : positions) {
+			x1 = std::min(x1, pos.x());
+			y1 = std::min(y1, pos.y());
+			x2 = std::max(x2, pos.x());
+			y2 = std::max(y2, pos.y());
 		}
 	}
 	m_size = QSize(x2 - x1 + 1, y2 - y1 + 1);
 
 	QPoint delta = QPoint(-x1, -y1);
-	foreach (Word* word, m_solution) {
+	for (Word* word : m_solution) {
 		word->moveBy(delta);
 	}
 
