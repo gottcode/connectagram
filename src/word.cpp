@@ -25,7 +25,6 @@
 #include "wordlist.h"
 
 #include <QGraphicsPathItem>
-#include <QHash>
 #include <QPainterPath>
 
 #include <algorithm>
@@ -248,7 +247,6 @@ void Word::setHighlight(bool highlight) {
 
 void Word::shuffle(const WordList* words) {
 	// Create list of characters and filter the list of words
-	QHash<int, QChar> fixed;
 	QString chars;
 	QString movable;
 	QString filter;
@@ -262,7 +260,6 @@ void Word::shuffle(const WordList* words) {
 			filter.append('.');
 		} else {
 			filter.append(c);
-			fixed.insert(i, c);
 		}
 	}
 	std::sort(chars.begin(), chars.end());
@@ -284,10 +281,11 @@ void Word::shuffle(const WordList* words) {
 		do {
 			std::shuffle(movable.begin(), movable.end(), m_random);
 			permuted = movable;
-			QHashIterator<int, QChar> j(fixed);
-			while (j.hasNext()) {
-				j.next();
-				permuted.insert(j.key(), j.value());
+			for (int i = 0, end = filter.length(); i < end; ++i) {
+				if (filter.at(i) == '.') {
+					continue;
+				}
+				permuted.insert(i, filter.at(i));
 			}
 		} while (m_solutions.contains(permuted));
 	} else {
