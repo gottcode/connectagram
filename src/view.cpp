@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ View::View(Board* board, QWidget* parent)
 	viewport()->setCursor(Qt::ArrowCursor);
 	setFrameStyle(QFrame::NoFrame);
 	setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
-	connect(m_board, SIGNAL(started()), this, SLOT(gameStarted()));
+	connect(m_board, &Board::started, this, &View::gameStarted);
 
 	// Scale board to be 50% larger than default font
 	QFont f = font();

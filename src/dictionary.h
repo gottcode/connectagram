@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,9 +25,7 @@ class WordList;
 #include <QHash>
 #include <QObject>
 #include <QUrl>
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 #include <QUrlQuery>
-#endif
 class QNetworkAccessManager;
 class QNetworkReply;
 
@@ -55,9 +53,7 @@ private slots:
 private:
 	const WordList* m_wordlist;
 	QUrl m_url;
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	QUrlQuery m_query;
-#endif
 	QNetworkAccessManager* m_manager;
 	QHash<QNetworkReply*, QString> m_reply_details;
 	QHash<QString, QString> m_spellings;

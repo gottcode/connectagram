@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,12 +37,12 @@ Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 	setModal(true);
 
 	m_dictionary = new Dictionary(wordlist, this);
-	connect(m_dictionary, SIGNAL(wordDefined(QString, QString)), this, SLOT(wordDefined(QString, QString)));
+	connect(m_dictionary, &Dictionary::wordDefined, this, &Definitions::wordDefined);
 
 	m_contents = new QSplitter(this);
 
 	m_words = new QListWidget(m_contents);
-	connect(m_words, SIGNAL(currentItemChanged(QListWidgetItem*, QListWidgetItem*)), this, SLOT(wordSelected(QListWidgetItem*)));
+	connect(m_words, &QListWidget::currentItemChanged, this, &Definitions::wordSelected);
 	m_contents->addWidget(m_words);
 	m_contents->setStretchFactor(0, 0);
 	m_contents->setSizes(QList<int>() << settings.value("Definitions/Splitter", m_words->fontMetrics().averageCharWidth() * 12).toInt());
@@ -50,12 +50,12 @@ Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 	m_text = new QTextBrowser(m_contents);
 	m_text->setReadOnly(true);
 	m_text->setOpenLinks(false);
-	connect(m_text, SIGNAL(anchorClicked(QUrl)), this, SLOT(anchorClicked(QUrl)));
+	connect(m_text, &QTextBrowser::anchorClicked, this, &Definitions::anchorClicked);
 	m_contents->addWidget(m_text);
 	m_contents->setStretchFactor(1, 1);
 
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttons, &QDialogButtonBox::rejected, this, &Definitions::reject);
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->addWidget(m_contents);

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ Board::Board(QObject* parent)
 : QGraphicsScene(parent), m_pattern(0), m_current_word(0), m_hint(0), m_finished(true), m_paused(false) {
 	QTimer* auto_save = new QTimer(this);
 	auto_save->setInterval(30000);
-	connect(auto_save, SIGNAL(timeout()), this, SLOT(saveGame()));
+	connect(auto_save, &QTimer::timeout, this, &Board::saveGame);
 	auto_save->start();
 
 	m_wordlist = new WordList(this);
@@ -115,7 +115,7 @@ void Board::openGame() {
 	m_pattern->setLength(settings.value("Current/Length").toInt());
 	m_pattern->setSeed(settings.value("Current/Seed").toInt());
 
-	connect(m_pattern, SIGNAL(generated()), this, SLOT(patternGenerated()));
+	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
 	m_pattern->start();
 }
 
@@ -182,7 +182,7 @@ bool Board::openGame(const QString& number) {
 	m_pattern->setLength(length);
 	m_pattern->setSeed(seed);
 
-	connect(m_pattern, SIGNAL(generated()), this, SLOT(patternGenerated()));
+	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
 	m_pattern->start();
 
 	return true;

@@ -44,9 +44,9 @@ Window::Window() {
 	setWindowTitle(QCoreApplication::applicationName());
 
 	m_board = new Board(this);
-	connect(m_board, SIGNAL(finished()), this, SLOT(gameFinished()));
-	connect(m_board, SIGNAL(started()), this, SLOT(gameStarted()));
-	connect(m_board, SIGNAL(pauseChanged()), this, SLOT(gamePauseChanged()));
+	connect(m_board, &Board::finished, this, &Window::gameFinished);
+	connect(m_board, &Board::started, this, &Window::gameStarted);
+	connect(m_board, &Board::pauseChanged, this, &Window::gamePauseChanged);
 
 	QWidget* contents = new QWidget(this);
 	setCentralWidget(contents);
@@ -56,10 +56,10 @@ Window::Window() {
 	m_scores = new ScoreBoard(this);
 
 	m_definitions = new Definitions(m_board->words(), this);
-	connect(m_board, SIGNAL(wordAdded(QString)), m_definitions, SLOT(addWord(QString)));
-	connect(m_board, SIGNAL(wordSolved(QString, QString)), m_definitions, SLOT(solveWord(QString, QString)));
-	connect(m_board, SIGNAL(wordSelected(QString)), m_definitions, SLOT(selectWord(QString)));
-	connect(m_board, SIGNAL(loading()), m_definitions, SLOT(clear()));
+	connect(m_board, &Board::wordAdded, m_definitions, &Definitions::addWord);
+	connect(m_board, &Board::wordSolved, m_definitions, &Definitions::solveWord);
+	connect(m_board, &Board::wordSelected, m_definitions, &Definitions::selectWord);
+	connect(m_board, &Board::loading, m_definitions, &Definitions::clear);
 
 	// Create success message
 	m_success = new QLabel(contents);
@@ -87,7 +87,7 @@ Window::Window() {
 	}
 	m_success->setPixmap(pixmap);
 	m_success->hide();
-	connect(m_board, SIGNAL(loading()), m_success, SLOT(hide()));
+	connect(m_board, &Board::loading, m_success, &QLabel::hide);
 
 	// Create overlay background
 	QLabel* overlay = new QLabel(this);
@@ -127,13 +127,13 @@ Window::Window() {
 	m_hint_button->setToolTip(tr("Hint"));
 	m_hint_button->setDisabled(true);
 	m_hint_button->installEventFilter(this);
-	connect(m_board, SIGNAL(hintAvailable(bool)), m_hint_button, SLOT(setEnabled(bool)));
+	connect(m_board, &Board::hintAvailable, m_hint_button, &QLabel::setEnabled);
 
 	// Create clock
 	m_clock = new Clock(overlay);
 	m_clock->setDisabled(true);
-	connect(m_clock, SIGNAL(togglePaused()), m_board, SLOT(togglePaused()));
-	connect(m_board, SIGNAL(loading()), m_clock, SLOT(setLoading()));
+	connect(m_clock, &Clock::togglePaused, m_board, &Board::togglePaused);
+	connect(m_board, &Board::loading, m_clock, &Clock::setLoading);
 
 	QHBoxLayout* overlay_layout = new QHBoxLayout(overlay);
 	overlay_layout->setMargin(0);
@@ -163,7 +163,7 @@ Window::Window() {
 	m_pause_action->setDisabled(true);
 	QAction* action = menu->addAction(tr("&Hint"), m_board, SLOT(showHint()), tr("H"));
 	action->setDisabled(true);
-	connect(m_board, SIGNAL(hintAvailable(bool)), action, SLOT(setEnabled(bool)));
+	connect(m_board, &Board::hintAvailable, action, &QAction::setEnabled);
 	menu->addAction(tr("D&efinitions"), m_definitions, SLOT(selectWord()), tr("D"));
 	menu->addSeparator();
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));

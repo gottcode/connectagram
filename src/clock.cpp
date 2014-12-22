@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ Clock::Clock(QWidget* parent)
 	setPalette(p);
 
 	m_clock_timer = new QTimeLine(1000, this);
-	connect(m_clock_timer, SIGNAL(finished()), this, SLOT(tick()));
+	connect(m_clock_timer, &QTimeLine::finished, this, &Clock::tick);
 }
 
 //-----------------------------------------------------------------------------

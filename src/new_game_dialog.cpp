@@ -58,7 +58,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create word length box
 	m_word_length_box = new QComboBox(this);
-	connect(m_word_length_box, SIGNAL(activated(int)), this, SLOT(lengthSelected(int)));
+	connect(m_word_length_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &NewGameDialog::lengthSelected);
 
 	// Create pattern buttons
 	QFrame* patterns = new QFrame(this);
@@ -75,7 +75,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 		pattern_button->setIcon(QIcon(QString(":/patterns/%1.png").arg(i)));
 		pattern_button->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 		pattern_button->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
-		connect(pattern_button, SIGNAL(clicked()), this, SLOT(patternSelected()));
+		connect(pattern_button, &QToolButton::clicked, this, &NewGameDialog::patternSelected);
 
 		patterns_layout->addWidget(pattern_button, i / 3, i % 3);
 		m_pattern_buttons.append(pattern_button);
@@ -83,7 +83,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create cancel button
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Cancel, Qt::Horizontal, this);
-	connect(buttons, SIGNAL(rejected()), this, SLOT(reject()));
+	connect(buttons, &QDialogButtonBox::rejected, this, &NewGameDialog::reject);
 
 	// Lay out dialog
 	QFormLayout* contents_layout = new QFormLayout;
@@ -107,7 +107,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	setLength(settings.value("NewGame/Length", 7).toInt());
 	m_pattern_buttons.at(settings.value("NewGame/Pattern").toInt())->setFocus();
 
-	connect(m_languages_box, SIGNAL(currentIndexChanged(int)), this, SLOT(languageSelected(int)));
+	connect(m_languages_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &NewGameDialog::languageSelected);
 }
 
 //-----------------------------------------------------------------------------

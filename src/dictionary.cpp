@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,11 +28,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 #include <QStandardPaths>
-#else
-#include <QDesktopServices>
-#endif
 #include <QTextStream>
 #include <QXmlStreamReader>
 
@@ -42,22 +38,15 @@ Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 : QObject(parent), m_wordlist(wordlist) {
 	m_url.setScheme("http");
 	m_url.setPath("/w/api.php");
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	m_query.addQueryItem("format", "xml");
 	m_query.addQueryItem("action", "mobileview");
 	m_query.addQueryItem("sections", "all");
 	m_query.addQueryItem("noimages", "");
-#else
-	m_url.addQueryItem("format", "xml");
-	m_url.addQueryItem("action", "mobileview");
-	m_url.addQueryItem("sections", "all");
-	m_url.addQueryItem("noimages", "");
-#endif
 
 	m_manager = new QNetworkAccessManager(this);
-	connect(m_manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(lookupFinished(QNetworkReply*)));
+	connect(m_manager, &QNetworkAccessManager::finished, this, &Dictionary::lookupFinished);
 
-	connect(m_wordlist, SIGNAL(languageChanged(QString)), this, SLOT(setLanguage(QString)));
+	connect(m_wordlist, &WordList::languageChanged, this, &Dictionary::setLanguage);
 }
 
 //-----------------------------------------------------------------------------
@@ -84,13 +73,9 @@ void Dictionary::lookup(const QString& word) {
 
 		QNetworkRequest request;
 		QUrl url = m_url;
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 		QUrlQuery query = m_query;
 		query.addQueryItem("page", spelling);
 		url.setQuery(query);
-#else
-		url.addQueryItem("page", spelling);
-#endif
 		request.setUrl(url);
 		request.setRawHeader("User-Agent", USER_AGENT);
 
@@ -181,11 +166,7 @@ void Dictionary::setLanguage(const QString& langcode) {
 	m_url.setHost(langcode + ".wiktionary.org");
 
 	// Find cache path
-#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
 	m_cache_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-#else
-	m_cache_path = QDesktopServices::storageLocation(QDesktopServices::CacheLocation);
-#endif
 	m_cache_path += "/" + langcode + "/";
 
 	// Create cache directory
