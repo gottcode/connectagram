@@ -172,8 +172,8 @@ void NewGameDialog::patternSelected() {
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
 	std::random_device rd;
 	std::mt19937 gen(rd());
-	std::uniform_int_distribution<int> dis(0, INT_MAX);
-	int seed = dis(gen);
+	std::uniform_int_distribution<unsigned int> dis(0, UINT_MAX);
+	unsigned int seed = dis(gen);
 
 	QSettings settings;
 	settings.remove("Current");

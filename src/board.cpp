@@ -113,7 +113,7 @@ void Board::openGame() {
 	m_pattern = Pattern::create(m_wordlist, settings.value("Current/Pattern").toInt());
 	m_pattern->setCount(settings.value("Current/Count").toInt());
 	m_pattern->setLength(settings.value("Current/Length").toInt());
-	m_pattern->setSeed(settings.value("Current/Seed").toInt());
+	m_pattern->setSeed(settings.value("Current/Seed").toUInt());
 
 	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
 	m_pattern->start();
@@ -167,7 +167,7 @@ bool Board::openGame(const QString& number) {
 	if ((index += 2) == number.length()) {
 		return false;
 	}
-	unsigned int seed = number.mid(index).toInt(&ok, 16);
+	unsigned int seed = number.mid(index).toUInt(&ok, 16);
 	if (!ok) {
 		return false;
 	}

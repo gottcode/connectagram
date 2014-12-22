@@ -69,7 +69,7 @@ class Pattern : public QThread {
 			return m_solution;
 		}
 
-		int seed() const {
+		unsigned int seed() const {
 			return m_seed;
 		}
 
@@ -87,7 +87,7 @@ class Pattern : public QThread {
 
 		void setCount(int count);
 		void setLength(int length);
-		void setSeed(int seed);
+		void setSeed(unsigned int seed);
 
 	signals:
 		void generated();
@@ -120,7 +120,7 @@ class Pattern : public QThread {
 		WordList* m_words;
 		int m_count;
 		int m_length;
-		int m_seed;
+		unsigned int m_seed;
 		QSize m_size;
 		QList<Word*> m_solution;
 		bool m_cancelled;

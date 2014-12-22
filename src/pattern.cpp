@@ -57,7 +57,7 @@ void Pattern::setLength(int length) {
 
 //-----------------------------------------------------------------------------
 
-void Pattern::setSeed(int seed) {
+void Pattern::setSeed(unsigned int seed) {
 	m_seed = seed;
 }
 
