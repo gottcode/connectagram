@@ -41,8 +41,6 @@
 #include <algorithm>
 
 Window::Window() {
-	setWindowTitle(QCoreApplication::applicationName());
-
 	m_board = new Board(this);
 	connect(m_board, &Board::finished, this, &Window::gameFinished);
 	connect(m_board, &Board::started, this, &Window::gameStarted);
