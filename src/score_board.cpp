@@ -26,6 +26,8 @@
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
+#include <cmath>
+
 ScoreBoard::ScoreBoard(QWidget* parent)
 : QDialog(parent) {
 	setWindowTitle(tr("Scores"));
@@ -97,7 +99,7 @@ QTreeWidgetItem* ScoreBoard::createScoreItem(int secs, int count, int length) {
 	if (secs == 0) {
 		return 0;
 	}
-	int score = qRound((count * length * 120.0) / secs);
+	int score = std::lround((count * length * 120.0) / secs);
 	if (score == 0) {
 		return 0;
 	}

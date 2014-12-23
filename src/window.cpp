@@ -39,6 +39,7 @@
 #include <QSettings>
 
 #include <algorithm>
+#include <cmath>
 
 Window::Window() {
 	m_board = new Board(this);
@@ -325,7 +326,7 @@ void Window::gameFinished() {
 	m_pause_action->setDisabled(true);
 	m_success->show();
 
-	m_scores->addScore(qRound(msecs / 1000.0), count, length);
+	m_scores->addScore(std::lround(msecs / 1000.0), count, length);
 }
 
 //-----------------------------------------------------------------------------
