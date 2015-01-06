@@ -6,15 +6,25 @@ TEMPLATE = app
 QT += network widgets
 CONFIG += warn_on c++11
 
+# Allow in-tree builds
+!win32 {
+	MOC_DIR = build
+	OBJECTS_DIR = build
+	RCC_DIR = build
+}
+
+# Set program version
 VERSION = 1.1.2
 DEFINES += VERSIONSTR=\\\"$${VERSION}\\\"
 
+# Set program name
 unix: !macx {
 	TARGET = connectagram
 } else {
 	TARGET = Connectagram
 }
 
+# Specify program sources
 HEADERS = src/board.h \
 	src/cell.h \
 	src/clock.h \
@@ -46,8 +56,10 @@ SOURCES = src/board.cpp \
 	src/word.cpp \
 	src/wordlist.cpp
 
+# Allow for updating translations
 TRANSLATIONS = $$files(translations/connectagram_*.ts)
 
+# Install program data
 RESOURCES = icons/icons.qrc
 macx {
 	ICON = icons/connectagram.icns
