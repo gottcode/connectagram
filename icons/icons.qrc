@@ -9,5 +9,15 @@
 	<file>patterns/3.png</file>
 	<file>patterns/4.png</file>
 	<file>patterns/5.png</file>
+
+	<file>definitions@2x.png</file>
+	<file>hint@2x.png</file>
+
+	<file>patterns/0@2x.png</file>
+	<file>patterns/1@2x.png</file>
+	<file>patterns/2@2x.png</file>
+	<file>patterns/3@2x.png</file>
+	<file>patterns/4@2x.png</file>
+	<file>patterns/5@2x.png</file>
 </qresource>
 </RCC>

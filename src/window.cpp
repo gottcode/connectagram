@@ -101,7 +101,9 @@ Window::Window() {
 		test.insert(2, QLatin1Char(':'));
 		width = std::max(width, metrics.width(test));
 	}
-	pixmap = QPixmap(QSize(width + 82, 32));
+	int ratio = devicePixelRatio();
+	pixmap = QPixmap(QSize(width + 82, 32) * ratio);
+	pixmap.setDevicePixelRatio(ratio);
 	pixmap.fill(Qt::transparent);
 	{
 		QPainter painter(&pixmap);
@@ -115,13 +117,13 @@ Window::Window() {
 
 	// Create overlay buttons
 	m_definitions_button = new QLabel(overlay);
-	m_definitions_button->setPixmap(QString(":/definitions.png"));
+	m_definitions_button->setPixmap(QIcon(":/definitions.png").pixmap(24,24));
 	m_definitions_button->setCursor(Qt::PointingHandCursor);
 	m_definitions_button->setToolTip(tr("Definitions"));
 	m_definitions_button->installEventFilter(this);
 
 	m_hint_button = new QLabel(overlay);
-	m_hint_button->setPixmap(QString(":/hint.png"));
+	m_hint_button->setPixmap(QIcon(":/hint.png").pixmap(24,24));
 	m_hint_button->setCursor(Qt::PointingHandCursor);
 	m_hint_button->setToolTip(tr("Hint"));
 	m_hint_button->setDisabled(true);
@@ -293,7 +295,7 @@ void Window::showDetails() {
 			.arg(tr("Game Number:")).arg(number),
 		QMessageBox::NoButton,
 		this);
-	dialog.setIconPixmap(QString(":/patterns/%1.png").arg(patternid));
+	dialog.setIconPixmap(QIcon(QString(":/patterns/%1.png").arg(patternid)).pixmap(96,96));
 	dialog.exec();
 }
 
