@@ -1,3 +1,10 @@
+1.2.0
+-----
+* Fixed words not shuffled in Qt 5.
+* Added support for high DPI displays.
+* Switched to C++11 random classes.
+* Removed support for Qt 4.
+
 1.1.2
 -----
 * Fixed games only saved when closing window.
