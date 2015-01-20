@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Oprea Nicolae <jaff2002@yahoo.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-14 13:58+0000\n"
+"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/connectagram/"
 "language/ro/)\n"
 "Language: ro\n"
@@ -25,7 +26,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Ordonaţi cuvinte plasate în tipare"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
@@ -36,6 +37,12 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram este un joc de ordonare cuvinte. Tabela este constituită din "
+"mai multe cuvinte amestecate, care sunt unite împreună. Puteţi alege "
+"lungimea cuvintelor, cantitatea de cuvinte, şi tiparul după care cuvintele "
+"sînt aranjate. Jocul oferă o opţiune de sugestie pentru momentele în care v-"
+"aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui "
+"cuvînt de la Wikţionar. Progresul curent este salvat automat."
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"

@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Moo, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-13 22:11+0000\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/projects/p/connectagram/"
 "language/lt/)\n"
 "Language: lt\n"
@@ -25,7 +26,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Iššifruokite žodžius, išdėstytus šablone"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
@@ -36,6 +37,12 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, "
+"kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir "
+"šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra patarimo funkciją "
+"skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių "
+"peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio "
+"žaidimo eiga yra automatiškai išsaugoma."
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"

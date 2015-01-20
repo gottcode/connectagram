@@ -6,6 +6,7 @@
   <name>Connectagram</name>
   <name xml:lang="cs">Connectagram</name>
   <name xml:lang="de">Connectagram</name>
+  <name xml:lang="fr">Connectagram</name>
   <name xml:lang="hr">Connectagram</name>
   <name xml:lang="hu">Connectagram</name>
   <name xml:lang="lt">Connectagram</name>
@@ -15,8 +16,15 @@
   <name xml:lang="ru">Connectagram</name>
   <name xml:lang="tr">Connectagram</name>
   <summary>Unscramble words placed in patterns</summary>
+  <summary xml:lang="cs">Rozluštěte slova umístěná ve vzorech</summary>
+  <summary xml:lang="fr">Déchiffrage de mots reliés entre eux</summary>
+  <summary xml:lang="lt">Iššifruokite žodžius, išdėstytus šablone</summary>
+  <summary xml:lang="ro">Ordonaţi cuvinte plasate în tipare</summary>
   <description>
     <p>Connectagram is a word unscrambling game. The board consists of several scrambled words that are joined together. You can choose the length of the words, the amount of words, and the pattern that the words are arranged in. The game provides a hint option for times when you are stuck, and features an online word lookup that fetches the definitions of each word from Wiktionary. Your current progress is automatically saved.</p>
+    <p xml:lang="fr">Connectagram est un jeu de déchiffrage de mots. Le plateau consiste en plusieurs mots brouillés reliés les uns aux autres. Vous avez le choix de la longueur des mots, de leur nombre et de la figure dans laquelle ils sont arrangés. Le jeu propose une option d'aide en cas de blocage, ainsi qu'une recherche en ligne des définitions de chaque mot sur Wiktionary. Votre progression en cours est automatiquement sauvegardée. </p>
+    <p xml:lang="lt">Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra patarimo funkciją skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio žaidimo eiga yra automatiškai išsaugoma.</p>
+    <p xml:lang="ro">Connectagram este un joc de ordonare cuvinte. Tabela este constituită din mai multe cuvinte amestecate, care sunt unite împreună. Puteţi alege lungimea cuvintelor, cantitatea de cuvinte, şi tiparul după care cuvintele sînt aranjate. Jocul oferă o opţiune de sugestie pentru momentele în care v-aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui cuvînt de la Wikţionar. Progresul curent este salvat automat.</p>
   </description>
   <screenshots>
     <screenshot type="default">

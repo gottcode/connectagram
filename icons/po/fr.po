@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Guillaume Gay <guillaume.gay@bigfoot.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-17 09:27+0000\n"
+"Last-Translator: Guillaume Gay <guillaume.gay@bigfoot.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/connectagram/"
 "language/fr/)\n"
 "Language: fr\n"
@@ -20,11 +21,11 @@ msgstr ""
 
 #: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:1
 msgid "Connectagram"
-msgstr ""
+msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Déchiffrage de mots reliés entre eux"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
@@ -35,7 +36,13 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram est un jeu de déchiffrage de mots. Le plateau consiste en "
+"plusieurs mots brouillés reliés les uns aux autres. Vous avez le choix de la "
+"longueur des mots, de leur nombre et de la figure dans laquelle ils sont "
+"arrangés. Le jeu propose une option d'aide en cas de blocage, ainsi qu'une "
+"recherche en ligne des définitions de chaque mot sur Wiktionary. Votre "
+"progression en cours est automatiquement sauvegardée. "
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"
-msgstr ""
+msgstr "Jeu d'anagrammes"
