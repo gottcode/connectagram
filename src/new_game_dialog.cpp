@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,6 +37,7 @@
 #include <QToolButton>
 #include <QVBoxLayout>
 
+#include <ctime>
 #include <random>
 
 NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
@@ -170,8 +171,14 @@ void NewGameDialog::patternSelected() {
 	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int count = m_word_count_box->currentIndex();
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
+#ifndef Q_OS_WIN
 	std::random_device rd;
 	unsigned int seed = rd();
+#else
+	std::mt19937 gen(time(0));
+	std::uniform_int_distribution<unsigned int> dist;
+	unsigned int seed = dist(gen);
+#endif
 
 	QSettings settings;
 	settings.remove("Current");
