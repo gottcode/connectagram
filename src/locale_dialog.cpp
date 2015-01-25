@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2010, 2011, 2012, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2010, 2011, 2012, 2014, 2015 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +20,10 @@
 #include "locale_dialog.h"
 
 #include <QComboBox>
-#include <QCoreApplication>
 #include <QDialogButtonBox>
 #include <QDir>
 #include <QFile>
+#include <QGuiApplication>
 #include <QHash>
 #include <QLabel>
 #include <QLibraryInfo>
@@ -43,8 +43,8 @@ QString LocaleDialog::m_appname;
 
 //-----------------------------------------------------------------------------
 
-LocaleDialog::LocaleDialog(QWidget* parent)
-	: QDialog(parent, Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint)
+LocaleDialog::LocaleDialog(QWidget* parent) :
+	QDialog(parent, Qt::WindowTitleHint | Qt::MSWindowsFixedSizeDialogHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint)
 {
 	QString title = parent ? parent->window()->windowTitle() : QString();
 	setWindowTitle(!title.isEmpty() ? title : QCoreApplication::applicationName());
@@ -96,7 +96,6 @@ void LocaleDialog::loadTranslator(const QString& name, const QStringList& datadi
 		}
 	}
 
-
 	// Find current locale
 	m_current = QSettings().value("Locale/Language").toString();
 	QString current = !m_current.isEmpty() ? m_current : QLocale::system().name();
@@ -125,6 +124,9 @@ void LocaleDialog::loadTranslator(const QString& name, const QStringList& datadi
 	static QTranslator translator;
 	translator.load(m_appname + current, m_path);
 	QCoreApplication::installTranslator(&translator);
+
+	// Work around bug in Qt 5 where text direction is not loaded
+	QGuiApplication::setLayoutDirection(QLocale(current).textDirection());
 }
 
 //-----------------------------------------------------------------------------
