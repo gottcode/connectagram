@@ -1,3 +1,8 @@
+1.2.1
+-----
+* FIXED: Application layout did not respect RTL languages.
+* FIXED: All new games used the same seed in Windows.
+
 1.2.0
 -----
 * Fixed words not shuffled in Qt 5.
