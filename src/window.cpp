@@ -69,7 +69,9 @@ Window::Window() {
 	QFontMetrics metrics(f);
 	int width = metrics.width(tr("Success"));
 	int height = metrics.height();
-	QPixmap pixmap(QSize(width + height, height * 2));
+	int ratio = devicePixelRatio();
+	QPixmap pixmap(QSize(width + height, height * 2) * ratio);
+	pixmap.setDevicePixelRatio(ratio);
 	pixmap.fill(QColor(0, 0, 0, 0));
 	{
 		QPainter painter(&pixmap);
@@ -101,7 +103,6 @@ Window::Window() {
 		test.insert(2, QLatin1Char(':'));
 		width = std::max(width, metrics.width(test));
 	}
-	int ratio = devicePixelRatio();
 	pixmap = QPixmap(QSize(width + 82, 32) * ratio);
 	pixmap.setDevicePixelRatio(ratio);
 	pixmap.fill(Qt::transparent);
