@@ -20,23 +20,59 @@
   <summary xml:lang="fr">Déchiffrage de mots reliés entre eux</summary>
   <summary xml:lang="lt">Iššifruokite žodžius, išdėstytus šablone</summary>
   <summary xml:lang="ro">Ordonaţi cuvinte plasate în tipare</summary>
+
   <description>
     <p>Connectagram is a word unscrambling game. The board consists of several scrambled words that are joined together. You can choose the length of the words, the amount of words, and the pattern that the words are arranged in. The game provides a hint option for times when you are stuck, and features an online word lookup that fetches the definitions of each word from Wiktionary. Your current progress is automatically saved.</p>
     <p xml:lang="fr">Connectagram est un jeu de déchiffrage de mots. Le plateau consiste en plusieurs mots brouillés reliés les uns aux autres. Vous avez le choix de la longueur des mots, de leur nombre et de la figure dans laquelle ils sont arrangés. Le jeu propose une option d'aide en cas de blocage, ainsi qu'une recherche en ligne des définitions de chaque mot sur Wiktionary. Votre progression en cours est automatiquement sauvegardée. </p>
     <p xml:lang="lt">Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra patarimo funkciją skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio žaidimo eiga yra automatiškai išsaugoma.</p>
     <p xml:lang="ro">Connectagram este un joc de ordonare cuvinte. Tabela este constituită din mai multe cuvinte amestecate, care sunt unite împreună. Puteţi alege lungimea cuvintelor, cantitatea de cuvinte, şi tiparul după care cuvintele sînt aranjate. Jocul oferă o opţiune de sugestie pentru momentele în care v-aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui cuvînt de la Wikţionar. Progresul curent este salvat automat.</p>
   </description>
+
   <screenshots>
     <screenshot type="default">
-      <image>http://gottcode.org/connectagram/screenshots/appdata.png</image>
+      <image>https://gottcode.org/connectagram/screenshots/appdata.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://gottcode.org/connectagram/</url>
-  <url type="bugtracker">http://gottcode.org/connectagram/bugs/</url>
-  <url type="donation">http://gottcode.org/tip/</url>
+
+  <url type="homepage">https://gottcode.org/connectagram/</url>
+  <url type="bugtracker">https://gottcode.org/connectagram/bugs/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/projects/p/connectagram/</url>
+
   <developer_name>Graeme Gott</developer_name>
-  <updatecontact>graeme@gottcode.org</updatecontact>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">connectagram</translation>
+
   <provides>
-	<binary>connectagram</binary>
+    <binary>connectagram</binary>
   </provides>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
 </component>
