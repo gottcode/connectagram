@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2012, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2012, 2013, 2014, 2015, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -262,7 +262,7 @@ void Window::about() {
 	QMessageBox::about(this, tr("About"), QString("<p><center><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></center></p><p><center>%6</center></p>")
 		.arg(tr("Connectagram"), QCoreApplication::applicationVersion(),
 			tr("A word unscrambling game"),
-			tr("Copyright &copy; 2009-%1 by Graeme Gott").arg("2015"),
+			tr("Copyright &copy; 2009-%1 by Graeme Gott").arg("2016"),
 			tr("Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license"),
 			tr("Definitions are from <a href=\"http://wiktionary.org/\">Wiktionary</a>"))
 	);
