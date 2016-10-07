@@ -105,6 +105,7 @@ macx {
 
 	qm.files = translations/*.qm
 	qm.path = $$PREFIX/share/connectagram/translations
+	qm.CONFIG += no_check_exist
 
 	man.files = doc/connectagram.6
 	man.path = $$PREFIX/share/man/man6
