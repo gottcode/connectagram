@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# RobertBorst <webmaster@fam-borst.nl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/connectagram/"
+"POT-Creation-Date: 2014-11-14 20:37+0000\n"
+"PO-Revision-Date: 2016-08-21 14:40+0000\n"
+"Last-Translator: RobertBorst <webmaster@fam-borst.nl>\n"
+"Language-Team: Dutch (http://www.transifex.com/gottcode/connectagram/"
 "language/nl/)\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +25,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Orden de verhaspelde woorden in patronen"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +36,11 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram is een woord orden spel. Het bord bestaat uit diverse "
+"verhaspelde woroden die samengevoegd zijn. Je kunt de lengte, het aantal en "
+"het patroon van de woorden kiezen. Het spel heeft een hint optie voor als je "
+"vast komt te zitten en de mogelijkheid om de definities van woorden on-line "
+"op te zoeken van Wiktionary. Je voortgang is automatisch opgeslagen."
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"

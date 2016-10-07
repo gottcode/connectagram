@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# M T <michtrz@gmail.com>, 2015
+# Wasilis Mandratzis-Walz, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: German (http://www.transifex.com/projects/p/connectagram/"
+"POT-Creation-Date: 2014-11-14 20:37+0000\n"
+"PO-Revision-Date: 2015-10-25 19:00+0000\n"
+"Last-Translator: M T <michtrz@gmail.com>\n"
+"Language-Team: German (http://www.transifex.com/gottcode/connectagram/"
 "language/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +26,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Entschlüsselte Wörter in Mustern anordnen"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
@@ -35,6 +37,13 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram ist ein Wortangramm Spiel. Das Spiel besteht aus mehreren "
+"verschlüsselten Wörtern, die miteinander verbunden sind. Sie können die "
+"Länge der Wörter, die Menge der Wörter, und das Muster, in den die Wörter "
+"angeordnet sind wählen. Das Spiel bietet eine Hinweisoption für die "
+"Verzögerung, wenn Sie stecken geblieben sind, und verfügt über eine Online-"
+"Wort-Suche, die die Definitionen der einzelnen Begriffe aus Wiktionary "
+"abruft. Ihr aktueller Fortschritt wird automatisch gespeichert."
 
 #: ../connectagram.desktop.in.h:2
 msgid "Anagram Game"

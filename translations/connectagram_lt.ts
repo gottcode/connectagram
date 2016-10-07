@@ -64,7 +64,7 @@
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
-        <translation>&lt;Sistemos Kalba&gt;</translation>
+        <translation>&lt;Sistemos kalba&gt;</translation>
     </message>
     <message>
         <source>Note</source>
@@ -79,7 +79,7 @@
     <name>NewGameDialog</name>
     <message>
         <source>New Game</source>
-        <translation>Naujas Žaidimas</translation>
+        <translation>Naujas žaidimas</translation>
     </message>
     <message>
         <source>Low</source>
@@ -95,7 +95,7 @@
     </message>
     <message>
         <source>Very High</source>
-        <translation>Labai Didelis</translation>
+        <translation>Labai didelis</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -103,11 +103,11 @@
     </message>
     <message>
         <source>Word Length:</source>
-        <translation>Žodžių Ilgis:</translation>
+        <translation>Žodžių ilgis:</translation>
     </message>
     <message>
         <source>Amount of Words:</source>
-        <translation>Žodžių Kiekis:</translation>
+        <translation>Žodžių kiekis:</translation>
     </message>
     <message numerus="yes">
         <source>%n letter(s)</source>
@@ -129,11 +129,11 @@
     <name>ScoreBoard</name>
     <message>
         <source>Scores</source>
-        <translation>Surinkti Taškai</translation>
+        <translation>Surinkti taškai</translation>
     </message>
     <message>
         <source>Score</source>
-        <translation>Surinkta Taškų</translation>
+        <translation>Surinkta taškų</translation>
     </message>
     <message>
         <source>Time</source>
@@ -189,7 +189,7 @@
     </message>
     <message>
         <source>Hint</source>
-        <translation>Patarimas</translation>
+        <translation>Užuomina</translation>
     </message>
     <message>
         <source>&amp;Game</source>
@@ -217,7 +217,7 @@
     </message>
     <message>
         <source>&amp;Hint</source>
-        <translation>&amp;Patarimas</translation>
+        <translation>&amp;Užuomina</translation>
     </message>
     <message>
         <source>H</source>
@@ -233,7 +233,7 @@
     </message>
     <message>
         <source>&amp;Scores</source>
-        <translation>&amp;Surinkti Taškai</translation>
+        <translation>&amp;Surinkti taškai</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -245,7 +245,7 @@
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Programos &amp;Kalba</translation>
+        <translation>Programos &amp;kalba</translation>
     </message>
     <message>
         <source>&amp;Help</source>
@@ -261,11 +261,11 @@
     </message>
     <message>
         <source>Choose Game</source>
-        <translation>Pasirinkite Žaidimą</translation>
+        <translation>Pasirinkite žaidimą</translation>
     </message>
     <message>
         <source>Game Number:</source>
-        <translation>Žaidimo Numeris:</translation>
+        <translation>Žaidimo numeris:</translation>
     </message>
     <message>
         <source>Sorry</source>
@@ -289,7 +289,7 @@
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
-        <translation>Autorinės Teisės &amp;copy; 2009-%1 by Graeme Gott</translation>
+        <translation>Autorių Teisės &amp;copy; 2009-%1 pagal Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>

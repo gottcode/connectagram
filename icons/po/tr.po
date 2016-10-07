@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Cüneyt Oktay <cuneytoktay@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 15:37-0500\n"
-"PO-Revision-Date: 2014-11-13 13:41+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Turkish (http://www.transifex.com/projects/p/connectagram/"
+"POT-Creation-Date: 2014-11-14 20:37+0000\n"
+"PO-Revision-Date: 2015-04-09 19:37+0000\n"
+"Last-Translator: Cüneyt Oktay <cuneytoktay@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/gottcode/connectagram/"
 "language/tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +25,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
 msgid "Unscramble words placed in patterns"
-msgstr ""
+msgstr "Kalıplarda yerleştirilmiş kelimeleri düzenle"
 
 #: ../connectagram.appdata.xml.in.h:3
 msgid ""
