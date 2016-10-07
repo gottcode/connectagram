@@ -48,7 +48,6 @@ class Cell {
 		}
 
 	private:
-		Board* m_board;
 		QPoint m_position;
 		Word* m_word;
 		Letter* m_letter;
