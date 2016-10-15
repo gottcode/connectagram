@@ -34,6 +34,8 @@
 
 static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (https://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
 
+static const QDateTime MODIFIED_DATE = QLocale::c().toDateTime(QString(__TIMESTAMP__).simplified(), "MMM d hh:ss:mm yyyy");
+
 Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 : QObject(parent), m_wordlist(wordlist) {
 	m_url.setScheme("https");
@@ -54,7 +56,7 @@ Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 void Dictionary::lookup(const QString& word) {
 	// Check if word exists in cache and is recent
 	QFileInfo info(m_cache_path + word);
-	if (info.exists() && (info.lastModified() >= QDateTime::currentDateTime().addDays(-14))) {
+	if (info.exists() && (info.lastModified() >= std::max(MODIFIED_DATE, QDateTime::currentDateTime().addDays(-14)))) {
 		QFile file(info.absoluteFilePath());
 		if (file.open(QFile::ReadOnly | QFile::Text)) {
 			QTextStream stream(&file);
