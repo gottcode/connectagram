@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,11 +32,11 @@
 #include <QTextStream>
 #include <QXmlStreamReader>
 
-static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (http://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
+static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (https://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
 
 Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 : QObject(parent), m_wordlist(wordlist) {
-	m_url.setScheme("http");
+	m_url.setScheme("https");
 	m_url.setPath("/w/api.php");
 	m_query.addQueryItem("format", "xml");
 	m_query.addQueryItem("action", "mobileview");
