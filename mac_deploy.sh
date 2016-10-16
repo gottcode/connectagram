@@ -2,7 +2,7 @@
 
 APP='Connectagram'
 BUNDLE="$APP.app"
-VERSION='1.2.3'
+VERSION='1.2.4'
 
 # Remove any previous disk folder or DMG
 echo -n 'Preparing... '

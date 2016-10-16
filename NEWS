@@ -1,3 +1,7 @@
+1.2.4
+-----
+* FIXED: Definitions were not being downloaded.
+
 1.2.3
 -----
 * FIXED: Did not install translations in Linux.
