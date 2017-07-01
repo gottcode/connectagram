@@ -107,7 +107,7 @@ macx {
 	appdata.files = icons/connectagram.appdata.xml
 	appdata.path = $$PREFIX/share/metainfo/
 
-	qm.files = translations/*.qm
+	qm.files = $$replace(TRANSLATIONS, .ts, .qm)
 	qm.path = $$PREFIX/share/connectagram/translations
 	qm.CONFIG += no_check_exist
 
