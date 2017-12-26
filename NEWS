@@ -1,3 +1,7 @@
+1.2.6
+-----
+* FIXED: Could not compile with Qt 5.10.
+
 1.2.5
 -----
 * FIXED: Did not always install translations in Linux.
