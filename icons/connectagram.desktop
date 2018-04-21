@@ -43,3 +43,4 @@ Exec=connectagram
 Icon=connectagram
 Terminal=false
 Categories=Qt;Game;LogicGame;
+Keywords=game;logic;
