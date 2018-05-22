@@ -67,7 +67,7 @@ Window::Window() {
 	QFont f = font();
 	f.setPointSize(24);
 	QFontMetrics metrics(f);
-	int width = metrics.width(tr("Success"));
+	int width = metrics.boundingRect(tr("Success")).width();
 	int height = metrics.height();
 	int ratio = devicePixelRatio();
 	QPixmap pixmap(QSize(width + height, height * 2) * ratio);
@@ -96,12 +96,12 @@ Window::Window() {
 	f = font();
 	f.setPixelSize(20);
 	metrics = QFontMetrics(f);
-	width = std::max(metrics.width(tr("Loading")), metrics.width(tr("Paused")));
+	width = std::max(metrics.boundingRect(tr("Loading")).width(), metrics.boundingRect(tr("Paused")).width());
 	for (int i = 0; i < 10; ++i) {
 		QString test(6, QChar(i + 48));
 		test.insert(4, QLatin1Char(':'));
 		test.insert(2, QLatin1Char(':'));
-		width = std::max(width, metrics.width(test));
+		width = std::max(width, metrics.boundingRect(test).width());
 	}
 	pixmap = QPixmap(QSize(width + 82, 32) * ratio);
 	pixmap.setDevicePixelRatio(ratio);
