@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:37+0000\n"
-"PO-Revision-Date: 2014-11-14 13:58+0000\n"
+"POT-Creation-Date: 2018-05-27 16:06-0400\n"
+"PO-Revision-Date: 2017-09-23 20:29+0000\n"
 "Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/projects/p/connectagram/"
+"Language-Team: Romanian (http://www.transifex.com/gottcode/connectagram/"
 "language/ro/)\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:1
+#: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4
 msgid "Connectagram"
 msgstr "Connectagram"
 
-#: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
+#: ../connectagram.appdata.xml.in:7 ../connectagram.desktop.in:6
 msgid "Unscramble words placed in patterns"
 msgstr "Ordonaţi cuvinte plasate în tipare"
 
-#: ../connectagram.appdata.xml.in.h:3
+#: ../connectagram.appdata.xml.in:10
 msgid ""
 "Connectagram is a word unscrambling game. The board consists of several "
 "scrambled words that are joined together. You can choose the length of the "
@@ -44,6 +44,6 @@ msgstr ""
 "aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui "
 "cuvînt de la Wikţionar. Progresul curent este salvat automat."
 
-#: ../connectagram.desktop.in.h:2
+#: ../connectagram.desktop.in:5
 msgid "Anagram Game"
 msgstr "Joc de anagrame"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:37+0000\n"
-"PO-Revision-Date: 2016-04-15 20:46+0000\n"
+"POT-Creation-Date: 2018-05-27 16:06-0400\n"
+"PO-Revision-Date: 2017-09-21 13:50+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/gottcode/connectagram/"
 "language/lt/)\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:1
+#: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4
 msgid "Connectagram"
 msgstr "Connectagram"
 
-#: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
+#: ../connectagram.appdata.xml.in:7 ../connectagram.desktop.in:6
 msgid "Unscramble words placed in patterns"
 msgstr "Iššifruokite šablone išdėstytus žodžius"
 
-#: ../connectagram.appdata.xml.in.h:3
+#: ../connectagram.appdata.xml.in:10
 msgid ""
 "Connectagram is a word unscrambling game. The board consists of several "
 "scrambled words that are joined together. You can choose the length of the "
@@ -44,6 +44,6 @@ msgstr ""
 "peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio "
 "žaidimo eiga yra automatiškai įrašoma."
 
-#: ../connectagram.desktop.in.h:2
+#: ../connectagram.desktop.in:5
 msgid "Anagram Game"
 msgstr "Anagramos žaidimas"

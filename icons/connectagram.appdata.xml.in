@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>connectagram.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Connectagram</name>
+  <summary>Unscramble words placed in patterns</summary>
+
+  <description>
+    <p>Connectagram is a word unscrambling game. The board consists of several scrambled words that are joined together. You can choose the length of the words, the amount of words, and the pattern that the words are arranged in. The game provides a hint option for times when you are stuck, and features an online word lookup that fetches the definitions of each word from Wiktionary. Your current progress is automatically saved.</p>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://gottcode.org/connectagram/screenshots/appdata.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://gottcode.org/connectagram/</url>
+  <url type="bugtracker">https://gottcode.org/connectagram/bugs/</url>
+  <url type="donation">https://gottcode.org/tip/</url>
+  <url type="translate">https://www.transifex.com/projects/p/connectagram/</url>
+
+  <developer_name>Graeme Gott</developer_name>
+  <update_contact>graeme@gottcode.org</update_contact>
+
+  <translation type="qt">connectagram</translation>
+
+  <provides>
+    <binary>connectagram</binary>
+  </provides>
+
+  <kudos>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+  </kudos>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="1.2.6" date="2017-12-26">
+      <description>
+        <ul>
+          <li>FIXED: Could not compile with Qt 5.10</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

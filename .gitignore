@@ -1,0 +1,7 @@
+Makefile
+build
+connectagram
+*.qm
+*.appdata.xml
+*.desktop
+*~

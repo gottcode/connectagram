@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 20:37+0000\n"
-"PO-Revision-Date: 2015-10-25 19:00+0000\n"
+"POT-Creation-Date: 2018-05-27 16:06-0400\n"
+"PO-Revision-Date: 2017-09-21 13:50+0000\n"
 "Last-Translator: M T <michtrz@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/gottcode/connectagram/"
 "language/de/)\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../connectagram.appdata.xml.in.h:1 ../connectagram.desktop.in.h:1
+#: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4
 msgid "Connectagram"
 msgstr "Connectagram"
 
-#: ../connectagram.appdata.xml.in.h:2 ../connectagram.desktop.in.h:3
+#: ../connectagram.appdata.xml.in:7 ../connectagram.desktop.in:6
 msgid "Unscramble words placed in patterns"
 msgstr "Entschlüsselte Wörter in Mustern anordnen"
 
-#: ../connectagram.appdata.xml.in.h:3
+#: ../connectagram.appdata.xml.in:10
 msgid ""
 "Connectagram is a word unscrambling game. The board consists of several "
 "scrambled words that are joined together. You can choose the length of the "
@@ -45,6 +45,6 @@ msgstr ""
 "Wort-Suche, die die Definitionen der einzelnen Begriffe aus Wiktionary "
 "abruft. Ihr aktueller Fortschritt wird automatisch gespeichert."
 
-#: ../connectagram.desktop.in.h:2
+#: ../connectagram.desktop.in:5
 msgid "Anagram Game"
 msgstr "Ein Anagramm-Spiel"
