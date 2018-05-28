@@ -107,22 +107,8 @@ macx {
 	icon.files = icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
-	DESKTOPFILE = icons/connectagram.desktop.in
-	updatedesktop.input = DESKTOPFILE
-	updatedesktop.output = ${QMAKE_FILE_PATH}/connectagram.desktop
-	updatedesktop.commands = msgfmt --desktop -d ${QMAKE_FILE_PATH}/po --template ${QMAKE_FILE_IN} -o ${QMAKE_FILE_OUT}
-	updatedesktop.CONFIG += no_link target_predeps
-	QMAKE_EXTRA_COMPILERS += updatedesktop
-
 	desktop.files = icons/connectagram.desktop
 	desktop.path = $$PREFIX/share/applications/
-
-	APPDATAFILE = icons/connectagram.appdata.xml.in
-	updateappdata.input = APPDATAFILE
-	updateappdata.output = ${QMAKE_FILE_PATH}/connectagram.appdata.xml
-	updateappdata.commands = msgfmt --xml -d ${QMAKE_FILE_PATH}/po --template ${QMAKE_FILE_IN} -o ${QMAKE_FILE_OUT}
-	updateappdata.CONFIG += no_link target_predeps
-	QMAKE_EXTRA_COMPILERS += updateappdata
 
 	appdata.files = icons/connectagram.appdata.xml
 	appdata.path = $$PREFIX/share/metainfo/
