@@ -93,4 +93,19 @@
     <content_attribute id="money-purchasing">none</content_attribute>
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
+
+  <releases>
+    <release version="1.2.7" date="2018-05-29">
+      <description>
+        <ul>
+          <li>Replaced deprecated code</li>
+          <li>Extra warnings only shown in debug build</li>
+          <li>Improved Linux deployment</li>
+          <li>Improved macOS deployment</li>
+          <li>Improved Windows deployment</li>
+          <li>Translation updates: Portuguese, Ukrainian</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
 </component>
