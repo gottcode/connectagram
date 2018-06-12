@@ -46,6 +46,7 @@ Comment[ro]=Ordonaţi cuvinte plasate în tipare
 Comment[tr]=Kalıplarda yerleştirilmiş kelimeleri düzenle
 Comment[uk]=Розшифруйте слова, що знаходяться у відповідних комірках
 Exec=connectagram
+Icon=connectagram
 Terminal=false
 Categories=Qt;Game;LogicGame;
 Keywords=game;logic;
