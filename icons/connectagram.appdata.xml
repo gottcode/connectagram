@@ -95,6 +95,13 @@
   </content_rating>
 
   <releases>
+    <release version="1.2.8" date="2018-06-22">
+      <description>
+        <ul>
+          <li>FIXED: Missing launcher icon in Linux</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.2.7" date="2018-05-29">
       <description>
         <ul>

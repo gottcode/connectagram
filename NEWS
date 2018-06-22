@@ -1,3 +1,7 @@
+1.2.8
+-----
+* FIXED: Missing launcher icon in Linux.
+
 1.2.7
 -----
 * Replaced deprecated code.
