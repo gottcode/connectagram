@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014, 2018 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 #include "definitions.h"
 
 #include "dictionary.h"
+#include "wordlist.h"
 
 #include <QDesktopServices>
 #include <QDialogButtonBox>
@@ -34,7 +35,12 @@
 
 Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 	: QDialog(parent)
+	, m_wordlist(wordlist)
 {
+	m_url.setScheme("https");
+	m_url.setPath("/wiki/");
+	connect(wordlist, &WordList::languageChanged, this, &Definitions::setLanguage);
+
 	QSettings settings;
 	setWindowTitle(tr("Definitions"));
 	setModal(true);
@@ -46,6 +52,8 @@ Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 
 	m_words = new QListWidget(m_contents);
 	connect(m_words, &QListWidget::currentItemChanged, this, &Definitions::wordSelected);
+	connect(m_words, &QListWidget::itemActivated, this, &Definitions::defineWord);
+	connect(m_words, &QListWidget::itemClicked, this, &Definitions::defineWord);
 	m_contents->addWidget(m_words);
 	m_contents->setStretchFactor(0, 0);
 	m_contents->setSizes(QList<int>() << settings.value("Definitions/Splitter", m_words->fontMetrics().averageCharWidth() * 12).toInt());
@@ -122,6 +130,7 @@ void Definitions::selectWord(const QString& word)
 	}
 	m_words->setCurrentItem(item);
 	show();
+	defineWord(item);
 }
 
 //-----------------------------------------------------------------------------
@@ -139,6 +148,28 @@ void Definitions::hideEvent(QHideEvent* event)
 void Definitions::anchorClicked(const QUrl& link)
 {
 	QDesktopServices::openUrl(m_dictionary->url().resolved(link));
+}
+
+//-----------------------------------------------------------------------------
+
+void Definitions::defineWord(QListWidgetItem* item)
+{
+	if (!item || (item->text().at(0) == QChar('?'))) {
+		return;
+	}
+
+	const QString word = m_wordlist->spellings(item->text()).first();
+
+	QUrl url = m_url;
+	url.setPath("/wiki/" + word);
+	QDesktopServices::openUrl(url);
+}
+
+//-----------------------------------------------------------------------------
+
+void Definitions::setLanguage(const QString& langcode)
+{
+	m_url.setHost(langcode + ".wiktionary.org");
 }
 
 //-----------------------------------------------------------------------------
