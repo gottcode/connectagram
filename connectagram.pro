@@ -87,7 +87,7 @@ macx {
 } else:win32 {
 	RC_ICONS = icons/connectagram.ico
 	QMAKE_TARGET_DESCRIPTION = "Anagram game"
-	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2018 Graeme Gott"
+	QMAKE_TARGET_COPYRIGHT = "Copyright (C) 2019 Graeme Gott"
 } else:unix {
 	RESOURCES += icons/icon.qrc
 
