@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014, 2015 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009, 2013, 2014, 2015, 2019 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -95,10 +95,11 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	contents_layout->addRow(tr("Word Length:"), m_word_length_box);
 
 	QVBoxLayout* layout = new QVBoxLayout(this);
+	const int margin = layout->contentsMargins().top();
 	layout->addLayout(contents_layout);
-	layout->addSpacing(layout->margin());
+	layout->addSpacing(margin);
 	layout->addWidget(patterns);
-	layout->addSpacing(layout->margin());
+	layout->addSpacing(margin);
 	layout->addWidget(buttons);
 
 	// Load settings

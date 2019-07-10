@@ -138,7 +138,7 @@ Window::Window() {
 	connect(m_board, &Board::loading, m_clock, &Clock::setLoading);
 
 	QHBoxLayout* overlay_layout = new QHBoxLayout(overlay);
-	overlay_layout->setMargin(0);
+	overlay_layout->setContentsMargins(0, 0, 0, 0);
 	overlay_layout->setSpacing(0);
 	overlay_layout->addSpacing(10);
 	overlay_layout->addWidget(m_definitions_button);
@@ -150,7 +150,7 @@ Window::Window() {
 
 	// Lay out board
 	QGridLayout* layout = new QGridLayout(contents);
-	layout->setMargin(0);
+	layout->setContentsMargins(0, 0, 0, 0);
 	layout->setSpacing(0);
 	layout->addWidget(view, 0, 0);
 	layout->addWidget(m_success, 0, 0, Qt::AlignCenter);
