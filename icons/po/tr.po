@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Connectagram package.
 #
 # Translators:
+# abc Def <hdogan1974@gmail.com>, 2020
 # Cuneyt Oktay <cuneytoktay@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 16:06-0400\n"
-"PO-Revision-Date: 2017-09-21 13:50+0000\n"
-"Last-Translator: Cuneyt Oktay <cuneytoktay@gmail.com>\n"
+"PO-Revision-Date: 2020-05-05 11:47+0000\n"
+"Last-Translator: abc Def <hdogan1974@gmail.com>\n"
 "Language-Team: Turkish (http://www.transifex.com/gottcode/connectagram/"
 "language/tr/)\n"
 "Language: tr\n"
@@ -36,6 +37,12 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
+"Connectagram bir kelime çözme oyunu. Pano birkaç şifreli kelimelerin "
+"birlikte katılımıyla oluşur. Kelimelerin uzunluğunu, kelimelerin miktarını "
+"ve kelimelerin düzenlendiği deseni seçebilirsiniz. Oyun, sıkıştığınız "
+"zamanlar için bir ipucu seçeneği sunar ve her kelimenin Vikisözlük'ten "
+"tanımlamalarını getiren çevrimiçi bir kelime araması içerir. Mevcut "
+"ilerlemeniz otomatik olarak kaydedilir."
 
 #: ../connectagram.desktop.in:5
 msgid "Anagram Game"

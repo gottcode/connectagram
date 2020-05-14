@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<TS version="2.1" language="id">
 <context>
     <name>ChainPattern</name>
     <message>
@@ -112,8 +112,6 @@
     <message numerus="yes">
         <source>%n letter(s)</source>
         <translation>
-            <numerusform>%n surat</numerusform>
-            <numerusform>%n surat-surat</numerusform>
             <numerusform>%n surat</numerusform>
         </translation>
     </message>
