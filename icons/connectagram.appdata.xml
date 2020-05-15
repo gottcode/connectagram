@@ -11,6 +11,7 @@
   <name xml:lang="fr">Connectagram</name>
   <name xml:lang="hr">Connectagram</name>
   <name xml:lang="hu">Connectagram</name>
+  <name xml:lang="id">Connectagram</name>
   <name xml:lang="it">Connectagram</name>
   <name xml:lang="lt">Connectagram</name>
   <name xml:lang="nl">Connectagram</name>
@@ -26,6 +27,7 @@
   <summary xml:lang="el">Αποκρυπτογραφήσετε λέξεις poz τοποθετήθηκαν σε μοτίβα</summary>
   <summary xml:lang="es_PE">Descrifrar palabras colocadas en patrones</summary>
   <summary xml:lang="fr">Déchiffrage de mots reliés entre eux</summary>
+  <summary xml:lang="id">Menata-lagi huruf teracak dalam pola</summary>
   <summary xml:lang="it">Riordina le parole disposte in schemi</summary>
   <summary xml:lang="lt">Iššifruokite šablone išdėstytus žodžius</summary>
   <summary xml:lang="nl">Orden de verhaspelde woorden in patronen</summary>
@@ -41,6 +43,7 @@
     <p xml:lang="el">Το Connectagram είναι ενα παιχνίδι αποκωδικοποίησης λέξεων.  Ο πίνακας αποτελείται από πολλά κωδικοποιημένα λόγια που ενώνονται μεταξύ τους. Μπορείτε να επιλέξετε το μήκος των λέξεων, το ποσό των λέξεων, και το μοτίβο που οι λέξεις διατάσσονται. Το παιχνίδι προσφέρει μια επιλογή υποδειξεων για τους χρόνους όταν δεν μπορείτε να ξεκολλήσετε, και διαθέτει μια ηλεκτρονική αναζήτηση λέξεων που φέρνει τους ορισμούς της κάθε λέξης από το Βικιλεξικό. Η πρόοδός σας αποθηκεύεται αυτόματα.</p>
     <p xml:lang="es_PE">Connectagram es un juego para descifrar palabras. El tablero se compone de varias palabras revueltas que se unen entre sí. Se puede elegir la longitud de las palabras, la cantidad de palabras, y el patrón en que las palabras se organizan. El juego ofrece una opción de sugerencia para los momentos cuando está estancado y cuenta con una búsqueda de textos en línea que recupera las definiciones de cada palabra de Wiktionary. Su actual progreso se guarda automáticamente.</p>
     <p xml:lang="fr">Connectagram est un jeu de déchiffrage de mots. Le plateau consiste en plusieurs mots brouillés reliés les uns aux autres. Vous avez le choix de la longueur des mots, de leur nombre et de la figure dans laquelle ils sont arrangés. Le jeu propose une option d'aide en cas de blocage, ainsi qu'une recherche en ligne des définitions de chaque mot sur Wiktionary. Votre progression en cours est automatiquement sauvegardée. </p>
+    <p xml:lang="id">Connectagram adalah game pengurai kata. Papan terdiri dari beberapa kata acak yang digabungkan menjadi satu.Anda dapat memilih panjang kata, jumlah kata, dan pola pengaturan kata tersebut.Permainan ini menyediakan opsi petunjuk saat Anda macet, dan menampilkan pencarian kata daring yang mengambil definisi setiap kata dari Wiktionary. Kemajuan Anda saat ini disimpan secara otomatis.</p>
     <p xml:lang="it">Connectagram è un gioco di decodifica. Il tabellone è composto da diverse parole confuse che sono unite insieme. Puoi scegliere la lunghezza delle parole, la quantità di parole e il modello in cui sono disposte le parole. Il gioco offre un'opzione di suggerimento per i momenti in cui sei bloccato e presenta una ricerca di parole online che recupera le definizioni di ogni parola da Wikizionario. I tuoi progressi attuali vengono salvati automaticamente.</p>
     <p xml:lang="lt">Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra užuominos funkciją skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio žaidimo eiga yra automatiškai įrašoma.</p>
     <p xml:lang="nl">Connectagram is een woord orden spel. Het bord bestaat uit diverse verhaspelde woroden die samengevoegd zijn. Je kunt de lengte, het aantal en het patroon van de woorden kiezen. Het spel heeft een hint optie voor als je vast komt te zitten en de mogelijkheid om de definities van woorden on-line op te zoeken van Wiktionary. Je voortgang is automatisch opgeslagen.</p>

@@ -112,7 +112,7 @@
     <message numerus="yes">
         <source>%n letter(s)</source>
         <translation>
-            <numerusform>%n surat</numerusform>
+            <numerusform>%n huruf</numerusform>
         </translation>
     </message>
 </context>
@@ -139,7 +139,7 @@
     </message>
     <message>
         <source>Words</source>
-        <translation>Kata</translation>
+        <translation>Kata-kata</translation>
     </message>
     <message>
         <source>Length</source>
