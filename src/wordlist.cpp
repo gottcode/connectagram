@@ -120,7 +120,11 @@ WordList::WordListData::WordListData(const QString& language) :
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
 	while (!in.atEnd()) {
+#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
+		QStringList spellings = in.readLine().simplified().split(" ", Qt::SkipEmptyParts);
+#else
 		QStringList spellings = in.readLine().simplified().split(" ", QString::SkipEmptyParts);
+#endif
 		if (spellings.isEmpty()) {
 			continue;
 		}
