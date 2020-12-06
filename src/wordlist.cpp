@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2013, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2013-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,8 @@
 #include "wordlist.h"
 
 #include <QFile>
+#include <QLocale>
+#include <QRegularExpression>
 #include <QTextStream>
 
 #include <algorithm>
@@ -33,16 +35,16 @@ WordList::WordList(QObject* parent)
 //-----------------------------------------------------------------------------
 
 QStringList WordList::filter(const QString& known_letters) const {
-	QRegExp filter(known_letters);
+	const QRegularExpression filter("^" + known_letters + "$");
 	QStringList filtered;
-	for (auto i = m_words.constBegin(), end = m_words.constEnd(); i != end; ++i) {
-		if (filter.exactMatch(*i)) {
-			QString sorted = *i;
+	for (const QString& word : m_words) {
+		if (filter.match(word).hasMatch()) {
+			QString sorted = word;
 			std::sort(sorted.begin(), sorted.end());
 			if (m_anagram_filters.contains(sorted)) {
 				continue;
 			}
-			filtered += *i;
+			filtered += word;
 		}
 	}
 	return filtered;
@@ -118,7 +120,9 @@ WordList::WordListData::WordListData(const QString& language) :
 	}
 
 	QTextStream in(&file);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 	in.setCodec("UTF-8");
+#endif
 	while (!in.atEnd()) {
 #if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
 		QStringList spellings = in.readLine().simplified().split(" ", Qt::SkipEmptyParts);

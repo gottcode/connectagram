@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014, 2016 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,7 +60,9 @@ void Dictionary::lookup(const QString& word) {
 		QFile file(info.absoluteFilePath());
 		if (file.open(QFile::ReadOnly | QFile::Text)) {
 			QTextStream stream(&file);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 			stream.setCodec("UTF-8");
+#endif
 			QString definition = stream.readAll();
 			file.close();
 			emit wordDefined(word, definition);
@@ -123,9 +125,9 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 				continue;
 			}
 
-			if (xml.name() == "section") {
+			if (xml.name() == QLatin1String("section")) {
 				definition += xml.readElementText();
-			} else if (xml.name() == "error") {
+			} else if (xml.name() == QLatin1String("error")) {
 				xml.raiseError();
 			}
 		}
@@ -154,7 +156,9 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 		QFile file(m_cache_path + word);
 		if (file.open(QFile::WriteOnly | QFile::Text)) {
 			QTextStream stream(&file);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 			stream.setCodec("UTF-8");
+#endif
 			stream << definition;
 			file.close();
 		}
