@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009-2020 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
  ***********************************************************************/
 
 #include "locale_dialog.h"
+#include "scores_dialog.h"
 #include "window.h"
 
 #include <QApplication>
@@ -54,6 +55,8 @@ int main(int argc, char** argv) {
 	QDir::setSearchPaths("connectagram", paths);
 
 	LocaleDialog::loadTranslator("connectagram_");
+
+	ScoresDialog::migrate();
 
 	Window window;
 

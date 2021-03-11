@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2014 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,6 @@ class QLabel;
 class Board;
 class Clock;
 class Definitions;
-class ScoreBoard;
 
 class Window : public QMainWindow {
 	Q_OBJECT
@@ -47,6 +46,7 @@ class Window : public QMainWindow {
 		void chooseGame();
 		void about();
 		void showDetails();
+		void showScores();
 		void setLocale();
 		void gameStarted();
 		void gameFinished();
@@ -58,7 +58,6 @@ class Window : public QMainWindow {
 		Clock* m_clock;
 		QLabel* m_definitions_button;
 		QLabel* m_hint_button;
-		ScoreBoard* m_scores;
 		Definitions* m_definitions;
 		QLabel* m_success;
 };

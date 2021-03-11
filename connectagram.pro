@@ -41,7 +41,7 @@ HEADERS = src/board.h \
 	src/locale_dialog.h \
 	src/new_game_dialog.h \
 	src/pattern.h \
-	src/score_board.h \
+	src/scores_dialog.h \
 	src/view.h \
 	src/window.h \
 	src/word.h \
@@ -57,7 +57,7 @@ SOURCES = src/board.cpp \
 	src/main.cpp \
 	src/new_game_dialog.cpp \
 	src/pattern.cpp \
-	src/score_board.cpp \
+	src/scores_dialog.cpp \
 	src/view.cpp \
 	src/window.cpp \
 	src/word.cpp \

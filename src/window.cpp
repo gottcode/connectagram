@@ -25,7 +25,7 @@
 #include "locale_dialog.h"
 #include "new_game_dialog.h"
 #include "pattern.h"
-#include "score_board.h"
+#include "scores_dialog.h"
 #include "view.h"
 
 #include <QApplication>
@@ -51,8 +51,6 @@ Window::Window() {
 	setCentralWidget(contents);
 
 	View* view = new View(m_board, contents);
-
-	m_scores = new ScoreBoard(this);
 
 	m_definitions = new Definitions(m_board->words(), this);
 	connect(m_board, &Board::wordAdded, m_definitions, &Definitions::addWord);
@@ -169,7 +167,7 @@ Window::Window() {
 	menu->addAction(tr("D&efinitions"), m_definitions, SLOT(selectWord()), tr("D"));
 	menu->addSeparator();
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
-	menu->addAction(tr("&Scores"), m_scores, SLOT(exec()));
+	menu->addAction(tr("High &Scores"), this, &Window::showScores);
 	menu->addSeparator();
 	action = menu->addAction(tr("&Quit"), qApp, SLOT(quit()), QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
@@ -302,6 +300,13 @@ void Window::showDetails() {
 
 //-----------------------------------------------------------------------------
 
+void Window::showScores() {
+	ScoresDialog scores(this);
+	scores.exec();
+}
+
+//-----------------------------------------------------------------------------
+
 void Window::setLocale() {
 	LocaleDialog dialog(this);
 	dialog.exec();
@@ -329,7 +334,10 @@ void Window::gameFinished() {
 	m_pause_action->setDisabled(true);
 	m_success->show();
 
-	m_scores->addScore(std::lround(msecs / 1000.0), count, length);
+	ScoresDialog scores(this);
+	if (scores.addScore(std::lround(msecs / 1000.0), count, length)) {
+		scores.exec();
+	}
 }
 
 //-----------------------------------------------------------------------------
