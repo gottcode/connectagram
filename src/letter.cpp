@@ -35,11 +35,11 @@
 Letter::Letter(const QChar& character, Board* board)
 	: m_board(board)
 	, m_character(character)
-	, m_cell(0)
+	, m_cell(nullptr)
 	, m_correct(false)
 	, m_movable(true)
 	, m_dragged(false)
-	, m_shadow(0)
+	, m_shadow(nullptr)
 {
 	QPainterPath path;
 	path.addRoundedRect(0, 0, 32, 32, 5, 5);
@@ -124,18 +124,18 @@ void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 	}
 
 	QPoint pos = (((mapToScene(boundingRect().center()) - QPoint(2.f, 34.f)) / 34.f) - QPointF(0.5f, 0.5f)).toPoint();
-	Cell* cell = 0;
+	Cell* cell = nullptr;
 	if (m_cell->word()->orientation() == Qt::Horizontal) {
 		cell = m_board->cell(pos.x(), m_cell->position().y());
 	} else {
 		cell = m_board->cell(m_cell->position().x(), pos.y());
 	}
-	if (cell == 0 || cell == m_cell || cell->word() != m_cell->word()) {
+	if (!cell || cell == m_cell || cell->word() != m_cell->word()) {
 		return;
 	}
 
 	Letter* letter = cell->letter();
-	if (letter == 0 || letter->m_movable == false) {
+	if (!letter || letter->m_movable == false) {
 		return;
 	}
 	m_cell->setLetter(letter);
@@ -196,7 +196,7 @@ void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 	setPos(m_shadow->pos());
 	delete m_shadow;
-	m_shadow = 0;
+	m_shadow = nullptr;
 
 	m_cell->word()->check();
 

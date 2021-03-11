@@ -25,7 +25,7 @@
 
 Cell::Cell(const QPoint& position, Letter* letter)
 	: m_position(position)
-	, m_letter(0)
+	, m_letter(nullptr)
 {
 	setLetter(letter);
 }

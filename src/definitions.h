@@ -31,7 +31,7 @@ class Definitions : public QMenu
 	Q_OBJECT
 
 public:
-	Definitions(const WordList* wordlist, QWidget* parent = 0);
+	Definitions(const WordList* wordlist, QWidget* parent = nullptr);
 
 public slots:
 	void clearWords();

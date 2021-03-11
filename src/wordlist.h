@@ -30,7 +30,7 @@ class WordList : public QObject
 	Q_OBJECT
 
 public:
-	WordList(QObject* parent = 0);
+	WordList(QObject* parent = nullptr);
 
 	bool isEmpty() const
 	{

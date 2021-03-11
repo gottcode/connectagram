@@ -34,7 +34,7 @@ class NewGameDialog : public QDialog
 	Q_OBJECT
 
 public:
-	NewGameDialog(Board* board, QWidget* parent = 0);
+	NewGameDialog(Board* board, QWidget* parent = nullptr);
 	~NewGameDialog();
 
 	static QString densityString(int size);

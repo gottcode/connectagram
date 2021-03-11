@@ -33,7 +33,7 @@ Pattern::Pattern(WordList* words)
 	, m_seed(0)
 	, m_cancelled(false)
 {
-	Q_ASSERT(words != 0);
+	Q_ASSERT(words);
 }
 
 //-----------------------------------------------------------------------------
@@ -75,7 +75,7 @@ void Pattern::setSeed(unsigned int seed)
 
 Pattern* Pattern::create(WordList* words, int type)
 {
-	Pattern* pattern = 0;
+	Pattern* pattern = nullptr;
 	switch (type) {
 	case 0:
 		pattern = new ChainPattern(words);
@@ -119,7 +119,7 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation)
 	// Find word
 	QString result = !words.isEmpty() ? words.at(randomInt(words.count())) : QString();
 	if (result.isEmpty()) {
-		return 0;
+		return nullptr;
 	}
 
 	// Remove anagrams of word
@@ -212,14 +212,14 @@ void Pattern::cleanUp()
 
 Word* Pattern::addWord(int)
 {
-	return 0;
+	return nullptr;
 }
 
 //-----------------------------------------------------------------------------
 
 Word* ChainPattern::addWord(int step)
 {
-	Word* result = 0;
+	Word* result = nullptr;
 	switch (step) {
 	case 0:
 		result = addRandomWord(Qt::Vertical);
@@ -250,7 +250,7 @@ Word* ChainPattern::addWord(int step)
 
 Word* FencePattern::addWord(int step)
 {
-	Word* result = 0;
+	Word* result = nullptr;
 	switch (step) {
 	case 0:
 		result = addRandomWord(Qt::Vertical);
@@ -285,7 +285,7 @@ Word* FencePattern::addWord(int step)
 
 Word* RingsPattern::addWord(int step)
 {
-	Word* result = 0;
+	Word* result = nullptr;
 	switch (step) {
 	case 0:
 		result = addRandomWord(Qt::Horizontal);
@@ -312,7 +312,7 @@ Word* RingsPattern::addWord(int step)
 
 Word* StairsPattern::addWord(int step)
 {
-	Word* result = 0;
+	Word* result = nullptr;
 	switch (step) {
 	case 0:
 		result = addRandomWord(Qt::Horizontal);
@@ -386,7 +386,7 @@ Word* TwistyPattern::stepOne()
 		}
 	}
 
-	return 0;
+	return nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -440,14 +440,14 @@ Word* TwistyPattern::stepTwo()
 		}
 	}
 
-	return 0;
+	return nullptr;
 }
 
 //-----------------------------------------------------------------------------
 
 Word* WavePattern::addWord(int step)
 {
-	Word* result = 0;
+	Word* result = nullptr;
 	switch (step) {
 	case 0:
 		result = addRandomWord(Qt::Horizontal);

@@ -64,7 +64,7 @@ static int countPermutations(const QString& word)
 //-----------------------------------------------------------------------------
 
 Word::Word(const QString& word, const QPoint& position, Qt::Orientation orientation, std::mt19937& random)
-	: m_board(0)
+	: m_board(nullptr)
 	, m_correct(false)
 	, m_orientation(orientation)
 	, m_random(random)
@@ -104,7 +104,7 @@ void Word::check()
 			cell->setWord(this);
 			cell->letter()->setCorrect();
 		}
-		m_board->setCurrentWord(0);
+		m_board->setCurrentWord(nullptr);
 		m_board->check(m_solutions.at(0), word);
 	}
 }
@@ -114,7 +114,7 @@ void Word::check()
 QGraphicsItem* Word::hint()
 {
 	if (isCorrect()) {
-		return 0;
+		return nullptr;
 	}
 
 	// Find position of first incorrect character

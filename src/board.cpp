@@ -32,9 +32,9 @@
 
 Board::Board(QObject* parent)
 	: QGraphicsScene(parent)
-	, m_pattern(0)
-	, m_current_word(0)
-	, m_hint(0)
+	, m_pattern(nullptr)
+	, m_current_word(nullptr)
+	, m_hint(nullptr)
 	, m_finished(true)
 	, m_paused(false)
 {
@@ -82,13 +82,13 @@ void Board::setCurrentWord(Word* word)
 	if (m_current_word) {
 		m_current_word->setHighlight(false);
 	}
-	m_current_word = !m_paused ? word : 0;
+	m_current_word = !m_paused ? word : nullptr;
 	if (m_current_word) {
 		m_current_word->setHighlight(true);
 	}
 	delete m_hint;
-	m_hint = 0;
-	emit hintAvailable(m_current_word != 0);
+	m_hint = nullptr;
+	emit hintAvailable(m_current_word);
 }
 
 //-----------------------------------------------------------------------------
@@ -110,7 +110,7 @@ void Board::setPaused(bool paused)
 		}
 	}
 	if (m_paused) {
-		setCurrentWord(0);
+		setCurrentWord(nullptr);
 	}
 	emit pauseChanged();
 }
@@ -244,7 +244,7 @@ void Board::patternGenerated()
 	for (int x = 0; x < size.width(); ++x) {
 		QList<Cell*> cells;
 		for (int y = 0; y < size.height(); ++y) {
-			cells.append(0);
+			cells.append(nullptr);
 		}
 		m_cells.append(cells);
 	}
@@ -255,7 +255,7 @@ void Board::patternGenerated()
 		for (int i = 0; i < positions.count(); ++i) {
 			const QPoint& pos = positions.at(i);
 			Cell* cell = m_cells.at(pos.x()).at(pos.y());
-			if (cell == 0) {
+			if (!cell) {
 				Letter* letter = new Letter(word->at(i), this);
 				addItem(letter);
 
@@ -264,7 +264,7 @@ void Board::patternGenerated()
 				m_cells[pos.x()][pos.y()] = cell;
 			} else {
 				cell->letter()->setJoin();
-				cell->setWord(0);
+				cell->setWord(nullptr);
 			}
 		}
 	}
@@ -290,15 +290,15 @@ void Board::patternGenerated()
 void Board::cleanUp()
 {
 	delete m_pattern;
-	m_pattern = 0;
+	m_pattern = nullptr;
 	clear();
 	for (int i = 0; i < m_cells.count(); ++i) {
 		qDeleteAll(m_cells[i]);
 	}
 	m_cells.clear();
 	m_words.clear();
-	m_current_word = 0;
-	m_hint = 0;
+	m_current_word = nullptr;
+	m_hint = nullptr;
 	m_finished = false;
 	m_paused = false;
 }

@@ -33,7 +33,7 @@ class Board : public QGraphicsScene
 	Q_OBJECT
 
 public:
-	Board(QObject* parent = 0);
+	Board(QObject* parent = nullptr);
 	~Board();
 
 	void check(const QString& original_word, const QString& current_word);

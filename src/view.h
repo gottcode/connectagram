@@ -29,7 +29,7 @@ class View : public QGraphicsView
 	Q_OBJECT
 
 public:
-	View(Board* board, QWidget* parent = 0);
+	View(Board* board, QWidget* parent = nullptr);
 
 protected:
 	void mouseReleaseEvent(QMouseEvent* event);
