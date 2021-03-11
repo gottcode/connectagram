@@ -87,8 +87,8 @@ Window::Window()
 	width = std::max(metrics.boundingRect(tr("Loading")).width(), metrics.boundingRect(tr("Paused")).width());
 	for (int i = 0; i < 10; ++i) {
 		QString test(6, QChar(i + 48));
-		test.insert(4, QLatin1Char(':'));
-		test.insert(2, QLatin1Char(':'));
+		test.insert(4, QChar(':'));
+		test.insert(2, QChar(':'));
 		width = std::max(width, metrics.boundingRect(test).width());
 	}
 	pixmap = QPixmap(QSize(width + 82, 32) * ratio);
@@ -286,7 +286,7 @@ void Window::showDetails()
 		+ m_board->words()->language()
 		+ patternid
 		+ QString::number(pattern->wordCount())
-		+ QString("%1").arg(int(pattern->wordLength() - 4), 2, 16, QLatin1Char('0'))
+		+ QString("%1").arg(int(pattern->wordLength() - 4), 2, 16, QChar('0'))
 		+ QString::number(pattern->seed(), 16);
 	QMessageBox dialog(QMessageBox::Information,
 		tr("Details"),
