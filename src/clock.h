@@ -16,7 +16,7 @@ class Clock : public QLabel
 	Q_OBJECT
 
 public:
-	Clock(QWidget* parent);
+	explicit Clock(QWidget* parent);
 
 public slots:
 	void start();

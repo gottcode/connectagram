@@ -17,7 +17,7 @@ class WordList : public QObject
 	Q_OBJECT
 
 public:
-	WordList(QObject* parent = nullptr);
+	explicit WordList(QObject* parent = nullptr);
 
 	bool isEmpty() const
 	{

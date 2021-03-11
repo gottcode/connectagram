@@ -21,7 +21,7 @@ class NewGameDialog : public QDialog
 	Q_OBJECT
 
 public:
-	NewGameDialog(Board* board, QWidget* parent = nullptr);
+	explicit NewGameDialog(Board* board, QWidget* parent = nullptr);
 	~NewGameDialog();
 
 	static QString densityString(int size);

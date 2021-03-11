@@ -92,7 +92,7 @@ signals:
 	void generated();
 
 protected:
-	Pattern(WordList* words);
+	explicit Pattern(WordList* words);
 
 	Word* addRandomWord(Qt::Orientation orientation);
 	QChar at(const QPoint& pos) const;
@@ -136,7 +136,7 @@ class ChainPattern : public Pattern
 	Q_OBJECT
 
 public:
-	ChainPattern(WordList* words)
+	explicit ChainPattern(WordList* words)
 		: Pattern(words)
 	{
 	}
@@ -167,7 +167,7 @@ class FencePattern : public Pattern
 	Q_OBJECT
 
 public:
-	FencePattern(WordList* words)
+	explicit FencePattern(WordList* words)
 		: Pattern(words)
 	{
 	}
@@ -198,7 +198,7 @@ class RingsPattern : public Pattern
 	Q_OBJECT
 
 public:
-	RingsPattern(WordList* words)
+	explicit RingsPattern(WordList* words)
 		: Pattern(words)
 	{
 	}
@@ -229,7 +229,7 @@ class StairsPattern : public Pattern
 	Q_OBJECT
 
 public:
-	StairsPattern(WordList* words)
+	explicit StairsPattern(WordList* words)
 		: Pattern(words)
 	{
 	}
@@ -250,7 +250,7 @@ class TwistyPattern : public Pattern
 	Q_OBJECT
 
 public:
-	TwistyPattern(WordList* words)
+	explicit TwistyPattern(WordList* words)
 		: Pattern(words)
 	{
 	}
@@ -273,7 +273,7 @@ class WavePattern : public Pattern
 	Q_OBJECT
 
 public:
-	WavePattern(WordList* words)
+	explicit WavePattern(WordList* words)
 		: Pattern(words)
 	{
 	}

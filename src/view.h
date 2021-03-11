@@ -16,7 +16,7 @@ class View : public QGraphicsView
 	Q_OBJECT
 
 public:
-	View(Board* board, QWidget* parent = nullptr);
+	explicit View(Board* board, QWidget* parent = nullptr);
 
 protected:
 	void mouseReleaseEvent(QMouseEvent* event) override;
