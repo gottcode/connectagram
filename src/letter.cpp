@@ -33,7 +33,7 @@ Letter::Letter(const QChar& character, Board* board)
 	setPath(path);
 	setCursor(Qt::OpenHandCursor);
 	setPen(Qt::NoPen);
-	setBrush(QColor("#bbbbbb"));
+	setBrush(QColor(0xbb, 0xbb, 0xbb));
 	setFlag(QGraphicsItem::ItemIsMovable);
 	setZValue(1);
 
@@ -61,7 +61,7 @@ void Letter::setCell(Cell* cell)
 void Letter::setCorrect()
 {
 	setFlag(QGraphicsItem::ItemIsMovable, false);
-	setBrush(QColor("#008c00"));
+	setBrush(QColor(0, 0x8c, 0));
 	setCursor(Qt::PointingHandCursor);
 	m_correct = true;
 	m_movable = false;
@@ -72,7 +72,7 @@ void Letter::setCorrect()
 void Letter::setHighlight(bool highlight)
 {
 	if (m_movable) {
-		setBrush(highlight ? QColor("#0057ae") : QColor("#bbbbbb"));
+		setBrush(highlight ? QColor(0, 0x57, 0xae) : QColor(0xbb, 0xbb, 0xbb));
 	}
 }
 
@@ -81,7 +81,7 @@ void Letter::setHighlight(bool highlight)
 void Letter::setJoin()
 {
 	setFlag(QGraphicsItem::ItemIsMovable, false);
-	setBrush(QColor("#555555"));
+	setBrush(QColor(0x55, 0x55, 0x55));
 	setCursor(Qt::ArrowCursor);
 	m_movable = false;
 }
@@ -156,7 +156,7 @@ void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event)
 	m_board->setPaused(false);
 	m_board->setCurrentWord(m_cell->word());
 
-	m_shadow = scene()->addPath(path(), Qt::NoPen, QColor("#a5c1e4"));
+	m_shadow = scene()->addPath(path(), Qt::NoPen, QColor(0xa5, 0xc1, 0xe4));
 	m_shadow->setPos(pos());
 
 	QGraphicsPathItem::mousePressEvent(event);

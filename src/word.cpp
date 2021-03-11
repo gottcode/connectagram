@@ -131,7 +131,7 @@ QGraphicsItem* Word::hint()
 		Letter* letter = m_board->cell(point.x(), point.y())->letter();
 		if (letter->isMovable() && letter->character() == c) {
 			position = letter->scenePos();
-			letter->setBrush(QColor("#ffbf00"));
+			letter->setBrush(QColor(0xff, 0xbf, 0x0));
 			break;
 		}
 	}
@@ -161,7 +161,7 @@ QGraphicsItem* Word::hint()
 		path.lineTo(positions.at(i));
 	}
 
-	QGraphicsPathItem* item = m_board->addPath(path, Qt::NoPen, QColor("#ffbf00"));
+	QGraphicsPathItem* item = m_board->addPath(path, Qt::NoPen, QColor(0xff, 0xbf, 0x0));
 	item->setPos(position + delta);
 	item->setZValue(20);
 
