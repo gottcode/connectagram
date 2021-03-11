@@ -39,7 +39,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	m_wordlist = new WordList(this);
 	m_wordlist->setLanguage(WordList::defaultLanguage());
 	m_languages_box = new QComboBox(this);
-	QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+	const QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
 	for (const QString& language : languages) {
 		m_languages_box->addItem(LocaleDialog::languageName(language), language);
 	}
@@ -129,7 +129,7 @@ QString NewGameDialog::densityString(int size)
 void NewGameDialog::keyPressEvent(QKeyEvent* event)
 {
 	if ((event->key() == Qt::Key_Enter) || (event->key() == Qt::Key_Return)) {
-		for (QToolButton* button : m_pattern_buttons) {
+		for (QToolButton* button : qAsConst(m_pattern_buttons)) {
 			if (button->hasFocus() && button->isEnabled()) {
 				button->click();
 				break;

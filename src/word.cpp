@@ -81,12 +81,12 @@ void Word::click()
 void Word::check()
 {
 	QString word;
-	for (const QPoint& pos : m_positions) {
+	for (const QPoint& pos : qAsConst(m_positions)) {
 		word += m_board->cell(pos.x(), pos.y())->letter()->character();
 	}
 	if (m_solutions.contains(word)) {
 		m_correct = true;
-		for (const QPoint& pos : m_positions) {
+		for (const QPoint& pos : qAsConst(m_positions)) {
 			Cell* cell = m_board->cell(pos.x(), pos.y());
 			cell->setWord(this);
 			cell->letter()->setCorrect();
@@ -108,7 +108,7 @@ QGraphicsItem* Word::hint()
 	int count = m_positions.count();
 	int pos = -1;
 	QString solution;
-	for (const QString& word : m_solutions) {
+	for (const QString& word : qAsConst(m_solutions)) {
 		for (int i = 0; i < count; ++i) {
 			const QPoint& point = m_positions.at(i);
 			Letter* letter = m_board->cell(point.x(), point.y())->letter();
@@ -240,7 +240,7 @@ QString Word::toString() const
 
 void Word::setHighlight(bool highlight)
 {
-	for (const QPoint& pos : m_positions) {
+	for (const QPoint& pos : qAsConst(m_positions)) {
 		m_board->cell(pos.x(), pos.y())->letter()->setHighlight(highlight);
 	}
 }
@@ -267,7 +267,7 @@ void Word::shuffle(const WordList* words)
 	}
 	std::sort(chars.begin(), chars.end());
 	std::sort(movable.begin(), movable.end());
-	QStringList filtered = words->filter(filter);
+	const QStringList filtered = words->filter(filter);
 
 	// Find valid solutions
 	for (const QString& valid : filtered) {
