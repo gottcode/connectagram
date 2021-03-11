@@ -41,7 +41,7 @@ signals:
 	void togglePaused();
 
 protected:
-	virtual void mousePressEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event) override;
 
 private slots:
 	void tick();

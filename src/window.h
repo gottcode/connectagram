@@ -39,9 +39,9 @@ public slots:
 	void newGame();
 
 protected:
-	virtual void closeEvent(QCloseEvent* event);
-	virtual bool event(QEvent* event);
-	virtual bool eventFilter(QObject* object, QEvent* event);
+	void closeEvent(QCloseEvent* event) override;
+	bool event(QEvent* event) override;
+	bool eventFilter(QObject* object, QEvent* event) override;
 
 private slots:
 	void chooseGame();

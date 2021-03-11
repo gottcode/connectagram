@@ -154,23 +154,23 @@ public:
 	{
 	}
 
-	QList<int> counts() const
+	QList<int> counts() const override
 	{
 		return QList<int>() << 4 << 9 << 14 << 19;
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Chain");
 	}
 
 private:
-	int steps() const
+	int steps() const override
 	{
 		return 5;
 	}
 
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -185,23 +185,23 @@ public:
 	{
 	}
 
-	QList<int> counts() const
+	QList<int> counts() const override
 	{
 		return QList<int>() << 4 << 7 << 13 << 16;
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Fence");
 	}
 
 private:
-	int steps() const
+	int steps() const override
 	{
 		return 6;
 	}
 
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -216,23 +216,23 @@ public:
 	{
 	}
 
-	int minimumLength() const
+	int minimumLength() const override
 	{
 		return 7;
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Rings");
 	}
 
 private:
-	int steps() const
+	int steps() const override
 	{
 		return 4;
 	}
 
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -247,13 +247,13 @@ public:
 	{
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Stairs");
 	}
 
 private:
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 };
 
 //-----------------------------------------------------------------------------
@@ -268,13 +268,13 @@ public:
 	{
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Twisty");
 	}
 
 private:
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 	Word* stepOne();
 	Word* stepTwo();
 };
@@ -291,23 +291,23 @@ public:
 	{
 	}
 
-	QList<int> counts() const
+	QList<int> counts() const override
 	{
 		return QList<int>() << 5 << 9 << 13 << 17;
 	}
 
-	QString name() const
+	QString name() const override
 	{
 		return tr("Wave");
 	}
 
 private:
-	int steps() const
+	int steps() const override
 	{
 		return 4;
 	}
 
-	Word* addWord(int step);
+	Word* addWord(int step) override;
 };
 
 #endif
