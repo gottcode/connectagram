@@ -367,7 +367,6 @@ Word* TwistyPattern::stepOne()
 		int offset = length - wordLength();
 		if (offset >= 0) {
 			left += offset ? randomInt(offset) : 0;
-			right = left + wordLength();
 			m_current = QPoint(left, pos.y());
 			return addRandomWord(Qt::Horizontal);
 		}
@@ -421,7 +420,6 @@ Word* TwistyPattern::stepTwo()
 		int offset = length - wordLength();
 		if (offset >= 0) {
 			top += offset ? randomInt(offset) : 0;
-			bottom = top + wordLength();
 			m_current = QPoint(pos.x(), top);
 			return addRandomWord(Qt::Vertical);
 		}
