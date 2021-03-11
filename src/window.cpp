@@ -146,29 +146,29 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, SLOT(newGame()), QKeySequence::New);
-	menu->addAction(tr("&Choose..."), this, SLOT(chooseGame()));
+	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
+	menu->addAction(tr("&Choose..."), this, &Window::chooseGame);
 	menu->addSeparator();
-	m_pause_action = menu->addAction(tr("&Pause"), m_board, SLOT(togglePaused()), tr("P"));
+	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::togglePaused, tr("P"));
 	m_pause_action->setDisabled(true);
-	QAction* action = menu->addAction(tr("&Hint"), m_board, SLOT(showHint()), tr("H"));
+	QAction* action = menu->addAction(tr("&Hint"), m_board, &Board::showHint, tr("H"));
 	action->setDisabled(true);
 	connect(m_board, &Board::hintAvailable, action, &QAction::setEnabled);
 	menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions, tr("D"));
 	menu->addSeparator();
-	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
+	menu->addAction(tr("&Details"), this, &Window::showDetails);
 	menu->addAction(tr("High &Scores"), this, &Window::showScores);
 	menu->addSeparator();
-	action = menu->addAction(tr("&Quit"), qApp, SLOT(quit()), QKeySequence::Quit);
+	action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
-	menu->addAction(tr("Application &Language..."), this, SLOT(setLocale()));
+	menu->addAction(tr("Application &Language..."), this, &Window::setLocale);
 
 	menu = menuBar()->addMenu(tr("&Help"));
-	action = menu->addAction(tr("&About"), this, SLOT(about()));
+	action = menu->addAction(tr("&About"), this, &Window::about);
 	action->setMenuRole(QAction::AboutRole);
-	action = menu->addAction(tr("About &Qt"), qApp, SLOT(aboutQt()));
+	action = menu->addAction(tr("About &Qt"), qApp, &QApplication::aboutQt);
 	action->setMenuRole(QAction::AboutQtRole);
 
 	// Restore window geometry
