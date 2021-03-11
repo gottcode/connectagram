@@ -291,11 +291,16 @@ void Window::showDetails()
 	QMessageBox dialog(QMessageBox::Information,
 		tr("Details"),
 		QString("<p><b>%1</b> %2<br><b>%3</b> %4<br><b>%5</b> %6<br><b>%7</b> %8<br><b>%9</b> %10</p>")
-			.arg(tr("Pattern:")).arg(pattern->name())
-			.arg(NewGameDialog::tr("Language:")).arg(LocaleDialog::languageName(m_board->words()->language()))
-			.arg(NewGameDialog::tr("Amount of Words:")).arg(NewGameDialog::densityString(pattern->wordCount()))
-			.arg(NewGameDialog::tr("Word Length:")).arg(NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1))
-			.arg(tr("Game Number:")).arg(number),
+			.arg(tr("Pattern:")
+				, pattern->name()
+				, NewGameDialog::tr("Language:")
+				, LocaleDialog::languageName(m_board->words()->language())
+				, NewGameDialog::tr("Amount of Words:")
+				, NewGameDialog::densityString(pattern->wordCount())
+				, NewGameDialog::tr("Word Length:")
+				, NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1)
+				, tr("Game Number:"))
+			.arg(number),
 		QMessageBox::NoButton,
 		this);
 	dialog.setIconPixmap(QIcon(QString(":/patterns/%1.png").arg(patternid)).pixmap(96,96));
