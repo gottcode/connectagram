@@ -78,7 +78,7 @@ void WordList::setLanguage(const QString& langcode)
 	}
 	m_langcode = langcode;
 
-	static QHash<QString, QSharedPointer<WordListData> > languages;
+	static QHash<QString, QSharedPointer<WordListData>> languages;
 	if (!languages.contains(langcode)) {
 		languages.insert(langcode, QSharedPointer<WordListData>(new WordListData(langcode)));
 	}

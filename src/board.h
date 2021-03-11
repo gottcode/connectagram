@@ -93,7 +93,7 @@ private:
 private:
 	WordList* m_wordlist;
 	Pattern* m_pattern;
-	QList<QList<Cell*> > m_cells;
+	QList<QList<Cell*>> m_cells;
 	QList<Word*> m_words;
 	Word* m_current_word;
 	QGraphicsItem* m_hint;
