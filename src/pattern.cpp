@@ -26,13 +26,20 @@
 //-----------------------------------------------------------------------------
 
 Pattern::Pattern(WordList* words)
-: m_current(0,0), m_words(words), m_count(0), m_length(0), m_seed(0), m_cancelled(false) {
+	: m_current(0,0)
+	, m_words(words)
+	, m_count(0)
+	, m_length(0)
+	, m_seed(0)
+	, m_cancelled(false)
+{
 	Q_ASSERT(words != 0);
 }
 
 //-----------------------------------------------------------------------------
 
-Pattern::~Pattern() {
+Pattern::~Pattern()
+{
 	if (isRunning()) {
 		m_cancelled_mutex.lock();
 		m_cancelled = true;
@@ -44,55 +51,60 @@ Pattern::~Pattern() {
 
 //-----------------------------------------------------------------------------
 
-void Pattern::setCount(int count) {
+void Pattern::setCount(int count)
+{
 	m_count = counts().value(count, 4);
 }
 
 //-----------------------------------------------------------------------------
 
-void Pattern::setLength(int length) {
+void Pattern::setLength(int length)
+{
 	m_length = qBound(minimumLength(), length, maximumLength()) - 1;
 	m_words->setLength(m_length);
 }
 
 //-----------------------------------------------------------------------------
 
-void Pattern::setSeed(unsigned int seed) {
+void Pattern::setSeed(unsigned int seed)
+{
 	m_seed = seed;
 }
 
 //-----------------------------------------------------------------------------
 
-Pattern* Pattern::create(WordList* words, int type) {
+Pattern* Pattern::create(WordList* words, int type)
+{
 	Pattern* pattern = 0;
 	switch (type) {
-		case 0:
-			pattern = new ChainPattern(words);
-			break;
-		case 1:
-			pattern = new FencePattern(words);
-			break;
-		case 2:
-			pattern = new RingsPattern(words);
-			break;
-		case 3:
-			pattern = new StairsPattern(words);
-			break;
-		case 4:
-			pattern = new TwistyPattern(words);
-			break;
-		case 5:
-			pattern = new WavePattern(words);
-			break;
-		default:
-			break;
+	case 0:
+		pattern = new ChainPattern(words);
+		break;
+	case 1:
+		pattern = new FencePattern(words);
+		break;
+	case 2:
+		pattern = new RingsPattern(words);
+		break;
+	case 3:
+		pattern = new StairsPattern(words);
+		break;
+	case 4:
+		pattern = new TwistyPattern(words);
+		break;
+	case 5:
+		pattern = new WavePattern(words);
+		break;
+	default:
+		break;
 	}
 	return pattern;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* Pattern::addRandomWord(Qt::Orientation orientation) {
+Word* Pattern::addRandomWord(Qt::Orientation orientation)
+{
 	// Filter words on what characters are on the board
 	QString known_letters;
 	QPoint pos = m_current;
@@ -118,7 +130,8 @@ Word* Pattern::addRandomWord(Qt::Orientation orientation) {
 
 //-----------------------------------------------------------------------------
 
-QChar Pattern::at(const QPoint& pos) const {
+QChar Pattern::at(const QPoint& pos) const
+{
 	for (Word* word : m_solution) {
 		QList<QPoint> positions = word->positions();
 		for (int i = 0; i < positions.count(); ++i) {
@@ -132,7 +145,8 @@ QChar Pattern::at(const QPoint& pos) const {
 
 //-----------------------------------------------------------------------------
 
-void Pattern::run() {
+void Pattern::run()
+{
 	if (m_words->isEmpty()) {
 		return;
 	}
@@ -186,7 +200,8 @@ void Pattern::run() {
 
 //-----------------------------------------------------------------------------
 
-void Pattern::cleanUp() {
+void Pattern::cleanUp()
+{
 	qDeleteAll(m_solution);
 	m_solution.clear();
 	m_words->resetAnagramFilters();
@@ -195,128 +210,135 @@ void Pattern::cleanUp() {
 
 //-----------------------------------------------------------------------------
 
-Word* Pattern::addWord(int) {
+Word* Pattern::addWord(int)
+{
 	return 0;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* ChainPattern::addWord(int step) {
+Word* ChainPattern::addWord(int step)
+{
 	Word* result = 0;
 	switch (step) {
-		case 0:
-			result = addRandomWord(Qt::Vertical);
-			break;
-		case 1:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(), 0);
-			break;
-		case 2:
-			result = addRandomWord(Qt::Vertical);
-			m_current += QPoint(-wordLength(), wordLength());
-			break;
-		case 3:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength() - 1, wordLength() / -2);
-			break;
-		case 4:
-			result = addRandomWord(Qt::Horizontal);
-			m_current = QPoint(m_current.x() + wordLength() - 1, 0);
-			break;
-		default:
-			break;
+	case 0:
+		result = addRandomWord(Qt::Vertical);
+		break;
+	case 1:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(), 0);
+		break;
+	case 2:
+		result = addRandomWord(Qt::Vertical);
+		m_current += QPoint(-wordLength(), wordLength());
+		break;
+	case 3:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength() - 1, wordLength() / -2);
+		break;
+	case 4:
+		result = addRandomWord(Qt::Horizontal);
+		m_current = QPoint(m_current.x() + wordLength() - 1, 0);
+		break;
+	default:
+		break;
 	}
 	return result;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* FencePattern::addWord(int step) {
+Word* FencePattern::addWord(int step)
+{
 	Word* result = 0;
 	switch (step) {
-		case 0:
-			result = addRandomWord(Qt::Vertical);
-			m_current += QPoint(0, 1);
-			break;
-		case 1:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(0, 2);
-			break;
-		case 2:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(), -3);
-			break;
-		case 3:
-			result = addRandomWord(Qt::Vertical);
-			break;
-		case 4:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(0, 2);
-			break;
-		case 5:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(),- 2);
-			break;
-		default:
-			break;
+	case 0:
+		result = addRandomWord(Qt::Vertical);
+		m_current += QPoint(0, 1);
+		break;
+	case 1:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(0, 2);
+		break;
+	case 2:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(), -3);
+		break;
+	case 3:
+		result = addRandomWord(Qt::Vertical);
+		break;
+	case 4:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(0, 2);
+		break;
+	case 5:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(),- 2);
+		break;
+	default:
+		break;
 	}
 	return result;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* RingsPattern::addWord(int step) {
+Word* RingsPattern::addWord(int step)
+{
 	Word* result = 0;
 	switch (step) {
-		case 0:
-			result = addRandomWord(Qt::Horizontal);
-			break;
-		case 1:
-			result = addRandomWord(Qt::Vertical);
-			m_current += QPoint(0, wordLength());
-			break;
-		case 2:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(), -wordLength());
-			break;
-		case 3:
-			result = addRandomWord(Qt::Vertical);
-			m_current = QPoint(m_current.x() - 2, m_current.y() ? 0 : (wordLength() - 2));
-			break;
-		default:
-			break;
+	case 0:
+		result = addRandomWord(Qt::Horizontal);
+		break;
+	case 1:
+		result = addRandomWord(Qt::Vertical);
+		m_current += QPoint(0, wordLength());
+		break;
+	case 2:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(), -wordLength());
+		break;
+	case 3:
+		result = addRandomWord(Qt::Vertical);
+		m_current = QPoint(m_current.x() - 2, m_current.y() ? 0 : (wordLength() - 2));
+		break;
+	default:
+		break;
 	}
 	return result;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* StairsPattern::addWord(int step) {
+Word* StairsPattern::addWord(int step)
+{
 	Word* result = 0;
 	switch (step) {
-		case 0:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength() - 1, 0);
-			break;
-		case 1:
-			result = addRandomWord(Qt::Vertical);
-			m_current += QPoint(0, wordLength());
-			break;
-		default:
-			break;
+	case 0:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength() - 1, 0);
+		break;
+	case 1:
+		result = addRandomWord(Qt::Vertical);
+		m_current += QPoint(0, wordLength());
+		break;
+	default:
+		break;
 	}
 	return result;
 }
 
 //-----------------------------------------------------------------------------
 
-Word* TwistyPattern::addWord(int step) {
+Word* TwistyPattern::addWord(int step)
+{
 	return step ? stepTwo() : stepOne();
 }
 
 //-----------------------------------------------------------------------------
 
-Word* TwistyPattern::stepOne() {
+Word* TwistyPattern::stepOne()
+{
 	QList<QPoint> positions;
 	for (int i = 0; i <= wordLength(); ++i) {
 		positions.append(m_current + QPoint(0, i));
@@ -369,7 +391,8 @@ Word* TwistyPattern::stepOne() {
 
 //-----------------------------------------------------------------------------
 
-Word* TwistyPattern::stepTwo() {
+Word* TwistyPattern::stepTwo()
+{
 	QList<QPoint> positions;
 	for (int i = 0; i <= wordLength(); ++i) {
 		positions.append(m_current + QPoint(i, 0));
@@ -422,26 +445,29 @@ Word* TwistyPattern::stepTwo() {
 
 //-----------------------------------------------------------------------------
 
-Word* WavePattern::addWord(int step) {
+Word* WavePattern::addWord(int step)
+{
 	Word* result = 0;
 	switch (step) {
-		case 0:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(), 0);
-			break;
-		case 1:
-			result = addRandomWord(Qt::Vertical);
-			m_current += QPoint(0, wordLength());
-			break;
-		case 2:
-			result = addRandomWord(Qt::Horizontal);
-			m_current += QPoint(wordLength(), -wordLength());
-			break;
-		case 3:
-			result = addRandomWord(Qt::Vertical);
-			break;
-		default:
-			break;
+	case 0:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(), 0);
+		break;
+	case 1:
+		result = addRandomWord(Qt::Vertical);
+		m_current += QPoint(0, wordLength());
+		break;
+	case 2:
+		result = addRandomWord(Qt::Horizontal);
+		m_current += QPoint(wordLength(), -wordLength());
+		break;
+	case 3:
+		result = addRandomWord(Qt::Vertical);
+		break;
+	default:
+		break;
 	}
 	return result;
 }
+
+//-----------------------------------------------------------------------------

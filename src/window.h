@@ -27,39 +27,40 @@ class Board;
 class Clock;
 class Definitions;
 
-class Window : public QMainWindow {
+class Window : public QMainWindow
+{
 	Q_OBJECT
 
-	public:
-		Window();
-		~Window();
+public:
+	Window();
+	~Window();
 
-	public slots:
-		void newGame();
+public slots:
+	void newGame();
 
-	protected:
-		virtual void closeEvent(QCloseEvent* event);
-		virtual bool event(QEvent* event);
-		virtual bool eventFilter(QObject* object, QEvent* event);
+protected:
+	virtual void closeEvent(QCloseEvent* event);
+	virtual bool event(QEvent* event);
+	virtual bool eventFilter(QObject* object, QEvent* event);
 
-	private slots:
-		void chooseGame();
-		void about();
-		void showDetails();
-		void showScores();
-		void setLocale();
-		void gameStarted();
-		void gameFinished();
-		void gamePauseChanged();
+private slots:
+	void chooseGame();
+	void about();
+	void showDetails();
+	void showScores();
+	void setLocale();
+	void gameStarted();
+	void gameFinished();
+	void gamePauseChanged();
 
-	private:
-		QAction* m_pause_action;
-		Board* m_board;
-		Clock* m_clock;
-		QLabel* m_definitions_button;
-		QLabel* m_hint_button;
-		Definitions* m_definitions;
-		QLabel* m_success;
+private:
+	QAction* m_pause_action;
+	Board* m_board;
+	Clock* m_clock;
+	QLabel* m_definitions_button;
+	QLabel* m_hint_button;
+	Definitions* m_definitions;
+	QLabel* m_success;
 };
 
 #endif

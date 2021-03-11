@@ -30,8 +30,17 @@
 #include <QPainterPath>
 #include <QPen>
 
+//-----------------------------------------------------------------------------
+
 Letter::Letter(const QChar& character, Board* board)
-: m_board(board), m_character(character), m_cell(0), m_correct(false), m_movable(true), m_dragged(false), m_shadow(0) {
+	: m_board(board)
+	, m_character(character)
+	, m_cell(0)
+	, m_correct(false)
+	, m_movable(true)
+	, m_dragged(false)
+	, m_shadow(0)
+{
 	QPainterPath path;
 	path.addRoundedRect(0, 0, 32, 32, 5, 5);
 	setPath(path);
@@ -53,7 +62,8 @@ Letter::Letter(const QChar& character, Board* board)
 
 //-----------------------------------------------------------------------------
 
-void Letter::setCell(Cell* cell) {
+void Letter::setCell(Cell* cell)
+{
 	m_cell = cell;
 	QGraphicsItem* item = m_shadow ? m_shadow : this;
 	item->setPos(m_cell->position().x() * 34 + 2, m_cell->position().y() * 34 + 34);
@@ -61,7 +71,8 @@ void Letter::setCell(Cell* cell) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::setCorrect() {
+void Letter::setCorrect()
+{
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setBrush(QColor("#008c00"));
 	setCursor(Qt::PointingHandCursor);
@@ -71,7 +82,8 @@ void Letter::setCorrect() {
 
 //-----------------------------------------------------------------------------
 
-void Letter::setHighlight(bool highlight) {
+void Letter::setHighlight(bool highlight)
+{
 	if (m_movable) {
 		setBrush(highlight ? QColor("#0057ae") : QColor("#bbbbbb"));
 	}
@@ -79,7 +91,8 @@ void Letter::setHighlight(bool highlight) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::setJoin() {
+void Letter::setJoin()
+{
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setBrush(QColor("#555555"));
 	setCursor(Qt::ArrowCursor);
@@ -88,7 +101,8 @@ void Letter::setJoin() {
 
 //-----------------------------------------------------------------------------
 
-void Letter::setPaused(bool paused) {
+void Letter::setPaused(bool paused)
+{
 	if (m_movable) {
 		setText(!paused ? m_character : '?');
 	}
@@ -96,7 +110,8 @@ void Letter::setPaused(bool paused) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
+void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+{
 	if (m_dragged == false) {
 		event->accept();
 		return;
@@ -129,7 +144,8 @@ void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event) {
+void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
 	if (event->button() != Qt::LeftButton) {
 		event->ignore();
 		return;
@@ -161,7 +177,8 @@ void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
+void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
+{
 	if (event->button() != Qt::LeftButton) {
 		event->ignore();
 		return;
@@ -188,7 +205,10 @@ void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void Letter::setText(const QChar& character) {
+void Letter::setText(const QChar& character)
+{
 	m_text->setText(character);
 	m_text->setPos(boundingRect().center() - m_text->boundingRect().center());
 }
+
+//-----------------------------------------------------------------------------

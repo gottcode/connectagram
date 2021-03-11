@@ -23,8 +23,12 @@
 
 #include <QMouseEvent>
 
+//-----------------------------------------------------------------------------
+
 View::View(Board* board, QWidget* parent)
-: QGraphicsView(board, parent), m_board(board) {
+	: QGraphicsView(board, parent)
+	, m_board(board)
+{
 	setDragMode(QGraphicsView::ScrollHandDrag);
 	viewport()->setCursor(Qt::ArrowCursor);
 	setFrameStyle(QFrame::NoFrame);
@@ -42,7 +46,8 @@ View::View(Board* board, QWidget* parent)
 
 //-----------------------------------------------------------------------------
 
-void View::mouseReleaseEvent(QMouseEvent* event) {
+void View::mouseReleaseEvent(QMouseEvent* event)
+{
 	QGraphicsView::mouseReleaseEvent(event);
 	if (!itemAt(event->pos())) {
 		viewport()->setCursor(Qt::ArrowCursor);
@@ -51,6 +56,9 @@ void View::mouseReleaseEvent(QMouseEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void View::gameStarted() {
+void View::gameStarted()
+{
 	centerOn(m_board->sceneRect().center());
 }
+
+//-----------------------------------------------------------------------------

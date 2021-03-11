@@ -41,7 +41,10 @@
 #include <algorithm>
 #include <cmath>
 
-Window::Window() {
+//-----------------------------------------------------------------------------
+
+Window::Window()
+{
 	m_board = new Board(this);
 	connect(m_board, &Board::finished, this, &Window::gameFinished);
 	connect(m_board, &Board::started, this, &Window::gameStarted);
@@ -198,20 +201,23 @@ Window::Window() {
 
 //-----------------------------------------------------------------------------
 
-Window::~Window() {
+Window::~Window()
+{
 	m_board->saveGame();
 }
 
 //-----------------------------------------------------------------------------
 
-void Window::newGame() {
+void Window::newGame()
+{
 	NewGameDialog dialog(m_board, this);
 	dialog.exec();
 }
 
 //-----------------------------------------------------------------------------
 
-void Window::chooseGame() {
+void Window::chooseGame()
+{
 	bool ok = false;
 	QString number = QInputDialog::getText(this, tr("Choose Game"), tr("Game Number:"), QLineEdit::Normal, QString(), &ok);
 	if (ok && !number.isEmpty()) {
@@ -224,7 +230,8 @@ void Window::chooseGame() {
 
 //-----------------------------------------------------------------------------
 
-void Window::closeEvent(QCloseEvent* event) {
+void Window::closeEvent(QCloseEvent* event)
+{
 	m_board->saveGame();
 	QSettings().setValue("Geometry", saveGeometry());
 	QMainWindow::closeEvent(event);
@@ -232,7 +239,8 @@ void Window::closeEvent(QCloseEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-bool Window::eventFilter(QObject* object, QEvent* event) {
+bool Window::eventFilter(QObject* object, QEvent* event)
+{
 	if (event->type() == QEvent::MouseButtonPress) {
 		if (object == m_definitions_button) {
 			m_definitions->selectWord();
@@ -247,7 +255,8 @@ bool Window::eventFilter(QObject* object, QEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-bool Window::event(QEvent* event) {
+bool Window::event(QEvent* event)
+{
 	if (event->type() == QEvent::WindowBlocked || event->type() == QEvent::WindowDeactivate) {
 		m_board->setPaused(true);
 	}
@@ -256,7 +265,8 @@ bool Window::event(QEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void Window::about() {
+void Window::about()
+{
 	QMessageBox::about(this, tr("About"), QString("<p><center><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></center></p><p><center>%6</center></p>")
 		.arg(tr("Connectagram"), QCoreApplication::applicationVersion(),
 			tr("A word unscrambling game"),
@@ -268,7 +278,8 @@ void Window::about() {
 
 //-----------------------------------------------------------------------------
 
-void Window::showDetails() {
+void Window::showDetails()
+{
 	Pattern* pattern = m_board->pattern();
 	if (!pattern) {
 		return;
@@ -296,21 +307,24 @@ void Window::showDetails() {
 
 //-----------------------------------------------------------------------------
 
-void Window::showScores() {
+void Window::showScores()
+{
 	ScoresDialog scores(this);
 	scores.exec();
 }
 
 //-----------------------------------------------------------------------------
 
-void Window::setLocale() {
+void Window::setLocale()
+{
 	LocaleDialog dialog(this);
 	dialog.exec();
 }
 
 //-----------------------------------------------------------------------------
 
-void Window::gameStarted() {
+void Window::gameStarted()
+{
 	m_clock->setEnabled(true);
 	m_clock->start();
 	m_pause_action->setEnabled(true);
@@ -319,7 +333,8 @@ void Window::gameStarted() {
 
 //-----------------------------------------------------------------------------
 
-void Window::gameFinished() {
+void Window::gameFinished()
+{
 	QSettings settings;
 	int count = settings.value("Current/Count").toInt();
 	int length = settings.value("Current/Length").toInt();
@@ -338,8 +353,11 @@ void Window::gameFinished() {
 
 //-----------------------------------------------------------------------------
 
-void Window::gamePauseChanged() {
+void Window::gamePauseChanged()
+{
 	bool paused = m_board->isPaused();
 	m_pause_action->setText(paused ? tr("&Resume") : tr("&Pause"));
 	m_clock->setPaused(paused);
 }
+
+//-----------------------------------------------------------------------------

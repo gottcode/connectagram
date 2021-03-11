@@ -30,8 +30,11 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 
+//-----------------------------------------------------------------------------
+
 Definitions::Definitions(const WordList* wordlist, QWidget* parent)
-: QDialog(parent) {
+	: QDialog(parent)
+{
 	QSettings settings;
 	setWindowTitle(tr("Definitions"));
 	setModal(true);
@@ -66,13 +69,15 @@ Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 
 //-----------------------------------------------------------------------------
 
-Definitions::~Definitions() {
+Definitions::~Definitions()
+{
 	m_dictionary->wait();
 }
 
 //-----------------------------------------------------------------------------
 
-void Definitions::clear() {
+void Definitions::clear()
+{
 	m_text->clear();
 	m_word_table.clear();
 	m_words->clear();
@@ -80,7 +85,8 @@ void Definitions::clear() {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::addWord(const QString& word) {
+void Definitions::addWord(const QString& word)
+{
 	QListWidgetItem* item = new QListWidgetItem(QString(word.length(), QChar('?')), m_words);
 	m_word_table.insert(word, item);
 	m_words->clearSelection();
@@ -89,7 +95,8 @@ void Definitions::addWord(const QString& word) {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::solveWord(const QString& original_word, const QString& current_word) {
+void Definitions::solveWord(const QString& original_word, const QString& current_word)
+{
 	QListWidgetItem* item = m_word_table.value(original_word);
 	if (item == 0) {
 		return;
@@ -107,7 +114,8 @@ void Definitions::solveWord(const QString& original_word, const QString& current
 
 //-----------------------------------------------------------------------------
 
-void Definitions::selectWord(const QString& word) {
+void Definitions::selectWord(const QString& word)
+{
 	QListWidgetItem* item = m_word_table.value(word);
 	if (item == 0) {
 		item = m_words->item(0);
@@ -118,7 +126,8 @@ void Definitions::selectWord(const QString& word) {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::hideEvent(QHideEvent* event) {
+void Definitions::hideEvent(QHideEvent* event)
+{
 	QSettings settings;
 	settings.setValue("Definitions/Size", size());
 	settings.setValue("Definitions/Splitter", m_contents->sizes().first());
@@ -127,13 +136,15 @@ void Definitions::hideEvent(QHideEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::anchorClicked(const QUrl& link) {
+void Definitions::anchorClicked(const QUrl& link)
+{
 	QDesktopServices::openUrl(m_dictionary->url().resolved(link));
 }
 
 //-----------------------------------------------------------------------------
 
-void Definitions::wordSelected(QListWidgetItem* item) {
+void Definitions::wordSelected(QListWidgetItem* item)
+{
 	if (item == 0) {
 		m_text->clear();
 		return;
@@ -156,7 +167,8 @@ void Definitions::wordSelected(QListWidgetItem* item) {
 
 //-----------------------------------------------------------------------------
 
-void Definitions::wordDefined(const QString& word, const QString& definition) {
+void Definitions::wordDefined(const QString& word, const QString& definition)
+{
 	QListWidgetItem* item = m_word_table.value(word);
 	if (item == 0) {
 		return;
@@ -166,3 +178,5 @@ void Definitions::wordDefined(const QString& word, const QString& definition) {
 		m_text->setHtml(definition);
 	}
 }
+
+//-----------------------------------------------------------------------------

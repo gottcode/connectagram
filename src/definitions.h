@@ -30,33 +30,34 @@ class QUrl;
 class Dictionary;
 class WordList;
 
-class Definitions : public QDialog {
+class Definitions : public QDialog
+{
 	Q_OBJECT
 
-	public:
-		Definitions(const WordList* wordlist, QWidget* parent = 0);
-		~Definitions();
+public:
+	Definitions(const WordList* wordlist, QWidget* parent = 0);
+	~Definitions();
 
-	public slots:
-		void clear();
-		void addWord(const QString& word);
-		void solveWord(const QString& original_word, const QString& current_word);
-		void selectWord(const QString& word = QString());
+public slots:
+	void clear();
+	void addWord(const QString& word);
+	void solveWord(const QString& original_word, const QString& current_word);
+	void selectWord(const QString& word = QString());
 
-	protected:
-		virtual void hideEvent(QHideEvent* event);
+protected:
+	virtual void hideEvent(QHideEvent* event);
 
-	private slots:
-		void anchorClicked(const QUrl& link);
-		void wordSelected(QListWidgetItem* item);
-		void wordDefined(const QString& word, const QString& definition);
+private slots:
+	void anchorClicked(const QUrl& link);
+	void wordSelected(QListWidgetItem* item);
+	void wordDefined(const QString& word, const QString& definition);
 
-	private:
-		QSplitter* m_contents;
-		QListWidget* m_words;
-		QTextBrowser* m_text;
-		Dictionary* m_dictionary;
-		QHash<QString, QListWidgetItem*> m_word_table;
+private:
+	QSplitter* m_contents;
+	QListWidget* m_words;
+	QTextBrowser* m_text;
+	Dictionary* m_dictionary;
+	QHash<QString, QListWidgetItem*> m_word_table;
 };
 
 #endif

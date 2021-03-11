@@ -26,8 +26,14 @@
 #include <QSettings>
 #include <QTimeLine>
 
+//-----------------------------------------------------------------------------
+
 Clock::Clock(QWidget* parent)
-: QLabel(parent), m_clock(0, 0, 0), m_paused(true), m_stopped(true) {
+	: QLabel(parent)
+	, m_clock(0, 0, 0)
+	, m_paused(true)
+	, m_stopped(true)
+{
 	QFont f = font();
 	f.setPixelSize(20);
 	setFont(f);
@@ -43,7 +49,8 @@ Clock::Clock(QWidget* parent)
 
 //-----------------------------------------------------------------------------
 
-void Clock::start() {
+void Clock::start()
+{
 	m_paused = false;
 	m_stopped = false;
 	m_clock_timer->stop();
@@ -55,7 +62,8 @@ void Clock::start() {
 
 //-----------------------------------------------------------------------------
 
-void Clock::stop() {
+void Clock::stop()
+{
 	m_stopped = true;
 	m_clock_timer->stop();
 	QSettings().remove("Current/Time");
@@ -64,7 +72,8 @@ void Clock::stop() {
 
 //-----------------------------------------------------------------------------
 
-void Clock::setLoading() {
+void Clock::setLoading()
+{
 	m_stopped = true;
 	m_clock_timer->stop();
 	setText(tr("Loading"));
@@ -72,7 +81,8 @@ void Clock::setLoading() {
 
 //-----------------------------------------------------------------------------
 
-void Clock::setPaused(bool paused) {
+void Clock::setPaused(bool paused)
+{
 	m_paused = paused;
 	if (m_clock_timer->state() != QTimeLine::NotRunning) {
 		m_clock_timer->setPaused(paused);
@@ -84,14 +94,16 @@ void Clock::setPaused(bool paused) {
 
 //-----------------------------------------------------------------------------
 
-void Clock::mousePressEvent(QMouseEvent* event) {
+void Clock::mousePressEvent(QMouseEvent* event)
+{
 	QLabel::mousePressEvent(event);
 	emit togglePaused();
 }
 
 //-----------------------------------------------------------------------------
 
-void Clock::tick() {
+void Clock::tick()
+{
 	updateTime();
 	if (!m_stopped) {
 		m_clock_timer->start();
@@ -100,7 +112,8 @@ void Clock::tick() {
 
 //-----------------------------------------------------------------------------
 
-void Clock::updateTime() {
+void Clock::updateTime()
+{
 	m_clock = m_clock.addMSecs(m_clock_timer->currentTime());
 	QSettings().setValue("Current/Time", QTime(0, 0, 0).msecsTo(m_clock));
 	updateText();
@@ -108,6 +121,9 @@ void Clock::updateTime() {
 
 //-----------------------------------------------------------------------------
 
-void Clock::updateText() {
+void Clock::updateText()
+{
 	setText(!m_paused ? m_clock.toString("hh:mm:ss") : tr("Paused"));
 }
+
+//-----------------------------------------------------------------------------

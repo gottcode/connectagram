@@ -29,13 +29,15 @@ class WordList;
 class QNetworkAccessManager;
 class QNetworkReply;
 
-class Dictionary : public QObject {
+class Dictionary : public QObject
+{
 	Q_OBJECT
 
 public:
 	Dictionary(const WordList* wordlist, QObject* parent = 0);
 
-	QUrl url() const {
+	QUrl url() const
+	{
 		return m_url;
 	}
 

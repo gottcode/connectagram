@@ -29,11 +29,15 @@
 
 #include <algorithm>
 
-static int factorial(int num) {
+//-----------------------------------------------------------------------------
+
+static int factorial(int num)
+{
 	return (num > 1) ? (factorial(num - 1) * num) : 1;
 }
 
-static int countPermutations(const QString& word) {
+static int countPermutations(const QString& word)
+{
 	Q_ASSERT(!word.isEmpty());
 
 	int n = factorial(word.length());
@@ -60,7 +64,11 @@ static int countPermutations(const QString& word) {
 //-----------------------------------------------------------------------------
 
 Word::Word(const QString& word, const QPoint& position, Qt::Orientation orientation, std::mt19937& random)
-: m_board(0), m_correct(false), m_orientation(orientation), m_random(random) {
+	: m_board(0)
+	, m_correct(false)
+	, m_orientation(orientation)
+	, m_random(random)
+{
 	if (word.isEmpty()) {
 		return;
 	}
@@ -76,13 +84,15 @@ Word::Word(const QString& word, const QPoint& position, Qt::Orientation orientat
 
 //-----------------------------------------------------------------------------
 
-void Word::click() {
+void Word::click()
+{
 	m_board->click(toString());
 }
 
 //-----------------------------------------------------------------------------
 
-void Word::check() {
+void Word::check()
+{
 	QString word;
 	for (const QPoint& pos : m_positions) {
 		word += m_board->cell(pos.x(), pos.y())->letter()->character();
@@ -101,7 +111,8 @@ void Word::check() {
 
 //-----------------------------------------------------------------------------
 
-QGraphicsItem* Word::hint() {
+QGraphicsItem* Word::hint()
+{
 	if (isCorrect()) {
 		return 0;
 	}
@@ -172,7 +183,8 @@ QGraphicsItem* Word::hint() {
 
 //-----------------------------------------------------------------------------
 
-void Word::moveBy(const QPoint& delta) {
+void Word::moveBy(const QPoint& delta)
+{
 	int count = m_positions.count();
 	for (int i = 0; i < count; ++i) {
 		m_positions[i] += delta;
@@ -181,7 +193,8 @@ void Word::moveBy(const QPoint& delta) {
 
 //-----------------------------------------------------------------------------
 
-void Word::fromString(const QString& shuffled) {
+void Word::fromString(const QString& shuffled)
+{
 	// Find movable letters
 	QString sorted1;
 	QList<Letter*> letters;
@@ -227,7 +240,8 @@ void Word::fromString(const QString& shuffled) {
 
 //-----------------------------------------------------------------------------
 
-QString Word::toString() const {
+QString Word::toString() const
+{
 	QString result;
 	for (const QPoint& pos : m_positions) {
 		result.append(m_board->cell(pos.x(), pos.y())->letter()->character());
@@ -237,7 +251,8 @@ QString Word::toString() const {
 
 //-----------------------------------------------------------------------------
 
-void Word::setHighlight(bool highlight) {
+void Word::setHighlight(bool highlight)
+{
 	for (const QPoint& pos : m_positions) {
 		m_board->cell(pos.x(), pos.y())->letter()->setHighlight(highlight);
 	}
@@ -245,7 +260,8 @@ void Word::setHighlight(bool highlight) {
 
 //-----------------------------------------------------------------------------
 
-void Word::shuffle(const WordList* words) {
+void Word::shuffle(const WordList* words)
+{
 	// Create list of characters and filter the list of words
 	QString chars;
 	QString movable;
@@ -293,3 +309,5 @@ void Word::shuffle(const WordList* words) {
 	}
 	fromString(permuted);
 }
+
+//-----------------------------------------------------------------------------

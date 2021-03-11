@@ -24,7 +24,8 @@
 #include <QApplication>
 #include <QDir>
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
 #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 #if !defined(Q_OS_MAC)
 	if (!qEnvironmentVariableIsSet("QT_DEVICE_PIXEL_RATIO")

@@ -29,12 +29,15 @@
 //-----------------------------------------------------------------------------
 
 WordList::WordList(QObject* parent)
-: QObject(parent), m_length(0) {
+	: QObject(parent)
+	, m_length(0)
+{
 }
 
 //-----------------------------------------------------------------------------
 
-QStringList WordList::filter(const QString& known_letters) const {
+QStringList WordList::filter(const QString& known_letters) const
+{
 	const QRegularExpression filter("^" + known_letters + "$");
 	QStringList filtered;
 	for (const QString& word : m_words) {
@@ -52,7 +55,8 @@ QStringList WordList::filter(const QString& known_letters) const {
 
 //-----------------------------------------------------------------------------
 
-void WordList::addAnagramFilter(const QString& word) {
+void WordList::addAnagramFilter(const QString& word)
+{
 	QString sorted_letters = word;
 	std::sort(sorted_letters.begin(), sorted_letters.end());
 	m_anagram_filters.append(sorted_letters);
@@ -60,13 +64,15 @@ void WordList::addAnagramFilter(const QString& word) {
 
 //-----------------------------------------------------------------------------
 
-void WordList::resetAnagramFilters() {
+void WordList::resetAnagramFilters()
+{
 	m_anagram_filters.clear();
 }
 
 //-----------------------------------------------------------------------------
 
-void WordList::setLanguage(const QString& langcode) {
+void WordList::setLanguage(const QString& langcode)
+{
 	if (m_langcode == langcode) {
 		return;
 	}
@@ -84,14 +90,16 @@ void WordList::setLanguage(const QString& langcode) {
 
 //-----------------------------------------------------------------------------
 
-void WordList::setLength(int length) {
+void WordList::setLength(int length)
+{
 	m_length = length;
 	resetWords();
 }
 
 //-----------------------------------------------------------------------------
 
-QString WordList::defaultLanguage() {
+QString WordList::defaultLanguage()
+{
 	QString language = QLocale().name();
 	if (!QFile::exists("connectagram:" + language)) {
 		language = language.left(2);
@@ -104,14 +112,15 @@ QString WordList::defaultLanguage() {
 
 //-----------------------------------------------------------------------------
 
-void WordList::resetWords() {
+void WordList::resetWords()
+{
 	m_words = m_data->words(m_length);
 }
 
 //-----------------------------------------------------------------------------
 
-WordList::WordListData::WordListData(const QString& language) :
-	m_maximum_length(0)
+WordList::WordListData::WordListData(const QString& language)
+	: m_maximum_length(0)
 {
 	// Read words from disk
 	QFile file("connectagram:" + language + "/words");

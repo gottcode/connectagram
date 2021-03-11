@@ -28,8 +28,16 @@
 #include <QSettings>
 #include <QTimer>
 
+//-----------------------------------------------------------------------------
+
 Board::Board(QObject* parent)
-: QGraphicsScene(parent), m_pattern(0), m_current_word(0), m_hint(0), m_finished(true), m_paused(false) {
+	: QGraphicsScene(parent)
+	, m_pattern(0)
+	, m_current_word(0)
+	, m_hint(0)
+	, m_finished(true)
+	, m_paused(false)
+{
 	QTimer* auto_save = new QTimer(this);
 	auto_save->setInterval(30000);
 	connect(auto_save, &QTimer::timeout, this, &Board::saveGame);
@@ -40,13 +48,15 @@ Board::Board(QObject* parent)
 
 //-----------------------------------------------------------------------------
 
-Board::~Board() {
+Board::~Board()
+{
 	cleanUp();
 }
 
 //-----------------------------------------------------------------------------
 
-void Board::check(const QString& original_word, const QString& current_word) {
+void Board::check(const QString& original_word, const QString& current_word)
+{
 	emit wordSolved(original_word, current_word);
 	m_finished = true;
 	for (Word* word : m_words) {
@@ -60,13 +70,15 @@ void Board::check(const QString& original_word, const QString& current_word) {
 
 //-----------------------------------------------------------------------------
 
-void Board::click(const QString& word) {
+void Board::click(const QString& word)
+{
 	emit wordSelected(word);
 }
 
 //-----------------------------------------------------------------------------
 
-void Board::setCurrentWord(Word* word) {
+void Board::setCurrentWord(Word* word)
+{
 	if (m_current_word) {
 		m_current_word->setHighlight(false);
 	}
@@ -81,7 +93,8 @@ void Board::setCurrentWord(Word* word) {
 
 //-----------------------------------------------------------------------------
 
-void Board::setPaused(bool paused) {
+void Board::setPaused(bool paused)
+{
 	if (m_finished) {
 		return;
 	}
@@ -104,7 +117,8 @@ void Board::setPaused(bool paused) {
 
 //-----------------------------------------------------------------------------
 
-void Board::openGame() {
+void Board::openGame()
+{
 	cleanUp();
 	emit loading();
 
@@ -121,7 +135,8 @@ void Board::openGame() {
 
 //-----------------------------------------------------------------------------
 
-bool Board::openGame(const QString& number) {
+bool Board::openGame(const QString& number)
+{
 	if (!number.startsWith("4")) {
 		return false;
 	}
@@ -190,7 +205,8 @@ bool Board::openGame(const QString& number) {
 
 //-----------------------------------------------------------------------------
 
-void Board::saveGame() {
+void Board::saveGame()
+{
 	if (!m_finished && !m_words.isEmpty()) {
 		QStringList words;
 		for (Word* word : m_words) {
@@ -202,7 +218,8 @@ void Board::saveGame() {
 
 //-----------------------------------------------------------------------------
 
-void Board::showHint() {
+void Board::showHint()
+{
 	if (m_current_word && !mouseGrabberItem()) {
 		delete m_hint;
 		m_hint = m_current_word->hint();
@@ -211,13 +228,15 @@ void Board::showHint() {
 
 //-----------------------------------------------------------------------------
 
-void Board::togglePaused() {
+void Board::togglePaused()
+{
 	setPaused(!m_paused);
 }
 
 //-----------------------------------------------------------------------------
 
-void Board::patternGenerated() {
+void Board::patternGenerated()
+{
 	m_words = m_pattern->solution();
 	QSize size = m_pattern->size();
 	setSceneRect(0, 0, size.width() * 34 + 2, size.height() * 34 + 34);
@@ -268,7 +287,8 @@ void Board::patternGenerated() {
 
 //-----------------------------------------------------------------------------
 
-void Board::cleanUp() {
+void Board::cleanUp()
+{
 	delete m_pattern;
 	m_pattern = 0;
 	clear();
@@ -282,3 +302,5 @@ void Board::cleanUp() {
 	m_finished = false;
 	m_paused = false;
 }
+
+//-----------------------------------------------------------------------------

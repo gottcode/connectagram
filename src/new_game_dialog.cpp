@@ -40,8 +40,12 @@
 #include <ctime>
 #include <random>
 
+//-----------------------------------------------------------------------------
+
 NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
-: QDialog(parent, Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint), m_board(board) {
+	: QDialog(parent, Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint)
+	, m_board(board)
+{
 	setWindowTitle(tr("New Game"));
 
 	// Create languages box
@@ -116,13 +120,15 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 //-----------------------------------------------------------------------------
 
-NewGameDialog::~NewGameDialog() {
+NewGameDialog::~NewGameDialog()
+{
 	qDeleteAll(m_patterns);
 }
 
 //-----------------------------------------------------------------------------
 
-QString NewGameDialog::densityString(int size) {
+QString NewGameDialog::densityString(int size)
+{
 	static const QStringList sizes = QStringList()
 			<< tr("Low")
 			<< tr("Medium")
@@ -133,7 +139,8 @@ QString NewGameDialog::densityString(int size) {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::keyPressEvent(QKeyEvent* event) {
+void NewGameDialog::keyPressEvent(QKeyEvent* event)
+{
 	if ((event->key() == Qt::Key_Enter) || (event->key() == Qt::Key_Return)) {
 		for (QToolButton* button : m_pattern_buttons) {
 			if (button->hasFocus() && button->isEnabled()) {
@@ -148,7 +155,8 @@ void NewGameDialog::keyPressEvent(QKeyEvent* event) {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::languageSelected(int index) {
+void NewGameDialog::languageSelected(int index)
+{
 	m_wordlist->setLanguage(m_languages_box->itemData(index).toString());
 
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
@@ -161,7 +169,8 @@ void NewGameDialog::languageSelected(int index) {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::lengthSelected(int index) {
+void NewGameDialog::lengthSelected(int index)
+{
 	int length = m_word_length_box->itemData(index).toInt();
 	for (int i = 0; i < m_pattern_buttons.count(); ++i) {
 		m_pattern_buttons.at(i)->setEnabled(length >= m_patterns.at(i)->minimumLength());
@@ -170,7 +179,8 @@ void NewGameDialog::lengthSelected(int index) {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::patternSelected() {
+void NewGameDialog::patternSelected()
+{
 	int pattern = -1;
 	for (int i = 0; i < m_pattern_buttons.count(); ++i) {
 		if (m_pattern_buttons.at(i) == sender()) {
@@ -215,7 +225,8 @@ void NewGameDialog::patternSelected() {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::setLanguage(const QString& language) {
+void NewGameDialog::setLanguage(const QString& language)
+{
 	int id = m_languages_box->findData(language);
 	if (id == -1) {
 		id = 0;
@@ -228,16 +239,20 @@ void NewGameDialog::setLanguage(const QString& language) {
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::setCount(int count) {
+void NewGameDialog::setCount(int count)
+{
 	count = qBound(0, count, 3);
 	m_word_count_box->setCurrentIndex(count);
 }
 
 //-----------------------------------------------------------------------------
 
-void NewGameDialog::setLength(int length) {
+void NewGameDialog::setLength(int length)
+{
 	int min = m_word_length_box->itemData(0).toInt();
 	int max = m_word_length_box->itemData(m_word_length_box->count() - 1).toInt();
 	m_word_length_box->setCurrentIndex(qBound(min, length, max) - min);
 	lengthSelected(m_word_length_box->currentIndex());
 }
+
+//-----------------------------------------------------------------------------

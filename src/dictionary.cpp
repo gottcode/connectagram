@@ -32,12 +32,18 @@
 #include <QTextStream>
 #include <QXmlStreamReader>
 
+//-----------------------------------------------------------------------------
+
 static const QByteArray USER_AGENT = "Connectagram/" + QByteArray(VERSIONSTR) + " (https://gottcode.org/connectagram/; Qt/" + qVersion() + ")";
 
 static const QDateTime BUILD_DATE = QLocale::c().toDateTime(QString("%1 %2").arg(__DATE__, __TIME__).simplified(), "MMM d yyyy hh:ss:mm");
 
+//-----------------------------------------------------------------------------
+
 Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
-: QObject(parent), m_wordlist(wordlist) {
+	: QObject(parent)
+	, m_wordlist(wordlist)
+{
 	m_url.setScheme("https");
 	m_url.setPath("/w/api.php");
 	m_query.addQueryItem("format", "xml");
@@ -53,7 +59,8 @@ Dictionary::Dictionary(const WordList* wordlist, QObject* parent)
 
 //-----------------------------------------------------------------------------
 
-void Dictionary::lookup(const QString& word) {
+void Dictionary::lookup(const QString& word)
+{
 	// Check if word exists in cache and is recent
 	QFileInfo info(m_cache_path + word);
 	if (info.exists() && (info.lastModified() >= std::max(BUILD_DATE, QDateTime::currentDateTime().addDays(-14)))) {
@@ -90,7 +97,8 @@ void Dictionary::lookup(const QString& word) {
 
 //-----------------------------------------------------------------------------
 
-void Dictionary::wait() {
+void Dictionary::wait()
+{
 	QHashIterator<QNetworkReply*, QString> i(m_reply_details);
 	while (i.hasNext()) {
 		i.key()->abort();
@@ -99,7 +107,8 @@ void Dictionary::wait() {
 
 //-----------------------------------------------------------------------------
 
-void Dictionary::lookupFinished(QNetworkReply* reply) {
+void Dictionary::lookupFinished(QNetworkReply* reply)
+{
 	// Find word
 	QString word = m_reply_details.value(reply);
 	if (!word.isEmpty()) {
@@ -168,7 +177,8 @@ void Dictionary::lookupFinished(QNetworkReply* reply) {
 
 //-----------------------------------------------------------------------------
 
-void Dictionary::setLanguage(const QString& langcode) {
+void Dictionary::setLanguage(const QString& langcode)
+{
 	m_url.setHost(langcode + ".wiktionary.org");
 
 	// Find cache path
@@ -179,3 +189,5 @@ void Dictionary::setLanguage(const QString& langcode) {
 	QDir dir(m_cache_path);
 	dir.mkpath(dir.absolutePath());
 }
+
+//-----------------------------------------------------------------------------

@@ -24,36 +24,37 @@
 #include <QTime>
 class QTimeLine;
 
-class Clock : public QLabel {
+class Clock : public QLabel
+{
 	Q_OBJECT
 
-	public:
-		Clock(QWidget* parent);
+public:
+	Clock(QWidget* parent);
 
-	public slots:
-		void start();
-		void stop();
-		void setLoading();
-		void setPaused(bool paused);
+public slots:
+	void start();
+	void stop();
+	void setLoading();
+	void setPaused(bool paused);
 
-	signals:
-		void togglePaused();
+signals:
+	void togglePaused();
 
-	protected:
-		virtual void mousePressEvent(QMouseEvent* event);
+protected:
+	virtual void mousePressEvent(QMouseEvent* event);
 
-	private slots:
-		void tick();
+private slots:
+	void tick();
 
-	private:
-		void updateTime();
-		void updateText();
+private:
+	void updateTime();
+	void updateText();
 
-	private:
-		QTime m_clock;
-		QTimeLine* m_clock_timer;
-		bool m_paused;
-		bool m_stopped;
+private:
+	QTime m_clock;
+	QTimeLine* m_clock_timer;
+	bool m_paused;
+	bool m_stopped;
 };
 
 #endif

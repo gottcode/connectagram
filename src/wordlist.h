@@ -25,27 +25,32 @@
 #include <QStringList>
 #include <QObject>
 
-class WordList : public QObject {
+class WordList : public QObject
+{
 	Q_OBJECT
 
 public:
 	WordList(QObject* parent = 0);
 
-	bool isEmpty() const {
+	bool isEmpty() const
+	{
 		return m_data->isEmpty();
 	}
 
-	QString language() const {
+	QString language() const
+	{
 		return m_langcode;
 	}
 
-	int maximumLength() const {
+	int maximumLength() const
+	{
 		return m_data->maximumLength();
 	}
 
 	QStringList filter(const QString& known_letters) const;
 
-	QStringList spellings(const QString& word) const {
+	QStringList spellings(const QString& word) const
+	{
 		return m_data->spellings(word);
 	}
 
@@ -63,23 +68,28 @@ private:
 	void resetWords();
 
 private:
-	class WordListData {
+	class WordListData
+	{
 	public:
 		explicit WordListData(const QString& language = QString());
 
-		bool isEmpty() const {
+		bool isEmpty() const
+		{
 			return m_all_words.isEmpty();
 		}
 
-		int maximumLength() const {
+		int maximumLength() const
+		{
 			return m_maximum_length;
 		}
 
-		QStringList spellings(const QString& word) const {
+		QStringList spellings(const QString& word) const
+		{
 			return m_spellings.value(word, QStringList(word.toLower()));
 		}
 
-		QStringList words(int length) const {
+		QStringList words(int length) const
+		{
 			return m_all_words.value(length);
 		}
 

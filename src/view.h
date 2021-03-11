@@ -24,8 +24,9 @@
 #include <QTime>
 class Board;
 
-class View : public QGraphicsView {
-Q_OBJECT
+class View : public QGraphicsView
+{
+	Q_OBJECT
 
 public:
 	View(Board* board, QWidget* parent = 0);

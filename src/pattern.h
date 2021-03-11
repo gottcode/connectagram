@@ -33,235 +33,281 @@ class Word;
 
 #include <random>
 
-class Pattern : public QThread {
+class Pattern : public QThread
+{
 	Q_OBJECT
 
-	public:
-		virtual ~Pattern();
+public:
+	virtual ~Pattern();
 
-		static Pattern* create(WordList* words, int type);
+	static Pattern* create(WordList* words, int type);
 
-		static int types() {
-			return 6;
-		}
+	static int types()
+	{
+		return 6;
+	}
 
-		QSize size() const {
-			return m_size;
-		}
+	QSize size() const
+	{
+		return m_size;
+	}
 
-		virtual QList<int> counts() const {
-			return QList<int>() << 4 << 8 << 12 << 16;
-		}
+	virtual QList<int> counts() const
+	{
+		return QList<int>() << 4 << 8 << 12 << 16;
+	}
 
-		virtual QString name() const {
-			return QString();
-		}
+	virtual QString name() const
+	{
+		return QString();
+	}
 
-		virtual int minimumLength() const {
-			return 5;
-		}
+	virtual int minimumLength() const
+	{
+		return 5;
+	}
 
-		int maximumLength() const {
-			return m_words->maximumLength();
-		}
+	int maximumLength() const
+	{
+		return m_words->maximumLength();
+	}
 
-		QList<Word*> solution() const {
-			return m_solution;
-		}
+	QList<Word*> solution() const
+	{
+		return m_solution;
+	}
 
-		unsigned int seed() const {
-			return m_seed;
-		}
+	unsigned int seed() const
+	{
+		return m_seed;
+	}
 
-		const WordList* words() const {
-			return m_words;
-		}
+	const WordList* words() const
+	{
+		return m_words;
+	}
 
-		int wordCount() const {
-			return counts().indexOf(m_count);
-		}
+	int wordCount() const
+	{
+		return counts().indexOf(m_count);
+	}
 
-		int wordLength() const {
-			return m_length;
-		}
+	int wordLength() const
+	{
+		return m_length;
+	}
 
-		void setCount(int count);
-		void setLength(int length);
-		void setSeed(unsigned int seed);
+	void setCount(int count);
+	void setLength(int length);
+	void setSeed(unsigned int seed);
 
-	signals:
-		void generated();
+signals:
+	void generated();
 
-	protected:
-		Pattern(WordList* words);
+protected:
+	Pattern(WordList* words);
 
-		Word* addRandomWord(Qt::Orientation orientation);
-		QChar at(const QPoint& pos) const;
-		virtual void run();
+	Word* addRandomWord(Qt::Orientation orientation);
+	QChar at(const QPoint& pos) const;
+	virtual void run();
 
-		unsigned int randomInt(unsigned int max) {
-			std::uniform_int_distribution<unsigned int> gen(0, max - 1);
-			return gen(m_random);
-		}
+	unsigned int randomInt(unsigned int max)
+	{
+		std::uniform_int_distribution<unsigned int> gen(0, max - 1);
+		return gen(m_random);
+	}
 
-	protected:
-		QPoint m_current;
+protected:
+	QPoint m_current;
 
-	private:
-		void cleanUp();
+private:
+	void cleanUp();
 
-		virtual int steps() const {
-			return 2;
-		}
+	virtual int steps() const
+	{
+		return 2;
+	}
 
-		virtual Word* addWord(int step);
+	virtual Word* addWord(int step);
 
-	private:
-		WordList* m_words;
-		int m_count;
-		int m_length;
-		unsigned int m_seed;
-		QSize m_size;
-		QList<Word*> m_solution;
-		bool m_cancelled;
-		QMutex m_cancelled_mutex;
-		std::mt19937 m_random;
+private:
+	WordList* m_words;
+	int m_count;
+	int m_length;
+	unsigned int m_seed;
+	QSize m_size;
+	QList<Word*> m_solution;
+	bool m_cancelled;
+	QMutex m_cancelled_mutex;
+	std::mt19937 m_random;
 };
 
 //-----------------------------------------------------------------------------
 
-class ChainPattern : public Pattern {
+class ChainPattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		ChainPattern(WordList* words) : Pattern(words) {
-		}
+public:
+	ChainPattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		QList<int> counts() const {
-			return QList<int>() << 4 << 9 << 14 << 19;
-		}
+	QList<int> counts() const
+	{
+		return QList<int>() << 4 << 9 << 14 << 19;
+	}
 
-		QString name() const {
-			return tr("Chain");
-		}
+	QString name() const
+	{
+		return tr("Chain");
+	}
 
-	private:
-		int steps() const {
-			return 5;
-		}
+private:
+	int steps() const
+	{
+		return 5;
+	}
 
-		Word* addWord(int step);
+	Word* addWord(int step);
 };
 
 //-----------------------------------------------------------------------------
 
-class FencePattern : public Pattern {
+class FencePattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		FencePattern(WordList* words) : Pattern(words) {
-		}
+public:
+	FencePattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		QList<int> counts() const {
-			return QList<int>() << 4 << 7 << 13 << 16;
-		}
+	QList<int> counts() const
+	{
+		return QList<int>() << 4 << 7 << 13 << 16;
+	}
 
-		QString name() const {
-			return tr("Fence");
-		}
+	QString name() const
+	{
+		return tr("Fence");
+	}
 
-	private:
-		int steps() const {
-			return 6;
-		}
+private:
+	int steps() const
+	{
+		return 6;
+	}
 
-		Word* addWord(int step);
+	Word* addWord(int step);
 };
 
 //-----------------------------------------------------------------------------
 
-class RingsPattern : public Pattern {
+class RingsPattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		RingsPattern(WordList* words) : Pattern(words) {
-		}
+public:
+	RingsPattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		int minimumLength() const {
-			return 7;
-		}
+	int minimumLength() const
+	{
+		return 7;
+	}
 
-		QString name() const {
-			return tr("Rings");
-		}
+	QString name() const
+	{
+		return tr("Rings");
+	}
 
-	private:
-		int steps() const {
-			return 4;
-		}
+private:
+	int steps() const
+	{
+		return 4;
+	}
 
-		Word* addWord(int step);
+	Word* addWord(int step);
 };
 
 //-----------------------------------------------------------------------------
 
-class StairsPattern : public Pattern {
+class StairsPattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		StairsPattern(WordList* words) : Pattern(words) {
-		}
+public:
+	StairsPattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		QString name() const {
-			return tr("Stairs");
-		}
+	QString name() const
+	{
+		return tr("Stairs");
+	}
 
-	private:
-		Word* addWord(int step);
+private:
+	Word* addWord(int step);
 };
 
 //-----------------------------------------------------------------------------
 
-class TwistyPattern : public Pattern {
+class TwistyPattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		TwistyPattern(WordList* words) : Pattern(words) {
-		}
+public:
+	TwistyPattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		QString name() const {
-			return tr("Twisty");
-		}
+	QString name() const
+	{
+		return tr("Twisty");
+	}
 
-	private:
-		Word* addWord(int step);
-		Word* stepOne();
-		Word* stepTwo();
+private:
+	Word* addWord(int step);
+	Word* stepOne();
+	Word* stepTwo();
 };
 
 //-----------------------------------------------------------------------------
 
-class WavePattern : public Pattern {
+class WavePattern : public Pattern
+{
 	Q_OBJECT
 
-	public:
-		WavePattern(WordList* words) : Pattern(words) {
-		}
+public:
+	WavePattern(WordList* words)
+		: Pattern(words)
+	{
+	}
 
-		QList<int> counts() const {
-			return QList<int>() << 5 << 9 << 13 << 17;
-		}
+	QList<int> counts() const
+	{
+		return QList<int>() << 5 << 9 << 13 << 17;
+	}
 
-		QString name() const {
-			return tr("Wave");
-		}
+	QString name() const
+	{
+		return tr("Wave");
+	}
 
-	private:
-		int steps() const {
-			return 4;
-		}
+private:
+	int steps() const
+	{
+		return 4;
+	}
 
-		Word* addWord(int step);
+	Word* addWord(int step);
 };
 
 #endif

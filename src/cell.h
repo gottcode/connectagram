@@ -25,32 +25,37 @@ class Board;
 class Letter;
 class Word;
 
-class Cell {
-	public:
-		Cell(const QPoint& position, Letter* letter);
+class Cell
+{
+public:
+	Cell(const QPoint& position, Letter* letter);
 
-		QPoint position() const{
-			return m_position;
-		}
+	QPoint position() const
+	{
+		return m_position;
+	}
 
-		Letter* letter() const {
-			return m_letter;
-		}
+	Letter* letter() const
+	{
+		return m_letter;
+	}
 
-		void setLetter(Letter* letter);
+	void setLetter(Letter* letter);
 
-		Word* word() const {
-			return m_word;
-		}
+	Word* word() const
+	{
+		return m_word;
+	}
 
-		void setWord(Word* word) {
-			m_word = word;
-		}
+	void setWord(Word* word)
+	{
+		m_word = word;
+	}
 
-	private:
-		QPoint m_position;
-		Word* m_word;
-		Letter* m_letter;
+private:
+	QPoint m_position;
+	Word* m_word;
+	Letter* m_letter;
 };
 
 #endif
