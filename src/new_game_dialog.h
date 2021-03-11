@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,8 @@ class NewGameDialog : public QDialog {
 	public:
 		NewGameDialog(Board* board, QWidget* parent = 0);
 		~NewGameDialog();
+
+		static QString densityString(int size);
 
 	protected:
 		void keyPressEvent(QKeyEvent* event);

@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014, 2015, 2019 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -55,7 +55,9 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create word count box
 	m_word_count_box = new QComboBox(this);
-	m_word_count_box->addItems(QStringList() << tr("Low") << tr("Medium") << tr("High") << tr("Very High"));
+	for (int i = 0; i < 4; ++i) {
+		m_word_count_box->addItem(densityString(i));
+	}
 
 	// Create word length box
 	m_word_length_box = new QComboBox(this);
@@ -116,6 +118,17 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 NewGameDialog::~NewGameDialog() {
 	qDeleteAll(m_patterns);
+}
+
+//-----------------------------------------------------------------------------
+
+QString NewGameDialog::densityString(int size) {
+	static const QStringList sizes = QStringList()
+			<< tr("Low")
+			<< tr("Medium")
+			<< tr("High")
+			<< tr("Very High");
+	return sizes.value(size);
 }
 
 //-----------------------------------------------------------------------------

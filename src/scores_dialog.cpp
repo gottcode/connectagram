@@ -309,18 +309,13 @@ void ScoresDialog::updateItems()
 {
 	const int size = m_scores.size();
 
-	static const QStringList sizes = QStringList() << NewGameDialog::tr("Low")
-		<< NewGameDialog::tr("Medium")
-		<< NewGameDialog::tr("High")
-		<< NewGameDialog::tr("Very High");
-
 	// Add scores
 	for (int r = 0; r < size; ++r) {
 		const Score& score = m_scores[r];
 		m_score_labels[r][NameColumn]->setText(score.name);
 		m_score_labels[r][ScoreColumn]->setNum(score.score);
 		m_score_labels[r][TimeColumn]->setText(QTime(0, 0, 0).addSecs(score.secs).toString("hh:mm:ss"));
-		m_score_labels[r][WordsColumn]->setText(sizes[score.count]);
+		m_score_labels[r][WordsColumn]->setText(NewGameDialog::densityString(score.count));
 		m_score_labels[r][LengthColumn]->setNum(score.length);
 	}
 
