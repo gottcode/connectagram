@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef CLOCK_H
-#define CLOCK_H
+#ifndef CONNECTAGRAM_CLOCK_H
+#define CONNECTAGRAM_CLOCK_H
 
 #include <QLabel>
 #include <QTime>
@@ -44,4 +44,4 @@ private:
 	bool m_stopped;
 };
 
-#endif
+#endif // CONNECTAGRAM_CLOCK_H

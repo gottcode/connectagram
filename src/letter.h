@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef LETTER_H
-#define LETTER_H
+#ifndef CONNECTAGRAM_LETTER_H
+#define CONNECTAGRAM_LETTER_H
 
 #include <QGraphicsPathItem>
 class QGraphicsSimpleTextItem;
@@ -52,4 +52,4 @@ private:
 	QGraphicsPathItem* m_shadow;
 };
 
-#endif
+#endif // CONNECTAGRAM_LETTER_H

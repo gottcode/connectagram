@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef WORD_H
-#define WORD_H
+#ifndef CONNECTAGRAM_WORD_H
+#define CONNECTAGRAM_WORD_H
 
 #include <QChar>
 #include <QList>
@@ -74,4 +74,4 @@ private:
 	std::mt19937& m_random;
 };
 
-#endif
+#endif // CONNECTAGRAM_WORD_H

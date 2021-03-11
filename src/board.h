@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef BOARD_H
-#define BOARD_H
+#ifndef CONNECTAGRAM_BOARD_H
+#define CONNECTAGRAM_BOARD_H
 
 class Cell;
 class Pattern;
@@ -88,4 +88,4 @@ private:
 	bool m_paused;
 };
 
-#endif
+#endif // CONNECTAGRAM_BOARD_H

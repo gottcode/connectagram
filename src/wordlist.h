@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef WORD_LIST_H
-#define WORD_LIST_H
+#ifndef CONNECTAGRAM_WORD_LIST_H
+#define CONNECTAGRAM_WORD_LIST_H
 
 #include <QHash>
 #include <QSharedPointer>
@@ -94,4 +94,4 @@ private:
 	int m_length;
 };
 
-#endif
+#endif // CONNECTAGRAM_WORD_LIST_H

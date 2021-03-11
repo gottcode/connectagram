@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef NEW_GAME_DIALOG_H
-#define NEW_GAME_DIALOG_H
+#ifndef CONNECTAGRAM_NEW_GAME_DIALOG_H
+#define CONNECTAGRAM_NEW_GAME_DIALOG_H
 
 class Board;
 class Pattern;
@@ -49,4 +49,4 @@ private:
 	WordList* m_wordlist;
 };
 
-#endif
+#endif // CONNECTAGRAM_NEW_GAME_DIALOG_H

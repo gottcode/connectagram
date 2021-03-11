@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef DEFINITIONS_H
-#define DEFINITIONS_H
+#ifndef CONNECTAGRAM_DEFINITIONS_H
+#define CONNECTAGRAM_DEFINITIONS_H
 
 class WordList;
 
@@ -36,4 +36,4 @@ private:
 	QUrl m_url;
 };
 
-#endif
+#endif // CONNECTAGRAM_DEFINITIONS_H

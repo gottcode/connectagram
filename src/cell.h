@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef CELL_H
-#define CELL_H
+#ifndef CONNECTAGRAM_CELL_H
+#define CONNECTAGRAM_CELL_H
 
 #include <QPoint>
 class Board;
@@ -45,4 +45,4 @@ private:
 	Letter* m_letter;
 };
 
-#endif
+#endif // CONNECTAGRAM_CELL_H

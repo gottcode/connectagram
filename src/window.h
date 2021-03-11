@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef CONNECTAGRAM_WINDOW_H
+#define CONNECTAGRAM_WINDOW_H
 
 #include <QMainWindow>
 class QAction;
@@ -51,4 +51,4 @@ private:
 	QLabel* m_success;
 };
 
-#endif
+#endif // CONNECTAGRAM_WINDOW_H

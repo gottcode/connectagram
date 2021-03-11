@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef PATTERN_H
-#define PATTERN_H
+#ifndef CONNECTAGRAM_PATTERN_H
+#define CONNECTAGRAM_PATTERN_H
 
 #include "wordlist.h"
 class Word;
@@ -297,4 +297,4 @@ private:
 	Word* addWord(int step) override;
 };
 
-#endif
+#endif // CONNECTAGRAM_PATTERN_H

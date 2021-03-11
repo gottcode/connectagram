@@ -4,8 +4,8 @@
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
 
-#ifndef VIEW_H
-#define VIEW_H
+#ifndef CONNECTAGRAM_VIEW_H
+#define CONNECTAGRAM_VIEW_H
 
 #include <QGraphicsView>
 #include <QTime>
@@ -28,4 +28,4 @@ private:
 	Board* m_board;
 };
 
-#endif
+#endif // CONNECTAGRAM_VIEW_H
