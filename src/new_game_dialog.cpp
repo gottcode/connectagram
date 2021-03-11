@@ -52,7 +52,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create word length box
 	m_word_length_box = new QComboBox(this);
-	connect(m_word_length_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::activated), this, &NewGameDialog::lengthSelected);
+	connect(m_word_length_box, QOverload<int>::of(&QComboBox::activated), this, &NewGameDialog::lengthSelected);
 
 	// Create pattern buttons
 	QFrame* patterns = new QFrame(this);
@@ -102,7 +102,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	setLength(settings.value("NewGame/Length", 7).toInt());
 	m_pattern_buttons.at(settings.value("NewGame/Pattern").toInt())->setFocus();
 
-	connect(m_languages_box, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &NewGameDialog::languageSelected);
+	connect(m_languages_box, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &NewGameDialog::languageSelected);
 }
 
 //-----------------------------------------------------------------------------
