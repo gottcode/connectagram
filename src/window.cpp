@@ -59,7 +59,7 @@ Window::Window()
 	connect(m_board, &Board::wordAdded, m_definitions, &Definitions::addWord);
 	connect(m_board, &Board::wordSolved, m_definitions, &Definitions::solveWord);
 	connect(m_board, &Board::wordSelected, m_definitions, &Definitions::selectWord);
-	connect(m_board, &Board::loading, m_definitions, &Definitions::clear);
+	connect(m_board, &Board::loading, m_definitions, &Definitions::clearWords);
 
 	// Create success message
 	m_success = new QLabel(contents);
@@ -167,7 +167,7 @@ Window::Window()
 	QAction* action = menu->addAction(tr("&Hint"), m_board, SLOT(showHint()), tr("H"));
 	action->setDisabled(true);
 	connect(m_board, &Board::hintAvailable, action, &QAction::setEnabled);
-	menu->addAction(tr("D&efinitions"), m_definitions, SLOT(selectWord()), tr("D"));
+	menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions, tr("D"));
 	menu->addSeparator();
 	menu->addAction(tr("&Details"), this, SLOT(showDetails()));
 	menu->addAction(tr("High &Scores"), this, &Window::showScores);
@@ -243,7 +243,7 @@ bool Window::eventFilter(QObject* object, QEvent* event)
 {
 	if (event->type() == QEvent::MouseButtonPress) {
 		if (object == m_definitions_button) {
-			m_definitions->selectWord();
+			showDefinitions();
 			return true;
 		} else if (object == m_hint_button) {
 			m_board->showHint();
@@ -274,6 +274,16 @@ void Window::about()
 			tr("Released under the <a href=\"http://www.gnu.org/licenses/gpl.html\">GPL 3</a> license"),
 			tr("Definitions are from <a href=\"http://wiktionary.org/\">Wiktionary</a>"))
 	);
+}
+
+//-----------------------------------------------------------------------------
+
+void Window::showDefinitions()
+{
+	m_board->setPaused(true);
+	const int height = m_definitions_button->height();
+	const QPoint pos = m_definitions_button->mapToGlobal(QPoint(0, height));
+	m_definitions->popup(pos);
 }
 
 //-----------------------------------------------------------------------------

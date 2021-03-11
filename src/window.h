@@ -46,6 +46,7 @@ protected:
 private slots:
 	void chooseGame();
 	void about();
+	void showDefinitions();
 	void showDetails();
 	void showScores();
 	void setLocale();

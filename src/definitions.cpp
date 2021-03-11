@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2014, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,146 +19,85 @@
 
 #include "definitions.h"
 
-#include "dictionary.h"
 #include "wordlist.h"
 
 #include <QDesktopServices>
-#include <QDialogButtonBox>
-#include <QHBoxLayout>
-#include <QListWidget>
-#include <QSettings>
-#include <QSplitter>
-#include <QTextBrowser>
-#include <QVBoxLayout>
 
 //-----------------------------------------------------------------------------
 
 Definitions::Definitions(const WordList* wordlist, QWidget* parent)
-	: QDialog(parent)
+	: QMenu(parent)
 	, m_wordlist(wordlist)
 {
 	m_url.setScheme("https");
 	m_url.setPath("/wiki/");
 	connect(wordlist, &WordList::languageChanged, this, &Definitions::setLanguage);
 
-	QSettings settings;
-	setWindowTitle(tr("Definitions"));
-	setModal(true);
-
-	m_dictionary = new Dictionary(wordlist, this);
-	connect(m_dictionary, &Dictionary::wordDefined, this, &Definitions::wordDefined);
-
-	m_contents = new QSplitter(this);
-
-	m_words = new QListWidget(m_contents);
-	connect(m_words, &QListWidget::currentItemChanged, this, &Definitions::wordSelected);
-	connect(m_words, &QListWidget::itemActivated, this, &Definitions::defineWord);
-	connect(m_words, &QListWidget::itemClicked, this, &Definitions::defineWord);
-	m_contents->addWidget(m_words);
-	m_contents->setStretchFactor(0, 0);
-	m_contents->setSizes(QList<int>() << settings.value("Definitions/Splitter", m_words->fontMetrics().averageCharWidth() * 12).toInt());
-
-	m_text = new QTextBrowser(m_contents);
-	m_text->setReadOnly(true);
-	m_text->setOpenLinks(false);
-	connect(m_text, &QTextBrowser::anchorClicked, this, &Definitions::anchorClicked);
-	m_contents->addWidget(m_text);
-	m_contents->setStretchFactor(1, 1);
-
-	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Close, Qt::Horizontal, this);
-	connect(buttons, &QDialogButtonBox::rejected, this, &Definitions::reject);
-
-	QVBoxLayout* layout = new QVBoxLayout(this);
-	layout->addWidget(m_contents);
-	layout->addWidget(buttons);
-
-	resize(settings.value("Definitions/Size", QSize(500, 400)).toSize());
+	connect(this, &QMenu::triggered, this, &Definitions::defineWord);
 }
 
 //-----------------------------------------------------------------------------
 
-Definitions::~Definitions()
+void Definitions::clearWords()
 {
-	m_dictionary->wait();
-}
-
-//-----------------------------------------------------------------------------
-
-void Definitions::clear()
-{
-	m_text->clear();
 	m_word_table.clear();
-	m_words->clear();
+	clear();
 }
 
 //-----------------------------------------------------------------------------
 
 void Definitions::addWord(const QString& word)
 {
-	QListWidgetItem* item = new QListWidgetItem(QString(word.length(), QChar('?')), m_words);
-	m_word_table.insert(word, item);
-	m_words->clearSelection();
-	m_words->setCurrentRow(0);
+	QAction* action = addAction(QString(word.length(), QChar('?')));
+	m_word_table.insert(word, action);
 }
 
 //-----------------------------------------------------------------------------
 
 void Definitions::solveWord(const QString& original_word, const QString& current_word)
 {
-	QListWidgetItem* item = m_word_table.value(original_word);
-	if (item == 0) {
+	QAction* action = m_word_table.value(original_word);
+	if (!action) {
 		return;
 	}
 	if (original_word != current_word) {
 		m_word_table.remove(original_word);
-		m_word_table.insert(current_word, item);
+		m_word_table.insert(current_word, action);
 	}
-	item->setText(current_word);
-	m_words->sortItems();
-	if (item == m_words->currentItem()) {
-		wordSelected(item);
+	action->setText(current_word);
+
+	// Sort actions
+	removeAction(action);
+	QAction* before = nullptr;
+	const QList<QAction*> acts = actions();
+	for (QAction* check : acts) {
+		if (check->text().localeAwareCompare(current_word) >= 0) {
+			before = check;
+			break;
+		}
 	}
+	insertAction(before, action);
 }
 
 //-----------------------------------------------------------------------------
 
 void Definitions::selectWord(const QString& word)
 {
-	QListWidgetItem* item = m_word_table.value(word);
-	if (item == 0) {
-		item = m_words->item(0);
+	QAction* action = m_word_table.value(word);
+	if (action) {
+		defineWord(action);
 	}
-	m_words->setCurrentItem(item);
-	show();
-	defineWord(item);
 }
 
 //-----------------------------------------------------------------------------
 
-void Definitions::hideEvent(QHideEvent* event)
+void Definitions::defineWord(QAction* action)
 {
-	QSettings settings;
-	settings.setValue("Definitions/Size", size());
-	settings.setValue("Definitions/Splitter", m_contents->sizes().first());
-	QDialog::hideEvent(event);
-}
-
-//-----------------------------------------------------------------------------
-
-void Definitions::anchorClicked(const QUrl& link)
-{
-	QDesktopServices::openUrl(m_dictionary->url().resolved(link));
-}
-
-//-----------------------------------------------------------------------------
-
-void Definitions::defineWord(QListWidgetItem* item)
-{
-	if (!item || (item->text().at(0) == QChar('?'))) {
+	if (!action || (action->text().at(0) == QChar('?'))) {
 		return;
 	}
 
-	const QString word = m_wordlist->spellings(item->text()).first();
+	const QString word = m_wordlist->spellings(action->text()).constFirst();
 
 	QUrl url = m_url;
 	url.setPath("/wiki/" + word);
@@ -170,44 +109,6 @@ void Definitions::defineWord(QListWidgetItem* item)
 void Definitions::setLanguage(const QString& langcode)
 {
 	m_url.setHost(langcode + ".wiktionary.org");
-}
-
-//-----------------------------------------------------------------------------
-
-void Definitions::wordSelected(QListWidgetItem* item)
-{
-	if (item == 0) {
-		m_text->clear();
-		return;
-	}
-
-	if (item->text().at(0) != QChar('?')) {
-		QString definition = item->data(Qt::UserRole).toString();
-		if (definition.isEmpty()) {
-			definition = QString("<font color=\"#555\">%1</font>").arg(tr("Downloading definition..."));
-			m_text->setHtml(definition);
-			item->setData(Qt::UserRole, definition);
-			m_dictionary->lookup(item->text());
-		} else {
-			m_text->setHtml(definition);
-		}
-	} else {
-		m_text->setText(tr("Unsolved word"));
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-void Definitions::wordDefined(const QString& word, const QString& definition)
-{
-	QListWidgetItem* item = m_word_table.value(word);
-	if (item == 0) {
-		return;
-	}
-	item->setData(Qt::UserRole, definition);
-	if (item == m_words->currentItem()) {
-		m_text->setHtml(definition);
-	}
 }
 
 //-----------------------------------------------------------------------------

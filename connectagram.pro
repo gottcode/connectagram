@@ -6,7 +6,7 @@ equals(QT_MAJOR_VERSION, 5):lessThan(QT_MINOR_VERSION, 9) {
 }
 
 TEMPLATE = app
-QT += network widgets
+QT += widgets
 
 CONFIG(debug, debug|release) {
 	CONFIG += warn_on
@@ -36,7 +36,6 @@ HEADERS = src/board.h \
 	src/cell.h \
 	src/clock.h \
 	src/definitions.h \
-	src/dictionary.h \
 	src/letter.h \
 	src/locale_dialog.h \
 	src/new_game_dialog.h \
@@ -51,7 +50,6 @@ SOURCES = src/board.cpp \
 	src/cell.cpp \
 	src/clock.cpp \
 	src/definitions.cpp \
-	src/dictionary.cpp \
 	src/letter.cpp \
 	src/locale_dialog.cpp \
 	src/main.cpp \

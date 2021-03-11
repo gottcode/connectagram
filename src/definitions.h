@@ -1,6 +1,6 @@
 /***********************************************************************
  *
- * Copyright (C) 2009, 2013, 2018 Graeme Gott <graeme@gottcode.org>
+ * Copyright (C) 2009-2021 Graeme Gott <graeme@gottcode.org>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,48 +20,32 @@
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
 
-#include <QDialog>
-#include <QHash>
-#include <QUrl>
-class QListWidget;
-class QListWidgetItem;
-class QSplitter;
-class QTextBrowser;
-class QUrl;
-class Dictionary;
 class WordList;
 
-class Definitions : public QDialog
+#include <QHash>
+#include <QMenu>
+#include <QUrl>
+
+class Definitions : public QMenu
 {
 	Q_OBJECT
 
 public:
 	Definitions(const WordList* wordlist, QWidget* parent = 0);
-	~Definitions();
 
 public slots:
-	void clear();
+	void clearWords();
 	void addWord(const QString& word);
 	void solveWord(const QString& original_word, const QString& current_word);
-	void selectWord(const QString& word = QString());
-
-protected:
-	virtual void hideEvent(QHideEvent* event);
+	void selectWord(const QString& word);
 
 private slots:
-	void anchorClicked(const QUrl& link);
-	void defineWord(QListWidgetItem* item);
+	void defineWord(QAction* action);
 	void setLanguage(const QString& langcode);
-	void wordSelected(QListWidgetItem* item);
-	void wordDefined(const QString& word, const QString& definition);
 
 private:
 	const WordList* m_wordlist;
-	QSplitter* m_contents;
-	QListWidget* m_words;
-	QTextBrowser* m_text;
-	Dictionary* m_dictionary;
-	QHash<QString, QListWidgetItem*> m_word_table;
+	QHash<QString, QAction*> m_word_table;
 	QUrl m_url;
 };
 
