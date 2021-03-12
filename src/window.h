@@ -44,6 +44,8 @@ private slots:
 
 private:
 	QAction* m_pause_action;
+	QAction* m_definitions_action;
+	QAction* m_details_action;
 	Board* m_board;
 	Clock* m_clock;
 	QLabel* m_definitions_button;

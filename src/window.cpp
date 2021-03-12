@@ -109,6 +109,7 @@ Window::Window()
 	m_definitions_button->setPixmap(QIcon(":/definitions.png").pixmap(24,24));
 	m_definitions_button->setCursor(Qt::PointingHandCursor);
 	m_definitions_button->setToolTip(tr("Definitions"));
+	m_definitions_button->setDisabled(true);
 	m_definitions_button->installEventFilter(this);
 
 	m_hint_button = new QLabel(overlay);
@@ -154,9 +155,11 @@ Window::Window()
 	QAction* action = menu->addAction(tr("&Hint"), m_board, &Board::showHint, tr("H"));
 	action->setDisabled(true);
 	connect(m_board, &Board::hintAvailable, action, &QAction::setEnabled);
-	menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions, tr("D"));
+	m_definitions_action = menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions, tr("D"));
+	m_definitions_action->setDisabled(true);
 	menu->addSeparator();
-	menu->addAction(tr("&Details"), this, &Window::showDetails);
+	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
+	m_details_action->setDisabled(true);
 	menu->addAction(tr("High &Scores"), this, &Window::showScores);
 	menu->addSeparator();
 	action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
@@ -338,6 +341,9 @@ void Window::gameStarted()
 	m_clock->setEnabled(true);
 	m_clock->start();
 	m_pause_action->setEnabled(true);
+	m_definitions_button->setEnabled(true);
+	m_definitions_action->setEnabled(true);
+	m_details_action->setEnabled(true);
 	m_success->hide();
 }
 
