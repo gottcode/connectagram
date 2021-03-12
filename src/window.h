@@ -28,7 +28,6 @@ public slots:
 
 protected:
 	void closeEvent(QCloseEvent* event) override;
-	bool event(QEvent* event) override;
 	bool eventFilter(QObject* object, QEvent* event) override;
 
 private slots:

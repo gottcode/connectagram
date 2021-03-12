@@ -253,16 +253,6 @@ bool Window::eventFilter(QObject* object, QEvent* event)
 
 //-----------------------------------------------------------------------------
 
-bool Window::event(QEvent* event)
-{
-	if (event->type() == QEvent::WindowBlocked || event->type() == QEvent::WindowDeactivate) {
-		m_board->setPaused(true);
-	}
-	return QMainWindow::event(event);
-}
-
-//-----------------------------------------------------------------------------
-
 void Window::about()
 {
 	QMessageBox::about(this, tr("About"), QString("<p><center><big><b>%1 %2</b></big><br/>%3<br/><small>%4<br/>%5</small></center></p><p><center>%6</center></p>")
@@ -278,7 +268,6 @@ void Window::about()
 
 void Window::showDefinitions()
 {
-	m_board->setPaused(true);
 	const int height = m_definitions_button->height();
 	const QPoint pos = m_definitions_button->mapToGlobal(QPoint(0, height));
 	m_definitions->popup(pos);

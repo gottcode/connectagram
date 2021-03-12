@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2014 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -29,6 +29,14 @@ View::View(Board* board, QWidget* parent)
 	qreal h2 = fontMetrics().height() * 1.5;
 	qreal s = h2 / h1;
 	scale(s, s);
+}
+
+//-----------------------------------------------------------------------------
+
+void View::focusOutEvent(QFocusEvent* event)
+{
+	m_board->setPaused(true);
+	QGraphicsView::focusOutEvent(event);
 }
 
 //-----------------------------------------------------------------------------

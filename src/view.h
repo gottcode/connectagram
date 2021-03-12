@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -20,6 +20,7 @@ public:
 	explicit View(Board* board, QWidget* parent = nullptr);
 
 protected:
+	void focusOutEvent(QFocusEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
 
 private slots:

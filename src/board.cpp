@@ -61,6 +61,7 @@ void Board::check(const QString& original_word, const QString& current_word)
 
 void Board::click(const QString& word)
 {
+	setPaused(true);
 	emit wordSelected(word);
 }
 
