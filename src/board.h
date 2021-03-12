@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -59,6 +59,7 @@ public slots:
 	bool openGame(const QString& number);
 	void saveGame();
 	void showHint();
+	void setDarkMode(bool enabled);
 	void togglePaused();
 
 signals:

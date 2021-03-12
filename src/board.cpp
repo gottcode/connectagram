@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2014 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -31,6 +31,8 @@ Board::Board(QObject* parent)
 	auto_save->start();
 
 	m_wordlist = new WordList(this);
+
+	setBackgroundBrush(Qt::white);
 }
 
 //-----------------------------------------------------------------------------
@@ -211,6 +213,14 @@ void Board::showHint()
 		delete m_hint;
 		m_hint = m_current_word->hint();
 	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::setDarkMode(bool enabled)
+{
+	setBackgroundBrush(enabled ? QColor(0x26, 0x26, 0x26) : Qt::white);
+	QSettings().setValue("DarkMode", enabled);
 }
 
 //-----------------------------------------------------------------------------

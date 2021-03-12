@@ -163,6 +163,9 @@ Window::Window()
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
+	QAction* dark_mode = menu->addAction(tr("&Dark Mode"), m_board, &Board::setDarkMode);
+	dark_mode->setCheckable(true);
+	menu->addSeparator();
 	menu->addAction(tr("Application &Language..."), this, &Window::setLocale);
 
 	menu = menuBar()->addMenu(tr("&Help"));
@@ -175,6 +178,11 @@ Window::Window()
 	QSettings settings;
 	resize(800, 600);
 	restoreGeometry(settings.value("Geometry").toByteArray());
+
+	// Set dark mode
+	if (settings.value("DarkMode", false).toBool()) {
+		dark_mode->trigger();
+	}
 
 	// Continue previous or start new game
 	show();

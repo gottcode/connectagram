@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -33,7 +33,7 @@ Letter::Letter(const QChar& character, Board* board)
 	setPath(path);
 	setCursor(Qt::OpenHandCursor);
 	setPen(Qt::NoPen);
-	setBrush(QColor(0xbb, 0xbb, 0xbb));
+	setBrush(QColor(0x90, 0x90, 0x90, 0x9d));
 	setFlag(QGraphicsItem::ItemIsMovable);
 	setZValue(1);
 
@@ -72,7 +72,7 @@ void Letter::setCorrect()
 void Letter::setHighlight(bool highlight)
 {
 	if (m_movable) {
-		setBrush(highlight ? QColor(0, 0x57, 0xae) : QColor(0xbb, 0xbb, 0xbb));
+		setBrush(highlight ? QColor(0, 0x57, 0xae) : QColor(0x90, 0x90, 0x90, 0x9d));
 	}
 }
 
@@ -81,7 +81,7 @@ void Letter::setHighlight(bool highlight)
 void Letter::setJoin()
 {
 	setFlag(QGraphicsItem::ItemIsMovable, false);
-	setBrush(QColor(0x55, 0x55, 0x55));
+	setBrush(QColor(0, 0, 0, 0xaa));
 	setCursor(Qt::ArrowCursor);
 	m_movable = false;
 }
