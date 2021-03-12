@@ -7,9 +7,10 @@
 #ifndef CONNECTAGRAM_VIEW_H
 #define CONNECTAGRAM_VIEW_H
 
+class Board;
+
 #include <QGraphicsView>
 #include <QTime>
-class Board;
 
 class View : public QGraphicsView
 {

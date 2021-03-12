@@ -7,14 +7,14 @@
 #ifndef CONNECTAGRAM_WORD_H
 #define CONNECTAGRAM_WORD_H
 
+class Board;
+class WordList;
+
 #include <QChar>
 #include <QList>
 #include <QPoint>
 #include <QString>
 class QGraphicsItem;
-class Board;
-class Random;
-class WordList;
 
 #include <random>
 

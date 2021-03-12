@@ -7,10 +7,10 @@
 #ifndef CONNECTAGRAM_CELL_H
 #define CONNECTAGRAM_CELL_H
 
-#include <QPoint>
-class Board;
 class Letter;
 class Word;
+
+#include <QPoint>
 
 class Cell
 {

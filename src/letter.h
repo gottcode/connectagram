@@ -7,10 +7,11 @@
 #ifndef CONNECTAGRAM_LETTER_H
 #define CONNECTAGRAM_LETTER_H
 
-#include <QGraphicsPathItem>
-class QGraphicsSimpleTextItem;
 class Board;
 class Cell;
+
+#include <QGraphicsPathItem>
+class QGraphicsSimpleTextItem;
 
 class Letter : public QGraphicsPathItem
 {

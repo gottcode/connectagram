@@ -7,12 +7,13 @@
 #ifndef CONNECTAGRAM_WINDOW_H
 #define CONNECTAGRAM_WINDOW_H
 
-#include <QMainWindow>
-class QAction;
-class QLabel;
 class Board;
 class Clock;
 class Definitions;
+
+#include <QMainWindow>
+class QAction;
+class QLabel;
 
 class Window : public QMainWindow
 {
