@@ -148,7 +148,7 @@ Window::Window()
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
 	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
-	menu->addAction(tr("&Choose..."), this, &Window::chooseGame);
+	menu->addAction(tr("&Choose..."), this, &Window::chooseGame, QKeySequence::Open);
 	menu->addSeparator();
 	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::togglePaused, tr("P"));
 	m_pause_action->setDisabled(true);
@@ -160,7 +160,7 @@ Window::Window()
 	menu->addSeparator();
 	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
 	m_details_action->setDisabled(true);
-	menu->addAction(tr("High &Scores"), this, &Window::showScores);
+	menu->addAction(tr("High &Scores"), this, &Window::showScores, tr("Ctrl+H"));
 	menu->addSeparator();
 	action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
