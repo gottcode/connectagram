@@ -245,7 +245,7 @@ bool ScoresDialog::addScore(const QString& name, int secs, int count, int length
 {
 	m_row = -1;
 
-	const int score = std::lround((count * length * 120.0) / secs);
+	const int score = std::lround(((count + 1) * length * 1200.0) / secs);
 	if (score == 0) {
 		return false;
 	}
