@@ -152,7 +152,8 @@ Window::Window()
 	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
 	menu->addAction(tr("&Choose..."), this, &Window::chooseGame, QKeySequence::Open);
 	menu->addSeparator();
-	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::togglePaused, tr("P"));
+	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::setPaused, tr("P"));
+	m_pause_action->setCheckable(true);
 	m_pause_action->setDisabled(true);
 	QAction* action = menu->addAction(tr("&Hint"), m_board, &Board::showHint, tr("H"));
 	action->setDisabled(true);
@@ -364,7 +365,7 @@ void Window::gameFinished()
 void Window::gamePauseChanged()
 {
 	bool paused = m_board->isPaused();
-	m_pause_action->setText(paused ? tr("&Resume") : tr("&Pause"));
+	m_pause_action->setChecked(paused);
 	m_clock->setPaused(paused);
 }
 

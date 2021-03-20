@@ -52,7 +52,6 @@ public:
 	}
 
 	void setCurrentWord(Word* word);
-	void setPaused(bool paused);
 
 public slots:
 	void openGame();
@@ -60,6 +59,7 @@ public slots:
 	void saveGame();
 	void showHint();
 	void setDarkMode(bool enabled);
+	void setPaused(bool paused);
 	void togglePaused();
 
 signals:

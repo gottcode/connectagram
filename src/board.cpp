@@ -83,30 +83,6 @@ void Board::setCurrentWord(Word* word)
 
 //-----------------------------------------------------------------------------
 
-void Board::setPaused(bool paused)
-{
-	if (m_finished) {
-		return;
-	}
-
-	m_paused = paused;
-	for (int x = 0; x < m_cells.count(); ++x) {
-		QList<Cell*>& cells = m_cells[x];
-		for (int y = 0; y < cells.count(); ++y) {
-			Cell* cell = cells[y];
-			if (cell) {
-				cell->letter()->setPaused(paused);
-			}
-		}
-	}
-	if (m_paused) {
-		setCurrentWord(nullptr);
-	}
-	emit pauseChanged();
-}
-
-//-----------------------------------------------------------------------------
-
 void Board::openGame()
 {
 	cleanUp();
@@ -222,6 +198,31 @@ void Board::setDarkMode(bool enabled)
 {
 	setBackgroundBrush(enabled ? QColor(0x26, 0x26, 0x26) : Qt::white);
 	QSettings().setValue("DarkMode", enabled);
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::setPaused(bool paused)
+{
+	if (m_finished || (paused == m_paused)) {
+		return;
+	}
+
+	m_paused = paused;
+
+	for (const QList<Cell*>& cells : qAsConst(m_cells)) {
+		for (const Cell* cell : cells) {
+			if (cell) {
+				cell->letter()->setPaused(m_paused);
+			}
+		}
+	}
+
+	if (m_paused) {
+		setCurrentWord(nullptr);
+	}
+
+	emit pauseChanged();
 }
 
 //-----------------------------------------------------------------------------
