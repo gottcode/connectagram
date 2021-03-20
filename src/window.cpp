@@ -79,7 +79,7 @@ Window::Window()
 	connect(m_board, &Board::loading, m_success, &QLabel::hide);
 
 	// Create overlay background
-	QLabel* overlay = new QLabel(this);
+	m_overlay = new QLabel(this);
 
 	f = font();
 	f.setPixelSize(20);
@@ -102,17 +102,19 @@ Window::Window()
 		painter.setRenderHint(QPainter::Antialiasing, true);
 		painter.drawRoundedRect(0, -32, width + 82, 64, 5, 5);
 	}
-	overlay->setPixmap(pixmap);
+	m_overlay->setPixmap(pixmap);
+
+	m_overlay->hide();
 
 	// Create overlay buttons
-	m_definitions_button = new QLabel(overlay);
+	m_definitions_button = new QLabel(m_overlay);
 	m_definitions_button->setPixmap(QIcon(":/definitions.png").pixmap(24,24));
 	m_definitions_button->setCursor(Qt::PointingHandCursor);
 	m_definitions_button->setToolTip(tr("Definitions"));
 	m_definitions_button->setDisabled(true);
 	m_definitions_button->installEventFilter(this);
 
-	m_hint_button = new QLabel(overlay);
+	m_hint_button = new QLabel(m_overlay);
 	m_hint_button->setPixmap(QIcon(":/hint.png").pixmap(24,24));
 	m_hint_button->setCursor(Qt::PointingHandCursor);
 	m_hint_button->setToolTip(tr("Hint"));
@@ -121,12 +123,12 @@ Window::Window()
 	connect(m_board, &Board::hintAvailable, m_hint_button, &QLabel::setEnabled);
 
 	// Create clock
-	m_clock = new Clock(overlay);
+	m_clock = new Clock(m_overlay);
 	m_clock->setDisabled(true);
 	connect(m_clock, &Clock::togglePaused, m_board, &Board::togglePaused);
 	connect(m_board, &Board::loading, m_clock, &Clock::setLoading);
 
-	QHBoxLayout* overlay_layout = new QHBoxLayout(overlay);
+	QHBoxLayout* overlay_layout = new QHBoxLayout(m_overlay);
 	overlay_layout->setContentsMargins(0, 0, 0, 0);
 	overlay_layout->setSpacing(0);
 	overlay_layout->addSpacing(10);
@@ -143,7 +145,7 @@ Window::Window()
 	layout->setSpacing(0);
 	layout->addWidget(view, 0, 0);
 	layout->addWidget(m_success, 0, 0, Qt::AlignCenter);
-	layout->addWidget(overlay, 0, 0, Qt::AlignHCenter | Qt::AlignTop);
+	layout->addWidget(m_overlay, 0, 0, Qt::AlignHCenter | Qt::AlignTop);
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
@@ -327,6 +329,7 @@ void Window::setLocale()
 
 void Window::gameStarted()
 {
+	m_overlay->show();
 	m_clock->setEnabled(true);
 	m_clock->start();
 	m_pause_action->setEnabled(true);

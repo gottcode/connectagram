@@ -47,6 +47,7 @@ private:
 	QAction* m_details_action;
 	Board* m_board;
 	Clock* m_clock;
+	QLabel* m_overlay;
 	QLabel* m_definitions_button;
 	QLabel* m_hint_button;
 	Definitions* m_definitions;
