@@ -19,6 +19,7 @@
 #include <QFrame>
 #include <QGridLayout>
 #include <QKeyEvent>
+#include <QPushButton>
 #include <QSettings>
 #include <QSpinBox>
 #include <QToolButton>
@@ -78,6 +79,9 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	// Create cancel button
 	QDialogButtonBox* buttons = new QDialogButtonBox(QDialogButtonBox::Cancel, Qt::Horizontal, this);
 	connect(buttons, &QDialogButtonBox::rejected, this, &NewGameDialog::reject);
+	QPushButton* reset_button = buttons->addButton(QDialogButtonBox::RestoreDefaults);
+	reset_button->setAutoDefault(false);
+	connect(reset_button, &QPushButton::clicked, this, &NewGameDialog::restoreDefaults);
 
 	// Lay out dialog
 	QFormLayout* contents_layout = new QFormLayout;
@@ -208,6 +212,16 @@ void NewGameDialog::patternSelected()
 	m_board->openGame();
 
 	accept();
+}
+
+//-----------------------------------------------------------------------------
+
+void NewGameDialog::restoreDefaults()
+{
+	setLanguage(WordList::defaultLanguage());
+	setCount(1);
+	setLength(7);
+	m_pattern_buttons.at(0)->setFocus();
 }
 
 //-----------------------------------------------------------------------------

@@ -33,6 +33,7 @@ private slots:
 	void languageSelected(int index);
 	void lengthSelected(int index);
 	void patternSelected();
+	void restoreDefaults();
 
 private:
 	void setLanguage(const QString& language);
