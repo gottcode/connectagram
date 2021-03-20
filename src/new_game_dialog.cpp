@@ -20,13 +20,11 @@
 #include <QGridLayout>
 #include <QKeyEvent>
 #include <QPushButton>
+#include <QRandomGenerator>
 #include <QSettings>
 #include <QSpinBox>
 #include <QToolButton>
 #include <QVBoxLayout>
-
-#include <ctime>
-#include <random>
 
 //-----------------------------------------------------------------------------
 
@@ -186,14 +184,7 @@ void NewGameDialog::patternSelected()
 	QString language = m_languages_box->itemData(m_languages_box->currentIndex()).toString();
 	int count = m_word_count_box->currentIndex();
 	int length = m_word_length_box->itemData(m_word_length_box->currentIndex()).toInt();
-#ifndef Q_OS_WIN
-	std::random_device rd;
-	unsigned int seed = rd();
-#else
-	std::mt19937 gen(time(0));
-	std::uniform_int_distribution<unsigned int> dist;
-	unsigned int seed = dist(gen);
-#endif
+	unsigned int seed = QRandomGenerator::system()->generate();
 
 	QSettings settings;
 	settings.remove("Current");
