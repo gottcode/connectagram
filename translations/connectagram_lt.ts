@@ -20,36 +20,6 @@
     </message>
 </context>
 <context>
-    <name>Definitions</name>
-    <message>
-        <source>Definitions</source>
-        <translation>Apibrėžtys</translation>
-    </message>
-    <message>
-        <source>Downloading definition...</source>
-        <translation>Atsiunčiama apibrėžtis...</translation>
-    </message>
-    <message>
-        <source>Unsolved word</source>
-        <translation>Neįmintas žodis</translation>
-    </message>
-</context>
-<context>
-    <name>Dictionary</name>
-    <message>
-        <source>Definition from Wiktionary, the free dictionary</source>
-        <translation>Apibrėžtis iš Vikižodyno, laisvojo žodyno</translation>
-    </message>
-    <message>
-        <source>No definition found</source>
-        <translation>Apibrėžtis nerasta</translation>
-    </message>
-    <message>
-        <source>Unable to connect to Wiktionary</source>
-        <translation>Neįmanoma prisijungti prie Vikižodyno</translation>
-    </message>
-</context>
-<context>
     <name>FencePattern</name>
     <message>
         <source>Fence</source>
@@ -126,10 +96,18 @@
     </message>
 </context>
 <context>
-    <name>ScoreBoard</name>
+    <name>ScoresDialog</name>
     <message>
-        <source>Scores</source>
-        <translation>Surinkti taškai</translation>
+        <source>High Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Score</source>
@@ -146,6 +124,26 @@
     <message>
         <source>Length</source>
         <translation>Ilgis</translation>
+    </message>
+    <message>
+        <source>#%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulations!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You beat your top score!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Well done!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have a new high score!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -232,8 +230,12 @@
         <translation>D</translation>
     </message>
     <message>
-        <source>&amp;Scores</source>
-        <translation>&amp;Surinkti taškai</translation>
+        <source>High &amp;Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -242,6 +244,10 @@
     <message>
         <source>&amp;Settings</source>
         <translation>&amp;Nustatymai</translation>
+    </message>
+    <message>
+        <source>&amp;Dark Mode</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
@@ -306,10 +312,6 @@
     <message>
         <source>Pattern:</source>
         <translation>Šablonas:</translation>
-    </message>
-    <message>
-        <source>&amp;Resume</source>
-        <translation>P&amp;ratęsti</translation>
     </message>
 </context>
 </TS>

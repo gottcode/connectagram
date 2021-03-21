@@ -20,36 +20,6 @@
     </message>
 </context>
 <context>
-    <name>Definitions</name>
-    <message>
-        <source>Definitions</source>
-        <translation>Definizioni</translation>
-    </message>
-    <message>
-        <source>Downloading definition...</source>
-        <translation>Scaricamento definizione in corso...</translation>
-    </message>
-    <message>
-        <source>Unsolved word</source>
-        <translation>Parola irrisolta</translation>
-    </message>
-</context>
-<context>
-    <name>Dictionary</name>
-    <message>
-        <source>Definition from Wiktionary, the free dictionary</source>
-        <translation>Definizione da Wikizionario, il dizionario gratuito</translation>
-    </message>
-    <message>
-        <source>No definition found</source>
-        <translation>Nessuna definizione trovata</translation>
-    </message>
-    <message>
-        <source>Unable to connect to Wiktionary</source>
-        <translation>Impossibile connettersi a Wikizionario</translation>
-    </message>
-</context>
-<context>
     <name>FencePattern</name>
     <message>
         <source>Fence</source>
@@ -125,10 +95,18 @@
     </message>
 </context>
 <context>
-    <name>ScoreBoard</name>
+    <name>ScoresDialog</name>
     <message>
-        <source>Scores</source>
-        <translation>Punteggi</translation>
+        <source>High Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Score</source>
@@ -145,6 +123,26 @@
     <message>
         <source>Length</source>
         <translation>Lunghezza</translation>
+    </message>
+    <message>
+        <source>#%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulations!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You beat your top score!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Well done!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have a new high score!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -231,8 +229,12 @@
         <translation>D</translation>
     </message>
     <message>
-        <source>&amp;Scores</source>
-        <translation>&amp;Punteggio</translation>
+        <source>High &amp;Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -241,6 +243,10 @@
     <message>
         <source>&amp;Settings</source>
         <translation>&amp;Impostazioni</translation>
+    </message>
+    <message>
+        <source>&amp;Dark Mode</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
@@ -305,10 +311,6 @@
     <message>
         <source>Pattern:</source>
         <translation>Percorso:</translation>
-    </message>
-    <message>
-        <source>&amp;Resume</source>
-        <translation>&amp;Ripristina</translation>
     </message>
 </context>
 </TS>

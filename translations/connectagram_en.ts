@@ -20,36 +20,6 @@
     </message>
 </context>
 <context>
-    <name>Definitions</name>
-    <message>
-        <source>Definitions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Downloading definition...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unsolved word</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Dictionary</name>
-    <message>
-        <source>Definition from Wiktionary, the free dictionary</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No definition found</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to connect to Wiktionary</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>FencePattern</name>
     <message>
         <source>Fence</source>
@@ -125,9 +95,17 @@
     </message>
 </context>
 <context>
-    <name>ScoreBoard</name>
+    <name>ScoresDialog</name>
     <message>
-        <source>Scores</source>
+        <source>High Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rank</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -144,6 +122,26 @@
     </message>
     <message>
         <source>Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>#%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Congratulations!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You beat your top score!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Well done!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have a new high score!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -231,7 +229,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;Scores</source>
+        <source>High &amp;Scores</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -240,6 +242,10 @@
     </message>
     <message>
         <source>&amp;Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Dark Mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -304,10 +310,6 @@
     </message>
     <message>
         <source>Pattern:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&amp;Resume</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
