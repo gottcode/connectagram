@@ -46,7 +46,7 @@ public:
 		return m_paused;
 	}
 
-	WordList* words()
+	WordList* words() const
 	{
 		return m_wordlist;
 	}
