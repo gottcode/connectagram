@@ -111,11 +111,13 @@ WordList::WordListData::WordListData(const QString& language)
 {
 	// Read words from disk
 	QFile file("connectagram:" + language + "/words");
-	if (!file.open(QFile::ReadOnly | QIODevice::Text)) {
+	if (!file.open(QFile::ReadOnly)) {
 		return;
 	}
+	const QByteArray data = qUncompress(file.readAll());
+	file.close();
 
-	QTextStream in(&file);
+	QTextStream in(data);
 #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
 	in.setCodec("UTF-8");
 #endif
