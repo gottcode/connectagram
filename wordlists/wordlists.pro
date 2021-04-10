@@ -1,6 +1,6 @@
 TEMPLATE = aux
 
-LANGUAGES = en fr hu id ru
+LANGUAGES = ca cs de el es en fr he hu id nl pl pt pt_BR ru
 
 updatewords.input = LANGUAGES
 updatewords.output = $$PWD/../data/${QMAKE_FILE_BASE}/words
