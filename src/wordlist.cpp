@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2013-2020 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2013-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -9,6 +9,7 @@
 #include <QFile>
 #include <QLocale>
 #include <QRegularExpression>
+#include <QSettings>
 #include <QTextStream>
 
 #include <algorithm>
@@ -95,6 +96,21 @@ QString WordList::defaultLanguage()
 		}
 	}
 	return language;
+}
+
+//-----------------------------------------------------------------------------
+
+QString WordList::languageName(const QString& language)
+{
+	QSettings settings(QString("connectagram:%1/language.ini").arg(language), QSettings::IniFormat);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
+	settings.setIniCodec("UTF-8");
+#endif
+	QString name = settings.value("Language/Name").toString();
+	if (name.isEmpty()) {
+		name = QLocale(language).nativeLanguageName();
+	}
+	return name;
 }
 
 //-----------------------------------------------------------------------------

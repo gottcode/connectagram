@@ -7,7 +7,6 @@
 #include "new_game_dialog.h"
 
 #include "board.h"
-#include "locale_dialog.h"
 #include "pattern.h"
 #include "wordlist.h"
 
@@ -40,7 +39,14 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	m_languages_box = new QComboBox(this);
 	const QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
 	for (const QString& language : languages) {
-		m_languages_box->addItem(LocaleDialog::languageName(language), language);
+		const QString name = WordList::languageName(language);
+		int i;
+		for (i = 0; i < m_languages_box->count(); ++i) {
+			if (m_languages_box->itemText(i).localeAwareCompare(name) >= 0) {
+				break;
+			}
+		}
+		m_languages_box->insertItem(i, name, language);
 	}
 
 	// Create word count box

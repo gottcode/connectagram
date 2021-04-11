@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2013 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2013-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -47,6 +47,7 @@ public:
 	void setLength(int length);
 
 	static QString defaultLanguage();
+	static QString languageName(const QString& language);
 
 signals:
 	void languageChanged(const QString& language);
