@@ -9,9 +9,9 @@
 
 class WordList;
 
+#include <QByteArray>
 #include <QHash>
 #include <QMenu>
-#include <QUrl>
 
 class Definitions : public QMenu
 {
@@ -33,7 +33,7 @@ private slots:
 private:
 	const WordList* m_wordlist;
 	QHash<QString, QAction*> m_word_table;
-	QUrl m_url;
+	QByteArray m_url;
 };
 
 #endif // CONNECTAGRAM_DEFINITIONS_H

@@ -9,6 +9,8 @@
 #include "wordlist.h"
 
 #include <QDesktopServices>
+#include <QSettings>
+#include <QUrl>
 
 //-----------------------------------------------------------------------------
 
@@ -16,8 +18,6 @@ Definitions::Definitions(const WordList* wordlist, QWidget* parent)
 	: QMenu(parent)
 	, m_wordlist(wordlist)
 {
-	m_url.setScheme("https");
-	m_url.setPath("/wiki/");
 	connect(wordlist, &WordList::languageChanged, this, &Definitions::setLanguage);
 
 	connect(this, &QMenu::triggered, this, &Definitions::defineWord);
@@ -86,16 +86,24 @@ void Definitions::defineWord(QAction* action)
 
 	const QString word = m_wordlist->spellings(action->text()).constFirst();
 
-	QUrl url = m_url;
-	url.setPath("/wiki/" + word);
-	QDesktopServices::openUrl(url);
+	QByteArray url = m_url;
+	url.replace("%s", QUrl::toPercentEncoding(word));
+	QDesktopServices::openUrl(QUrl::fromEncoded(url));
 }
 
 //-----------------------------------------------------------------------------
 
 void Definitions::setLanguage(const QString& langcode)
 {
-	m_url.setHost(langcode + ".wiktionary.org");
+	QSettings settings(QString("connectagram:%1/language.ini").arg(langcode), QSettings::IniFormat);
+#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
+	settings.setIniCodec("UTF-8");
+#endif
+	QString url = settings.value("Language/Dictionary").toString();
+	if (url.isEmpty()) {
+		url = QString("https://%1.wiktionary.org/wiki/%s").arg(langcode);
+	}
+	m_url = QUrl::toPercentEncoding(url, "#$%&+,/:;=?@~");
 }
 
 //-----------------------------------------------------------------------------
