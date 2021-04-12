@@ -284,13 +284,6 @@ void Window::showDetails()
 	if (!pattern) {
 		return;
 	}
-	QString patternid = QString::number(pattern->type());
-	QString number = "5"
-		+ m_board->words()->language()
-		+ patternid
-		+ QString::number(pattern->wordCount())
-		+ QString("%1").arg(int(pattern->wordLength() - 4), 2, 16, QChar('0'))
-		+ QString::number(pattern->seed(), 16);
 	QMessageBox dialog(QMessageBox::Information,
 		tr("Details"),
 		QString("<p><b>%1</b> %2<br><b>%3</b> %4<br><b>%5</b> %6<br><b>%7</b> %8<br><b>%9</b> %10</p>")
@@ -303,10 +296,10 @@ void Window::showDetails()
 				, NewGameDialog::tr("Word Length:")
 				, NewGameDialog::tr("%n letter(s)", "", pattern->wordLength() + 1)
 				, tr("Game Number:"))
-			.arg(number),
+			.arg(m_board->gameNumber()),
 		QMessageBox::NoButton,
 		this);
-	dialog.setIconPixmap(QIcon(QString(":/patterns/%1.png").arg(patternid)).pixmap(96,96));
+	dialog.setIconPixmap(QIcon(QString(":/patterns/%1.png").arg(pattern->type())).pixmap(96,96));
 	dialog.exec();
 }
 

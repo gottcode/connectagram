@@ -83,6 +83,18 @@ void Board::setCurrentWord(Word* word)
 
 //-----------------------------------------------------------------------------
 
+QString Board::gameNumber() const
+{
+	return QString("5%1%2%3%4%5")
+			.arg(m_wordlist->language())
+			.arg(m_pattern->type())
+			.arg(m_pattern->wordCount())
+			.arg(m_pattern->wordLength() - 4, 2, 16, QChar('0'))
+			.arg(m_pattern->seed(), 0, 16);
+}
+
+//-----------------------------------------------------------------------------
+
 void Board::openGame()
 {
 	cleanUp();

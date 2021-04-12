@@ -53,6 +53,8 @@ public:
 
 	void setCurrentWord(Word* word);
 
+	QString gameNumber() const;
+
 public slots:
 	void openGame();
 	bool openGame(const QString& number);
