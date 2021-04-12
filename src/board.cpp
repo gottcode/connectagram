@@ -85,7 +85,8 @@ void Board::setCurrentWord(Word* word)
 
 QString Board::gameNumber() const
 {
-	return QString("5%1%2%3%4%5")
+	return QString("%1%2%3%4%5%6")
+			.arg(Version)
 			.arg(m_wordlist->language())
 			.arg(m_pattern->type())
 			.arg(m_pattern->wordCount())
@@ -115,7 +116,7 @@ void Board::openGame()
 
 bool Board::openGame(const QString& number)
 {
-	if (!number.startsWith("5")) {
+	if (!number.startsWith(QString::number(Version))) {
 		return false;
 	}
 

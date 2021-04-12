@@ -55,6 +55,8 @@ public:
 
 	QString gameNumber() const;
 
+	static const int Version = 5;
+
 public slots:
 	void openGame();
 	bool openGame(const QString& number);
