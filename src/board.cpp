@@ -103,7 +103,7 @@ void Board::openGame()
 
 bool Board::openGame(const QString& number)
 {
-	if (!number.startsWith("4")) {
+	if (!number.startsWith("5")) {
 		return false;
 	}
 

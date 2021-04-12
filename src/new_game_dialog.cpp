@@ -198,7 +198,7 @@ void NewGameDialog::patternSelected()
 	settings.setValue("NewGame/Pattern", pattern);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
-	settings.setValue("Current/Version", 4);
+	settings.setValue("Current/Version", 5);
 	settings.setValue("Current/Language", language);
 	settings.setValue("Current/Pattern", pattern);
 	settings.setValue("Current/Count", count);

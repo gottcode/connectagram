@@ -192,7 +192,7 @@ Window::Window()
 
 	// Continue previous or start new game
 	show();
-	if (settings.contains("Current/Words") && (settings.value("Current/Version" ).toInt() == 4)) {
+	if (settings.contains("Current/Words") && (settings.value("Current/Version" ).toInt() == 5)) {
 		m_board->openGame();
 	} else {
 		settings.remove("Current");
@@ -285,7 +285,7 @@ void Window::showDetails()
 		return;
 	}
 	QString patternid = QSettings().value("Current/Pattern", 0).toString();
-	QString number = "4"
+	QString number = "5"
 		+ m_board->words()->language()
 		+ patternid
 		+ QString::number(pattern->wordCount())
