@@ -9,6 +9,7 @@
 #include "board.h"
 #include "cell.h"
 #include "word.h"
+#include "wordlist.h"
 
 #include <QCursor>
 #include <QFont>
@@ -44,7 +45,30 @@ Letter::Letter(const QChar& character, Board* board)
 	f.setWeight(QFont::Bold);
 	m_text->setFont(f);
 	m_text->setBrush(Qt::white);
-	setText(m_character);
+	if (m_board->words()->language() != "he") {
+		setText(m_character);
+	} else {
+		switch (character.unicode()) {
+		case u'ך':
+			setText(QChar(u'כ'));
+			break;
+		case u'ם':
+			setText(QChar(u'מ'));
+			break;
+		case u'ן':
+			setText(QChar(u'נ'));
+			break;
+		case u'ף':
+			setText(QChar(u'פ'));
+			break;
+		case u'ץ':
+			setText(QChar(u'צ'));
+			break;
+		default:
+			setText(character);
+			break;
+		}
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -63,6 +87,9 @@ void Letter::setCorrect()
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setBrush(QColor(0, 0x8c, 0));
 	setCursor(Qt::PointingHandCursor);
+	if (m_board->words()->language() == "he") {
+		setText(m_character);
+	}
 	m_correct = true;
 	m_movable = false;
 }

@@ -15,46 +15,17 @@
 #include <QStringList>
 #include <QTextStream>
 
-#include <functional>
 #include <iostream>
 #include <stdexcept>
 
 //-----------------------------------------------------------------------------
 
-QString generateSolutionHe(QString string)
-{
-	string.replace(u'ך', u'כ');
-	string.replace(u'ם', u'מ');
-	string.replace(u'ן', u'נ');
-	string.replace(u'ף', u'פ');
-	string.replace(u'ץ', u'צ');
-	return string;
-}
-
-QString generateSolutionNone(QString string)
-{
-	return string;
-}
-
-std::function<QString(QString)> fetchGenerateSolution(const QString& language)
-{
-	if (language == "he") {
-		return generateSolutionHe;
-	} else {
-		return generateSolutionNone;
-	}
-}
-
-//-----------------------------------------------------------------------------
-
-QMap<QString, QStringList> readWords(const QString& filename, const QString& language)
+QMap<QString, QStringList> readWords(const QString& filename)
 {
 	QFile in(filename);
 	if (!in.open(QIODevice::ReadOnly | QIODevice::Text)) {
 		throw std::runtime_error("Unable to open file '" + filename.toStdString() + "' for reading.");
 	}
-
-	const auto generateSolution = fetchGenerateSolution(language);
 
 	QTextStream stream(&in);
 #if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
@@ -65,16 +36,13 @@ QMap<QString, QStringList> readWords(const QString& filename, const QString& lan
 	while (!stream.atEnd()) {
 		const QString word = stream.readLine().trimmed();
 
-		// Replace letters
-		const QString solution = generateSolution(word.toUpper());
-
 		// Discard words that are too short
-		if (solution.length() < 5) {
+		if (word.length() < 5) {
 			continue;
 		}
 
 		// Store unique spellings
-		QStringList& spellings = words[solution];
+		QStringList& spellings = words[word.toUpper()];
 		if (!spellings.contains(word)) {
 			spellings += word;
 		}
@@ -170,7 +138,7 @@ int main(int argc, char** argv)
 			outfilename = parser.value("output");
 		}
 
-		const QMap<QString, QStringList> words = readWords(filename, language);
+		const QMap<QString, QStringList> words = readWords(filename);
 		const QByteArray lines = joinWordsIntoLines(words);
 		writeLines(outfilename, lines);
 	} catch (const std::runtime_error& err) {
