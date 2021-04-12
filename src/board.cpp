@@ -17,6 +17,10 @@
 
 //-----------------------------------------------------------------------------
 
+constexpr int CONNECTAGRAM_GAME_VERSION = 5;
+
+//-----------------------------------------------------------------------------
+
 Board::Board(QObject* parent)
 	: QGraphicsScene(parent)
 	, m_pattern(nullptr)
@@ -86,7 +90,7 @@ void Board::setCurrentWord(Word* word)
 QString Board::gameNumber() const
 {
 	return QString("%1%2%3%4%5%6")
-			.arg(Version)
+			.arg(CONNECTAGRAM_GAME_VERSION)
 			.arg(m_wordlist->language())
 			.arg(m_pattern->type())
 			.arg(m_pattern->wordCount())
@@ -96,27 +100,50 @@ QString Board::gameNumber() const
 
 //-----------------------------------------------------------------------------
 
-void Board::openGame()
+bool Board::continueGame()
 {
-	cleanUp();
-	emit loading();
-
 	QSettings settings;
-	m_wordlist->setLanguage(settings.value("Current/Language", WordList::defaultLanguage()).toString());
-	m_pattern = Pattern::create(m_wordlist, settings.value("Current/Pattern").toInt());
-	m_pattern->setCount(settings.value("Current/Count").toInt());
-	m_pattern->setLength(settings.value("Current/Length").toInt());
-	m_pattern->setSeed(settings.value("Current/Seed").toUInt());
 
-	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
-	m_pattern->start();
+	if (settings.value("Current/Version").toInt() != CONNECTAGRAM_GAME_VERSION) {
+		settings.remove("Current");
+		return false;
+	}
+
+	settings.beginGroup("Current");
+	const QString language = settings.value("Language", WordList::defaultLanguage()).toString();
+	const int pattern = settings.value("Pattern").toInt();
+	const int count = settings.value("Count").toInt();
+	const int length = settings.value("Length").toInt();
+	const unsigned int seed = settings.value("Seed").toUInt();
+
+	generate(language, pattern, count, length, seed);
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::newGame(const QString& language, int pattern, int count, int length, unsigned int seed)
+{
+	QSettings settings;
+	settings.remove("Current");
+	settings.beginGroup("Current");
+	settings.setValue("Version", CONNECTAGRAM_GAME_VERSION);
+	settings.setValue("Language", language);
+	settings.setValue("Pattern", pattern);
+	settings.setValue("Count", count);
+	settings.setValue("Length", length);
+	settings.setValue("Seed", seed);
+	settings.setValue("Time", 0);
+
+	generate(language, pattern, count, length, seed);
 }
 
 //-----------------------------------------------------------------------------
 
 bool Board::openGame(const QString& number)
 {
-	if (!number.startsWith(QString::number(Version))) {
+	if (!number.startsWith(QString::number(CONNECTAGRAM_GAME_VERSION))) {
 		return false;
 	}
 
@@ -167,17 +194,7 @@ bool Board::openGame(const QString& number)
 	}
 
 	// Start game
-	cleanUp();
-	emit loading();
-
-	m_wordlist->setLanguage(language);
-	m_pattern = Pattern::create(m_wordlist, pattern);
-	m_pattern->setCount(count);
-	m_pattern->setLength(length);
-	m_pattern->setSeed(seed);
-
-	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
-	m_pattern->start();
+	newGame(language, pattern, count, length, seed);
 
 	return true;
 }
@@ -243,6 +260,23 @@ void Board::setPaused(bool paused)
 void Board::togglePaused()
 {
 	setPaused(!m_paused);
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::generate(const QString& language, int pattern, int count, int length, unsigned int seed)
+{
+	cleanUp();
+	emit loading();
+
+	m_wordlist->setLanguage(language);
+	m_pattern = Pattern::create(m_wordlist, pattern);
+	m_pattern->setCount(count);
+	m_pattern->setLength(length);
+	m_pattern->setSeed(seed);
+
+	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
+	m_pattern->start();
 }
 
 //-----------------------------------------------------------------------------

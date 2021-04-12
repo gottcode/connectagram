@@ -193,20 +193,12 @@ void NewGameDialog::patternSelected()
 	unsigned int seed = QRandomGenerator::system()->generate();
 
 	QSettings settings;
-	settings.remove("Current");
 	settings.setValue("NewGame/Language", language);
 	settings.setValue("NewGame/Pattern", pattern);
 	settings.setValue("NewGame/Count", count);
 	settings.setValue("NewGame/Length", length);
-	settings.setValue("Current/Version", Board::Version);
-	settings.setValue("Current/Language", language);
-	settings.setValue("Current/Pattern", pattern);
-	settings.setValue("Current/Count", count);
-	settings.setValue("Current/Length", length);
-	settings.setValue("Current/Seed", seed);
-	settings.setValue("Current/Time", 0);
 
-	m_board->openGame();
+	m_board->newGame(language, pattern, count, length, seed);
 
 	accept();
 }

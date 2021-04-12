@@ -55,10 +55,9 @@ public:
 
 	QString gameNumber() const;
 
-	static const int Version = 5;
-
 public slots:
-	void openGame();
+	bool continueGame();
+	void newGame(const QString& language, int pattern, int count, int length, unsigned int seed);
 	bool openGame(const QString& number);
 	void saveGame();
 	void showHint();
@@ -77,6 +76,7 @@ signals:
 	void wordSolved(const QString& original_word, const QString& current_word);
 
 private slots:
+	void generate(const QString& language, int pattern, int count, int length, unsigned int seed);
 	void patternGenerated();
 
 private:

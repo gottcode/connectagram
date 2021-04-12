@@ -192,10 +192,7 @@ Window::Window()
 
 	// Continue previous or start new game
 	show();
-	if (settings.contains("Current/Words") && (settings.value("Current/Version").toInt() == Board::Version)) {
-		m_board->openGame();
-	} else {
-		settings.remove("Current");
+	if (!m_board->continueGame()) {
 		newGame();
 	}
 }
