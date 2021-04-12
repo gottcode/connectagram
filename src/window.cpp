@@ -284,7 +284,7 @@ void Window::showDetails()
 	if (!pattern) {
 		return;
 	}
-	QString patternid = QSettings().value("Current/Pattern", 0).toString();
+	QString patternid = QString::number(pattern->type());
 	QString number = "5"
 		+ m_board->words()->language()
 		+ patternid

@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2014 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -68,6 +68,8 @@ public:
 	{
 		return m_seed;
 	}
+
+	virtual int type() const = 0;
 
 	const WordList* words() const
 	{
@@ -151,6 +153,12 @@ public:
 		return tr("Chain");
 	}
 
+	static const int Type = 0;
+	int type() const override
+	{
+		return Type;
+	}
+
 private:
 	int steps() const override
 	{
@@ -180,6 +188,12 @@ public:
 	QString name() const override
 	{
 		return tr("Fence");
+	}
+
+	static const int Type = 1;
+	int type() const override
+	{
+		return Type;
 	}
 
 private:
@@ -213,6 +227,12 @@ public:
 		return tr("Rings");
 	}
 
+	static const int Type = 2;
+	int type() const override
+	{
+		return Type;
+	}
+
 private:
 	int steps() const override
 	{
@@ -239,6 +259,12 @@ public:
 		return tr("Stairs");
 	}
 
+	static const int Type = 3;
+	int type() const override
+	{
+		return Type;
+	}
+
 private:
 	Word* addWord(int step) override;
 };
@@ -258,6 +284,12 @@ public:
 	QString name() const override
 	{
 		return tr("Twisty");
+	}
+
+	static const int Type = 4;
+	int type() const override
+	{
+		return Type;
 	}
 
 private:
@@ -286,6 +318,12 @@ public:
 	QString name() const override
 	{
 		return tr("Wave");
+	}
+
+	static const int Type = 5;
+	int type() const override
+	{
+		return Type;
 	}
 
 private:

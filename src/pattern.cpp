@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2014 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -64,22 +64,22 @@ Pattern* Pattern::create(WordList* words, int type)
 {
 	Pattern* pattern = nullptr;
 	switch (type) {
-	case 0:
+	case ChainPattern::Type:
 		pattern = new ChainPattern(words);
 		break;
-	case 1:
+	case FencePattern::Type:
 		pattern = new FencePattern(words);
 		break;
-	case 2:
+	case RingsPattern::Type:
 		pattern = new RingsPattern(words);
 		break;
-	case 3:
+	case StairsPattern::Type:
 		pattern = new StairsPattern(words);
 		break;
-	case 4:
+	case TwistyPattern::Type:
 		pattern = new TwistyPattern(words);
 		break;
-	case 5:
+	case WavePattern::Type:
 		pattern = new WavePattern(words);
 		break;
 	default:
