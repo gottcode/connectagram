@@ -9,6 +9,8 @@ CONFIG(debug, debug|release) {
 	DEFINES += QT_NO_NARROWING_CONVERSIONS_IN_CONNECT
 }
 
+DESTDIR = ../..
+
 HEADERS =
 
 SOURCES = main.cpp
