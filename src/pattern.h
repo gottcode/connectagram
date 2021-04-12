@@ -153,7 +153,7 @@ public:
 		return tr("Chain");
 	}
 
-	static const int Type = 0;
+	static constexpr int Type = 0;
 	int type() const override
 	{
 		return Type;
@@ -190,7 +190,7 @@ public:
 		return tr("Fence");
 	}
 
-	static const int Type = 1;
+	static constexpr int Type = 1;
 	int type() const override
 	{
 		return Type;
@@ -227,7 +227,7 @@ public:
 		return tr("Rings");
 	}
 
-	static const int Type = 2;
+	static constexpr int Type = 2;
 	int type() const override
 	{
 		return Type;
@@ -259,7 +259,7 @@ public:
 		return tr("Stairs");
 	}
 
-	static const int Type = 3;
+	static constexpr int Type = 3;
 	int type() const override
 	{
 		return Type;
@@ -286,7 +286,7 @@ public:
 		return tr("Twisty");
 	}
 
-	static const int Type = 4;
+	static constexpr int Type = 4;
 	int type() const override
 	{
 		return Type;
@@ -320,7 +320,7 @@ public:
 		return tr("Wave");
 	}
 
-	static const int Type = 5;
+	static constexpr int Type = 5;
 	int type() const override
 	{
 		return Type;
