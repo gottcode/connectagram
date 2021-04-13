@@ -57,7 +57,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 
 	// Create word length box
 	m_word_length_box = new QComboBox(this);
-	connect(m_word_length_box, QOverload<int>::of(&QComboBox::activated), this, &NewGameDialog::lengthSelected);
+	connect(m_word_length_box, qOverload<int>(&QComboBox::activated), this, &NewGameDialog::lengthSelected);
 
 	// Create pattern buttons
 	QFrame* patterns = new QFrame(this);
