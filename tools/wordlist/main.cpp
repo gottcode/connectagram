@@ -15,12 +15,14 @@
 #include <QStringList>
 #include <QTextStream>
 
+#include <algorithm>
 #include <iostream>
+#include <map>
 #include <stdexcept>
 
 //-----------------------------------------------------------------------------
 
-QMap<QString, QStringList> readWords(const QString& filename)
+std::map<QString, std::vector<QString>> readWords(const QString& filename)
 {
 	QFile in(filename);
 	if (!in.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -32,7 +34,7 @@ QMap<QString, QStringList> readWords(const QString& filename)
 	stream.setCodec("UTF-8");
 #endif
 
-	QMap<QString, QStringList> words;
+	std::map<QString, std::vector<QString>> words;
 	while (!stream.atEnd()) {
 		const QString word = stream.readLine().trimmed();
 
@@ -42,9 +44,9 @@ QMap<QString, QStringList> readWords(const QString& filename)
 		}
 
 		// Store unique spellings
-		QStringList& spellings = words[word.toUpper()];
-		if (!spellings.contains(word)) {
-			spellings += word;
+		std::vector<QString>& spellings = words[word.toUpper()];
+		if (std::find(spellings.cbegin(), spellings.cend(), word) == spellings.cend()) {
+			spellings.push_back(word);
 		}
 	}
 
@@ -55,7 +57,7 @@ QMap<QString, QStringList> readWords(const QString& filename)
 
 //-----------------------------------------------------------------------------
 
-QByteArray joinWordsIntoLines(const QMap<QString, QStringList>& words)
+QByteArray joinWordsIntoLines(const std::map<QString, std::vector<QString>>& words)
 {
 	QBuffer buffer;
 	buffer.open(QIODevice::WriteOnly | QIODevice::Text);
@@ -65,12 +67,10 @@ QByteArray joinWordsIntoLines(const QMap<QString, QStringList>& words)
 	stream.setCodec("UTF-8");
 #endif
 
-	QMapIterator<QString, QStringList> i(words);
-	while (i.hasNext()) {
-		i.next();
-		const QString& solution = i.key();
-		const QStringList& spellings = i.value();
-		if ((spellings.size() == 1) && (spellings.first() == solution.toLower())) {
+	for (const auto& i : words) {
+		const QString& solution = i.first;
+		const std::vector<QString>& spellings = i.second;
+		if ((spellings.size() == 1) && (spellings.front() == solution.toLower())) {
 			// Doesn't need to store proper spellings in this case;
 			// Connectagram will fall back to all lowercase of solution.
 			stream << solution << '\n';
@@ -138,7 +138,7 @@ int main(int argc, char** argv)
 			outfilename = parser.value("output");
 		}
 
-		const QMap<QString, QStringList> words = readWords(filename);
+		const std::map<QString, std::vector<QString>> words = readWords(filename);
 		const QByteArray lines = joinWordsIntoLines(words);
 		writeLines(outfilename, lines);
 	} catch (const std::runtime_error& err) {
