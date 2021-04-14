@@ -319,12 +319,12 @@ Word* StairsPattern::addWord(int step)
 
 Word* TwistyPattern::addWord(int step)
 {
-	return step ? stepTwo() : stepOne();
+	return step ? addVerticalWord() : addHorizontalWord();
 }
 
 //-----------------------------------------------------------------------------
 
-Word* TwistyPattern::stepOne()
+Word* TwistyPattern::addHorizontalWord()
 {
 	QList<QPoint> positions;
 	for (int i = 0; i <= wordLength(); ++i) {
@@ -377,7 +377,7 @@ Word* TwistyPattern::stepOne()
 
 //-----------------------------------------------------------------------------
 
-Word* TwistyPattern::stepTwo()
+Word* TwistyPattern::addVerticalWord()
 {
 	QList<QPoint> positions;
 	for (int i = 0; i <= wordLength(); ++i) {

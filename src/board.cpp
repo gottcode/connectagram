@@ -264,23 +264,6 @@ void Board::togglePaused()
 
 //-----------------------------------------------------------------------------
 
-void Board::generate(const QString& language, int pattern, int count, int length, unsigned int seed)
-{
-	cleanUp();
-	emit loading();
-
-	m_wordlist->setLanguage(language);
-	m_pattern = Pattern::create(m_wordlist, pattern);
-	m_pattern->setCount(count);
-	m_pattern->setLength(length);
-	m_pattern->setSeed(seed);
-
-	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
-	m_pattern->start();
-}
-
-//-----------------------------------------------------------------------------
-
 void Board::patternGenerated()
 {
 	m_words = m_pattern->solution();
@@ -329,6 +312,23 @@ void Board::patternGenerated()
 	saveGame();
 
 	emit started();
+}
+
+//-----------------------------------------------------------------------------
+
+void Board::generate(const QString& language, int pattern, int count, int length, unsigned int seed)
+{
+	cleanUp();
+	emit loading();
+
+	m_wordlist->setLanguage(language);
+	m_pattern = Pattern::create(m_wordlist, pattern);
+	m_pattern->setCount(count);
+	m_pattern->setLength(length);
+	m_pattern->setSeed(seed);
+
+	connect(m_pattern, &Pattern::generated, this, &Board::patternGenerated);
+	m_pattern->start();
 }
 
 //-----------------------------------------------------------------------------
