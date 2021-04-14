@@ -45,30 +45,7 @@ Letter::Letter(const QChar& character, Board* board)
 	f.setWeight(QFont::Bold);
 	m_text->setFont(f);
 	m_text->setBrush(Qt::white);
-	if (m_board->words()->language() != "he") {
-		setText(m_character);
-	} else {
-		switch (character.unicode()) {
-		case u'ך':
-			setText(QChar(u'כ'));
-			break;
-		case u'ם':
-			setText(QChar(u'מ'));
-			break;
-		case u'ן':
-			setText(QChar(u'נ'));
-			break;
-		case u'ף':
-			setText(QChar(u'פ'));
-			break;
-		case u'ץ':
-			setText(QChar(u'צ'));
-			break;
-		default:
-			setText(character);
-			break;
-		}
-	}
+	setText(m_character);
 }
 
 //-----------------------------------------------------------------------------
@@ -87,9 +64,7 @@ void Letter::setCorrect()
 	setFlag(QGraphicsItem::ItemIsMovable, false);
 	setBrush(QColor(0, 0x8c, 0));
 	setCursor(Qt::PointingHandCursor);
-	if (m_board->words()->language() == "he") {
-		setText(m_character);
-	}
+	setText(m_character);
 	m_correct = true;
 	m_movable = false;
 }
@@ -221,7 +196,30 @@ void Letter::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 void Letter::setText(const QChar& character)
 {
-	m_text->setText(character);
+	if (m_correct || (m_board->words()->language() != "he")) {
+		m_text->setText(character);
+	} else {
+		switch (character.unicode()) {
+		case u'ך':
+			m_text->setText(QChar(u'כ'));
+			break;
+		case u'ם':
+			m_text->setText(QChar(u'מ'));
+			break;
+		case u'ן':
+			m_text->setText(QChar(u'נ'));
+			break;
+		case u'ף':
+			m_text->setText(QChar(u'פ'));
+			break;
+		case u'ץ':
+			m_text->setText(QChar(u'צ'));
+			break;
+		default:
+			m_text->setText(character);
+			break;
+		}
+	}
 	m_text->setPos(boundingRect().center() - m_text->boundingRect().center());
 }
 
