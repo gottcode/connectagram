@@ -110,7 +110,7 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	setLength(settings.value("NewGame/Length", 7).toInt());
 	m_pattern_buttons.at(settings.value("NewGame/Pattern").toInt())->setFocus();
 
-	connect(m_languages_box, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &NewGameDialog::languageSelected);
+	connect(m_languages_box, qOverload<int>(&QComboBox::currentIndexChanged), this, &NewGameDialog::languageSelected);
 }
 
 //-----------------------------------------------------------------------------
