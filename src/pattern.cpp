@@ -28,9 +28,7 @@ Pattern::Pattern(WordList* words)
 Pattern::~Pattern()
 {
 	if (isRunning()) {
-		m_cancelled_mutex.lock();
 		m_cancelled = true;
-		m_cancelled_mutex.unlock();
 		wait();
 	}
 	cleanUp();
@@ -153,7 +151,6 @@ void Pattern::run()
 			i = -1;
 		}
 
-		QMutexLocker locker(&m_cancelled_mutex);
 		if (m_cancelled) {
 			return;
 		}

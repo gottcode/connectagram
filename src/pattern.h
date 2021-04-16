@@ -12,12 +12,12 @@ class Word;
 
 #include <QHash>
 #include <QList>
-#include <QMutex>
 #include <QPoint>
 #include <QSize>
 #include <QStringList>
 #include <QThread>
 
+#include <atomic>
 #include <random>
 
 /**
@@ -226,8 +226,7 @@ private:
 	unsigned int m_seed; /**< seed for random number generator */
 	QSize m_size; /**< the size of the layout */
 	QList<Word*> m_solution; /**< the words in the layout */
-	bool m_cancelled; /**< is the thread cancelled */
-	QMutex m_cancelled_mutex; /**< mutex to protect the cancelled variable */
+	std::atomic_bool m_cancelled; /**< is the thread cancelled */
 	std::mt19937 m_random; /**< the random number generator */
 };
 
