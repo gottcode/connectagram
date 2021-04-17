@@ -28,7 +28,7 @@ Pattern::Pattern(WordList* words)
 Pattern::~Pattern()
 {
 	if (isRunning()) {
-		m_cancelled = true;
+		m_cancelled.store(true, std::memory_order_relaxed);
 		wait();
 	}
 	cleanUp();
@@ -151,7 +151,7 @@ void Pattern::run()
 			i = -1;
 		}
 
-		if (m_cancelled) {
+		if (m_cancelled.load(std::memory_order_relaxed)) {
 			return;
 		}
 	}
