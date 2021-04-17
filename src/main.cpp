@@ -9,6 +9,7 @@
 #include "window.h"
 
 #include <QApplication>
+#include <QCommandLineParser>
 #include <QDir>
 
 int main(int argc, char** argv)
@@ -45,6 +46,12 @@ int main(int argc, char** argv)
 	LocaleDialog::loadTranslator("connectagram_");
 
 	ScoresDialog::migrate();
+
+	QCommandLineParser parser;
+	parser.setApplicationDescription(Window::tr("A word unscrambling game"));
+	parser.addHelpOption();
+	parser.addVersionOption();
+	parser.process(app);
 
 	Window window;
 
