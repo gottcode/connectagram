@@ -98,19 +98,19 @@
     <name>ScoresDialog</name>
     <message>
         <source>High Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Highscores</translation>
     </message>
     <message>
         <source>Rank</source>
-        <translation type="unfinished"></translation>
+        <translation>Rang</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Score</source>
-        <translation>Spielergebniss</translation>
+        <translation>Ergebnis</translation>
     </message>
     <message>
         <source>Time</source>
@@ -126,23 +126,23 @@
     </message>
     <message>
         <source>#%1</source>
-        <translation type="unfinished"></translation>
+        <translation>#%1</translation>
     </message>
     <message>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Glückwunsch!</translation>
     </message>
     <message>
         <source>You beat your top score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben Ihr bestes Ergebnis geschlagen!</translation>
     </message>
     <message>
         <source>Well done!</source>
-        <translation type="unfinished"></translation>
+        <translation>Gut gemacht!</translation>
     </message>
     <message>
         <source>You have a new high score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben einen neuen Highscore!</translation>
     </message>
 </context>
 <context>
@@ -230,11 +230,11 @@
     </message>
     <message>
         <source>High &amp;Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>High&amp;scores</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+H</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -246,7 +246,7 @@
     </message>
     <message>
         <source>&amp;Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Dunkler Modus</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>

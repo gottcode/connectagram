@@ -99,15 +99,15 @@
     <name>ScoresDialog</name>
     <message>
         <source>High Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Rekordai</translation>
     </message>
     <message>
         <source>Rank</source>
-        <translation type="unfinished"></translation>
+        <translation>Rangas</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Vardas</translation>
     </message>
     <message>
         <source>Score</source>
@@ -127,23 +127,23 @@
     </message>
     <message>
         <source>#%1</source>
-        <translation type="unfinished"></translation>
+        <translation>#%1</translation>
     </message>
     <message>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Sveikiname!</translation>
     </message>
     <message>
         <source>You beat your top score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Jūs sumušėte savo rekordą!</translation>
     </message>
     <message>
         <source>Well done!</source>
-        <translation type="unfinished"></translation>
+        <translation>Puikiai padirbėta!</translation>
     </message>
     <message>
         <source>You have a new high score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Jūs pasiekėte naują rekordą!</translation>
     </message>
 </context>
 <context>
@@ -231,11 +231,11 @@
     </message>
     <message>
         <source>High &amp;Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Rekordai</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -247,7 +247,7 @@
     </message>
     <message>
         <source>&amp;Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Tamsi veiksena</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
