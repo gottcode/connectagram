@@ -1,3 +1,14 @@
+1.3.0
+-----
+* Added dark mode.
+* Added option to reset new game to defaults.
+* Added support for Qt 6.
+* Look up definitions in web browser.
+* Improved high scores dialog.
+* Refactored code.
+* Translation updates: German, Indonesian, Lithuanian, Polish, Romanian, Turkish.
+* Word list updates: Brazilian Portuguese, Catalan, Czech, Dutch, English, French, German, Greek, Hebrew, Indonesian, Polish, Portuguese, Russian, Spanish.
+
 1.2.11
 ------
 * FIXED: Did not load locales with underscores.

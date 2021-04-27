@@ -3,8 +3,8 @@
 
 !define APPNAME "Connectagram"
 !define VERSIONMAJOR 1
-!define VERSIONMINOR 2
-!define VERSIONPATCH 11
+!define VERSIONMINOR 3
+!define VERSIONPATCH 0
 !define APPVERSION "${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONPATCH}"
 !define ABOUTURL "https://gottcode.org/connectagram/"
 
