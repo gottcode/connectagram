@@ -8,7 +8,7 @@ SET VERSION=1.3.0
 
 ECHO Copying executable
 MKDIR %SRCDIR%\%APP%
-COPY release\%APP%.exe %SRCDIR%\%APP% >nul
+COPY %APP%.exe %SRCDIR%\%APP% >nul
 CD %SRCDIR%
 
 ECHO Copying data
