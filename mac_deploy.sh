@@ -2,7 +2,7 @@
 
 APP='Connectagram'
 BUNDLE="$APP.app"
-VERSION='1.3.0'
+VERSION='1.3.1'
 
 # Remove any previous disk folder or DMG
 echo -n 'Preparing... '
@@ -18,7 +18,7 @@ echo -n 'Copying application bundle... '
 mkdir "$APP"
 cp -Rf "$BUNDLE" "$APP/"
 strip "$APP/$BUNDLE/Contents/MacOS/$APP"
-cp LICENSES/GPL-3.0-or-later.txt "$APP/License.txt"
+cp COPYING "$APP/License.txt"
 echo 'Done'
 
 # Create ReadMe

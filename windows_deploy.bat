@@ -4,7 +4,7 @@
 
 SET SRCDIR=..\connectagram
 SET APP=Connectagram
-SET VERSION=1.3.0
+SET VERSION=1.3.1
 
 ECHO Copying executable
 MKDIR %SRCDIR%\%APP%
