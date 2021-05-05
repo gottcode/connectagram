@@ -93,9 +93,6 @@ macx {
 	data.files = ../data
 	data.path = $$PREFIX/share/connectagram/
 
-	pixmap.files = ../icons/connectagram.xpm
-	pixmap.path = $$PREFIX/share/pixmaps/
-
 	icon.files = ../icons/hicolor/*
 	icon.path = $$PREFIX/share/icons/hicolor/
 
@@ -112,5 +109,5 @@ macx {
 	man.files = ../doc/connectagram.6
 	man.path = $$PREFIX/share/man/man6
 
-	INSTALLS += target pixmap icon desktop appdata data qm man
+	INSTALLS += target icon desktop appdata data qm man
 }
