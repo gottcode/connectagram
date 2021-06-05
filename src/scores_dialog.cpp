@@ -79,7 +79,7 @@ ScoresDialog::ScoresDialog(QWidget* parent)
 	divider->setFrameStyle(QFrame::HLine | QFrame::Sunken);
 	m_scores_layout->addWidget(divider, 2, 0, 1, TotalColumns);
 
-	QVector<Qt::Alignment> alignments(TotalColumns, Qt::AlignTrailing);
+	QList<Qt::Alignment> alignments(TotalColumns, Qt::AlignTrailing);
 	alignments[NameColumn] = Qt::AlignLeading;
 	alignments[WordsColumn] = Qt::AlignHCenter;
 	for (int r = 0; r < 10; ++r) {
