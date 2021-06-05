@@ -103,9 +103,6 @@ QString WordList::defaultLanguage()
 QString WordList::languageName(const QString& language)
 {
 	QSettings settings(QString("connectagram:%1/language.ini").arg(language), QSettings::IniFormat);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-	settings.setIniCodec("UTF-8");
-#endif
 	QString name = settings.value("Language/Name").toString();
 	if (name.isEmpty()) {
 		name = QLocale(language).nativeLanguageName();
@@ -134,15 +131,8 @@ WordList::WordListData::WordListData(const QString& language)
 	file.close();
 
 	QTextStream in(data);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-	in.setCodec("UTF-8");
-#endif
 	while (!in.atEnd()) {
-#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
 		QStringList spellings = in.readLine().simplified().split(" ", Qt::SkipEmptyParts);
-#else
-		QStringList spellings = in.readLine().simplified().split(" ", QString::SkipEmptyParts);
-#endif
 		if (spellings.isEmpty()) {
 			continue;
 		}

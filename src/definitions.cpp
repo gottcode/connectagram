@@ -96,9 +96,6 @@ void Definitions::defineWord(QAction* action)
 void Definitions::setLanguage(const QString& langcode)
 {
 	QSettings settings(QString("connectagram:%1/language.ini").arg(langcode), QSettings::IniFormat);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-	settings.setIniCodec("UTF-8");
-#endif
 	QString url = settings.value("Language/Dictionary").toString();
 	if (url.isEmpty()) {
 		url = QString("https://%1.wiktionary.org/wiki/%s").arg(langcode);

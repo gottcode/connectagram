@@ -30,9 +30,6 @@ std::map<QString, std::vector<QString>> readWords(const QString& filename)
 	}
 
 	QTextStream stream(&in);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-	stream.setCodec("UTF-8");
-#endif
 
 	std::map<QString, std::vector<QString>> words;
 	while (!stream.atEnd()) {
@@ -63,9 +60,6 @@ QByteArray joinWordsIntoLines(const std::map<QString, std::vector<QString>>& wor
 	buffer.open(QIODevice::WriteOnly | QIODevice::Text);
 
 	QTextStream stream(&buffer);
-#if (QT_VERSION < QT_VERSION_CHECK(6,0,0))
-	stream.setCodec("UTF-8");
-#endif
 
 	for (const auto& i : words) {
 		const QString& solution = i.first;
