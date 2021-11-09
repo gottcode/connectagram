@@ -51,6 +51,7 @@ Comment[pt]=Reordena palavras dispostas em padrões
 Comment[ro]=Ordonaţi cuvinte plasate în tipare
 Comment[tr]=Kalıplarda yerleştirilmiş kelimeleri düzenle
 Comment[uk]=Розшифруйте слова, що знаходяться у відповідних комірках
+TryExec=connectagram
 Exec=connectagram
 Icon=connectagram
 Terminal=false
