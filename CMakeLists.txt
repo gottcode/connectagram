@@ -81,7 +81,7 @@ elseif(WIN32)
 		QT_TARGET_VERSION "${PROJECT_VERSION}"
 		QT_TARGET_COMPANY_NAME "Graeme Gott"
 		QT_TARGET_DESCRIPTION "Anagram game"
-		QT_TARGET_COPYRIGHT "Copyright (C) 2021 Graeme Gott"
+		QT_TARGET_COPYRIGHT "Copyright (C) 2022 Graeme Gott"
 		QT_TARGET_PRODUCT_NAME "Connectagram"
 		QT_TARGET_RC_ICONS ${CMAKE_SOURCE_DIR}/icons/connectagram.ico
 	)
