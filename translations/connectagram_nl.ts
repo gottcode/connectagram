@@ -12,11 +12,11 @@
     <name>Clock</name>
     <message>
         <source>Loading</source>
-        <translation>Aan het laden</translation>
+        <translation>Bezig met laden…</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation>Gepauzeerd</translation>
+        <translation>Onderbroken</translation>
     </message>
 </context>
 <context>
@@ -30,7 +30,7 @@
     <name>LocaleDialog</name>
     <message>
         <source>Select application language:</source>
-        <translation>Selecteer de applicatie taal</translation>
+        <translation>Kies de programmataal</translation>
     </message>
     <message>
         <source>&lt;System Language&gt;</source>
@@ -38,11 +38,11 @@
     </message>
     <message>
         <source>Note</source>
-        <translation>Notitie</translation>
+        <translation>Opmerking</translation>
     </message>
     <message>
         <source>Please restart this application for the change in language to take effect.</source>
-        <translation>Herstart de applicatie om de taalwijziging door te voeren</translation>
+        <translation>Herstart het programma om de taalwijziging door te voeren</translation>
     </message>
 </context>
 <context>
@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Medium</source>
-        <translation>Medium</translation>
+        <translation>Gemiddeld</translation>
     </message>
     <message>
         <source>High</source>
@@ -65,7 +65,7 @@
     </message>
     <message>
         <source>Very High</source>
-        <translation>Zeer hoog</translation>
+        <translation>Erg hoog</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -73,7 +73,7 @@
     </message>
     <message>
         <source>Word Length:</source>
-        <translation>Woord lengte</translation>
+        <translation>Woordlengte:</translation>
     </message>
     <message>
         <source>Amount of Words:</source>
@@ -98,15 +98,15 @@
     <name>ScoresDialog</name>
     <message>
         <source>High Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Topscores</translation>
     </message>
     <message>
         <source>Rank</source>
-        <translation type="unfinished"></translation>
+        <translation>Rang</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Score</source>
@@ -118,7 +118,7 @@
     </message>
     <message>
         <source>Words</source>
-        <translation>Woorden</translation>
+        <translation>Aantal woorden</translation>
     </message>
     <message>
         <source>Length</source>
@@ -126,23 +126,23 @@
     </message>
     <message>
         <source>#%1</source>
-        <translation type="unfinished"></translation>
+        <translation>#%1</translation>
     </message>
     <message>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Gefeliciteerd!</translation>
     </message>
     <message>
         <source>You beat your top score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt je topscore verbroken!</translation>
     </message>
     <message>
         <source>Well done!</source>
-        <translation type="unfinished"></translation>
+        <translation>Goed gedaan!</translation>
     </message>
     <message>
         <source>You have a new high score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt een nieuwe topscore neergezet!</translation>
     </message>
 </context>
 <context>
@@ -156,7 +156,7 @@
     <name>TwistyPattern</name>
     <message>
         <source>Twisty</source>
-        <translation>Gedraaidheid</translation>
+        <translation>Kronkel</translation>
     </message>
 </context>
 <context>
@@ -174,15 +174,15 @@
     </message>
     <message>
         <source>Loading</source>
-        <translation>Aan het laden</translation>
+        <translation>Bezig met laden…</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation>Gepauzeerd</translation>
+        <translation>Onderbroken</translation>
     </message>
     <message>
         <source>Definitions</source>
-        <translation>Definities</translation>
+        <translation>Betekenissen</translation>
     </message>
     <message>
         <source>Hint</source>
@@ -198,7 +198,7 @@
     </message>
     <message>
         <source>&amp;Choose...</source>
-        <translation>&amp;Kies...</translation>
+        <translation>&amp;Kiezen…</translation>
     </message>
     <message>
         <source>&amp;Details</source>
@@ -206,7 +206,7 @@
     </message>
     <message>
         <source>&amp;Pause</source>
-        <translation>&amp;Pauzeren</translation>
+        <translation>&amp;Onderbreken</translation>
     </message>
     <message>
         <source>P</source>
@@ -222,7 +222,7 @@
     </message>
     <message>
         <source>D&amp;efinitions</source>
-        <translation>D&amp;efinities</translation>
+        <translation>Bet&amp;ekenissen</translation>
     </message>
     <message>
         <source>D</source>
@@ -230,31 +230,31 @@
     </message>
     <message>
         <source>High &amp;Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Top&amp;scores</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
-        <translation>&amp;Stoppen</translation>
+        <translation>&amp;Afsluiten</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Instellingen</translation>
+        <translation>In&amp;stellingen</translation>
     </message>
     <message>
         <source>&amp;Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Donker thema</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
-        <translation>Taal van de applicatie</translation>
+        <translation>Programmataal…</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Help</translation>
+        <translation>&amp;Hulp</translation>
     </message>
     <message>
         <source>&amp;About</source>
@@ -266,11 +266,11 @@
     </message>
     <message>
         <source>Choose Game</source>
-        <translation>Kies Spel</translation>
+        <translation>Kies een spel</translation>
     </message>
     <message>
         <source>Game Number:</source>
-        <translation>Spel nummer:</translation>
+        <translation>Spelnummer:</translation>
     </message>
     <message>
         <source>Sorry</source>
@@ -278,7 +278,7 @@
     </message>
     <message>
         <source>Unable to start requested game.</source>
-        <translation>Het is niet mogelijk het gevraagde spel te starten</translation>
+        <translation>Het is niet mogelijk om dit spel te starten.</translation>
     </message>
     <message>
         <source>About</source>
@@ -290,19 +290,19 @@
     </message>
     <message>
         <source>A word unscrambling game</source>
-        <translation>Een spel om woorden uit de knoop te halen</translation>
+        <translation>Een spel waar je woorden moet ordenen</translation>
     </message>
     <message>
         <source>Copyright &amp;copy; 2009-%1 by Graeme Gott</source>
-        <translation>Copyright &amp;copy; 2009-%1  Graeme Gott</translation>
+        <translation>Copyright &amp;copy; 2009-%1 Graeme Gott</translation>
     </message>
     <message>
         <source>Released under the &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</source>
-        <translation>Uitgegeven onder de &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt; license</translation>
+        <translation>Uitgebracht onder de &lt;a href=&quot;http://www.gnu.org/licenses/gpl.html&quot;&gt;GPL 3&lt;/a&gt;-licentie</translation>
     </message>
     <message>
         <source>Definitions are from &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</source>
-        <translation>Definities zijn van &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
+        <translation>De betekenissen zijn afkomstig van &lt;a href=&quot;http://wiktionary.org/&quot;&gt;Wiktionary&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Details</source>

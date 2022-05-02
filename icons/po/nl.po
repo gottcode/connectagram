@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Connectagram package.
 #
 # Translators:
+# Heimen Stoffels <vistausss@fastmail.com>, 2021
 # RobertBorst <webmaster@fam-borst.nl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 16:06-0400\n"
-"PO-Revision-Date: 2017-09-21 13:50+0000\n"
-"Last-Translator: RobertBorst <webmaster@fam-borst.nl>\n"
+"PO-Revision-Date: 2014-11-13 13:41+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>, 2021\n"
 "Language-Team: Dutch (http://www.transifex.com/gottcode/connectagram/"
 "language/nl/)\n"
 "Language: nl\n"
@@ -25,7 +26,7 @@ msgstr "Connectagram"
 
 #: ../connectagram.appdata.xml.in:7 ../connectagram.desktop.in:6
 msgid "Unscramble words placed in patterns"
-msgstr "Orden de verhaspelde woorden in patronen"
+msgstr "Orden de in patronen verhaspelde woorden"
 
 #: ../connectagram.appdata.xml.in:10
 msgid ""
@@ -36,12 +37,12 @@ msgid ""
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
 msgstr ""
-"Connectagram is een woord orden spel. Het bord bestaat uit diverse "
-"verhaspelde woroden die samengevoegd zijn. Je kunt de lengte, het aantal en "
-"het patroon van de woorden kiezen. Het spel heeft een hint optie voor als je "
-"vast komt te zitten en de mogelijkheid om de definities van woorden on-line "
-"op te zoeken van Wiktionary. Je voortgang is automatisch opgeslagen."
+"Connectagram is een woord-ordenspel. Het bord bestaat uit diverse "
+"verhaspelde woorden die samengevoegd zijn. Je kunt de lengte, het aantal en "
+"het patroon van de woorden kiezen. Het spel bevat een hintoptie voor als je "
+"vast komt te zitten en de mogelijkheid om betekenissen online op te zoeken "
+"(op Wiktionary). Je voortgang wordt automatisch opgeslagen."
 
 #: ../connectagram.desktop.in:5
 msgid "Anagram Game"
-msgstr "Anagram spel"
+msgstr "Anagramspel"
