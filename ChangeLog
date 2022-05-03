@@ -1,6 +1,13 @@
+1.3.2
+-----
+* Switched to Qt 6.
+* Removed XPM icon.
+* Translation updates: Dutch, Ukrainian.
+* Word list updates: German, Polish.
+
 1.3.1
 -----
-* Added CMake buildsystem for Qt6.
+* Added CMake buildsystem for Qt 6.
 
 1.3.0
 -----
