@@ -72,6 +72,7 @@
   <provides>
     <binary>connectagram</binary>
   </provides>
+  <launchable type="desktop-id">connectagram.desktop</launchable>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
