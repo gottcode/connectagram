@@ -50,7 +50,7 @@ protected:
 	 */
 	void keyPressEvent(QKeyEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Updates the maximum word length and the current word list based on the language selected.
 	 * @param index the index of the languages combobox

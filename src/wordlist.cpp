@@ -73,7 +73,7 @@ void WordList::setLanguage(const QString& langcode)
 	m_data = languages[langcode];
 	resetWords();
 
-	emit languageChanged(m_langcode);
+	Q_EMIT languageChanged(m_langcode);
 }
 
 //-----------------------------------------------------------------------------

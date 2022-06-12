@@ -84,7 +84,7 @@ void Clock::setPaused(bool paused)
 void Clock::mousePressEvent(QMouseEvent* event)
 {
 	QLabel::mousePressEvent(event);
-	emit togglePaused();
+	Q_EMIT togglePaused();
 }
 
 //-----------------------------------------------------------------------------

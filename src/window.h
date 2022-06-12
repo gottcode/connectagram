@@ -33,7 +33,7 @@ public:
 	 */
 	~Window();
 
-public slots:
+public Q_SLOTS:
 	/**
 	 * Shows the new game dialog to start a new game.
 	 */
@@ -54,7 +54,7 @@ protected:
 	 */
 	bool eventFilter(QObject* object, QEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Opens a new game.
 	 */

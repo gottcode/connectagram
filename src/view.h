@@ -40,7 +40,7 @@ protected:
 	 */
 	void mouseReleaseEvent(QMouseEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Center the board when the game starts.
 	 */

@@ -28,7 +28,7 @@ public:
 	 */
 	explicit Definitions(const WordList* wordlist, QWidget* parent = nullptr);
 
-public slots:
+public Q_SLOTS:
 	/**
 	 * Clears the list of words to define.
 	 */
@@ -53,7 +53,7 @@ public slots:
 	 */
 	void selectWord(const QString& word);
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Shows the definition of a word in a web browser.
 	 * @param action the word to define

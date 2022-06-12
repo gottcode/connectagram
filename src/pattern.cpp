@@ -179,7 +179,7 @@ void Pattern::run()
 
 	m_words->resetAnagramFilters();
 
-	emit generated();
+	Q_EMIT generated();
 }
 
 //-----------------------------------------------------------------------------

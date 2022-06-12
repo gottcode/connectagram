@@ -50,14 +50,14 @@ Board::~Board()
 
 void Board::check(const QString& original_word, const QString& current_word)
 {
-	emit wordSolved(original_word, current_word);
+	Q_EMIT wordSolved(original_word, current_word);
 	m_finished = true;
 	for (Word* word : qAsConst(m_words)) {
 		m_finished &= word->isCorrect();
 	}
 	if (m_finished) {
 		QSettings().remove("Current/Words");
-		emit finished();
+		Q_EMIT finished();
 	}
 }
 
@@ -66,7 +66,7 @@ void Board::check(const QString& original_word, const QString& current_word)
 void Board::click(const QString& word)
 {
 	setPaused(true);
-	emit wordSelected(word);
+	Q_EMIT wordSelected(word);
 }
 
 //-----------------------------------------------------------------------------
@@ -82,7 +82,7 @@ void Board::setCurrentWord(Word* word)
 	}
 	delete m_hint;
 	m_hint = nullptr;
-	emit hintAvailable(m_current_word);
+	Q_EMIT hintAvailable(m_current_word);
 }
 
 //-----------------------------------------------------------------------------
@@ -252,7 +252,7 @@ void Board::setPaused(bool paused)
 		setCurrentWord(nullptr);
 	}
 
-	emit pauseChanged();
+	Q_EMIT pauseChanged();
 }
 
 //-----------------------------------------------------------------------------
@@ -299,7 +299,7 @@ void Board::patternGenerated()
 	}
 
 	for (Word* word : qAsConst(m_words)) {
-		emit wordAdded(word->toString());
+		Q_EMIT wordAdded(word->toString());
 		word->shuffle(m_pattern->words());
 	}
 
@@ -311,7 +311,7 @@ void Board::patternGenerated()
 	}
 	saveGame();
 
-	emit started();
+	Q_EMIT started();
 }
 
 //-----------------------------------------------------------------------------
@@ -319,7 +319,7 @@ void Board::patternGenerated()
 void Board::generate(const QString& language, int pattern, int count, int length, unsigned int seed)
 {
 	cleanUp();
-	emit loading();
+	Q_EMIT loading();
 
 	m_wordlist->setLanguage(language);
 	m_pattern = Pattern::create(m_wordlist, pattern);

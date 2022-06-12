@@ -152,7 +152,7 @@ public:
 	 */
 	void setSeed(unsigned int seed);
 
-signals:
+Q_SIGNALS:
 	/**
 	 * Emitted when the pattern has finished laying out the words.
 	 */

@@ -104,7 +104,7 @@ public:
 	 */
 	static QString languageName(const QString& language);
 
-signals:
+Q_SIGNALS:
 	/**
 	 * Emitted after the word list has loaded a new set of words.
 	 * @param language the language used by the word list

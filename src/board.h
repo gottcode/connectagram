@@ -101,7 +101,7 @@ public:
 	 */
 	QString gameNumber() const;
 
-public slots:
+public Q_SLOTS:
 	/**
 	 * Continues a game from the previous run.
 	 * @return @c true if the game could be started
@@ -152,7 +152,7 @@ public slots:
 	 */
 	void togglePaused();
 
-signals:
+Q_SIGNALS:
 	/**
 	 * Emitted while the game is loading.
 	 */
@@ -198,7 +198,7 @@ signals:
 	 */
 	void wordSolved(const QString& original_word, const QString& current_word);
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Creates the cells when the pattern of words has been created.
 	 */

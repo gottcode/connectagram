@@ -25,7 +25,7 @@ public:
 	 */
 	explicit Clock(QWidget* parent);
 
-public slots:
+public Q_SLOTS:
 	/**
 	 * Starts the clock.
 	 */
@@ -47,7 +47,7 @@ public slots:
 	 */
 	void setPaused(bool paused);
 
-signals:
+Q_SIGNALS:
 	/**
 	 * Emitted when the player clicks on the clock to toggle pause state.
 	 */
@@ -60,7 +60,7 @@ protected:
 	 */
 	void mousePressEvent(QMouseEvent* event) override;
 
-private slots:
+private Q_SLOTS:
 	/**
 	 * Update the current game time.
 	 */
