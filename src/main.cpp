@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2022 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -25,14 +25,25 @@ int main(int argc, char** argv)
 	app.setDesktopFileName("connectagram");
 #endif
 
-	QString path = app.applicationDirPath();
+	const QString appdir = app.applicationDirPath();
+	const QStringList datadirs{
+#if defined(Q_OS_MAC)
+		appdir + "/../Resources"
+#elif defined(Q_OS_UNIX)
+		DATADIR,
+		appdir + "/../share/connectagram"
+#else
+		appdir
+#endif
+	};
+
 	QStringList paths;
-	paths.append(path + "/data/");
-	paths.append(path + "/../share/connectagram/data/");
-	paths.append(path + "/../Resources/data/");
+	for (const QString& datadir : datadirs) {
+		paths.append(datadir + "/data/");
+	}
 	QDir::setSearchPaths("connectagram", paths);
 
-	LocaleDialog::loadTranslator("connectagram_");
+	LocaleDialog::loadTranslator("connectagram_", datadirs);
 
 	ScoresDialog::migrate();
 

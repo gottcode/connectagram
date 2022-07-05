@@ -88,6 +88,8 @@ add_subdirectory(wordlists)
 
 # Install
 if(UNIX AND NOT APPLE)
+	target_compile_definitions(connectagram PRIVATE DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/connectagram")
+
 	target_sources(connectagram PRIVATE icons/icon.qrc)
 
 	install(TARGETS connectagram RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
