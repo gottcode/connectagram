@@ -7,6 +7,8 @@ cmake_minimum_required(VERSION 3.16)
 # Configure project
 project(connectagram VERSION 1.3.2 LANGUAGES CXX)
 
+set(project_copyright "2009-2022 Graeme Gott")
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -14,9 +16,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui LinguistTools Widgets)
-if(UNIX AND NOT APPLE)
-	include(GNUInstallDirs)
-endif()
+include(GNUInstallDirs)
 
 add_compile_definitions(
 	QT_NO_KEYWORDS
@@ -88,10 +88,16 @@ foreach(lang_file ${languages})
 	if(EXISTS ${lang_source}/README)
 		list(APPEND data_files ${lang_source}/README)
 	endif()
-	target_sources(connectagram PRIVATE ${wordlist_file})
+	target_sources(connectagram PRIVATE ${data_files})
 
 	# Install data for ${lang}
-	if(UNIX AND NOT APPLE)
+	if(APPLE)
+		set_source_files_properties(
+			${data_files}
+			PROPERTIES
+			MACOSX_PACKAGE_LOCATION Resources/data/${lang}
+		)
+	elseif(NOT WIN32)
 		install(FILES ${data_files} DESTINATION ${CMAKE_INSTALL_DATADIR}/connectagram/data/${lang})
 	endif()
 endforeach()
@@ -115,7 +121,35 @@ if(ENABLE_STRIP)
 endif()
 
 # Install
-if(UNIX AND NOT APPLE)
+if(APPLE)
+	set(datadir "../Resources")
+
+	set_target_properties(connectagram PROPERTIES
+		OUTPUT_NAME Connectagram
+		MACOSX_BUNDLE TRUE
+		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/mac/Info.plist.in
+	)
+
+	include(cmake/BundleResources.cmake)
+	bundle_data(connectagram ${CMAKE_SOURCE_DIR}/icons/connectagram.icns Resources)
+	bundle_translations(connectagram "${translations_QM}")
+elseif(WIN32)
+	set(datadir ".")
+
+	# Use Qt6 macro until CMake provides something
+	# https://bugreports.qt.io/browse/QTBUG-87618
+	set_target_properties(connectagram PROPERTIES
+		OUTPUT_NAME Connectagram
+		WIN32_EXECUTABLE TRUE
+		QT_TARGET_VERSION "${PROJECT_VERSION}"
+		QT_TARGET_COMPANY_NAME "Graeme Gott"
+		QT_TARGET_DESCRIPTION "Anagram game"
+		QT_TARGET_COPYRIGHT "\\xA9 ${project_copyright}"
+		QT_TARGET_PRODUCT_NAME "Connectagram"
+		QT_TARGET_RC_ICONS ${CMAKE_SOURCE_DIR}/icons/connectagram.ico
+	)
+	_qt_internal_generate_win32_rc_file(connectagram)
+else()
 	file(RELATIVE_PATH datadir ${CMAKE_INSTALL_FULL_BINDIR} ${CMAKE_INSTALL_FULL_DATADIR}/connectagram)
 
 	target_sources(connectagram PRIVATE icons/icon.qrc)
@@ -126,21 +160,6 @@ if(UNIX AND NOT APPLE)
 	install(DIRECTORY icons/hicolor DESTINATION ${CMAKE_INSTALL_DATADIR}/icons)
 	install(FILES icons/connectagram.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 	install(FILES icons/connectagram.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
-elseif(WIN32)
-	set(datadir ".")
-
-	# Use Qt6 macro until CMake provides something
-	# https://bugreports.qt.io/browse/QTBUG-87618
-	set_target_properties(connectagram PROPERTIES
-		WIN32_EXECUTABLE TRUE
-		QT_TARGET_VERSION "${PROJECT_VERSION}"
-		QT_TARGET_COMPANY_NAME "Graeme Gott"
-		QT_TARGET_DESCRIPTION "Anagram game"
-		QT_TARGET_COPYRIGHT "Copyright (C) 2022 Graeme Gott"
-		QT_TARGET_PRODUCT_NAME "Connectagram"
-		QT_TARGET_RC_ICONS ${CMAKE_SOURCE_DIR}/icons/connectagram.ico
-	)
-	_qt_internal_generate_win32_rc_file(connectagram)
 endif()
 
 set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS CONNECTAGRAM_DATADIR="${datadir}")
