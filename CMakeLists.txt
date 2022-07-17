@@ -65,6 +65,37 @@ target_link_libraries(connectagram PRIVATE
 	Qt6::Widgets
 )
 
+# Create word lists
+add_subdirectory(tools)
+
+file(GLOB languages wordlists/*)
+foreach(lang_file ${languages})
+	get_filename_component(lang ${lang_file} NAME)
+	set(lang_source ${CMAKE_SOURCE_DIR}/data/${lang})
+
+	# Create wordlist for ${lang}
+	set(wordlist_file ${lang_source}/words)
+	add_custom_command(
+		OUTPUT ${wordlist_file}
+		COMMAND "$<SHELL_PATH:$<TARGET_FILE:wordlist>>" -l ${lang} -o "$<SHELL_PATH:${wordlist_file}>" "$<SHELL_PATH:${lang_file}>"
+		DEPENDS ${lang_file} ${CMAKE_SOURCE_DIR}/tools/wordlist.cpp
+		WORKING_DIRECTORY ${CMAKE_PREFIX_PATH}/bin # needed for Windows to find Qt
+		VERBATIM
+	)
+
+	# Add ${lang} as dependency of target
+	set(data_files ${wordlist_file} ${lang_source}/language.ini)
+	if(EXISTS ${lang_source}/README)
+		list(APPEND data_files ${lang_source}/README)
+	endif()
+	target_sources(connectagram PRIVATE ${wordlist_file})
+
+	# Install data for ${lang}
+	if(UNIX AND NOT APPLE)
+		install(FILES ${data_files} DESTINATION ${CMAKE_INSTALL_DATADIR}/connectagram/data/${lang})
+	endif()
+endforeach()
+
 # Optimize build
 option(ENABLE_LINK_TIME_OPTIMIZATION "Enable link time optimization" OFF)
 if(ENABLE_LINK_TIME_OPTIMIZATION)
@@ -82,9 +113,6 @@ if(ENABLE_STRIP)
 		COMMAND ${CMAKE_STRIP} $<TARGET_FILE:connectagram>
 	)
 endif()
-
-# Create word lists
-add_subdirectory(wordlists)
 
 # Install
 if(UNIX AND NOT APPLE)
