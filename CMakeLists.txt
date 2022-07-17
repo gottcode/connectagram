@@ -116,7 +116,7 @@ endif()
 
 # Install
 if(UNIX AND NOT APPLE)
-	target_compile_definitions(connectagram PRIVATE DATADIR="${CMAKE_INSTALL_FULL_DATADIR}/connectagram")
+	file(RELATIVE_PATH datadir ${CMAKE_INSTALL_FULL_BINDIR} ${CMAKE_INSTALL_FULL_DATADIR}/connectagram)
 
 	target_sources(connectagram PRIVATE icons/icon.qrc)
 
@@ -127,6 +127,8 @@ if(UNIX AND NOT APPLE)
 	install(FILES icons/connectagram.appdata.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 	install(FILES icons/connectagram.desktop DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
 elseif(WIN32)
+	set(datadir ".")
+
 	# Use Qt6 macro until CMake provides something
 	# https://bugreports.qt.io/browse/QTBUG-87618
 	set_target_properties(connectagram PROPERTIES
@@ -140,3 +142,5 @@ elseif(WIN32)
 	)
 	_qt_internal_generate_win32_rc_file(connectagram)
 endif()
+
+set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS CONNECTAGRAM_DATADIR="${datadir}")

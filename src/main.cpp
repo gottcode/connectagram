@@ -29,16 +29,7 @@ int main(int argc, char** argv)
 
 	// Find application data
 	const QString appdir = app.applicationDirPath();
-	const QStringList datadirs{
-#if defined(Q_OS_MAC)
-		appdir + "/../Resources"
-#elif defined(Q_OS_UNIX)
-		DATADIR,
-		appdir + "/../share/connectagram"
-#else
-		appdir
-#endif
-	};
+	const QString datadir = QDir::cleanPath(appdir + "/" + CONNECTAGRAM_DATADIR);
 
 	// Handle portability
 #ifdef Q_OS_MAC
@@ -52,7 +43,7 @@ int main(int argc, char** argv)
 	}
 
 	// Load application language
-	LocaleDialog::loadTranslator("connectagram_", datadirs);
+	LocaleDialog::loadTranslator("connectagram_", datadir);
 
 	// Handle commandline
 	QCommandLineParser parser;
@@ -62,11 +53,7 @@ int main(int argc, char** argv)
 	parser.process(app);
 
 	// Find word lists
-	QStringList paths;
-	for (const QString& datadir : datadirs) {
-		paths.append(datadir + "/data/");
-	}
-	QDir::setSearchPaths("connectagram", paths);
+	QDir::setSearchPaths("connectagram", { datadir + "/data/" });
 
 	// Convert old scores to new format
 	ScoresDialog::migrate();
