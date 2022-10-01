@@ -149,23 +149,30 @@ Window::Window()
 
 	// Create menus
 	QMenu* menu = menuBar()->addMenu(tr("&Game"));
-	menu->addAction(tr("&New"), this, &Window::newGame, QKeySequence::New);
-	menu->addAction(tr("&Choose..."), this, &Window::chooseGame, QKeySequence::Open);
+	QAction* action = menu->addAction(tr("&New"), this, &Window::newGame);
+	action->setShortcut(QKeySequence::New);
+	action = menu->addAction(tr("&Choose..."), this, &Window::chooseGame);
+	action->setShortcut(QKeySequence::Open);
 	menu->addSeparator();
-	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::setPaused, tr("P"));
+	m_pause_action = menu->addAction(tr("&Pause"), m_board, &Board::setPaused);
+	m_pause_action->setShortcut(tr("P"));
 	m_pause_action->setCheckable(true);
 	m_pause_action->setDisabled(true);
-	QAction* action = menu->addAction(tr("&Hint"), m_board, &Board::showHint, tr("H"));
+	action = menu->addAction(tr("&Hint"), m_board, &Board::showHint);
+	action->setShortcut(tr("H"));
 	action->setDisabled(true);
 	connect(m_board, &Board::hintAvailable, action, &QAction::setEnabled);
-	m_definitions_action = menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions, tr("D"));
+	m_definitions_action = menu->addAction(tr("D&efinitions"), this, &Window::showDefinitions);
+	m_definitions_action->setShortcut(tr("D"));
 	m_definitions_action->setDisabled(true);
 	menu->addSeparator();
 	m_details_action = menu->addAction(tr("&Details"), this, &Window::showDetails);
 	m_details_action->setDisabled(true);
-	menu->addAction(tr("High &Scores"), this, &Window::showScores, tr("Ctrl+H"));
+	action = menu->addAction(tr("High &Scores"), this, &Window::showScores);
+	action->setShortcut(tr("Ctrl+H"));
 	menu->addSeparator();
-	action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit, QKeySequence::Quit);
+	action = menu->addAction(tr("&Quit"), qApp, &QApplication::quit);
+	action->setShortcut(QKeySequence::Quit);
 	action->setMenuRole(QAction::QuitRole);
 
 	menu = menuBar()->addMenu(tr("&Settings"));
