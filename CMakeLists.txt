@@ -71,7 +71,7 @@ add_subdirectory(tools)
 file(GLOB languages wordlists/*)
 foreach(lang_file ${languages})
 	get_filename_component(lang ${lang_file} NAME)
-	set(lang_source ${CMAKE_SOURCE_DIR}/data/${lang})
+	set(lang_source ${CMAKE_SOURCE_DIR}/gamedata/${lang})
 
 	# Create wordlist for ${lang}
 	set(wordlist_file ${lang_source}/words)
@@ -95,10 +95,10 @@ foreach(lang_file ${languages})
 		set_source_files_properties(
 			${data_files}
 			PROPERTIES
-			MACOSX_PACKAGE_LOCATION Resources/data/${lang}
+			MACOSX_PACKAGE_LOCATION Resources/gamedata/${lang}
 		)
 	elseif(NOT WIN32)
-		install(FILES ${data_files} DESTINATION ${CMAKE_INSTALL_DATADIR}/connectagram/data/${lang})
+		install(FILES ${data_files} DESTINATION ${CMAKE_INSTALL_DATADIR}/connectagram/gamedata/${lang})
 	endif()
 endforeach()
 

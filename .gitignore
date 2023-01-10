@@ -1,6 +1,6 @@
 Makefile
 build
 connectagram
-/data/*/words
+/gamedata/*/words
 *.qm
 *~

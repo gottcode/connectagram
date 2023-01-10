@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 	parser.process(app);
 
 	// Find word lists
-	QDir::setSearchPaths("connectagram", { datadir + "/data/" });
+	QDir::setSearchPaths("connectagram", { datadir + "/gamedata/" });
 
 	// Convert old scores to new format
 	ScoresDialog::migrate();
