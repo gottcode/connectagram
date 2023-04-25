@@ -101,6 +101,7 @@ void Definitions::setLanguage(const QString& langcode)
 		url = QString("https://%1.wiktionary.org/wiki/%s").arg(langcode);
 	}
 	m_url = QUrl::toPercentEncoding(url, "#$%&+,/:;=?@~");
+	m_url.replace("%25", "%"); // work around Qt's decision to force percent encoding of percent symbol (bug 110446)
 }
 
 //-----------------------------------------------------------------------------
