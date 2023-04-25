@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2023 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -99,6 +99,20 @@ void Letter::setPaused(bool paused)
 
 //-----------------------------------------------------------------------------
 
+void Letter::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
+{
+	if (!m_movable && m_correct) {
+		Word* word = m_cell->word();
+		if (word) {
+			word->click();
+		}
+	}
+
+	QGraphicsPathItem::mouseDoubleClickEvent(event);
+}
+
+//-----------------------------------------------------------------------------
+
 void Letter::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
 	if (m_dragged == false) {
@@ -144,9 +158,7 @@ void Letter::mousePressEvent(QGraphicsSceneMouseEvent* event)
 	if (!m_movable) {
 		if (m_correct) {
 			Word* word = m_cell->word();
-			if (word) {
-				word->click();
-			} else {
+			if (!word) {
 				m_board->click("");
 			}
 		}

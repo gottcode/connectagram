@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2023 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -71,6 +71,12 @@ public:
 	void setPaused(bool paused);
 
 protected:
+	/**
+	 * Override mouseMoveEvent to handle the player clicking on a word.
+	 * @param event details of the mouse double click event
+	 */
+	void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event) override;
+
 	/**
 	 * Override mouseMoveEvent to handle the player dragging a letter.
 	 * @param event details of the mouse move event
