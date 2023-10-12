@@ -52,7 +52,7 @@ void Board::check(const QString& original_word, const QString& current_word)
 {
 	Q_EMIT wordSolved(original_word, current_word);
 	m_finished = true;
-	for (Word* word : qAsConst(m_words)) {
+	for (Word* word : std::as_const(m_words)) {
 		m_finished &= word->isCorrect();
 	}
 	if (m_finished) {
@@ -205,7 +205,7 @@ void Board::saveGame()
 {
 	if (!m_finished && !m_words.isEmpty()) {
 		QStringList words;
-		for (Word* word : qAsConst(m_words)) {
+		for (Word* word : std::as_const(m_words)) {
 			words.append(word->toString());
 		}
 		QSettings().setValue("Current/Words", words);
@@ -240,7 +240,7 @@ void Board::setPaused(bool paused)
 
 	m_paused = paused;
 
-	for (const QList<Cell*>& cells : qAsConst(m_cells)) {
+	for (const QList<Cell*>& cells : std::as_const(m_cells)) {
 		for (const Cell* cell : cells) {
 			if (cell) {
 				cell->letter()->setPaused(m_paused);
@@ -278,7 +278,7 @@ void Board::patternGenerated()
 		m_cells.append(cells);
 	}
 
-	for (Word* word : qAsConst(m_words)) {
+	for (Word* word : std::as_const(m_words)) {
 		word->setBoard(this);
 		QList<QPoint> positions = word->positions();
 		for (int i = 0; i < positions.count(); ++i) {
@@ -298,7 +298,7 @@ void Board::patternGenerated()
 		}
 	}
 
-	for (Word* word : qAsConst(m_words)) {
+	for (Word* word : std::as_const(m_words)) {
 		Q_EMIT wordAdded(word->toString());
 		word->shuffle(m_pattern->words());
 	}

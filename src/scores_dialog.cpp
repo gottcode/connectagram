@@ -251,7 +251,7 @@ bool ScoresDialog::addScore(const QString& name, int secs, int count, int length
 	}
 
 	m_row = 0;
-	for (const Score& s : qAsConst(m_scores)) {
+	for (const Score& s : std::as_const(m_scores)) {
 		if (score >= s.score) {
 			break;
 		}

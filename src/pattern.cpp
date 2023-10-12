@@ -161,7 +161,7 @@ void Pattern::run()
 	int x2 = -x1;
 	int y1 = x1;
 	int y2 = x2;
-	for (Word* word : qAsConst(m_solution)) {
+	for (Word* word : std::as_const(m_solution)) {
 		const QList<QPoint> positions = word->positions();
 		for (const QPoint& pos : positions) {
 			x1 = std::min(x1, pos.x());
@@ -173,7 +173,7 @@ void Pattern::run()
 	m_size = QSize(x2 - x1 + 1, y2 - y1 + 1);
 
 	QPoint delta = QPoint(-x1, -y1);
-	for (Word* word : qAsConst(m_solution)) {
+	for (Word* word : std::as_const(m_solution)) {
 		word->moveBy(delta);
 	}
 

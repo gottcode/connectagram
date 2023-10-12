@@ -137,7 +137,7 @@ QString NewGameDialog::densityString(int size)
 void NewGameDialog::keyPressEvent(QKeyEvent* event)
 {
 	if ((event->key() == Qt::Key_Enter) || (event->key() == Qt::Key_Return)) {
-		for (QToolButton* button : qAsConst(m_pattern_buttons)) {
+		for (QToolButton* button : std::as_const(m_pattern_buttons)) {
 			if (button->hasFocus() && button->isEnabled()) {
 				button->click();
 				break;
