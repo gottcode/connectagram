@@ -5,9 +5,9 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Configure project
-project(connectagram VERSION 1.3.4 LANGUAGES CXX)
+project(connectagram VERSION 1.3.5 LANGUAGES CXX)
 
-set(project_copyright "2009-2023 Graeme Gott")
+set(project_copyright "2009-2024 Graeme Gott")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

@@ -2,7 +2,7 @@
 
 APP='Connectagram'
 BUNDLE="$APP.app"
-VERSION='1.3.4'
+VERSION='1.3.5'
 
 # Locate deployment script
 BIN_DIR=$(pwd)
