@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
+<component type="desktop-application">
   <id>connectagram.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
@@ -63,8 +63,11 @@
   <url type="homepage">https://gottcode.org/connectagram/</url>
   <url type="bugtracker">https://gottcode.org/connectagram/bugs/</url>
   <url type="donation">https://gottcode.org/tip/</url>
-  <url type="translate">https://www.transifex.com/projects/p/connectagram/</url>
+  <url type="translate">https://www.transifex.com/gottcode/connectagram/</url>
 
+  <developer id="org.gottcode">
+    <name translatable="no">Graeme Gott</name>
+  </developer>
   <update_contact>graeme@gottcode.org</update_contact>
 
   <translation type="qt">connectagram</translation>
@@ -73,6 +76,12 @@
     <binary>connectagram</binary>
   </provides>
   <launchable type="desktop-id">connectagram.desktop</launchable>
+  <icon type="stock">connectagram</icon>
+
+  <categories>
+    <category>Game</category>
+    <category>LogicGame</category>
+  </categories>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
