@@ -3,5 +3,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Program to generate wordlist
-qt6_add_executable(wordlist wordlist.cpp)
+qt_add_executable(wordlist wordlist.cpp)
 target_link_libraries(wordlist PRIVATE Qt6::Core)

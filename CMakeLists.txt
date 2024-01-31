@@ -29,18 +29,8 @@ add_compile_definitions(
 include(cmake/AddVersionCompileDefinition.cmake)
 add_version_compile_definition(src/main.cpp VERSIONSTR)
 
-# Create translations
-file(GLOB translations_SRCS translations/*.ts)
-qt6_add_translation(translations_QM ${translations_SRCS})
-
-add_custom_target(update_translations
-	COMMAND Qt6::lupdate -no-obsolete -locations none src -ts ${translations_SRCS}
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-	VERBATIM
-)
-
 # Create program
-qt6_add_executable(connectagram
+qt_add_executable(connectagram
 	src/board.cpp
 	src/cell.cpp
 	src/clock.cpp
@@ -63,6 +53,14 @@ target_link_libraries(connectagram PRIVATE
 	Qt6::Core
 	Qt6::Gui
 	Qt6::Widgets
+)
+
+# Create translations
+file(GLOB translations_SRCS translations/*.ts)
+qt_add_translations(connectagram
+	TS_FILES ${translations_SRCS}
+	QM_FILES_OUTPUT_VARIABLE translations_QM
+	LUPDATE_OPTIONS -no-obsolete -locations none
 )
 
 # Create word lists
