@@ -31,6 +31,21 @@ add_version_compile_definition(src/main.cpp VERSIONSTR)
 
 # Create program
 qt_add_executable(connectagram
+	# Headers
+	src/board.h
+	src/cell.h
+	src/clock.h
+	src/definitions.h
+	src/letter.h
+	src/locale_dialog.h
+	src/new_game_dialog.h
+	src/pattern.h
+	src/scores_dialog.h
+	src/view.h
+	src/window.h
+	src/word.h
+	src/wordlist.h
+	# Sources
 	src/board.cpp
 	src/cell.cpp
 	src/clock.cpp
@@ -45,6 +60,7 @@ qt_add_executable(connectagram
 	src/window.cpp
 	src/word.cpp
 	src/wordlist.cpp
+	# Resources
 	icons/icons.qrc
 	${translations_QM}
 )
