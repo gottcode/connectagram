@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Connectagram
+GenericName=Anagram Game
+Comment=Unscramble words placed in patterns
+TryExec=connectagram
+Exec=connectagram
+Icon=connectagram
+Terminal=false
+Categories=Qt;Game;LogicGame;
+Keywords=game;logic;
