@@ -1,21 +1,20 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
 # This file is distributed under the same license as the Connectagram package.
-#
+# 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 16:06-0400\n"
-"PO-Revision-Date: 2018-05-27 20:11+0000\n"
-"Last-Translator: Graeme Gott <graeme@gottcode.org>\n"
-"Language-Team: Hungarian (http://www.transifex.com/gottcode/connectagram/"
-"language/hu/)\n"
-"Language: hu\n"
+"PO-Revision-Date: 2014-11-13 13:41+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Hungarian (http://app.transifex.com/gottcode/connectagram/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4

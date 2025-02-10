@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-#
+# This file is distributed under the same license as the Connectagram package.
+# 
 # Translators:
 # Moo, 2014,2016
 msgid ""
@@ -9,16 +9,14 @@ msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 16:06-0400\n"
-"PO-Revision-Date: 2017-09-21 13:50+0000\n"
-"Last-Translator: Moo\n"
-"Language-Team: Lithuanian (http://www.transifex.com/gottcode/connectagram/"
-"language/lt/)\n"
-"Language: lt\n"
+"PO-Revision-Date: 2014-11-13 13:41+0000\n"
+"Last-Translator: Moo, 2014,2016\n"
+"Language-Team: Lithuanian (http://app.transifex.com/gottcode/connectagram/language/lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
 
 #: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4
 msgid "Connectagram"
@@ -36,13 +34,7 @@ msgid ""
 "The game provides a hint option for times when you are stuck, and features "
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
-msgstr ""
-"Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, "
-"kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir "
-"šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra užuominos funkciją "
-"skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių "
-"peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio "
-"žaidimo eiga yra automatiškai įrašoma."
+msgstr "Connectagram yra žodžių iššifravimo žaidimas. Plokštė susideda iš kelių, kartu sujungtų užšifruotų žodžių. Galite pasirinkti žodžių ilgį, skaičių ir šabloną, pagal kurį žodžiai bus išdėstyti. Žaidime yra užuominos funkciją skirta tam atvejui, kai užstrigsite aklavietėje, o taip pat yra žodžių peržiūra su kiekvieno žodžio apibrėžtimi iš Vikižodyno. Jūsų dabartinio žaidimo eiga yra automatiškai įrašoma."
 
 #: ../connectagram.desktop.in:5
 msgid "Anagram Game"

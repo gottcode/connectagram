@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Graeme Gott
-# This file is distributed under the same license as the PACKAGE package.
-#
+# This file is distributed under the same license as the Connectagram package.
+# 
 # Translators:
 # Oprea Nicolae <jaff2002@yahoo.com>, 2014
 msgid ""
@@ -9,16 +9,14 @@ msgstr ""
 "Project-Id-Version: Connectagram\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-27 16:06-0400\n"
-"PO-Revision-Date: 2017-09-23 20:29+0000\n"
-"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>\n"
-"Language-Team: Romanian (http://www.transifex.com/gottcode/connectagram/"
-"language/ro/)\n"
-"Language: ro\n"
+"PO-Revision-Date: 2014-11-13 13:41+0000\n"
+"Last-Translator: Oprea Nicolae <jaff2002@yahoo.com>, 2014\n"
+"Language-Team: Romanian (http://app.transifex.com/gottcode/connectagram/language/ro/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
-"2:1));\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 #: ../connectagram.appdata.xml.in:6 ../connectagram.desktop.in:4
 msgid "Connectagram"
@@ -36,13 +34,7 @@ msgid ""
 "The game provides a hint option for times when you are stuck, and features "
 "an online word lookup that fetches the definitions of each word from "
 "Wiktionary. Your current progress is automatically saved."
-msgstr ""
-"Connectagram este un joc de ordonare cuvinte. Tabela este constituită din "
-"mai multe cuvinte amestecate, care sunt unite împreună. Puteţi alege "
-"lungimea cuvintelor, cantitatea de cuvinte, şi tiparul după care cuvintele "
-"sînt aranjate. Jocul oferă o opţiune de sugestie pentru momentele în care v-"
-"aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui "
-"cuvînt de la Wikţionar. Progresul curent este salvat automat."
+msgstr "Connectagram este un joc de ordonare cuvinte. Tabela este constituită din mai multe cuvinte amestecate, care sunt unite împreună. Puteţi alege lungimea cuvintelor, cantitatea de cuvinte, şi tiparul după care cuvintele sînt aranjate. Jocul oferă o opţiune de sugestie pentru momentele în care v-aţi blocat, şi o căutare cuvînt online care preia definiţiile fiecărui cuvînt de la Wikţionar. Progresul curent este salvat automat."
 
 #: ../connectagram.desktop.in:5
 msgid "Anagram Game"
