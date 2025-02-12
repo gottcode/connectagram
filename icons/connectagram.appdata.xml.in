@@ -32,12 +32,6 @@
     <binary>connectagram</binary>
   </provides>
   <launchable type="desktop-id">connectagram.desktop</launchable>
-  <icon type="stock">connectagram</icon>
-
-  <categories>
-    <category>Game</category>
-    <category>LogicGame</category>
-  </categories>
 
   <kudos>
     <kudo>HiDpiIcon</kudo>
