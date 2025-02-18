@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2013-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2013-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -90,7 +90,7 @@ QString WordList::defaultLanguage()
 {
 	QString language = QLocale().name();
 	if (!QFile::exists("connectagram:" + language)) {
-		language = language.left(2);
+		language = language.section('_', 0, 0);
 		if (!QFile::exists("connectagram:" + language)) {
 			language = "en";
 		}
