@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -40,6 +40,9 @@ NewGameDialog::NewGameDialog(Board* board, QWidget* parent)
 	const QStringList languages = QDir("connectagram:").entryList(QDir::Dirs | QDir::NoDotAndDotDot);
 	for (const QString& language : languages) {
 		const QString name = WordList::languageName(language);
+		if (name.isEmpty()) {
+			continue;
+		}
 		int i;
 		for (i = 0; i < m_languages_box->count(); ++i) {
 			if (m_languages_box->itemText(i).localeAwareCompare(name) >= 0) {
