@@ -1,5 +1,5 @@
 /*
-	SPDX-FileCopyrightText: 2009-2021 Graeme Gott <graeme@gottcode.org>
+	SPDX-FileCopyrightText: 2009-2025 Graeme Gott <graeme@gottcode.org>
 
 	SPDX-License-Identifier: GPL-3.0-or-later
 */
@@ -43,6 +43,33 @@ class ScoresDialog : public QDialog
 		int secs; /**< how long it took to play the game */
 		int count; /**< range of words (low to very high) on the board */
 		int length; /**< the length of the words */
+
+		/**
+		 * Constructs a score.
+		 * @param n the player's name
+		 * @param s the value of the score
+		 * @param sc how long it took to play the game
+		 * @param c range of words (low to very high) on the board
+		 * @param l the length of the words
+		 */
+		Score(const QString& n = QString(), int s = 0, int sc = 0, int c = 0, int l = 0)
+			: score(s)
+			, secs(sc)
+			, count(c)
+			, length(l)
+		{
+			setName(n);
+		}
+
+		/**
+		 * Sets the player name for the score.
+		 * @param text the player name
+		 */
+		void setName(const QString& text)
+		{
+			name = text.simplified();
+			name.remove('\0');
+		}
 	};
 
 public:
