@@ -342,9 +342,10 @@ void Window::gameStarted()
 void Window::gameFinished()
 {
 	QSettings settings;
-	int count = settings.value("Current/Count").toInt();
-	int length = settings.value("Current/Length").toInt();
-	int msecs = settings.value("Current/Time").toInt();
+	const int count = settings.value("Current/Count").toInt();
+	const int length = settings.value("Current/Length").toInt();
+	const int msecs = settings.value("Current/Time").toInt();
+	settings.remove("Current");
 
 	m_clock->stop();
 	m_clock->setDisabled(true);
