@@ -84,6 +84,7 @@
         <translation>
             <numerusform>%n lettre</numerusform>
             <numerusform>%n lettres</numerusform>
+            <numerusform>%n lettres</numerusform>
         </translation>
     </message>
 </context>
@@ -98,19 +99,19 @@
     <name>ScoresDialog</name>
     <message>
         <source>High Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Palmarès</translation>
     </message>
     <message>
         <source>Rank</source>
-        <translation type="unfinished"></translation>
+        <translation>Rang</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom</translation>
     </message>
     <message>
         <source>Score</source>
-        <translation>Score</translation>
+        <translation>Résultat</translation>
     </message>
     <message>
         <source>Time</source>
@@ -126,23 +127,23 @@
     </message>
     <message>
         <source>#%1</source>
-        <translation type="unfinished"></translation>
+        <translation>n°%1</translation>
     </message>
     <message>
         <source>Congratulations!</source>
-        <translation type="unfinished"></translation>
+        <translation>Félicitations ! </translation>
     </message>
     <message>
         <source>You beat your top score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez battu votre propre score ! </translation>
     </message>
     <message>
         <source>Well done!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bien joué ! </translation>
     </message>
     <message>
         <source>You have a new high score!</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous détenez le plus haut score ! </translation>
     </message>
 </context>
 <context>
@@ -230,11 +231,11 @@
     </message>
     <message>
         <source>High &amp;Scores</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa&amp;lmarès</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <source>&amp;Quit</source>
@@ -246,7 +247,7 @@
     </message>
     <message>
         <source>&amp;Dark Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Mode sombre</translation>
     </message>
     <message>
         <source>Application &amp;Language...</source>
