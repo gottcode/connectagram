@@ -105,16 +105,16 @@ QGraphicsItem* Word::hint()
 	}
 
 	// Find position of first incorrect character
-	int count = m_positions.count();
-	int pos = -1;
+	const int count = m_positions.count();
+	int start_pos = -1;
 	QString solution;
 	for (const QString& word : std::as_const(m_solutions)) {
 		for (int i = 0; i < count; ++i) {
 			const QPoint& point = m_positions.at(i);
 			Letter* letter = m_board->cell(point.x(), point.y())->letter();
 			if (letter->character() != word.at(i)) {
-				if (i > pos) {
-					pos = i;
+				if (i > start_pos) {
+					start_pos = i;
 					solution = word;
 				}
 				break;
@@ -123,11 +123,11 @@ QGraphicsItem* Word::hint()
 	}
 
 	// Find letter from end of string which goes in that position
-	QChar c = solution.at(pos);
-	int pos2;
+	const QChar c = solution.at(start_pos);
+	int end_pos;
 	QPointF position;
-	for (pos2 = count - 1; pos2 > pos; --pos2) {
-		const QPoint& point = m_positions.at(pos2);
+	for (end_pos = count - 1; end_pos > start_pos; --end_pos) {
+		const QPoint& point = m_positions.at(end_pos);
 		Letter* letter = m_board->cell(point.x(), point.y())->letter();
 		if (letter->isMovable() && letter->character() == c) {
 			position = letter->scenePos();
@@ -137,7 +137,7 @@ QGraphicsItem* Word::hint()
 	}
 
 	// Create hint graphicsitem
-	int edge = ((pos2 - pos - 1) * 34) + 16;
+	const int edge = ((end_pos - start_pos - 1) * 34) + 16;
 	QList<QPointF> positions;
 	positions += QPointF(0, 8);
 	positions += QPointF(12, 0);
