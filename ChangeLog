@@ -1,3 +1,12 @@
+1.3.9
+-----
+* FIXED: Started identical game when finished.
+* FIXED: High score name had NULL at end in Windows.
+* Replaced shadowed variable names.
+* Updated link to translations.
+* Translation updates: French.
+* Word list updates: German.
+
 1.3.8
 -----
 * FIXED: Could choose empty language as game language.

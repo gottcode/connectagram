@@ -41,6 +41,18 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.3.9" date="2026-02-10">
+      <description>
+        <ul>
+          <li>FIXED: Started identical game when finished</li>
+          <li>FIXED: High score name had NULL at end in Windows</li>
+          <li>Replaced shadowed variable names</li>
+          <li>Updated link to translations</li>
+          <li>Translation updates: French</li>
+          <li>Word list updates: German</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.3.8" date="2025-02-19">
       <description>
         <ul>
