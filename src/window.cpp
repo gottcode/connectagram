@@ -49,65 +49,49 @@ Window::Window()
 	connect(m_board, &Board::loading, m_definitions, &Definitions::clearWords);
 
 	// Create success message
-	m_success = new QLabel(contents);
+	m_success = new QLabel(tr("Success"), contents);
+	m_success->setFont(QFont("Sans", 24));
+	m_success->setStyleSheet(
+		"QLabel {"
+			"background-color: rgba(0, 0, 0, 200);"
+			"color: white;"
+			"margin: 0;"
+			"padding: 1em;"
+			"border-radius: 10px;"
+		"}");
 	m_success->setAttribute(Qt::WA_TransparentForMouseEvents);
-
-	QFont f = font();
-	f.setPointSize(24);
-	QFontMetrics metrics(f);
-	int width = metrics.boundingRect(tr("Success")).width();
-	int height = metrics.height();
-	int ratio = devicePixelRatio();
-	QPixmap pixmap(QSize(width + height, height * 2) * ratio);
-	pixmap.setDevicePixelRatio(ratio);
-	pixmap.fill(QColor(0, 0, 0, 0));
-	{
-		QPainter painter(&pixmap);
-
-		painter.setPen(Qt::NoPen);
-		painter.setBrush(QColor(0, 0, 0, 200));
-		painter.setRenderHint(QPainter::Antialiasing, true);
-		painter.drawRoundedRect(0, 0, width + height, height * 2, 10, 10);
-
-		painter.setFont(f);
-		painter.setPen(Qt::white);
-		painter.setRenderHint(QPainter::TextAntialiasing, true);
-		painter.drawText(height / 2, height / 2 + metrics.ascent(), tr("Success"));
-	}
-	m_success->setPixmap(pixmap);
 	m_success->hide();
 	connect(m_board, &Board::loading, m_success, &QLabel::hide);
 
 	// Create overlay background
 	m_overlay = new QLabel(this);
-
-	f = font();
+	QFont f = font();
 	f.setPixelSize(20);
-	metrics = QFontMetrics(f);
-	width = std::max(metrics.boundingRect(tr("Loading")).width(), metrics.boundingRect(tr("Paused")).width());
+	QFontMetrics metrics = QFontMetrics(f);
+	int width = std::max(metrics.boundingRect(tr("Loading")).width(), metrics.boundingRect(tr("Paused")).width());
 	for (int i = 0; i < 10; ++i) {
 		QString test(6, QChar(i + 48));
 		test.insert(4, QChar(':'));
 		test.insert(2, QChar(':'));
 		width = std::max(width, metrics.boundingRect(test).width());
 	}
-	pixmap = QPixmap(QSize(width + 82, 32) * ratio);
-	pixmap.setDevicePixelRatio(ratio);
-	pixmap.fill(Qt::transparent);
-	{
-		QPainter painter(&pixmap);
 
-		painter.setPen(Qt::NoPen);
-		painter.setBrush(QColor(0, 0, 0, 200));
-		painter.setRenderHint(QPainter::Antialiasing, true);
-		painter.drawRoundedRect(0, -32, width + 82, 64, 5, 5);
-	}
-	m_overlay->setPixmap(pixmap);
+	m_overlay->setMinimumWidth(width + 82);
+	m_overlay->setMinimumHeight(std::max(32, metrics.height() + 6));
+	m_overlay->setStyleSheet(
+		"QLabel {"
+			"background-color: rgba(0, 0, 0, 200);"
+			"color: white;"
+			"margin-top: -5px;"
+			"padding-top: 5px;"
+			"border-radius: 5px;"
+		"}");
 
 	m_overlay->hide();
 
 	// Create overlay buttons
 	m_definitions_button = new QLabel(m_overlay);
+	m_definitions_button->setStyleSheet("QLabel{background:transparent;}");
 	m_definitions_button->setPixmap(QIcon(":/definitions.png").pixmap(24,24));
 	m_definitions_button->setCursor(Qt::PointingHandCursor);
 	m_definitions_button->setToolTip(tr("Definitions"));
@@ -115,6 +99,7 @@ Window::Window()
 	m_definitions_button->installEventFilter(this);
 
 	m_hint_button = new QLabel(m_overlay);
+	m_hint_button->setStyleSheet("QLabel{background:transparent;}");
 	m_hint_button->setPixmap(QIcon(":/hint.png").pixmap(24,24));
 	m_hint_button->setCursor(Qt::PointingHandCursor);
 	m_hint_button->setToolTip(tr("Hint"));
@@ -124,6 +109,7 @@ Window::Window()
 
 	// Create clock
 	m_clock = new Clock(m_overlay);
+	m_clock->setStyleSheet("QLabel{background:transparent;}");
 	m_clock->setDisabled(true);
 	connect(m_clock, &Clock::togglePaused, m_board, &Board::togglePaused);
 	connect(m_board, &Board::loading, m_clock, &Clock::setLoading);
@@ -133,9 +119,7 @@ Window::Window()
 	overlay_layout->setSpacing(0);
 	overlay_layout->addSpacing(10);
 	overlay_layout->addWidget(m_definitions_button);
-	overlay_layout->addStretch();
-	overlay_layout->addWidget(m_clock, 0, Qt::AlignCenter);
-	overlay_layout->addStretch();
+	overlay_layout->addWidget(m_clock, 1, Qt::AlignCenter);
 	overlay_layout->addWidget(m_hint_button);
 	overlay_layout->addSpacing(10);
 
