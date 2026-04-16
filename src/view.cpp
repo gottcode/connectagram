@@ -19,6 +19,7 @@ View::View(Board* board, QWidget* parent)
 	setDragMode(QGraphicsView::ScrollHandDrag);
 	viewport()->setCursor(Qt::ArrowCursor);
 	setFrameStyle(QFrame::NoFrame);
+	setCacheMode(QGraphicsView::CacheBackground);
 	setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 	connect(m_board, &Board::started, this, &View::gameStarted);
 

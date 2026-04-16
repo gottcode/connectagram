@@ -16,8 +16,6 @@
 
 int main(int argc, char** argv)
 {
-	QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::RoundPreferFloor);
-
 	QApplication app(argc, argv);
 	app.setApplicationName("Connectagram");
 	app.setApplicationVersion(VERSIONSTR);
