@@ -105,3 +105,5 @@ void Definitions::setLanguage(const QString& langcode)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_definitions.cpp"

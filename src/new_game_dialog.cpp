@@ -249,3 +249,5 @@ void NewGameDialog::setLength(int length)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_new_game_dialog.cpp"

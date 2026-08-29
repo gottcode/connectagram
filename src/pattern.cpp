@@ -453,3 +453,5 @@ Word* WavePattern::addWord(int step)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_pattern.cpp"

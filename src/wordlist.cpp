@@ -161,3 +161,5 @@ WordList::WordListData::WordListData(const QString& language)
 }
 
 //-----------------------------------------------------------------------------
+
+#include "moc_wordlist.cpp"
